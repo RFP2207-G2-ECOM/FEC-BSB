@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -7,7 +8,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>Hello Worlds</h1>
+      <>
+        <QuestionAnswers />
+      </>
     )
   }
 }

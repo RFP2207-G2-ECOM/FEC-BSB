@@ -1,0 +1,56 @@
+.QA-Container {
+  width: 1440px;
+  margin: auto;
+  border: solid;
+  border-color: red;
+}
+
+.qa-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 5vh;
+  margin-left: 20px;
+  font-size: large;
+}
+
+.Searchbox-Container {
+  display: flex;
+  height: 7vh;
+  width: 80%;
+  border: none;
+}
+
+.Search-Input {
+  display: flex;
+  width: 100%;
+}
+
+.search-input {
+  margin-left: 10px;
+  width: 90%;
+  height: 100%;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px 0px 2px 2px;
+  border-radius: 4px 0px 0px 4px;
+  font-size: 18px;
+}
+
+.Eyeglass-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 103%;
+  width: 40px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px 2px 2px 0px;
+  border-radius: 0px 4px 4px 0px;
+}
+
+.QandA-Container {
+  border: solid;
+  width: 100%;
+  height: 400px;
+}
