@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import Overview from './components/Overview/Overview.jsx';
 import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
 
 class App extends React.Component {
@@ -9,6 +10,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <Overview />
         <QuestionAnswers />
       </>
     )

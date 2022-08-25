@@ -1,0 +1,20 @@
+.Overview-Container {
+  width: auto;
+  height: 500px;
+  border: solid;
+  border-color: red;
+  display: flex;
+
+}
+
+.Layout {
+  width: auto;
+  margin: auto;
+  border: solid;
+  border-color: black;
+}
+
+.p {
+  width: auto;
+  height: 500px;
+}
