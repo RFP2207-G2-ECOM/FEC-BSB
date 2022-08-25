@@ -3,12 +3,16 @@ import { createRoot } from 'react-dom/client';
 
 import App from './App.jsx';
 
-import { ProductProvider } from './contexts/product.context.jsx';
+import ErrorBoundary from './components/ErrorBoundary.jsx';
+import { ProductProvider } from './contexts/product-info.context.jsx';
+import { ProductStylesProvider } from './contexts/product-styles.context.jsx';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <ProductProvider>
-    <App />
+    <ProductStylesProvider>
+      <App />
+    </ProductStylesProvider>
   </ProductProvider>
 );
