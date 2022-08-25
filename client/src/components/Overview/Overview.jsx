@@ -7,13 +7,8 @@ import styles from '../../styles/Overview/Overview.css';
 const Overview = () => {
   return (
     <div class='Overview-Container'>
-      <div class='Layout Product-Display'>
-      <p>Product Display will go here</p>
-      </div>
-      <div class='Layout Product-Details'>
+      <ProductDisplay />
       <ProductDetails />
-      <p>Product Details will go here</p>
-      </div>
     </div>
   )
 };

@@ -2,8 +2,8 @@ import React from 'react';
 
 const ProductDetails = () => {
   return (
-    <div className='ProDet-Container'>
-
+    <div class='Layout Product-Details'>
+      <p>Product Details will go here</p>
     </div>
   )
 };
