@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
 import RatingsReviews from './components/Reviews/RatingsReviews.jsx';
+import RelatedItemsAndComp from './components/Related/RelatedItemsAndComp.jsx';
 
 import { ProductContext } from './contexts/product.context.jsx';
 
@@ -22,6 +23,7 @@ const App = () => {
 
     return (
       <>
+        <RelatedItemsAndComp />
         <QuestionAnswers />
         <RatingsReviews />
       </>

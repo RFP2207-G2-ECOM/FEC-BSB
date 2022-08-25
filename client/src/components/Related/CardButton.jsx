@@ -3,16 +3,14 @@ import RelatedItemsAndComp from './RelatedItemsAndComp.jsx';
 import styles from '../../styles/Related/related.css';
 import RelatedProductsList from './RelatedProductsList.jsx';
 import YourOutfitList from './YourOutfitList.jsx';
-import CardButton from './CardButton.jsx';
+import Card from './Card.jsx';
 
-const Card = () => {
+const CardButton = () => {
   return (
-    <div className='card-container'>
+    <>
       <button className='card-button'>Star</button>
-      <div className='card-image'>IMAGE</div>
-      <div className='card-product-info'>Product Info</div>
-    </div>
+    </>
   )
 }
 
-export default Card;
+export default CardButton;
