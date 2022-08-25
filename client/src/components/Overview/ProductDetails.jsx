@@ -14,6 +14,6 @@ export default ProductDetails;
 // Star Rating & Reviews Link
 // Name & Category
 // Price
-// SocialMediaBtns
 // Styles & Selector
 // AddToCart
+// SocialMediaBtns

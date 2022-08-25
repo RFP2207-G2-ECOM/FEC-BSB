@@ -1,9 +1,12 @@
 import React from 'react';
+import PictureSelector from './ProductDisplay/PictureSelector.jsx';
+import SelectedPicture from './ProductDisplay/SelectedPicture.jsx';
 
 const ProductDisplay = () => {
   return (
     <div class='Layout Product-Display'>
-      <p>Product Display will go here</p>
+      <PictureSelector />
+      <SelectedPicture />
     </div>
   )
 };
@@ -14,5 +17,3 @@ export default ProductDisplay;
 // Loads:
 // SelectedPicture
 // PictureSelectorWheel
-// PrevArrow
-// NextArrow
