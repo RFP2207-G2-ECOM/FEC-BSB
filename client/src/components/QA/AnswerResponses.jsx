@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import AInfo from './AInfo.jsx';
 import LoadMoreAnswers from './LoadMoreAnswers.jsx';
 import ResponseInfo from './ResponseInfo.jsx';
 import ResponsePhotos from './ResponsePhotos.jsx';
 
+import { ProductContext } from '../../contexts/product-info.context.jsx';
+
+
 const AnswerReponses = () => {
+  const { product } = useContext(ProductContext);
 
   return (
     <div className='response-container'>
