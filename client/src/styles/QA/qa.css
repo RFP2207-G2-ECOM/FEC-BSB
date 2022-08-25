@@ -1,5 +1,5 @@
 .QA-Container {
-  width: 1440px;
+  width: 82%;
   margin: auto;
   border: solid;
   border-color: red;
@@ -19,6 +19,31 @@
   height: 7vh;
   width: 80%;
   border: none;
+}
+
+.Search-Input-Test {
+  display: flex;
+  width: 75%;
+  height: 40px;
+  background-color: white;
+  border-radius: 5px;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.Search-Input-Test > i {
+  font-size: large;
+  color: #777;
+}
+
+.Search-Input-Test > input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: large;
+  padding-left: 10px;
 }
 
 .Search-Input {
