@@ -3,6 +3,7 @@ import axios from 'axios';
 import Overview from './components/Overview/Overview.jsx';
 import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
 import RatingsReviews from './components/Reviews/RatingsReviews.jsx';
+import RelatedItemsAndComp from './components/Related/RelatedItemsAndComp.jsx';
 
 import { ProductContext } from './contexts/product-info.context.jsx';
 import { ProductStylesContext } from './contexts/product-styles.context.jsx';
@@ -15,6 +16,7 @@ const App = () => {
     return (
       <>
         <Overview />
+        <RelatedItemsAndComp />
         <QuestionAnswers />
         <RatingsReviews />
       </>
