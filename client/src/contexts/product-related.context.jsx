@@ -16,7 +16,6 @@ export const ProductRelatedProvider = ({ children }) => {
       }
     })
       .then(result => {
-        console.log('Related:', result.data);
         setProductRelated(result.data);
       })
   }, [])
