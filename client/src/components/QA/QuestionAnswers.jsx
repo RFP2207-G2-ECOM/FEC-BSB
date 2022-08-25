@@ -1,6 +1,11 @@
 import React from 'react';
 
-import QAContainer from './QAContainer.jsx';
+import AContainer from './AContainer.jsx';
+import AddAQuestion from './AddAQuestion.jsx';
+import AInfo from './AInfo.jsx';
+import AnswerReponses from './AnswerResponses.jsx';
+import MoreAnsweredQuestions from './MoreAnsweredQuestions.jsx';
+import QContainer from './QContainer.jsx';
 import SearchBox from './SearchBox.jsx';
 import Title from './Title.jsx';
 
@@ -11,7 +16,11 @@ const QuestionAnswers = () => {
     <div className='QA-Container'>
       <Title />
       <SearchBox />
-      <QAContainer />
+      <QContainer />
+      <AContainer />
+      <AInfo />
+      <AnswerReponses />
+      <MoreAnsweredQuestions />
     </div>
   )
 }
