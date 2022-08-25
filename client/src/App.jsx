@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
+import RatingsReviews from './components/Reviews/RatingsReviews.jsx';
 import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
 
 import { ProductContext } from './contexts/product.context.jsx';
@@ -21,6 +22,7 @@ const App = () => {
     return (
       <>
         <QuestionAnswers />
+        <RatingsReviews />
       </>
     )
 }
