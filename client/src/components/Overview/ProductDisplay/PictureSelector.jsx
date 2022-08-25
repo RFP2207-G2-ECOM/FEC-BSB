@@ -5,7 +5,7 @@ import ScrollDownArrow from './PictureSelector/ScrollDownArrow.jsx';
 
 const PictureSelector = () => {
   return (
-    <div class='Layout Picture-Selector'>
+    <div className='Layout Picture-Selector'>
       <ScrollUpArrow />
 
       <p>Selector Wheel Here</p>

@@ -5,7 +5,7 @@ import ScrollRightArrow from './PictureDisplay/ScrollRightArrow.jsx';
 
 const SelectedPicture = () => {
   return (
-    <div class='Layout Selected-Picture'>
+    <div className='Layout Selected-Picture'>
       <ScrollLeftArrow />
       <MainPic />
       <ScrollRightArrow />

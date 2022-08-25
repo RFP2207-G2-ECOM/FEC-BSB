@@ -1,9 +1,15 @@
 import React from 'react';
+import StarsAndReviews from './ProductDetails/StarsAndReviews.jsx';
+import NameAndCategory from './ProductDetails/NameAndCategory.jsx';
+import Price from './ProductDetails/Price.jsx';
 
 const ProductDetails = () => {
   return (
-    <div class='Layout Product-Details'>
-      <p>Product Details will go here</p>
+    <div className='Product-Details'>
+      <NameAndCategory />
+      <StarsAndReviews />
+      <Price />
+
     </div>
   )
 };
@@ -11,9 +17,7 @@ const ProductDetails = () => {
 export default ProductDetails;
 
 // Loads:
-// Star Rating & Reviews Link
-// Name & Category
-// Price
 // Styles & Selector
 // AddToCart
-// SocialMediaBtns
+{/* <StylesAndSelector />
+<AddToCart /> */}
