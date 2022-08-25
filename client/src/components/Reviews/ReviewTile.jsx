@@ -1,9 +1,15 @@
 import React from "react"
 
-const = ReviewTile = () => {
+const ReviewTile = () => {
   return (
     <div className="ReviewTile-Container">
-      <div>stars</div>
+      <div className="rating">
+        <i className="rating_star"></i>
+        <i className="rating_star"></i>
+        <i className="rating_star"></i>
+        <i className="rating_star"></i>
+        <i className="rating_star"></i>
+      </div>
       <div>username, January 1, 2022</div>
       <div>summary line</div>
       <div>

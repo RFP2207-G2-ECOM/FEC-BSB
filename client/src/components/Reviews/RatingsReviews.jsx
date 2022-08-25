@@ -1,10 +1,15 @@
-import React, {useState} from "react"
-import ReviewsList from "./ReviewsList.jsx"
-import RatingsBreakdown from "./RatingsBreakdown.jsx"
-import ProductBreakdown from "./ProductBreakdown.jsx"
-import styles from "../../styles/Reviews/reviews.css"
+import React, {useState} from "react";
+import axios from "axios";
 
-const RatingsReviews = () => {
+import ReviewsList from "./ReviewsList.jsx";
+import RatingsBreakdown from "./RatingsBreakdown.jsx";
+import ProductBreakdown from "./ProductBreakdown.jsx";
+
+import styles from "../../styles/Reviews/reviews.css";
+
+const RatingsReviews = (props) => {
+
+  console.log('these are the props:', props)
 
   return (
     <div className="RR-Container">
