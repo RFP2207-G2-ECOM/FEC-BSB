@@ -2,6 +2,7 @@ import React from "react"
 import ReviewsList from "./ReviewsList.jsx"
 import RatingsBreakdown from "./RatingsBreakdown.jsx"
 import ProductBreakdown from "./ProductBreakdown.jsx"
+import styles from "../../styles/Reviews/reviews.css"
 
 class RatingsReviews extends React.Component {
   constructor(props) {
@@ -10,13 +11,16 @@ class RatingsReviews extends React.Component {
 
   render() {
     return (
-      <>
-        <div>Ratings and Reviews section goes here!</div>
-        <h1>Ratings & Reviews</h1>
-        <RatingsBreakdown />
-        <ProductBreakdown />
-        <ReviewsList />
-      </>
+      <div className="RR-Container">
+        <div className="rr-title">RATINGS & REVIEWS</div>
+        <div className="Module-Container">
+          <div className="Breakdown-Container">
+            <RatingsBreakdown />
+            <ProductBreakdown />
+          </div>
+          <ReviewsList />
+        </div>
+      </div>
     )
   }
 

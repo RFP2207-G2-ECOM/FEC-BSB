@@ -7,7 +7,7 @@ class RatingsBreakdown extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="RatingsBreakdown-Container">
         Ratings Breakdown goes here!
       </div>
     )

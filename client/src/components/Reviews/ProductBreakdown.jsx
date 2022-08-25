@@ -7,7 +7,7 @@ class ProductBreakdown extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="ProductBreakdown-Container">
         Product Breakdown goes here!
       </div>
     )
