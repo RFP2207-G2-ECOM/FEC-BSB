@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
-import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
+
 import RatingsReviews from './components/Reviews/RatingsReviews.jsx';
+import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
 
 class App extends React.Component {
   constructor(props) {

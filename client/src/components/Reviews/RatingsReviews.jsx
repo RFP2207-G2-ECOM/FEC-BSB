@@ -9,6 +9,10 @@ class RatingsReviews extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    console.log(process.env.REACT_APP_github_token)
+  }
+
   render() {
     return (
       <div className="RR-Container">
