@@ -3,26 +3,20 @@ import axios from 'axios';
 import Overview from './components/Overview/Overview.jsx';
 import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
 import RatingsReviews from './components/Reviews/RatingsReviews.jsx';
+import RelatedItemsAndComp from './components/Related/RelatedItemsAndComp.jsx';
 
-import { ProductContext } from './contexts/product.context.jsx';
+import { ProductContext } from './contexts/product-info.context.jsx';
+import { ProductStylesContext } from './contexts/product-styles.context.jsx';
 
 const App = () => {
-
-  useEffect(() => {
-    var baseURI = process.env.BASE_URI;
-    axios.get(`${baseURI}products/40344`, {
-      headers: {
-        'Authorization': process.env.GITHUB_TOKEN
-      }
-    })
-      .then(result => {
-        console.log('RESULT:', result.data);
-      })
-  }, [])
+    // These are here for examples of how to use these
+    const { product } = useContext(ProductContext); // Object type
+    const { productStyles } = useContext(ProductStylesContext); // Array type, you can map over this
 
     return (
       <>
         <Overview />
+        <RelatedItemsAndComp />
         <QuestionAnswers />
         <RatingsReviews />
       </>
