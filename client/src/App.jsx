@@ -1,4 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
+
+import RatingsReviews from './components/Reviews/RatingsReviews.jsx';
 import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
 
 class App extends React.Component {
@@ -10,6 +12,7 @@ class App extends React.Component {
     return (
       <>
         <QuestionAnswers />
+        <RatingsReviews />
       </>
     )
   }
