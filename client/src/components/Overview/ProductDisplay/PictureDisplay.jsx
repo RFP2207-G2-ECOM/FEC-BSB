@@ -1,14 +1,17 @@
 import React from 'react';
-import MainPic from './PictureDisplay/MainPic.jsx';
-import ScrollLeftArrow from './PictureDisplay/ScrollLeftArrow.jsx';
-import ScrollRightArrow from './PictureDisplay/ScrollRightArrow.jsx';
 
 const SelectedPicture = () => {
   return (
     <div className='Layout Selected-Picture'>
-      <ScrollLeftArrow />
-      <MainPic />
-      <ScrollRightArrow />
+      <button className='Layout Scroll-Left-Right Arrow-Left'>
+        &lt;
+      </button>
+      <div className='Layout Main-Pic'>
+      <p>Main Picture Here / Add Zoom-In Functionality</p>
+      </div>
+      <button className='Layout Scroll-Left-Right Arrow-Right'>
+        &gt;
+      </button>
     </div>
   )
 };

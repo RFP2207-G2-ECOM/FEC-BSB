@@ -1,3 +1,7 @@
+.bolded {
+  font-weight: 900;
+}
+
 .Overview-Container {
   width: 82%;
   margin: auto;
@@ -10,7 +14,10 @@
 .Layout, .Picture-Selector,
 .Selected-Picture, .Stars-And-Reviews,
 .Stars, .Review-Link, .Name-And-Category,
-.Name, .Category, .Price {
+.ProductName, .Category, .Price,
+.StyleName, .StyleSelector, .StyleOptions,
+.Description-Container, .BLeft, .BCenter,
+.BRight, .SizeAndQuanitityRow, .CartAndFavRow {
   border: solid;
   border-color: rgb(0, 0, 0);
   display: flex;
@@ -62,13 +69,21 @@
   border-color: rgb(0, 0, 0);
 }
 
-.Stars-And-Reviews, .Name-And-Category, .Price {
+.Stars-And-Reviews, .Name-And-Category,
+.Price, .StyleName, .StyleSelector,
+.SizeAndQuanitityRow, .CartAndFavRow{
   border-color: blue;
-  align-items: flex-end;
 }
 
-.Stars, .Review-Link, .Name, .Category {
+
+
+.Stars, .Review-Link, .ProductName, .Category {
   border-color: rgb(52, 190, 42);
+  height: auto;
+}
+
+.Stars-And-Reviews {
+  align-items: flex-end;
 }
 
 .Stars {
@@ -86,9 +101,9 @@
   align-items: flex-start;
 }
 
-.Name {
+.ProductName {
   width: 85%;
-  height: 70px;
+  height: 75px;
   align-items: center;
 }
 
@@ -103,27 +118,78 @@
   align-items: center;
 }
 
-.SMB {
+.BottomBar {
   width:82%;
   margin: auto;
   display:flex;
-}
-
-.BtnSpacer {
-  width: 55%;
+  justify-content: center;
 }
 
 .Social-Media-Buttons {
-  height:25px;
-  width: 40%;
+  height:50px;
+  width: 25%;
   display: flex;
   justify-content: space-around;
   border: solid;
-  border-color: red;
+  border-color: rgb(0, 0, 0);
 }
 
 .btn {
   border: solid;
-  border-color:black;
+  border-color: blue;
   display: flex;
+}
+
+.BLeft, .BCenter, .BRight {
+  border-color:rgb(52, 190, 42);
+}
+
+.BLeft {
+  width: 5%;
+}
+
+.BCenter {
+  width: 25%;
+}
+
+.BRight {
+  width: 70%;
+}
+
+.StyleName {
+  height: 13.2%;
+  position:inherit;
+  left:0px;
+  right:0px;
+  align-items: center;
+}
+
+.StyleSelector {
+  flex-direction: column;
+  height: 20%;
+}
+
+.StyleOptions {
+  height: 33px;
+  justify-content: space-around;
+}
+
+.Description-Container {
+  width: 75%;
+  justify-content: center;
+}
+
+.SMBRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.AddToCart {
+  height: 18%;
+}
+
+.SizeAndQuanitityRow, .CartAndFavRow {
+  justify-content: space-around;
+  height:50%;
 }

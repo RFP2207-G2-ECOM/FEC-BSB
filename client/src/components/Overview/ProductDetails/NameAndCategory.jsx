@@ -3,8 +3,8 @@ import React from 'react';
 const NameAndCategory = () => {
   return (
     <div className='Name-And-Category'>
-      <div className='Name'>
-        <p>Product Name</p>
+      <div className='ProductName'>
+        <p className='bolded'>Product Name</p>
       </div>
       <div className='Category'>
         <p>Product Category</p>

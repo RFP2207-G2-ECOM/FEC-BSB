@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductDisplay from './ProductDisplay.jsx';
 import ProductDetails from './ProductDetails.jsx';
-import SocialMediaButtons from './SocialMediaButtons.jsx';
+import BottomBar from './BottomBar.jsx';
 
 import styles from '../../styles/Overview/Overview.css';
 
@@ -13,13 +13,8 @@ const Overview = () => {
       <ProductDisplay />
       <ProductDetails />
     </div>
+    <BottomBar />
 
-    <div className='SMB'>
-        <div className='BtnSpacer'>
-
-        </div>
-        <SocialMediaButtons />
-    </div>
     </div>
   )
 };
