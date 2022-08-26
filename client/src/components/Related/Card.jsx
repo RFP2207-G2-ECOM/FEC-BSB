@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import RelatedItemsAndComp from './RelatedItemsAndComp.jsx';
 import styles from '../../styles/Related/related.css';
 import RelatedProductsList from './RelatedProductsList.jsx';
 import YourOutfitList from './YourOutfitList.jsx';
-import CardButton from './CardButton.jsx';
 
-const Card = () => {
+
+const Card = ({style}) => {
+  const [styleItems, setStyle] = useState(style);
+
+  useEffect(()=>{
+    setStyle(style);
+  },[style])
+
   return (
     <div className='card-container'>
       <button className='card-button'>Star</button>
-      <div className='card-image'>IMAGE</div>
-      <div className='card-product-info'>Product Info</div>
+      {styleItems !== undefined &&
+        <img
+          className='card-image'
+          src={styleItems.photos[0].thumbnail_url}>
+        </img>}
+      <div className='card-product-info'>Product info</div>
     </div>
   )
-}
+  }
 
 export default Card;

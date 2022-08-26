@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .related-items-and-comp-container {
   width: 1440px;
   margin: auto;
@@ -11,16 +15,17 @@
 .card-container {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 400px;
   border: 3px solid black;
+  float: left;
 }
 
 .card-button {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 160px;
+  margin-left: 210px;
   height: 30px;
 }
 
@@ -33,6 +38,22 @@
 }
 
 .card-image {
-  display: flex;
+  display: inline-block;
   align-items: center;
+  width: 250px;
+  height: 350px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.card-image:hover {
+  transform: scale(1.05);
+  transition-timing-function: ease-in-out;
+  transition: 0.30s;
+}
+
+
+.related-products-list-container {
+  overflow-x: scroll;
+  width: 2000px;
 }

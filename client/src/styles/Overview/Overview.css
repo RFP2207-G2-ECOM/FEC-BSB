@@ -1,0 +1,54 @@
+.Overview-Container {
+  width: 82%;
+  margin: auto;
+  height: 500px;
+  border: solid;
+  border-color: red;
+  display: flex;
+}
+
+.Layout {
+  width: 100%;
+  height: 500px;
+  border: solid;
+  border-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Picture-Selector {
+  width: 10%;
+  height: 500px;
+  border: solid;
+  border-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.Selected-Picture {
+  width: 90%;
+  height: 500px;
+  border: solid;
+  border-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Scroll-Up-Down {
+  height: 30px;
+}
+
+.Scroll-Left-Right {
+  height: 30px;
+  width: 30px;
+}
+
+.Middle-Bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 30px;
+}
