@@ -1,3 +1,12 @@
 input[type="radio"] {
   display: none;
 }
+
+.star-container {
+  display: inline-block
+}
+
+.star-icon {
+  display: inline-block;
+  position: relative;
+}

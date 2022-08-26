@@ -1,5 +1,7 @@
 import React, {useState} from "react"
+
 import { MdStarOutline, MdStarHalf, MdStar } from "react-icons/md"
+import styles from "../styles/Reviews/starRating.css"
 
 
 const StaticRating = (props) => {
@@ -18,14 +20,14 @@ const StaticRating = (props) => {
   }
 
   return (
-    <div>
+    <div className="star-container">
       {stars.map(item => {
         if (item === 0) {
-          return <div><MdStarOutline /></div>
+          return <div className="star-icon"><MdStarOutline /></div>
         } else if (item === .5) {
-          return <div><MdStarHalf /></div>
+          return <div className="star-icon"><MdStarHalf /></div>
         } else {
-          return <div><MdStar /></div>
+          return <div className="star-icon"><MdStar /></div>
         }
       })}
     </div>
