@@ -1,4 +1,5 @@
 import React from "react"
+import StarRating from "./StarRating.jsx"
 
 const ReviewTile = ({ rating, username, date, summary, body, recommend, response, helpfulness }) => {
 
@@ -7,7 +8,7 @@ const ReviewTile = ({ rating, username, date, summary, body, recommend, response
 
   return (
     <div className="ReviewTile-Container">
-      <div className="rating">{rating} Stars!</div>
+      <div className="rating"><StarRating /></div>
       <div>{username}, {dateConverted}</div>
       <div>{summary}</div>
       <div>{body}</div>

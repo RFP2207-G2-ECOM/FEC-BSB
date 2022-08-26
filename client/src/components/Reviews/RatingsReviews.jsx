@@ -1,8 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
 
-// import { ProductContext } from '../../contexts/product-info.context.jsx';
-
 import ReviewsList from "./ReviewsList.jsx";
 import RatingsBreakdown from "./RatingsBreakdown.jsx";
 import ProductBreakdown from "./ProductBreakdown.jsx";
