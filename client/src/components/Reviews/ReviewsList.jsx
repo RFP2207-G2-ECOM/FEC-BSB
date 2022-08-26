@@ -35,8 +35,8 @@ const ReviewsList = ({ filteredReviews, ratings}) => {
           />)}
       </div>
       <div className="Buttons-Container">
-        <div className="more-reviews-button">MORE REVIEWS</div>
-        <div className="add-a-review-button">ADD A REVIEW</div>
+        <button className="more-reviews-button">MORE REVIEWS</button>
+        <button className="add-a-review-button">ADD A REVIEW</button>
       </div>
     </div>
   )
