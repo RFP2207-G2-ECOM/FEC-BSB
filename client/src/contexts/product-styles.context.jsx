@@ -16,7 +16,6 @@ export const ProductStylesProvider = ({children}) => {
       }
     })
       .then(result => {
-        console.log(result.data.results);
         setProductStyles(result.data.results);
       })
   }, [])
