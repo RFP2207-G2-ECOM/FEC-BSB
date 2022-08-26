@@ -11,12 +11,12 @@ const Overview = () => {
   // Include TopBar with Logo and Search Bar
   return (
     <div className='Overview'>
-    <TopBar />
-    <div className='Overview-Container'>
-      <ProductDisplay />
-      <ProductDetails />
-    </div>
-    <BottomBar />
+      <TopBar />
+      <div className='Overview-Container'>
+        <ProductDisplay />
+        <ProductDetails />
+      </div>
+      <BottomBar />
 
     </div>
   )
