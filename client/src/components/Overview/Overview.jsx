@@ -17,7 +17,6 @@ const Overview = () => {
         <ProductDetails />
       </div>
       <BottomBar />
-
     </div>
   )
 };

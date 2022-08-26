@@ -138,7 +138,11 @@
 }
 
 .ProductName {
-  height: 70%;
+  height: 60%;
+}
+
+.ProductTitle {
+  font-size: 35px;
 }
 
 .Category {
