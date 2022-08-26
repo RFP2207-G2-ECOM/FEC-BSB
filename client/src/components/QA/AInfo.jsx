@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Helpful from './Helpful.jsx';
+import Helpful from '../Helpful.jsx';
 import Report from './Report.jsx';
 
 const AInfo = () => {

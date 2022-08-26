@@ -19,6 +19,7 @@ export const QuestionsProvider = ({children}) => {
     })
       .then(result => {
         setProductID(result.data.product_id);
+        console.log('results:', result.data.results[0]);
         setResults(result.data.results[0]);
       })
   }, [])

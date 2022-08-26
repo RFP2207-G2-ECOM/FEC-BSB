@@ -17,7 +17,8 @@
 .ProductName, .Category, .Price,
 .StyleName, .StyleSelector, .StyleOptions,
 .Description-Container, .BLeft, .BCenter,
-.BRight, .SizeAndQuanitityRow, .CartAndFavRow {
+.BRight, .SizeAndQuanitityRow, .CartAndFavRow,
+.Logo, .SearchBar {
   border: solid;
   border-color: rgb(0, 0, 0);
   display: flex;
@@ -28,6 +29,36 @@
   height: 500px;
   justify-content: center;
   align-items: center;
+}
+
+/* TopBar */
+.TopBar {
+  height: 125px;
+  width: 82%;
+  margin:auto;
+  flex-direction: column;
+}
+
+.NavBar {
+  border: solid;
+  border-color: red;
+  display: flex;
+  height: 75px;
+  justify-content: space-between;
+}
+
+.Logo {
+  height:100%;
+  width: fit-content;
+}
+
+.SearchBar {
+  width:fit-content;
+}
+
+.Announcements {
+  display: flex;
+  justify-content: center;
 }
 
 /* Product Display */
@@ -71,11 +102,10 @@
 
 .Stars-And-Reviews, .Name-And-Category,
 .Price, .StyleName, .StyleSelector,
-.SizeAndQuanitityRow, .CartAndFavRow{
+.SizeAndQuanitityRow, .CartAndFavRow,
+.Logo, .SearchBar {
   border-color: blue;
 }
-
-
 
 .Stars, .Review-Link, .ProductName, .Category {
   border-color: rgb(52, 190, 42);
@@ -84,6 +114,7 @@
 
 .Stars-And-Reviews {
   align-items: flex-end;
+  height: 10%;
 }
 
 .Stars {
@@ -98,19 +129,24 @@
 
 .Name-And-Category {
   flex-direction: column;
-  align-items: flex-start;
+  height: 23%;
+}
+
+.ProductName, .Category {
+  width: 100%;
+  align-items: center;
 }
 
 .ProductName {
-  width: 85%;
-  height: 75px;
-  align-items: center;
+  height: 60%;
+}
+
+.ProductTitle {
+  font-size: 35px;
 }
 
 .Category {
-  width: 50%;
-  height:30px;
-  align-items: center;
+  height: 30%;
 }
 
 .Price {
@@ -118,6 +154,28 @@
   align-items: center;
 }
 
+.AddToCart {
+  height: 25%;
+}
+
+.SizeAndQuanitityRow, .CartAndFavRow {
+  justify-content: space-around;
+  height:50%;
+}
+
+.SizeSelect, .QuantitySelect {
+  width: 50%;
+}
+
+.CartButton {
+  width:75%
+}
+
+.FavButton {
+  width:25%
+}
+
+/* Bottom Bar */
 .BottomBar {
   width:82%;
   margin: auto;
@@ -157,7 +215,7 @@
 }
 
 .StyleName {
-  height: 13.2%;
+  height: 10%;
   position:inherit;
   left:0px;
   right:0px;
@@ -166,7 +224,7 @@
 
 .StyleSelector {
   flex-direction: column;
-  height: 20%;
+  height: 18%;
 }
 
 .StyleOptions {
@@ -183,13 +241,4 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.AddToCart {
-  height: 18%;
-}
-
-.SizeAndQuanitityRow, .CartAndFavRow {
-  justify-content: space-around;
-  height:50%;
 }
