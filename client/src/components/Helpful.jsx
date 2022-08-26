@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Helpful = () => {
+const Helpful = ({helpful}) => {
 
   return (
     <>
       <div className='helpful'>Helpful?</div>
-      <div className='yes-count'>Yes (45)</div>
+      <div className='yes-count'>Yes</div>
+      <div className='helpful'>({helpful})</div>
       <div className='pipe'>|</div>
     </>
   )
