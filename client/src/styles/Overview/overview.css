@@ -16,7 +16,7 @@
 .Stars, .Review-Link, .Name-And-Category,
 .ProductName, .Category, .Price,
 .StyleName, .StyleSelector, .StyleOptions,
-.Description-Container, .BLeft, .BCenter,
+.Info-Container, .BLeft, .BCenter,
 .BRight, .SizeAndQuanitityRow, .CartAndFavRow,
 .Logo, .SearchBar {
   border: solid;
@@ -232,9 +232,21 @@
   justify-content: space-around;
 }
 
-.Description-Container {
+.Info-Container {
   width: 75%;
   justify-content: center;
+  flex-direction: column;
+}
+
+.Underline {
+  border-bottom: 3px solid black;
+}
+
+.Slogan, .Description,
+.Slogan-Container, .Description-Container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .SMBRow {
