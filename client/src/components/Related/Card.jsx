@@ -13,15 +13,16 @@ const Card = ({style}) => {
   },[style])
 
   return (
-    <div className='card-container'>
-      <button className='card-button'>Star</button>
+    // <div className='card-container'>
+    //   <button className='card-button'>Star</button>
+    <>
       {styleItems !== undefined &&
         <img
           className='card-image'
-          src={styleItems.photos[0].thumbnail_url}>
-        </img>}
-      <div className='card-product-info'>Product info</div>
-    </div>
+          src={styleItems.photos[0].thumbnail_url}
+          alt='/'
+        />}
+     </>
   )
   }
 
