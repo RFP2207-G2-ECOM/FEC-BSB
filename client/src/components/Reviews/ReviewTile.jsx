@@ -1,27 +1,28 @@
 import React from "react"
 
-class ReviewTile extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+import StaticRating from "../StarRating.jsx"
+import PosterTag from "../PosterTag.jsx"
 
-  render() {
-    return (
-      <div className="ReviewTile-Container">
-        <div>stars</div>
-        <div>username, January 1, 2022</div>
-        <div>summary line</div>
-        <div>
-          this is the body text. lorem ipsum so and so and so blah blah blah blah this is review text
-        </div>
+const ReviewTile = ({ id, rating, username, date, summary, body, recommend, response, helpfulness }) => {
+
+  // const dateOptions = {year: 'numeric', month: 'long', day: 'numeric'}
+  // const dateConverted = new Date(date.substring(0,10)).toLocaleString(undefined, dateOptions)
+
+  return (
+    <div className="ReviewTile-Container">
+      <div className="rating"><StaticRating rating={rating}/></div>
+      <div><PosterTag username={username} date={date}/></div>
+      <div>{summary}</div>
+      <div>{body}</div>
+      {recommend === true &&
         <div>I recommend this product</div>
-        <div>Response: I am responding to the review</div>
-        <div>Helpful? Yes(10) | Report</div>
-      </div>
-    )
-  }
-
-
+      }
+      {response !== null &&
+        <div>{response}</div>
+      }
+      <div>Helpful? Yes({helpfulness}) | Report</div>
+    </div>
+  )
 }
 
 
