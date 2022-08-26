@@ -4,7 +4,6 @@ import { MdStar } from "react-icons/md"
 import styles from "../../styles/Reviews/starRating.css"
 
 const StarRating = () => {
-
   const [rating, setRating] = useState(null)
 
   return (
@@ -20,7 +19,10 @@ const StarRating = () => {
               value={ratingValue}
               onClick={() => setRating(ratingValue)}
             />
-            <MdStar className="star"/>
+            <MdStar
+              className="star"
+              color={ratingValue <= rating ? "0000ff" : "#808080"}
+            />
           </label>
         )
       })}

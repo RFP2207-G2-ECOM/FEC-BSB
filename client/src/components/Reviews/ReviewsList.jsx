@@ -24,6 +24,7 @@ const ReviewsList = ({ filteredReviews, ratings}) => {
         {filteredReviews.map(review =>
           <ReviewTile
             key={review.review_id}
+            id={review.review_id}
             rating={review.rating}
             username={review.reviewer_name}
             date={review.date}
