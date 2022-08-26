@@ -9,6 +9,7 @@ import { ProductContext } from './contexts/product-info.context.jsx';
 import { ProductStylesContext } from './contexts/product-styles.context.jsx';
 import { ProductRelatedContext } from './contexts/product-related.context.jsx';
 import { QuestionsContext } from './contexts/question.context.jsx';
+import { ProductReviewsContext } from './contexts/product-reviews.context.jsx';
 
 const App = () => {
     // These are here for examples of how to use these
@@ -16,6 +17,7 @@ const App = () => {
     const { productStyles } = useContext(ProductStylesContext); // Array type, you can map over this
     const { productRelated } = useContext(ProductRelatedContext); // Array type, you can map over this
     const { productID, results } = useContext(QuestionsContext);  // ProductID is an integer type --> results is an Object type
+    const { reviews, metadata } = useContext(ProductReviewsContext);
 
     return (
       <>
