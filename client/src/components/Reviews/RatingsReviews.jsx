@@ -18,6 +18,7 @@ const RatingsReviews = () => {
   const [reviews, setReviews] = useState([]);
   const [filteredReviews, setFilteredReviews] = useState([]);
   const [reviewMetadata, setReviewMetadata] = useState({});
+  const [ratings, setRatings] = useState({});
   const [reviewSort, setReviewSort] = useState('relevant');
   const [reviewCount, setReviewCount] = useState(2);
 
@@ -36,7 +37,9 @@ const RatingsReviews = () => {
       .then(results => {
         console.log('this is the review get request:', results.data.results)
         setReviews(reviews => results.data.results)
+        setFilteredReviews(filteredReviews => results.data.results)
       })
+      .catch(err => console.log(err))
   }
 
   const findReviewMetadata = () => {
@@ -50,8 +53,10 @@ const RatingsReviews = () => {
     })
       .then(results => {
         console.log('this is the review metadata get request:', results.data)
-        setReviewMetadata(reviews => results.data)
+        setReviewMetadata(reviewsMetadata => results.data)
+        setRatings(ratingsMetadata => results.data.ratings)
       })
+      .catch(err => console.log(err))
   }
 
   useEffect(() => {
@@ -67,7 +72,10 @@ const RatingsReviews = () => {
           <RatingsBreakdown />
           <ProductBreakdown />
         </div>
-        <ReviewsList />
+        <ReviewsList
+          filteredReviews={filteredReviews}
+          ratings={ratings}
+        />
       </div>
     </div>
   )
