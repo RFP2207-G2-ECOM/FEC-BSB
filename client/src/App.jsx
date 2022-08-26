@@ -8,12 +8,14 @@ import RelatedItemsAndComp from './components/Related/RelatedItemsAndComp.jsx';
 import { ProductContext } from './contexts/product-info.context.jsx';
 import { ProductStylesContext } from './contexts/product-styles.context.jsx';
 import { ProductRelatedContext } from './contexts/product-related.context.jsx';
+import { QuestionsContext } from './contexts/question.context.jsx';
 
 const App = () => {
     // These are here for examples of how to use these
     const { product } = useContext(ProductContext); // Object type
     const { productStyles } = useContext(ProductStylesContext); // Array type, you can map over this
     const { productRelated } = useContext(ProductRelatedContext); // Array type, you can map over this
+    const { productID, results } = useContext(QuestionsContext);  // ProductID is an integer type --> results is an Object type
 
     return (
       <>
