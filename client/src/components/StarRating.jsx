@@ -21,13 +21,13 @@ const StaticRating = (props) => {
 
   return (
     <div className="star-container">
-      {stars.map(item => {
+      {stars.map((item, index) => {
         if (item === 0) {
-          return <div className="star-icon"><MdStarOutline /></div>
+          return <div className="star-icon" key={index}><MdStarOutline /></div>
         } else if (item === .5) {
-          return <div className="star-icon"><MdStarHalf /></div>
+          return <div className="star-icon" key={index}><MdStarHalf /></div>
         } else {
-          return <div className="star-icon"><MdStar /></div>
+          return <div className="star-icon" key={index}><MdStar /></div>
         }
       })}
     </div>

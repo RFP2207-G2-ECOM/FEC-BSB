@@ -10,7 +10,7 @@ const ReviewTile = ({ id, rating, username, date, summary, body, recommend, resp
 
   return (
     <div className="ReviewTile-Container">
-      <div className="rating"><StaticRating rating={rating}/></div>
+      <div className="rating"><StaticRating key={id} rating={rating}/></div>
       <div><PosterTag username={username} date={date}/></div>
       <div>{summary}</div>
       <div>{body}</div>
