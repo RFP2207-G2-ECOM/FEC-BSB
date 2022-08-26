@@ -36,4 +36,4 @@ const StaticRating = (props) => {
 
 }
 
-export default StaticRating
+export default StaticRating;
