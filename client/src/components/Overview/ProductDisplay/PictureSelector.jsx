@@ -1,17 +1,18 @@
 import React from 'react';
-import ScrollUpArrow from './PictureSelector/ScrollUpArrow.jsx';
-import ScrollDownArrow from './PictureSelector/ScrollDownArrow.jsx';
-
 
 const PictureSelector = () => {
   return (
-    <div class='Layout Picture-Selector'>
-      <ScrollUpArrow />
+    <div className='Layout Picture-Selector'>
+      <button className='Layout Scroll-Up-Down Arrow-Up'>
+        ^
+      </button>
 
       <p>Selector Wheel Here</p>
       {/*Create Selector Wheel Here*/}
 
-      <ScrollDownArrow />
+      <button className='Layout Scroll-Up-Down Arrow-Down'>
+      V
+      </button>
     </div>
   )
 };
