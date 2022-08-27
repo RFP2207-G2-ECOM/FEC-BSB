@@ -18,7 +18,7 @@
 .StyleName, .StyleSelector, .StyleOptions,
 .Info-Container, .BLeft, .BCenter,
 .BRight, .SizeAndQuanitityRow, .CartAndFavRow,
-.Logo, .SearchBar {
+.Logo, .SearchBar, .FeatureContainer {
   border: solid;
   border-color: rgb(0, 0, 0);
   display: flex;
@@ -181,6 +181,40 @@
   margin: auto;
   display:flex;
   justify-content: center;
+}
+
+.FeatureContainer {
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+}
+
+.FeatureAndMaterial, .FeatureAndMaterialTitle {
+  display: flex;
+  justify-content:space-around;
+}
+
+.FeatureTitle, .MaterialTitle {
+  border-bottom: 3px solid black;
+}
+
+.Feature, .Material {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.Feature {
+  border-right: 3px solid black;
+}
+
+.FeatureMaterialBoundary {
+  display: flex;
+  justify-content: center;
+}
+
+.FeatureSpacer {
+  height: 10px;
 }
 
 .Social-Media-Buttons {
