@@ -1,10 +1,10 @@
 import React from 'react';
 
-const AContainer = () => {
+const AContainer = ({body}) => {
   return (
     <div className='a-container'>
       <div className='uc-a'>A:</div>
-      <div className='question'>This is a test answer?</div>
+      <div className='question'>{body}</div>
     </div>
   )
 }
