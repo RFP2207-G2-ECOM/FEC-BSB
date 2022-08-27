@@ -33,7 +33,6 @@ const RatingsReviews = () => {
       }
     })
       .then(results => {
-        console.log('this is the review get request:', results.data.results)
         setReviews(reviews => results.data.results)
         setFilteredReviews(filteredReviews => results.data.results)
       })
@@ -50,7 +49,6 @@ const RatingsReviews = () => {
       }
     })
       .then(results => {
-        console.log('this is the review metadata get request:', results.data)
         setReviewMetadata(reviewsMetadata => results.data)
         setRatings(ratingsMetadata => results.data.ratings)
       })
