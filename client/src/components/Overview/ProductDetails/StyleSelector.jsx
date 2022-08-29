@@ -5,12 +5,20 @@ import SingleStyle from './SingleStyle.jsx';
 
 const StyleSelector = () => {
   const { productStyles } = useContext(ProductStylesContext);
+  if (productStyles === undefined) {
+    productStyles = [];
+  }
   console.log(productStyles);
   // break down array into chunks of 4
   var arrOfFours = [];
   for (let i = 0; i < productStyles.length; i = i + 4) {
-    let temp = productStyles.slice(i,i+4);
+    let temp = productStyles.slice(i, i + 4);
     arrOfFours.push(temp);
+  }
+
+  let lastRow = arrOfFours[arrOfFours.length - 1] || [];
+  for (let j = lastRow.length; j < 4; j++) {
+    lastRow.push({name:''})
   }
   // arrOfFours can be mapped into each row of StyleOptions
 

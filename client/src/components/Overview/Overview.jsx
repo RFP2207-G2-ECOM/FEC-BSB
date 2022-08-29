@@ -20,12 +20,13 @@ const Overview = () => {
     if (productStyles.length){
       // console.log('productStyle has changed')
       let index = 0;
-      for (let i = 0; i < productStyles.length; i++) {
-        if (productStyles[i]['default?'] === true) {
-          index = i;
-          break;
-        }
-      }
+      // BRD says set to first in list, but then why default flag in the data?
+      // for (let i = 0; i < productStyles.length; i++) {
+      //   if (productStyles[i]['default?'] === true) {
+      //     index = i;
+      //     break;
+      //   }
+      // }
       setCurStyle(productStyles[index]);
     }
   }, [productStyles])
