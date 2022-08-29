@@ -24,7 +24,7 @@ const Helpful = ({helpful, helpfulType, id}) => {
         className='yes-count'
         onClick={handleClick}
       >Yes</div>
-      <div className='helpful'>({help})</div>
+      <div className='helpful'>&nbsp;({help})</div>
       <div className='pipe'>|</div>
     </>
   )

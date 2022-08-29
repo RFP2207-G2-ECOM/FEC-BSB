@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import AInfo from './AInfo.jsx';
-import ResponseInfo from './ResponseInfo.jsx';
+import ResponseInfo from '../QA/AnswerResponses.jsx';
 import ResponsePhotos from './ResponsePhotos.jsx';
 
 import { ProductContext } from '../../contexts/product-info.context.jsx';
