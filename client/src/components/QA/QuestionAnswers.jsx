@@ -21,36 +21,34 @@ const QuestionAnswers = () => {
     <div className='QA-Container'>
       <Title />
       <SearchBox />
-
       {
         results ?
           results.map((data, index) => {
             return (<>
               <QContainer
-                key={`${index}-que`}
+                key={`question-${data.question_id}`}
                 question_body={data.question_body}
                 question_helpfulness={data.question_helpfulness}
               />
               {
-                Object.values(data.answers).map(value => value).map(val => {
+                Object.values(data.answers).map(val => {
                   return (
                     <>
                       <AContainer
                         body={val.body}
-                        key={`${index}-ans`}
+                        key={`ans-${val.id}`}
                       />
                       <AInfo
                         answerer_name={val.answerer_name}
                         date={val.date}
                         helpful={val.helpfulness}
-                        key={`${index}-ainfo`}
+                        key={`aInfo-${val.id}`}
                       />
                       {/* <AnswerReponses
                         key={`${index}-ans-resp`}
                       /> */}
                     </>
                   )
-
                 })
               }
             </>)
