@@ -18,7 +18,7 @@ const RatingsReviews = () => {
   const [reviewMetadata, setReviewMetadata] = useState({});
   const [ratings, setRatings] = useState({});
   const [reviewSort, setReviewSort] = useState('relevant');
-  const [reviewCount, setReviewCount] = useState(6);
+  const [reviewCount, setReviewCount] = useState(2);
 
   const findReviews = () => {
     axios.get(`${baseURI}reviews/`, {

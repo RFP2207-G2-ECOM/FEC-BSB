@@ -20,6 +20,7 @@
   justify-content: flex-start;
   padding-left: 20px;
   padding-right: 20px;
+  border: 1px solid red;
 }
 
 .Breakdown-Container {
@@ -44,9 +45,11 @@
 }
 
 .ReviewsList-Container {
-  max-width: 800px;
+  width: 80%;
+  /* max-width: 800px; */
   margin-left: 40px;
   padding: 20px;
+  border: 1px solid purple;
 }
 
 .Buttons-Container {
