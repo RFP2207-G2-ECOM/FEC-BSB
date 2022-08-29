@@ -30,6 +30,7 @@
   align-items: center;
   padding: 10px;
   margin-top: 10px;
+  margin-left: 25px;
 }
 
 .Search-Input-Test > i {
@@ -148,6 +149,7 @@
 .a-info-container {
   display: flex;
   /* border: solid; */
+  align-items: center;
   height: 5vh;
   margin-top: 10px;
   margin-left: 55px;
@@ -203,9 +205,9 @@
   margin-top: 10px;
   width: 250px;
   height: 30px;
-  /* border: solid; */
   font-weight: bold;
   font-size: large;
+  padding-left: 55px;
 }
 
 .buttons-container {

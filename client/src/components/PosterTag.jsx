@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 const PosterTag = (props) => {
   const dateOptions = {year: 'numeric', month: 'long', day: 'numeric'}

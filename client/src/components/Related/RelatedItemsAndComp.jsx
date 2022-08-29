@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import Card from './Card.jsx';
 import styles from '../../styles/Related/related.css';
 import RelatedProductsTitle from './RelatedProductsTitle.jsx';
@@ -7,6 +7,7 @@ import RelatedProductsList from './RelatedProductsList.jsx';
 import YourOutfitList from './YourOutfitList.jsx'
 
 const RelatedItemsAndComp = () => {
+
   return (
     <div className='related-items-and-comp-container'>
       <RelatedProductsTitle />

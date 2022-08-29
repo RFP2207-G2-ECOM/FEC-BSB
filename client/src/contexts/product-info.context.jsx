@@ -16,7 +16,6 @@ export const ProductProvider = ({ children }) => {
       }
     })
       .then(result => {
-        console.log(result.data);
         setProduct(result.data);
       })
   }, [])

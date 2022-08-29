@@ -3,12 +3,12 @@ import axios from 'axios';
 
 export const QuestionsContext = createContext({
   productID: 0,
-  results: {}
+  results: []
 });
 
 export const QuestionsProvider = ({children}) => {
   const [productID, setProductID] = useState(0);
-  const [results, setResults] = useState({});
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     var baseURI = process.env.BASE_URI;
@@ -19,8 +19,7 @@ export const QuestionsProvider = ({children}) => {
     })
       .then(result => {
         setProductID(result.data.product_id);
-        console.log('results:', result.data.results[0]);
-        setResults(result.data.results[0]);
+        setResults(result.data.results);
       })
   }, [])
 

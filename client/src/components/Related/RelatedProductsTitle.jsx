@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import RelatedItemsAndComp from './RelatedItemsAndComp.jsx';
 import styles from '../../styles/Related/related.css';
 

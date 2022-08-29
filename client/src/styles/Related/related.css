@@ -11,17 +11,30 @@
 .card-container {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 400px;
   border: 3px solid black;
+  margin-right: 20px;
 }
 
 .card-button {
-  display: flex;
+  /* display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 160px;
-  height: 30px;
+  margin-left: 210px;
+  height: 30px; */
+  /* position: absolute; */
+  position: relative;
+  left: 220px;
+  top: -350px;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+
+  color: black;
+  font-weight: 550;
 }
 
 .card-product-info {
@@ -33,6 +46,42 @@
 }
 
 .card-image {
+  align-items: center;
+  width: 250px;
+  height: 350px;
+  padding: 0.5rem;
+  cursor: pointer;
+  float: left;
+  margin-right: 10px;
+}
+
+.card-image:hover {
+  transform: scale(1.05);
+  transition-timing-function: ease-in-out;
+  transition: 0.30s;
+}
+
+
+.related-products-list-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.products-list {
+  position: relative;
   display: flex;
   align-items: center;
 }
+
+.slide {
+  cursor: pointer;
+  opacity: .5;
+}
+
+.slide:hover {
+  opacity: 1;
+}
+
+/* opacity-50 cursor-pointer hover:opacity-100 */
