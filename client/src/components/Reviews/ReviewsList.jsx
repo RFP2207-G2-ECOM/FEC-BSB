@@ -3,7 +3,12 @@ import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 import ReviewTile from "./ReviewTile.jsx"
 
-const ReviewsList = ({ filteredReviews, ratings}) => {
+const ReviewsList = ({ filteredReviews, ratings, setReviewSort}) => {
+
+  const change = (e) => {
+    console.log('this is e value:', e.target.value)
+    setReviewSort(e.target.value)
+  }
 
   const ratingsCount =
     Object.values(ratings)
@@ -13,7 +18,9 @@ const ReviewsList = ({ filteredReviews, ratings}) => {
     <div className="ReviewsList-Container">
       <div>
         {ratingsCount} reviews, sorted by
-        <select>
+        <select
+          onChange={change}
+        >
           <option value="relevant">relevant</option>
           <option value="newest">newest</option>
           <option value="helpful">helpful</option>

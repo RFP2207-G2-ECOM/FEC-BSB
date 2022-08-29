@@ -61,6 +61,10 @@ const RatingsReviews = () => {
     findReviewMetadata();
   }, [])
 
+  useEffect(() => {
+    findReviews();
+  }, [reviewSort])
+
   return (
     <div className="RR-Container">
       <div className="rr-title">RATINGS & REVIEWS</div>
@@ -72,6 +76,7 @@ const RatingsReviews = () => {
         <ReviewsList
           filteredReviews={filteredReviews}
           ratings={ratings}
+          setReviewSort={setReviewSort}
         />
       </div>
     </div>
