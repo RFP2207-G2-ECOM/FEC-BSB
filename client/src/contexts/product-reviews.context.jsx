@@ -24,9 +24,7 @@ export const ProductReviewsProvider = ({children}) => {
     let metadata = axios.get(`${baseURI}reviews/meta/?product_id=${process.env.PRODUCT_ID}`, config)
 
     Promise.all([reviews, metadata]).then((results) => {
-      console.log('data from reviews API', results[0].data);
       setReviews(results[0].data);
-      console.log('data from metadata API', results[1].data);
       setMetadata(results[1].data);
     })
 
