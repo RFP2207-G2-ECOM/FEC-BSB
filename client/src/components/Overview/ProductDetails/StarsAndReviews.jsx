@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ProductReviewsContext } from '../../../contexts/product-reviews.context.jsx';
-import { StaticRating } from '../../StarRating.jsx';
+import StaticRating from '../../StarRating.jsx';
 
 const StarsAndReviews = () => {
   let { metadata } = useContext(ProductReviewsContext);
@@ -23,11 +23,10 @@ const StarsAndReviews = () => {
 
     ratings = Math.round(numerator/denominator * 10) / 10;
   }
-  console.log(ratings);
   return (
     <div className='Stars-And-Reviews'>
       <div className='Stars'>
-        {/*<StaticRating rating={ratings}/>*/}
+        <StaticRating rating={ratings}/>
       </div>
       <div className='Review-Link'>Review Link Here</div>
     </div>
