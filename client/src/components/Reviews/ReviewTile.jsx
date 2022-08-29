@@ -6,7 +6,7 @@ import PosterTag from "../PosterTag.jsx"
 
 import styles from "../../styles/Reviews/reviewTile.css"
 
-const ReviewTile = ({ id, rating, username, date, summary, body, recommend, response, helpful }) => {
+const ReviewTile = ({ id, rating, username, date, summary, body, photos, recommend, response, helpful }) => {
 
   let summaryLine1 = summary;
   let summaryLine2 = undefined;
@@ -30,6 +30,7 @@ const ReviewTile = ({ id, rating, username, date, summary, body, recommend, resp
         <div className="review-tile-summaryLine2">{summaryLine2}</div>
       }
       <div className="review-tile-body">{body}</div>
+
       {recommend === true &&
         <div className="review-tile-recommend">I recommend this product</div>
       }

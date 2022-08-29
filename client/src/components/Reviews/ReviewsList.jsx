@@ -29,6 +29,7 @@ const ReviewsList = ({ filteredReviews, ratings}) => {
             date={review.date}
             summary={review.summary}
             body={review.body}
+            photos={review.photos}
             recommend={review.recommend}
             response={review.response}
             helpful={review.helpfulness}
