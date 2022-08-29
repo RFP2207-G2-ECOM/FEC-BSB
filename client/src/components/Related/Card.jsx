@@ -16,16 +16,24 @@ const Card = ({style}) => {
     // <div className='card-container'>
     //   <button className='card-button'>Star</button>
     <div className='card-container'>
-      {styleItems &&
-        <img
-          className='card-image'
-          src={styleItems.photos[0].thumbnail_url}
-          alt='/'
-        />
+      <div className='card-media'>
+        { styleItems &&
+          <img
+            className='card-image'
+            src={styleItems.photos[0].thumbnail_url}
+            alt='/'
+          />
         }
         <i className='fa fa-star-o fa-lg card-button'></i>
+      </div>
+        <div className='card-content'>
+          <div>Category</div>
+          <div><b>Product Name</b></div>
+          <div>Price</div>
+          <div>Stars</div>
+        </div>
     </div>
   )
-  }
+}
 
 export default Card;
