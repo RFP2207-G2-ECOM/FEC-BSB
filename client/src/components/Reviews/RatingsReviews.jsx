@@ -1,9 +1,10 @@
 import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
 
-import ReviewsList from "./ReviewsList.jsx";
-import RatingsBreakdown from "./RatingsBreakdown.jsx";
+import MoreReviewsButton from "./MoreReviewsButton.jsx";
 import ProductBreakdown from "./ProductBreakdown.jsx";
+import RatingsBreakdown from "./RatingsBreakdown.jsx";
+import ReviewsList from "./ReviewsList.jsx";
 
 import styles from "../../styles/Reviews/reviews.css";
 
@@ -19,6 +20,10 @@ const RatingsReviews = () => {
   const [ratings, setRatings] = useState({});
   const [reviewSort, setReviewSort] = useState('relevant');
   const [reviewCount, setReviewCount] = useState(2);
+
+  const ratingsCount =
+  Object.values(ratings)
+  .reduce((a, b) => Number(a) + Number(b), 0);
 
   const findReviews = () => {
     axios.get(`${baseURI}reviews/`, {
@@ -63,7 +68,7 @@ const RatingsReviews = () => {
 
   useEffect(() => {
     findReviews();
-  }, [reviewSort])
+  }, [reviewSort, reviewCount])
 
   return (
     <div className="RR-Container">
@@ -75,12 +80,14 @@ const RatingsReviews = () => {
       <div className="ReviewsList-Container">
         <ReviewsList
           filteredReviews={filteredReviews}
-          ratings={ratings}
+          ratingsCount={ratingsCount}
           setReviewSort={setReviewSort}
         />
       </div>
       <div className="Buttons-Container">
-        <button className="more-reviews-button">MORE REVIEWS</button>
+        <MoreReviewsButton
+          setReviewCount={setReviewCount}
+        />
         <button className="add-a-review-button">ADD A REVIEW</button>
       </div>
     </div>

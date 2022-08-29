@@ -22,13 +22,6 @@
   font-size: large;
 }
 
-/* .Module-Container {
-  display: flex;
-  justify-content: flex-start;
-  gap: 20px;
-  border: 1px solid red;
-} */
-
 .Breakdown-Container {
   display: flex;
   flex-direction: column;
