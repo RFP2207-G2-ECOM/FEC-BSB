@@ -1,17 +1,25 @@
 import React from 'react';
+import { FaFacebookSquare } from 'react-icons/fa';
+import { FaInstagramSquare } from 'react-icons/fa';
+import { FaTwitterSquare } from 'react-icons/fa';
+import { FaPinterestSquare } from 'react-icons/fa';
+import { IconContext} from 'react-icons';
 
 const SocialMediaButtons = () => {
+  let style = { size:'5em'};
   return (
-    <div className='Social-Media-Buttons'>
-      <div className='SMBRow'>
-        <button className="FB btn">FB</button>
-        <button className="IG btn">IG</button>
+    <IconContext.Provider value={{className:'btn'}} >
+      <div className='Social-Media-Buttons' >
+        <div className='SMBRow'>
+          <FaFacebookSquare /> {/* Add onClickHandler to go to FaceBook link */}
+          <FaInstagramSquare /> {/* Add onClickHandler to go to Instagram link */}
+        </div>
+        <div className='SMBRow'>
+          <FaTwitterSquare /> {/* Add onClickHandler to go to Twitter link */}
+          <FaPinterestSquare /> {/* Add onClickHandler to go to Pinterest link */}
+        </div>
       </div>
-      <div className='SMBRow'>
-        <button className="TW btn">TW</button>
-        <button className="PT btn">PT</button>
-      </div>
-    </div>
+    </IconContext.Provider>
   )
 };
 
