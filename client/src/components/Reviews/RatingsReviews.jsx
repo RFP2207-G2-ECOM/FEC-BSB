@@ -68,16 +68,20 @@ const RatingsReviews = () => {
   return (
     <div className="RR-Container">
       <div className="rr-title">RATINGS & REVIEWS</div>
-      <div className="Module-Container">
-        <div className="Breakdown-Container">
-          <RatingsBreakdown />
-          <ProductBreakdown />
-        </div>
+      <div className="Breakdown-Container">
+        <RatingsBreakdown />
+        <ProductBreakdown />
+      </div>
+      <div className="ReviewsList-Container">
         <ReviewsList
           filteredReviews={filteredReviews}
           ratings={ratings}
           setReviewSort={setReviewSort}
         />
+      </div>
+      <div className="Buttons-Container">
+        <button className="more-reviews-button">MORE REVIEWS</button>
+        <button className="add-a-review-button">ADD A REVIEW</button>
       </div>
     </div>
   )

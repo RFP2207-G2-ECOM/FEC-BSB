@@ -5,22 +5,19 @@ import ReviewTile from "./ReviewTile.jsx"
 
 const ReviewsList = ({ filteredReviews, ratings, setReviewSort}) => {
 
-  const change = (e) => {
-    console.log('this is e value:', e.target.value)
-    setReviewSort(e.target.value)
-  }
-
   const ratingsCount =
     Object.values(ratings)
     .reduce((a, b) => Number(a) + Number(b), 0);
 
+  const change = (e) => {
+    setReviewSort(e.target.value)
+  }
+
   return (
-    <div className="ReviewsList-Container">
+    <>
       <div>
         {ratingsCount} reviews, sorted by
-        <select
-          onChange={change}
-        >
+        <select onChange={change}>
           <option value="relevant">relevant</option>
           <option value="newest">newest</option>
           <option value="helpful">helpful</option>
@@ -42,11 +39,7 @@ const ReviewsList = ({ filteredReviews, ratings, setReviewSort}) => {
             helpful={review.helpfulness}
           />)}
       </div>
-      <div className="Buttons-Container">
-        <button className="more-reviews-button">MORE REVIEWS</button>
-        <button className="add-a-review-button">ADD A REVIEW</button>
-      </div>
-    </div>
+    </>
   )
 }
 

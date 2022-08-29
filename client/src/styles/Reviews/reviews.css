@@ -1,12 +1,19 @@
 .RR-Container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: auto;
+  grid-gap: 40px;
   width: 82%;
   border: 3px solid blue;
   margin: auto;
   margin-top: 10px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  max-height: 100vh;
+  overflow: auto;
 }
 
 .rr-title {
+  grid-column: span 2;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -15,18 +22,16 @@
   font-size: large;
 }
 
-.Module-Container {
+/* .Module-Container {
   display: flex;
   justify-content: flex-start;
-  padding-left: 20px;
-  padding-right: 20px;
+  gap: 20px;
   border: 1px solid red;
-}
+} */
 
 .Breakdown-Container {
   display: flex;
   flex-direction: column;
-  width: 300px;
 }
 
 .RatingsBreakdown-Container {
@@ -45,17 +50,13 @@
 }
 
 .ReviewsList-Container {
-  width: 80%;
-  /* max-width: 800px; */
-  margin-left: 40px;
-  padding: 20px;
   border: 1px solid purple;
 }
 
 .Buttons-Container {
+  grid-column: 2 / -1;
   display: flex;
   justify-content: flex-start;
-  padding-top: 10px;
 }
 
 .more-reviews-button {
