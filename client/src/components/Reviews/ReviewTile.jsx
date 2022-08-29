@@ -1,6 +1,7 @@
 import React from "react"
 
 import Helpful from "../Helpful.jsx"
+import Report from "../Report.jsx"
 import StaticRating from "../StarRating.jsx"
 import PosterTag from "../PosterTag.jsx"
 
@@ -47,7 +48,12 @@ const ReviewTile = ({ id, rating, username, date, summary, body, photos, recomme
             id={id}
           />
         </div>
-        <div className="review-tile-report">Report</div>
+        <div className="review-tile-report">
+          <Report
+            reportType="review"
+            id={id}
+          />
+        </div>
       </div>
     </div>
   )
