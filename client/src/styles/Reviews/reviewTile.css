@@ -1,0 +1,16 @@
+.Review-Tile-Container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+  border-bottom: 1px solid gray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.review-tile-posterTag {
+  justify-self: flex-end
+}
+
+.review-tile-body {
+  max-width: 90%;
+}

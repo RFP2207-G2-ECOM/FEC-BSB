@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useContext} from "react"
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 
-
 import ReviewTile from "./ReviewTile.jsx"
 
 const ReviewsList = ({ filteredReviews, ratings}) => {
@@ -32,7 +31,7 @@ const ReviewsList = ({ filteredReviews, ratings}) => {
             body={review.body}
             recommend={review.recommend}
             response={review.response}
-            helpfulness={review.helpfulness}
+            helpful={review.helpfulness}
           />)}
       </div>
       <div className="Buttons-Container">

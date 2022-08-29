@@ -33,7 +33,6 @@
   justify-content: center;
   align-items: center;
   border: 3px solid black;
-  height: 300px;
   margin-bottom: 20px;
 }
 
@@ -42,18 +41,12 @@
   justify-content: center;
   align-items: center;
   border: 3px solid black;
-  height: 300px;
 }
 
 .ReviewsList-Container {
-  border: 3px solid black;
-  width: 800px;
+  max-width: 800px;
   margin-left: 40px;
   padding: 20px;
-}
-
-.ReviewTile-Container {
-  border: 3px solid black;
 }
 
 .Buttons-Container {
@@ -81,3 +74,5 @@
   height: 50px;
   margin-left: 20px;
 }
+
+
