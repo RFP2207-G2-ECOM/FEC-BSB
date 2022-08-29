@@ -7,7 +7,9 @@ const Helpful = ({helpful, helpfulType, id}) => {
   const [help, setHelp] = useState(helpful);
 
   const handleClick = (e) => {
-    axios.put(`${process.env.BASE_URI}qa/${helpfulType}/${id}/helpful`, {}, {
+    var qaURL = `${process.env.BASE_URI}qa/${helpfulType}/${id}/helpful`;
+    var revURL = `${process.env.BASE_URI}reviews/${id}/helpful`;
+    axios.put(`${helpfulType === 'review' ? revURL : qaURL}`, {}, {
       headers: { Authorization: process.env.GITHUB_TOKEN } }
       )
       .then(result => {
