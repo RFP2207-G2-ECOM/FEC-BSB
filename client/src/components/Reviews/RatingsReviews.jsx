@@ -87,6 +87,7 @@ const RatingsReviews = () => {
       <div className="Buttons-Container">
         <MoreReviewsButton
           setReviewCount={setReviewCount}
+          ratingsCount={ratingsCount}
         />
         <button className="add-a-review-button">ADD A REVIEW</button>
       </div>
