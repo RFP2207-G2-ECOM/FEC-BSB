@@ -24,7 +24,7 @@ const QuestionAnswers = () => {
       {
         results ?
           results.map((data, index) => {
-            return (<>
+            return (<div key={data.question_id}>
               <QContainer
                 key={`question-${data.question_id}`}
                 question_body={data.question_body}
@@ -33,7 +33,7 @@ const QuestionAnswers = () => {
               {
                 Object.values(data.answers).map(val => {
                   return (
-                    <>
+                    <div key={val.id}>
                       <AContainer
                         body={val.body}
                         key={`ans-${val.id}`}
@@ -47,11 +47,11 @@ const QuestionAnswers = () => {
                       {/* <AnswerReponses
                         key={`${index}-ans-resp`}
                       /> */}
-                    </>
+                    </div>
                   )
                 })
               }
-            </>)
+            </div>)
           })
           :
           <></>
