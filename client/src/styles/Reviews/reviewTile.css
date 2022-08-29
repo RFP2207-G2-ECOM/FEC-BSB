@@ -1,16 +1,67 @@
 .Review-Tile-Container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 90%;
+  gap: 3px;
+  max-width: 650px;
   border-bottom: 1px solid gray;
   margin-top: 10px;
   margin-bottom: 10px;
+  border: 1px solid red;
+}
+
+.review-tile-header {
+  border: 1px solid blue;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-tile-rating {
+  border: 1px solid red;
 }
 
 .review-tile-posterTag {
-  justify-self: flex-end
+  border: 1px solid red;
+}
+
+.review-tile-summaryLine1 {
+  border: 1px solid red;
+  flex-basis: 100%;
+  font-weight: bold;
+}
+
+.review-tile-summaryLine2 {
+  border: 1px solid green;
+  flex-basis: 100%;
 }
 
 .review-tile-body {
-  max-width: 90%;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  border: 1px solid red;
+}
+
+.review-tile-recommend {
+  border: 1px solid purple;
+  flex-basis: 100%;
+}
+
+.review-tile-footer {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid green;
+
+}
+
+.review-tile-helpful {
+  display: flex;
+  border: 1px solid green;
+}
+
+.review-tile-report {
+
 }

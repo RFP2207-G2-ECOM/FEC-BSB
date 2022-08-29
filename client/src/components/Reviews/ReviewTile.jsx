@@ -21,8 +21,10 @@ const ReviewTile = ({ id, rating, username, date, summary, body, recommend, resp
 
   return (
     <div className="Review-Tile-Container">
-      <div className="review-tile-rating"><StaticRating key={id} rating={rating}/></div>
-      <div className="review-tile-posterTag"><PosterTag username={username} date={date}/></div>
+      <div className="review-tile-header">
+        <div className="review-tile-rating"><StaticRating key={id} rating={rating}/></div>
+        <div className="review-tile-posterTag"><PosterTag username={username} date={date}/></div>
+      </div>
       <div className="review-tile-summaryLine1">{summaryLine1}</div>
       {summaryLine2 !== undefined &&
         <div className="review-tile-summaryLine2">{summaryLine2}</div>
@@ -34,7 +36,10 @@ const ReviewTile = ({ id, rating, username, date, summary, body, recommend, resp
       {response !== null &&
         <div className="review-tile-response">{response}</div>
       }
-      <div className="review-tile-helpful"><Helpful helpful={helpful}/>Report</div>
+      <div className="review-tile-footer">
+        <div className="review-tile-helpful"><Helpful helpful={helpful}/></div>
+        <div className="review-tile-report">Report</div>
+      </div>
     </div>
   )
 }
