@@ -120,7 +120,8 @@
 
 .Review-Link {
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
+  align-items:flex-end;
   width: 45%;
   height: auto;
   border: solid;
@@ -157,16 +158,71 @@
   font-size: 35px;
 }
 
-.Price {
+.StyleContainer {
+  height: 67%;
+}
+
+.StyleName {
   border: solid;
   border-color: blue;
   display: flex;
-  height: 30px;
+  height: 15%;
+  position:inherit;
   align-items: center;
 }
 
+.StyleSelector {
+  border: solid;
+  height: 31%;
+  border-color: blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.StyleOptions {
+  border: solid;
+  border-color: rgb(0, 0, 0);
+  display: flex;
+  height:max-content;
+  justify-content: space-around;
+  flex: auto;
+}
+
+.BasePrice {
+  border: solid;
+  border-color: blue;
+  display: flex;
+  height: 10%;
+  align-items: center;
+  font-size: 25px;
+}
+
+.SalePrice {
+  border: solid;
+  border-color: blue;
+  display: flex;
+  height: 10%;
+  align-items: center;
+}
+
+.SalePriceSpacer {
+  width: 5%;
+}
+
+.SalePriceOG {
+  font-size: 20px;
+  background: linear-gradient(to right top, transparent 47.75%,
+  currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
+
+}
+
+.SalePriceSale {
+  color:red;
+  font-size: 25px;
+}
+
 .AddToCart {
-  height: 25%;
+  height: 31%;
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {
@@ -265,31 +321,6 @@
 
 .BRight {
   width: 70%;
-}
-
-.StyleName {
-  border: solid;
-  border-color: blue;
-  display: flex;
-  height: 10%;
-  position:inherit;
-  align-items: center;
-}
-
-.StyleSelector {
-  border: solid;
-  border-color: blue;
-  display: flex;
-  flex-direction: column;
-  height: 18%;
-}
-
-.StyleOptions {
-  border: solid;
-  border-color: rgb(0, 0, 0);
-  display: flex;
-  height: 33px;
-  justify-content: space-around;
 }
 
 .Info-Container {
