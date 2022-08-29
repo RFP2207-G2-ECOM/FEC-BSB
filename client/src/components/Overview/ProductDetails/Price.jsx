@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CurrentStylesContext } from '../Overview.jsx';
 
-const Price = ({basePrice, salePrice}) => {
+const Price = () => {
+  const { curStyle } = useContext(CurrentStylesContext); // obj of current style
+  let basePrice = curStyle.original_price;
+  let salePrice = curStyle.sale_price;
+
   if (!salePrice) {
     return (
       <div className='BasePrice'>

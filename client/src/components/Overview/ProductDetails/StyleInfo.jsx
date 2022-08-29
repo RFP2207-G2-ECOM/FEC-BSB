@@ -1,14 +1,16 @@
-import React from 'react';
-import SingleStyle from './SingleStyle.jsx';
+import React, { useContext } from 'react';
+import { CurrentStylesContext } from '../Overview.jsx';
 
 const StyleInfo = () => {
-  // array of styles here
-  var styles = Array(7).fill('0');
+  const { curStyle } = useContext(CurrentStylesContext); // obj of current style
+  // console.log('curStyle', curStyle);
+  const styleName = curStyle.name;
+
   return (
       <div className='StyleName'>
-        <p className='BLeft'></p>
-        <p className='bolded Style-Title BCenter'>STYLE > </p>
-        <p className='Style-Title BRight'>SELECTED STYLE</p>
+        <p className='Style-Title-Left'></p>
+        <p className='bolded Style-Title-Center'>STYLE > </p>
+        <p className='Style-Title-Right'>{styleName}</p>
       </div>
   )
 };

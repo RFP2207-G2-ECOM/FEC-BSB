@@ -102,6 +102,39 @@
   border-color: rgb(0, 0, 0);
 }
 
+
+.Name-And-Category {
+  border: solid;
+  border-color: blue;
+  display: flex;
+  flex-direction: column;
+  height: 23%;
+}
+
+/* Name & Category */
+.Category {
+  height: 30%;
+  width: 100%;
+  border: solid;
+  border-color: rgb(52, 190, 42);
+  display: flex;
+  align-items: center;
+}
+
+.ProductName {
+  border: solid;
+  border-color: rgb(52, 190, 42);
+  display: flex;
+  height: 60%;
+  width: 100%;
+  align-items: center;
+}
+
+.ProductTitle {
+  font-size: 35px;
+}
+
+/* Stars & Review Link */
 .Stars-And-Reviews {
   border: solid;
   border-color: blue;
@@ -128,66 +161,7 @@
   border-color: rgb(52, 190, 42);
 }
 
-.Name-And-Category {
-  border: solid;
-  border-color: blue;
-  display: flex;
-  flex-direction: column;
-  height: 23%;
-}
-
-.Category {
-  height: 30%;
-  width: 100%;
-  border: solid;
-  border-color: rgb(52, 190, 42);
-  display: flex;
-  align-items: center;
-}
-
-.ProductName {
-  border: solid;
-  border-color: rgb(52, 190, 42);
-  display: flex;
-  height: 60%;
-  width: 100%;
-  align-items: center;
-}
-
-.ProductTitle {
-  font-size: 35px;
-}
-
-.StyleContainer {
-  height: 67%;
-}
-
-.StyleName {
-  border: solid;
-  border-color: blue;
-  display: flex;
-  height: 15%;
-  position:inherit;
-  align-items: center;
-}
-
-.StyleSelector {
-  border: solid;
-  height: 31%;
-  border-color: blue;
-  display: flex;
-  flex-direction: column;
-}
-
-.StyleOptions {
-  border: solid;
-  border-color: rgb(0, 0, 0);
-  display: flex;
-  height:max-content;
-  justify-content: space-around;
-  flex: auto;
-}
-
+/* Price Display */
 .BasePrice {
   border: solid;
   border-color: blue;
@@ -221,8 +195,76 @@
   font-size: 25px;
 }
 
+/* Style Display, Selector, & AddToCart */
+.StyleContainer {
+  height: 67%;
+}
+
+/* Style Display */
+.StyleName {
+  border: solid;
+  border-color: blue;
+  display: flex;
+  height: 15%;
+  position:inherit;
+  align-items: center;
+}
+.Style-Title-Left, .Style-Title-Center, .Style-Title-Right {
+  border: solid;
+  border-color:rgb(52, 190, 42);
+  display: flex;
+  justify-content: center;
+}
+
+
+.Style-Title-Left {
+  width: 5%;
+}
+
+.Style-Title-Center {
+  width: 25%;
+}
+
+.Style-Title-Right {
+  width: 70%;
+}
+
+
+/* Style Selector */
+.StyleSelector {
+  border: solid;
+  height: 33%;
+  border-color: blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.StyleOptions {
+  border: solid;
+  border-color: rgb(233, 11, 207);
+  display: flex;
+  flex: auto;
+  height:fit-content;
+}
+
+.SingleStyle {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.SingleStyleSelected {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  font-size: 10px;
+  border: solid;
+}
+
+/* AddToCart */
 .AddToCart {
-  height: 31%;
+  height: 30%;
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {
@@ -302,25 +344,6 @@
 .btn {
   display: flex;
   font-size: 35px;
-}
-
-.BLeft, .BCenter, .BRight {
-  border-color:rgb(52, 190, 42);
-  border: solid;
-  display: flex;
-  align-items: center;
-}
-
-.BLeft {
-  width: 5%;
-}
-
-.BCenter {
-  width: 25%;
-}
-
-.BRight {
-  width: 70%;
 }
 
 .Info-Container {
