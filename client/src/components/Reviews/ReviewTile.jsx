@@ -30,7 +30,9 @@ const ReviewTile = ({ id, rating, username, date, summary, body, photos, recomme
         <div className="review-tile-summaryLine2">{summaryLine2}</div>
       }
       <div className="review-tile-body">{body}</div>
-
+      {photos.length > 0 &&
+        <div className="review-tile-photos">Photos go here!</div>
+      }
       {recommend === true &&
         <div className="review-tile-recommend">I recommend this product</div>
       }
