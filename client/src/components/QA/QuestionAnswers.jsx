@@ -27,6 +27,7 @@ const QuestionAnswers = () => {
             return (<div key={data.question_id}>
               <QContainer
                 key={`question-${data.question_id}`}
+                id={data.question_id}
                 question_body={data.question_body}
                 question_helpfulness={data.question_helpfulness}
               />
@@ -39,6 +40,7 @@ const QuestionAnswers = () => {
                         key={`ans-${val.id}`}
                       />
                       <AInfo
+                        id={val.id}
                         answerer_name={val.answerer_name}
                         date={val.date}
                         helpful={val.helpfulness}
