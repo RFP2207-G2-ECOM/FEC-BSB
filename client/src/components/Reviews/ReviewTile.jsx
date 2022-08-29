@@ -40,7 +40,13 @@ const ReviewTile = ({ id, rating, username, date, summary, body, photos, recomme
         <div className="review-tile-response">{response}</div>
       }
       <div className="review-tile-footer">
-        <div className="review-tile-helpful"><Helpful helpful={helpful}/></div>
+        <div className="review-tile-helpful">
+          <Helpful
+            helpful={helpful}
+            helpfulType="review"
+            id={id}
+          />
+        </div>
         <div className="review-tile-report">Report</div>
       </div>
     </div>
