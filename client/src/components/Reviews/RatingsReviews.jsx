@@ -25,6 +25,26 @@ const RatingsReviews = () => {
   const [pageNumber, setPageNumber] = useState(1)
   const [moreReviews, setMoreReviews] = useState(false)
 
+  const findReviews = () => {
+    axios.get(`${baseURI}reviews/`, {
+      headers: {
+        Authorization: gitHubToken
+      },
+      params: {
+        page: 1,
+        count: reviewCount,
+        sort: reviewSort,
+        product_id: productID
+      }
+    })
+      .then(results => {
+        // console.log('this is reviews data:', results)
+        setReviews(reviews => results.data.results)
+        setFilteredReviews(filteredReviews => results.data.results)
+      })
+      .catch(err => console.log(err))
+  }
+
   const {
     reviews,
     hasMore,
@@ -82,7 +102,5 @@ const RatingsReviews = () => {
     </div>
   )
 }
-
-
 
 export default RatingsReviews

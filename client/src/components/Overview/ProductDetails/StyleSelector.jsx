@@ -8,7 +8,7 @@ const StyleSelector = () => {
   if (productStyles === undefined) {
     productStyles = [];
   }
-  console.log(productStyles);
+  // console.log(productStyles);
   // break down array into chunks of 4
   var arrOfFours = [];
   for (let i = 0; i < productStyles.length; i = i + 4) {
