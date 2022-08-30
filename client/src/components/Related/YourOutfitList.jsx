@@ -40,6 +40,10 @@ const YourOutfitList = () => {
   //     setRelatedProducts(result)
   //   })
   // }
+  const addOutfit = () => {
+    var currentProduct = [process.env.PRODUCT_ID];
+    setOutfit(outfitList.concat(currentProduct));
+  }
 
   const slideLeft = () => {
     var slider = document.getElementById('outfit-slider');
@@ -53,16 +57,24 @@ const YourOutfitList = () => {
 
   return (
     <div className='products-list'>
-      <MdChevronLeft className='slide' onClick={slideLeft} size={40} />
-        <div id='outfit-slider' className='related-products-list-container'>
-          <div className='card-container'>
-          <HiOutlinePlusCircle className='card-add-button' size={100} />
-            <div className='card-add-outfit '><b>Add to Outfit</b></div>
-          </div>
+      <MdChevronLeft
+        className='slide'
+        onClick={slideLeft}
+        size={40} />
+          <div id='outfit-slider'
+               className='related-products-list-container'>
+                 <div className='card-container'>
+                   <HiOutlinePlusCircle
+                   className='card-add-button'
+                   onClick={addOutfit}
+                   size={100} />
+                   <div className='card-add-outfit '>
+                   <b>Add to Outfit</b></div>
+                 </div>
           {/* {relatedProducts.map((relatedProduct, key) => (
             <Card relatedProduct={relatedProduct} key={key} />
           ))} */}
-        </div>
+          </div>
       <MdChevronRight className='slide' onClick={slideRight} size={40} />
     </div>
   )
