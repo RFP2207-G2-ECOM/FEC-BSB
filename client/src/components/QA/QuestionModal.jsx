@@ -1,39 +1,24 @@
 import React, { useState } from 'react';
 import ReactDom from 'react-dom';
 
-import { BsPlusLg } from 'react-icons/bs'
-
 import axios from 'axios';
 
-import '../../styles/QA/AnswerModal.css';
+import '../../styles/QA/QuestionModal.css';
 
-const AnswerModal = ({ open, product_id, onClose }) => {
+const QuestionModal = ({ open, product_id, onClose }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
-  const [photoCount, setPhotoCount] = useState(0);
-  const [photoValues, setPhotoValues] = useState({});
-
-  const handleClick = () => {
-    setPhotoCount(photoCount + 1);
-  };
-
-  const handleOnChange = (e) => {
-    const abc = {};
-    abc[e.target.className] = e.target.value;
-    setPhotoValues({ ...photoValues, ...abc });
-  };
 
   const handleSubmit = (e) => {
     const data = {
       body,
       name,
       email,
-      product_id: parseInt(product_id),
-      photos: Object.values(photoValues).map(val => val)
+      product_id: parseInt(product_id)
     }
 
-    axios.post(`${process.env.BASE_URI}qa/questions/${product_id}/answers`, data, {
+    axios.post(`${process.env.BASE_URI}qa/questions`, data, {
       headers: {
         'Authorization': process.env.GITHUB_TOKEN
       }
@@ -53,7 +38,7 @@ const AnswerModal = ({ open, product_id, onClose }) => {
     <>
       <div className='overlay-styles' />
       <div className='modal-styles'>
-        <div className='ans-mod-title'>Enter an Answer</div>
+        <div className='ans-mod-title'>Enter a Question</div>
         <hr></hr>
         <form className='modal-form' onSubmit={handleSubmit}>
           <label>
@@ -75,37 +60,16 @@ const AnswerModal = ({ open, product_id, onClose }) => {
             ></input>
           </label>
           <label>
-            Answer:
+            Question:
             <textarea
               value={body}
               type='text'
-              placeholder='Enter Answer'
+              placeholder='Enter Question'
               onChange={e => setBody(e.target.value)}
             ></textarea>
           </label>
-          <div
-            onClick={handleClick}
-            className='add-photo'
-          >
-            Click me to add a photo!
-          </div>
-          <br></br>
-          {Array.from(Array(photoCount)).map((c, index) => {
-            return (
-              <input
-                onChange={handleOnChange}
-                key={index}
-                className={index}
-                type="text"
-                placeholder='Enter photo URL'
-              ></input>
-            );
-          })}
-
-          <div className='more-answers'>
-            <button onClick={e => onClose(e.preventDefault())}>Cancel</button>
-            <button className='mod-sub-but'>Submit Answer</button>
-          </div>
+          <button onClick={e => onClose(e.preventDefault())}>Cancel</button>
+          <button className='mod-sub-but'>Submit Question</button>
         </form>
       </div>
     </>,
@@ -113,4 +77,4 @@ const AnswerModal = ({ open, product_id, onClose }) => {
   )
 }
 
-export default AnswerModal;
+export default QuestionModal;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AnswerModal from '../QA/AnswerModal.jsx';
+import QuestionModal from '../QA/QuestionModal.jsx';
 
 const MoreAnsweredQuestions = ({product_id}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +17,11 @@ const MoreAnsweredQuestions = ({product_id}) => {
       >
         ADD A QUESTION <div id='plus'>+</div>
       </button>
-      <AnswerModal
+      <QuestionModal
         open={isOpen}
         onClose={() => setIsOpen(false)}
         product_id={product_id}
-      ></AnswerModal>
+      />
     </div>
   )
 
