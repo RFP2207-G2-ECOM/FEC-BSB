@@ -36,44 +36,46 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
   }
 
   return (
-    <div className="Review-Tile-Container">
-      <div className="review-tile-header">
-        <div className="review-tile-rating"><StaticRating key={id} rating={rating}/></div>
-        <div className="review-tile-posterTag"><PosterTag username={username} date={date}/></div>
-      </div>
-      <div className="review-tile-summaryLine1">{summaryLine1}</div>
-      {summaryLine2 !== undefined &&
-        <div className="review-tile-summaryLine2">{summaryLine2}</div>
-      }
-      <div className="review-tile-body">{body}</div>
-      {photos.length > 0 &&
-        <div className="review-tile-photos">Photos go here!</div>
-      }
-      {recommend === true &&
-        <div className="review-tile-recommend">I recommend this product</div>
-      }
-      {response !== null &&
-        <div className="review-tile-response">{response}</div>
-      }
-      <div className="review-tile-footer">
-        <div className="review-tile-helpful">
-          <Helpful
-            helpful={helpful}
-            helpfulType="review"
-            id={id}
-          />
+    <>
+      <div className="Review-Tile-Container">
+        <div className="review-tile-header">
+          <div className="review-tile-rating"><StaticRating key={id} rating={rating}/></div>
+          <div className="review-tile-posterTag"><PosterTag username={username} date={date}/></div>
         </div>
-        <div className="review-tile-report">
-          <Report
-            reportType="review"
-            id={id}
-          />
+        <div className="review-tile-summaryLine1">{summaryLine1}</div>
+        {summaryLine2 !== undefined &&
+          <div className="review-tile-summaryLine2">{summaryLine2}</div>
+        }
+        <div className="review-tile-body">{body}</div>
+        {photos.length > 0 &&
+          <div className="review-tile-photos">Photos go here!</div>
+        }
+        {recommend === true &&
+          <div className="review-tile-recommend">I recommend this product</div>
+        }
+        {response !== null &&
+          <div className="review-tile-response">{response}</div>
+        }
+        <div className="review-tile-footer">
+          <div className="review-tile-helpful">
+            <Helpful
+              helpful={helpful}
+              helpfulType="review"
+              id={id}
+            />
+          </div>
+          <div className="review-tile-report">
+            <Report
+              reportType="review"
+              id={id}
+            />
+          </div>
         </div>
       </div>
       {array.length === index + 1 &&
         <div ref={lastReviewElementRef} className='invisible'></div>
       }
-    </div>
+    </>
   )
 }
 
