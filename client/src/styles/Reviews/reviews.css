@@ -10,6 +10,7 @@
   margin-bottom: 10px;
   /* max-height: 100vh; */
   overflow: auto;
+  position: relative;
 }
 
 .rr-title {
@@ -49,9 +50,12 @@
 }
 
 .Buttons-Container {
-  grid-column: 2 / -1;
+  /* grid-column: 2 / -1; */
   display: flex;
   justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  left: 25%;
 }
 
 .more-reviews-button {
