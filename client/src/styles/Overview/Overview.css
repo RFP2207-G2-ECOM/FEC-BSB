@@ -240,7 +240,7 @@
 /* Style Selector */
 .StyleSelector {
   border: solid;
-  height: 50%;
+  height: 40%;
   border-color: blue;
   display: flex;
   flex-shrink: 1;
@@ -280,7 +280,7 @@
 
 /* AddToCart */
 .AddToCart {
-  height: 20%;
+  height: 30%;
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {

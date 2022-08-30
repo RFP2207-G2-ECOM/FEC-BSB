@@ -33,7 +33,7 @@ const RatingsReviews = () => {
       }
     })
       .then(results => {
-        console.log('this is reviews data:', results)
+        // console.log('this is reviews data:', results)
         setReviews(reviews => results.data.results)
         setFilteredReviews(filteredReviews => results.data.results)
       })
