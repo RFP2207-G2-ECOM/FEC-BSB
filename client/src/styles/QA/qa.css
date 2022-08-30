@@ -43,7 +43,7 @@
   height: 40px;
   border: none;
   outline: none;
-  font-size: large;
+  font-size: medium;
   padding-left: 10px;
 }
 
@@ -60,7 +60,7 @@
   border-style: solid;
   border-width: 2px 0px 2px 2px;
   border-radius: 4px 0px 0px 4px;
-  font-size: 18px;
+  font-size: large;
 }
 
 .Eyeglass-button {
@@ -80,7 +80,7 @@
   padding-left: 20px;
   width: 98%;
   height: 5vh;
-  font-size: x-large;
+  font-size: large;
 }
 
 .q-or-a {
@@ -139,24 +139,19 @@
 .a-container {
   display: flex;
   padding-left: 20px;
-  font-size: x-large;
-  margin-top: 10px;
-  /* border: solid; */
+  font-size: large;
   height: 5vh;
 }
 
 .a-info-container {
   display: flex;
-  /* border: solid; */
   align-items: center;
   height: 5vh;
-  margin-top: 10px;
   margin-left: 55px;
 }
 
 .r-info-container {
   display: flex;
-  /* border: solid; */
   height: 5vh;
   margin-top: 10px;
 }
@@ -177,8 +172,6 @@
 }
 
 .response-container {
-  /* border: solid; */
-  /* border-color: purple; */
   margin-left: 55px;
   width: 90%;
 }
@@ -219,7 +212,7 @@
   justify-content: center;
   align-items: center;
   border: solid;
-  font-size: x-large;
+  font-size: large;
   font-weight:  bold;
   width: 380px;
   height: 75px;
@@ -233,7 +226,7 @@
   justify-content: center;
   align-items: center;
   border: solid;
-  font-size: x-large;
+  font-size: large;
   font-weight:  bold;
   width: 270px;
   height: 75px;
@@ -244,5 +237,9 @@
 #plus {
   margin-left: 15px;
   margin-bottom: 5px;
-  font-size: xx-large;
+  font-size: x-large;
+}
+
+.photo-container {
+  padding-left: 55px;
 }

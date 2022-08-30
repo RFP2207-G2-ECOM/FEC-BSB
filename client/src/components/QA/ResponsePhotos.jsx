@@ -1,12 +1,15 @@
 import React from 'react';
 
-const ResponsePhotos = () => {
+const ResponsePhotos = ({photos}) => {
+
+  if (photos.length === 0) return null;
 
   return (
     <div className='photo-container'>
-      <div className='response-photos'>Photo 1</div>
-      <div className='response-photos'>Photo 2</div>
-      <div className='response-photos'>Photo 3</div>
+    {photos.map((val, index) => {
+      return <img key={index} className='response-photos' src={val}></img>
+    })
+    }
     </div>
   )
 

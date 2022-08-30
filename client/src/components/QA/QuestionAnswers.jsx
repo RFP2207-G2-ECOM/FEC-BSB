@@ -7,6 +7,7 @@ import AnswerReponses from './AnswerResponses.jsx';
 import LoadMoreAnswers from './LoadMoreAnswers.jsx';
 import MoreAnsweredQuestions from './MoreAnsweredQuestions.jsx';
 import QContainer from './QContainer.jsx';
+import ResponsePhotos from './ResponsePhotos.jsx';
 import SearchBox from './SearchBox.jsx';
 import Title from './Title.jsx';
 
@@ -45,6 +46,12 @@ const QuestionAnswers = () => {
                         helpful={val.helpfulness}
                         key={`aInfo-${val.id}`}
                       />
+
+                      <ResponsePhotos
+                        photos={val.photos}
+                        key={`photo-${val.id}`}
+                      />
+
                     </div>
                   )
                 })
