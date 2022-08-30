@@ -51,6 +51,7 @@ const RatingsReviews = () => {
           loading={loading}
           ratingsCount={ratingsCount}
           setReviewSort={setReviewSort}
+          setPageNumber={setPageNumber}
         />
       </div>
       <div className="Buttons-Container">

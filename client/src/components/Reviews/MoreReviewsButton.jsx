@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 
-const MoreReviewsButton = ({setReviewCount, ratingsCount}) => {
+const MoreReviewsButton = ({setReviewCount, ratingsCount, loading}) => {
 
   const [visible, setVisible] = useState(true)
 

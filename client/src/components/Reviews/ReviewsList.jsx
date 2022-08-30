@@ -3,7 +3,7 @@ import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 import ReviewTile from "./ReviewTile.jsx"
 
-const ReviewsList = ({ hasMore, filteredReviews, loading, ratingsCount, setReviewSort}) => {
+const ReviewsList = ({ hasMore, filteredReviews, loading, ratingsCount, setReviewSort, setPageNumber}) => {
 
   const change = (e) => {
     setReviewSort(e.target.value)
@@ -37,6 +37,7 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, ratingsCount, setRevie
             recommend={review.recommend}
             response={review.response}
             helpful={review.helpfulness}
+            setPageNumber={setPageNumber}
           />
         )}
       </div>
