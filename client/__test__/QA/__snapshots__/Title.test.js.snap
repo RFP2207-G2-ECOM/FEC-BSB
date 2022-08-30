@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Verify that title text is correct 1`] = `
+<div
+  className="qa-title"
+>
+  QUESTIONS & ANSWERS
+</div>
+`;
