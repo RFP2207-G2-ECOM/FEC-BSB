@@ -38,8 +38,7 @@ const StarsAndReviews = () => {
             <StaticRating rating={ratings}/>
           </div>
           <div key={2} className='Review-Link'>
-            {/* Link to Review Section later*/}
-            Read all {totalReviews} reviews
+            <a href='#LinkToReviews'>Read all {totalReviews} reviews</a>
           </div>
         </div>
       )

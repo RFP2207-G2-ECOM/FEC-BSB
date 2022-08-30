@@ -8,7 +8,6 @@ const StyleSelector = () => {
   if (productStyles === undefined) {
     productStyles = [];
   }
-  console.log(productStyles);
   // break down array into chunks of 4
   var arrOfFours = [];
   for (let i = 0; i < productStyles.length; i = i + 4) {
@@ -54,10 +53,6 @@ const StyleSelector = () => {
           <button className='StyleButton'>X</button>
           <button className='StyleButton'>X</button>
         </div> */}
-        {/* Figure out how to render rows & styles in those rows */}
-        {/* User Map function to render instances of SinlgeStyle.jsx for each entry */}
-
-
       </div>
   )
 };

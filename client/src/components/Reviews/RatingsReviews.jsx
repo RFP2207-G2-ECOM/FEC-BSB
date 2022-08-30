@@ -63,6 +63,7 @@ const RatingsReviews = () => {
 
   return (
     <div className="RR-Container">
+      <a id='LinkToReviews'></a>
       <div className="rr-title">RATINGS & REVIEWS</div>
       <div className="Module-Container">
         <div className="Breakdown-Container">
