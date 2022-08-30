@@ -17,7 +17,9 @@ const QContainer = ({question_body, question_helpfulness, id}) => {
         id={id}
         helpful={question_helpfulness}
       />
-      <AddAnswer />
+      <AddAnswer
+        product_id={id}
+      />
     </div>
   )
 }
