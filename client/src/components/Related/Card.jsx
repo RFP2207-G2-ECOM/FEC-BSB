@@ -39,7 +39,7 @@ const Card = ({relatedProduct}) => {
         {productStyle[0] &&
           <img
             className='card-image'
-            src={productStyle[0].photos[0].thumbnail_url}
+            src={productStyle[0].photos[0].url}
             alt='/'
           />
         }
