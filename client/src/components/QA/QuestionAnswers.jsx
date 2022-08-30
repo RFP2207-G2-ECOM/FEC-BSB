@@ -18,7 +18,7 @@ import { QuestionsContext } from '../../contexts/question.context.jsx';
 const QuestionAnswers = () => {
   const { productID, results } = useContext(QuestionsContext);
   const [answerCount, setAnswerCount] = useState({});
-  const [limit, setLimit] = useState({});
+  const [answerLimit, setAnswerLimit] = useState({});
 
   useEffect(() => {
     if (results.length > 0) {
@@ -29,7 +29,7 @@ const QuestionAnswers = () => {
         tempTwo[question_id] = Object.keys(answers).length;
       })
       setAnswerCount(temp);
-      setLimit(tempTwo);
+      setAnswerLimit(tempTwo);
     }
   }, [results])
 
@@ -55,7 +55,7 @@ const QuestionAnswers = () => {
                 })
               }
               {
-                answerCount[data.question_id] < limit[data.question_id] ?
+                answerCount[data.question_id] < answerLimit[data.question_id] ?
                   <LoadMoreAnswers
                     question_id={data.question_id}
                     answerCount={answerCount}
