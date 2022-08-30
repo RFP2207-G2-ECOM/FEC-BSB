@@ -59,18 +59,27 @@ const RatingsReviews = () => {
           setReviewCount={setReviewCount}
           setMoreReviews={setMoreReviews}
         />
+        { moreReviews === true &&
+          <div className="Scroll-Buttons-Container">
+            <button className="scroll-add-a-review-button">Add+</button>
+            <button className="scroll-to-top-button">Top</button>
+          </div>
+        }
       </div>
-      <div className="Buttons-Container">
-        <MoreReviewsButton
-          loading={loading}
-          moreReviews={moreReviews}
-          ratingsCount={ratingsCount}
-          setReviewsToRender={setReviewsToRender}
-          setMoreReviews={setMoreReviews}
-          setReviewCount={setReviewCount}
-        />
-        <button className="add-a-review-button">ADD A REVIEW</button>
-      </div>
+      { moreReviews === false &&
+        <div className="Buttons-Container">
+          <MoreReviewsButton
+            loading={loading}
+            moreReviews={moreReviews}
+            ratingsCount={ratingsCount}
+            reviewsToRender={reviewsToRender}
+            setReviewsToRender={setReviewsToRender}
+            setMoreReviews={setMoreReviews}
+            setReviewCount={setReviewCount}
+          />
+          <button className="add-a-review-button">ADD A REVIEW</button>
+        </div>
+      }
     </div>
   )
 }
