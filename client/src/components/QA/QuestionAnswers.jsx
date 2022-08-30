@@ -14,7 +14,6 @@ import styles from '../../styles/QA/qa.css';
 import { QuestionsContext } from '../../contexts/question.context.jsx';
 
 const QuestionAnswers = () => {
-
   const { productID, results } = useContext(QuestionsContext);
 
   return (
@@ -46,9 +45,6 @@ const QuestionAnswers = () => {
                         helpful={val.helpfulness}
                         key={`aInfo-${val.id}`}
                       />
-                      {/* <AnswerReponses
-                        key={`${index}-ans-resp`}
-                      /> */}
                     </div>
                   )
                 })
@@ -59,7 +55,7 @@ const QuestionAnswers = () => {
           <></>
       }
       <LoadMoreAnswers />
-      <MoreAnsweredQuestions />
+      <MoreAnsweredQuestions product_id={productID}/>
     </div>
   )
 }
