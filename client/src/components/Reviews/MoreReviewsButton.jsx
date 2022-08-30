@@ -1,19 +1,15 @@
 import React, {useState, useEffect, useContext} from "react";
 
-const MoreReviewsButton = ({setReviewCount, ratingsCount, loading}) => {
-
-  const [visible, setVisible] = useState(true)
+const MoreReviewsButton = ({ moreReviews, setReviewCount, setMoreReviews, ratingsCount, loading }) => {
 
   const showAllReviews = () => {
     setReviewCount(4)
-    if(!loading) {
-      setVisible(false)
-    }
+    setMoreReviews(true)
   }
 
   return (
     <>
-      { visible === true &&
+      { moreReviews === false &&
         <button
           className="more-reviews-button"
           onClick={showAllReviews}

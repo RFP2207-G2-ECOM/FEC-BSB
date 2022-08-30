@@ -16,13 +16,13 @@ const RatingsReviews = () => {
   let { metadata } = useContext(ProductReviewsContext)
   let ratings = {...metadata.ratings}
   const ratingsCount =
-    Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0);
+    Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
 
-  const [filteredReviews, setFilteredReviews] = useState([]);
-  const [reviewSort, setReviewSort] = useState('relevant');
-  const [reviewCount, setReviewCount] = useState(2);
-  const [pageNumber, setPageNumber] = useState(1);
-
+  const [filteredReviews, setFilteredReviews] = useState([])
+  const [reviewSort, setReviewSort] = useState('relevant')
+  const [reviewCount, setReviewCount] = useState(2)
+  const [pageNumber, setPageNumber] = useState(1)
+  const [moreReviews, setMoreReviews] = useState(false)
 
   const {
     reviews,
@@ -46,19 +46,24 @@ const RatingsReviews = () => {
       </div>
       <div className="ReviewsList-Container">
         <ReviewsList
-          hasMore={hasMore}
           filteredReviews={filteredReviews}
+          hasMore={hasMore}
           loading={loading}
+          moreReviews={moreReviews}
           ratingsCount={ratingsCount}
           setReviewSort={setReviewSort}
           setPageNumber={setPageNumber}
+          setReviewCount={setReviewCount}
+          setMoreReviews={setMoreReviews}
         />
       </div>
       <div className="Buttons-Container">
         <MoreReviewsButton
           loading={loading}
-          setReviewCount={setReviewCount}
+          moreReviews={moreReviews}
           ratingsCount={ratingsCount}
+          setMoreReviews={setMoreReviews}
+          setReviewCount={setReviewCount}
         />
         <button className="add-a-review-button">ADD A REVIEW</button>
       </div>
