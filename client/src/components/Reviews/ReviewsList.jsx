@@ -1,29 +1,36 @@
-import React, {useState, useEffect, useContext} from "react"
+import React, { useState, useEffect, useContext, useRef, useCallback } from "react"
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 import ReviewTile from "./ReviewTile.jsx"
 
-const ReviewsList = ({ filteredReviews, ratings}) => {
+const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCount, reviewsToRender, setReviewsToRender, setMoreReviews, setReviewSort }) => {
 
-  const ratingsCount =
-    Object.values(ratings)
-    .reduce((a, b) => Number(a) + Number(b), 0);
+  const change = (e) => {
+    setReviewSort(e.target.value)
+    setReviewsToRender(2)
+    setMoreReviews(false)
+  }
 
   return (
-    <div className="ReviewsList-Container">
+    <>
       <div>
         {ratingsCount} reviews, sorted by
-        <select>
+        <select onChange={change}>
           <option value="relevant">relevant</option>
           <option value="newest">newest</option>
           <option value="helpful">helpful</option>
         </select>
       </div>
       <div>
-        {filteredReviews.map(review =>
+        {(filteredReviews.slice(0, reviewsToRender)).map((review, index, array) =>
           <ReviewTile
             key={review.review_id}
             id={review.review_id}
+            array={array}
+            index={index}
+            loading={loading}
+            hasMore={hasMore}
+            moreReviews={moreReviews}
             rating={review.rating}
             username={review.reviewer_name}
             date={review.date}
@@ -33,13 +40,11 @@ const ReviewsList = ({ filteredReviews, ratings}) => {
             recommend={review.recommend}
             response={review.response}
             helpful={review.helpfulness}
-          />)}
+            setReviewsToRender={setReviewsToRender}
+          />
+        )}
       </div>
-      <div className="Buttons-Container">
-        <button className="more-reviews-button">MORE REVIEWS</button>
-        <button className="add-a-review-button">ADD A REVIEW</button>
-      </div>
-    </div>
+    </>
   )
 }
 

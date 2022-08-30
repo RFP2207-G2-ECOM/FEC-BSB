@@ -1,3 +1,7 @@
+.invisible {
+  visibility: hidden;
+}
+
 .Review-Tile-Container {
   display: flex;
   flex-wrap: wrap;
@@ -7,6 +11,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   padding-bottom: 15px;
+  border: 1px solid green
 }
 
 .review-tile-header {
@@ -54,8 +59,6 @@
 
 .review-tile-helpful {
   display: flex;
+  border: 1px solid green;
 }
 
-/* .review-tile-report {
-
-} */
