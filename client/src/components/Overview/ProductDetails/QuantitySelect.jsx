@@ -1,31 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const QuantitySelect = () => {
-  const { listOfQuantity, curQuantity, setCurQuantity, curSize, listOfSizes } = useContext(CurrentSKUContext);
-  console.log('List Of Quantity', listOfQuantity);
-  console.log('curSize', curSize);
-  // console.log('setCurSize', setCurQuantity);
+  const { listOfQuantity, setCurQuantity, curSize, listOfSizes } = useContext(CurrentSKUContext);
 
   let index = listOfSizes.indexOf(curSize);
-  console.log(index);
-  console.log('current possible quantity', listOfQuantity[index]);
+  let totalAmount = listOfQuantity[index];
+  if (totalAmount > 15) {
+    totalAmount = 15;
+  } else if (totalAmount === undefined) {
+    totalAmount = 0;
+  }
 
-  // create an array of 1-quantity
-  // for (let i = 0; i < )
+  totalAmount = Array.from(Array(totalAmount + 1).keys());
+  totalAmount[0] = '-';
 
   if (curSize === 'Select Size') {
     return (
       <select className='QuantitySelect' disabled>
-        {listOfQuantity.map((quantity, index) =>{
+        {totalAmount.map((quantity, index) =>{
           return <option key={index} >{quantity}</option>
         })}
       </select>
     )
   } else {
     return (
-      <select className='QuantitySelect'>
-        {listOfQuantity.map((quantity, index) =>{
+      <select className='QuantitySelect' onChange={(e)=>{setCurQuantity(e.target.value)}}>
+        {totalAmount.map((quantity, index) =>{
           return <option key={index} >{quantity}</option>
         })}
       </select>

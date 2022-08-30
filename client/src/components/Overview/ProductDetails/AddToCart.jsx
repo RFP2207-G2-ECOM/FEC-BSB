@@ -34,9 +34,6 @@ const AddToCart = () => {
     SKUs.unshift('Fake SKU');
     quantity.unshift('-');
     sizes.unshift('Select Size');
-    console.log('SKUs', SKUs);
-    // console.log('quantity', quantity);
-    // console.log('sizes', sizes);
     setListOfSKUs([...SKUs]);
     setListOfSizes([...sizes]);
     setListOfQuantity([...quantity]);
