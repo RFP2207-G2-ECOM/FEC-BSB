@@ -6,7 +6,6 @@ import { FaPinterestSquare } from 'react-icons/fa';
 import { IconContext} from 'react-icons';
 
 const SocialMediaButtons = () => {
-  let style = { size:'5em'};
   return (
     <IconContext.Provider value={{className:'btn'}} >
       <div className='Social-Media-Buttons' >

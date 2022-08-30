@@ -2,22 +2,16 @@
   font-weight: 900;
 }
 
+.Style-Detail-Spacer {
+  width: 5%;
+}
+
 .Overview-Container {
   width: 82%;
   margin: auto;
-  height: 500px;
+  height: 650px;
   border: solid;
   border-color: red;
-  display: flex;
-}
-
-.Layout {
-  width: 100%;
-  height: 500px;
-  justify-content: center;
-  align-items: center;
-  border: solid;
-  border-color: rgb(0, 0, 0);
   display: flex;
 }
 
@@ -58,9 +52,18 @@
 }
 
 /* Product Display */
+.Product-Display {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-color: rgb(0, 0, 0);
+}
+
 .Picture-Selector {
-  width: 10%;
-  height: 500px;
+  width: 15%;
+  height: 100%;
   border: solid;
   border-color: rgb(0, 0, 0);
   display: flex;
@@ -70,7 +73,7 @@
 
 .Selected-Picture {
   width: 90%;
-  height: 500px;
+  height: 100%;
   border: solid;
   border-color: rgb(0, 0, 0);
   display: flex;
@@ -96,35 +99,12 @@
 
 /* Product Details */
 .Product-Details {
-  width: 90%;
-  height: 500px;
+  width: 40%;
+  height: 100%;
   border: solid;
   border-color: rgb(0, 0, 0);
-}
-
-.Stars-And-Reviews {
-  border: solid;
-  border-color: blue;
   display: flex;
-  align-items: flex-end;
-  height: 10%;
-}
-
-.Stars {
-  height: 50px;
-  width: 55%;
-  border: solid;
-  border-color: rgb(52, 190, 42);
-  display: flex;
-}
-
-.Review-Link {
-  display: flex;
-  align-items: flex-end;
-  width: 45%;
-  height: auto;
-  border: solid;
-  border-color: rgb(52, 190, 42);
+  flex-direction: column;
 }
 
 .Name-And-Category {
@@ -132,12 +112,27 @@
   border-color: blue;
   display: flex;
   flex-direction: column;
-  height: 23%;
+  height: 20%;
 }
 
+.Stars-And-Reviews {
+  border: solid;
+  border-color: blue;
+  display: flex;
+  align-items: center;
+  height: 10%;
+}
+
+.StyleContainer {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Name & Category */
+
 .Category {
-  height: 30%;
-  width: 100%;
+  height: 45px;
   border: solid;
   border-color: rgb(52, 190, 42);
   display: flex;
@@ -145,28 +140,147 @@
 }
 
 .ProductName {
+  height: 80px;
   border: solid;
   border-color: rgb(52, 190, 42);
   display: flex;
-  height: 60%;
-  width: 100%;
   align-items: center;
 }
 
 .ProductTitle {
   font-size: 35px;
+  height: 50%;
 }
 
-.Price {
+.CategoryTitle {
+  font-size: 18px;
+}
+
+/* Stars & Review Link */
+
+.Stars {
+  height: 60px;
+  width: 55%;
   border: solid;
-  border-color: blue;
+  border-color: rgb(52, 190, 42);
   display: flex;
-  height: 30px;
+  justify-content: center;
   align-items: center;
 }
 
+.Review-Link {
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  width: 45%;
+  height: auto;
+  border: solid;
+  border-color: rgb(52, 190, 42);
+  text-decoration: underline;
+}
+
+/* Price Display */
+.BasePrice {
+  display: flex;
+  align-items: center;
+  font-size: 27px;
+}
+
+.SalePrice {
+  border: solid;
+  border-color: blue;
+  display: flex;
+  height: 10%;
+  align-items: center;
+}
+
+.SalePriceOG {
+  font-size: 25px;
+  border: solid;
+  border-color: blue;
+  background: linear-gradient(to right top, transparent 47.75%,
+  currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
+
+}
+
+.SalePriceSale {
+  color:red;
+  font-size: 30px;
+}
+
+/* Style Display, Selector, & AddToCart */
+
+/* Style Display */
+.StyleName {
+  border: solid;
+  border-color: blue;
+  display: flex;
+  height: 12.5%;
+  position:inherit;
+  align-items: center;
+}
+
+.Style-Title-Center, .Style-Title-Right {
+  border: solid;
+  border-color:rgb(52, 190, 42);
+  display: flex;
+}
+
+.Style-Title-Center {
+  width: 25%;
+  font-size: 20px;
+}
+
+.Style-Title-Right {
+  width: 70%;
+  font-size: 25px;
+  justify-content: center;
+}
+
+/* Style Selector */
+.StyleSelector {
+  border: solid;
+  height: 50%;
+  border-color: blue;
+  display: flex;
+  flex-shrink: 1;
+  flex-direction: column;
+}
+
+.StyleOptions {
+  border: solid;
+  border-color: rgb(233, 11, 207);
+  display: flex;
+  flex: auto;
+  justify-content: space-around;
+}
+
+.SingleStyle {
+  display: flex;
+  justify-content: center;
+  width: calc(25%);
+}
+
+.SingleStyleSelected {
+  display: flex;
+  width: calc(25% - 6px);
+  border: solid 3px;
+}
+
+.SingleStyleNull {
+  width: 25%;
+}
+
+.style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* AddToCart */
 .AddToCart {
-  height: 25%;
+  height: 20%;
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {
@@ -246,50 +360,6 @@
 .btn {
   display: flex;
   font-size: 35px;
-}
-
-.BLeft, .BCenter, .BRight {
-  border-color:rgb(52, 190, 42);
-  border: solid;
-  display: flex;
-  align-items: center;
-}
-
-.BLeft {
-  width: 5%;
-}
-
-.BCenter {
-  width: 25%;
-}
-
-.BRight {
-  width: 70%;
-}
-
-.StyleName {
-  border: solid;
-  border-color: blue;
-  display: flex;
-  height: 10%;
-  position:inherit;
-  align-items: center;
-}
-
-.StyleSelector {
-  border: solid;
-  border-color: blue;
-  display: flex;
-  flex-direction: column;
-  height: 18%;
-}
-
-.StyleOptions {
-  border: solid;
-  border-color: rgb(0, 0, 0);
-  display: flex;
-  height: 33px;
-  justify-content: space-around;
 }
 
 .Info-Container {

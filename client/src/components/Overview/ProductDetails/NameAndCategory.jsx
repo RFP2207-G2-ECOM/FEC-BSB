@@ -9,10 +9,12 @@ const NameAndCategory = () => {
   return (
     <div className='Name-And-Category'>
       <div className='ProductName'>
-        <p className='bolded ProductTitle'>{product.name}</p>
+        <div className='Style-Detail-Spacer'></div>
+        <div className='bolded ProductTitle'>{product.name}</div>
       </div>
       <div className='Category'>
-        <p>{product.category}</p>
+        <div className='Style-Detail-Spacer'></div>
+        <div className='CategoryTitle'>{product.category}</div>
       </div>
     </div>
   )

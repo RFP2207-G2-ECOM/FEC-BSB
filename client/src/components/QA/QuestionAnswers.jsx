@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import AContainer from './AContainer.jsx';
+import AnswerContainer from './AnswerContainer.jsx';
 import AddAQuestion from './AddAQuestion.jsx';
 import AInfo from './AInfo.jsx';
 import AnswerReponses from './AnswerResponses.jsx';
 import LoadMoreAnswers from './LoadMoreAnswers.jsx';
 import MoreAnsweredQuestions from './MoreAnsweredQuestions.jsx';
 import QContainer from './QContainer.jsx';
+import ResponsePhotos from './ResponsePhotos.jsx';
 import SearchBox from './SearchBox.jsx';
 import Title from './Title.jsx';
 
@@ -14,8 +16,22 @@ import styles from '../../styles/QA/qa.css';
 import { QuestionsContext } from '../../contexts/question.context.jsx';
 
 const QuestionAnswers = () => {
-
   const { productID, results } = useContext(QuestionsContext);
+  const [answerCount, setAnswerCount] = useState({});
+  const [limit, setLimit] = useState({});
+
+  useEffect(() => {
+    if (results.length > 0) {
+      const temp = {};
+      const tempTwo = {};
+      results.forEach(({ question_id, answers }) => {
+        temp[question_id] = 1;
+        tempTwo[question_id] = Object.keys(answers).length;
+      })
+      setAnswerCount(temp);
+      setLimit(tempTwo);
+    }
+  }, [results])
 
   return (
     <div className='QA-Container'>
@@ -32,34 +48,28 @@ const QuestionAnswers = () => {
                 question_helpfulness={data.question_helpfulness}
               />
               {
-                Object.values(data.answers).map(val => {
-                  return (
-                    <div key={val.id}>
-                      <AContainer
-                        body={val.body}
-                        key={`ans-${val.id}`}
-                      />
-                      <AInfo
-                        id={val.id}
-                        answerer_name={val.answerer_name}
-                        date={val.date}
-                        helpful={val.helpfulness}
-                        key={`aInfo-${val.id}`}
-                      />
-                      {/* <AnswerReponses
-                        key={`${index}-ans-resp`}
-                      /> */}
-                    </div>
-                  )
+                Object.values(data.answers).map((val, index) => {
+                  if (index < answerCount[data.question_id]) {
+                    return <AnswerContainer key={index} data={val} />
+                  }
                 })
               }
+              {
+                answerCount[data.question_id] < limit[data.question_id] ?
+                  <LoadMoreAnswers
+                    question_id={data.question_id}
+                    answerCount={answerCount}
+                    setAnswerCount={setAnswerCount}
+                  />
+                  : <></>
+              }
+
             </div>)
           })
           :
           <></>
       }
-      <LoadMoreAnswers />
-      <MoreAnsweredQuestions />
+      <MoreAnsweredQuestions product_id={productID} />
     </div>
   )
 }

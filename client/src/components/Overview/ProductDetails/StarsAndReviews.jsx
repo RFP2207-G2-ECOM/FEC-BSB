@@ -5,41 +5,42 @@ import StaticRating from '../../StarRating.jsx';
 const StarsAndReviews = () => {
   let { metadata } = useContext(ProductReviewsContext);
   let ratings = {...metadata.ratings};
-  let denominator = 0;
+  let totalReviews = 0;
   ratings = Object.values(ratings);
   if (ratings.length === 0) {
     ratings = 0;
-    denominator = 0;
+    totalReviews = 0;
   } else {
     let weight = 1;
-    let numerator = ratings.reduce((prev, curr) => {
+    let totalScore = ratings.reduce((prev, curr) => {
       let total = prev + parseInt(curr) * weight;
       weight++;
       return total;
     }, 0);
-    denominator = ratings.reduce((prev, curr) => {
+    totalReviews = ratings.reduce((prev, curr) => {
       let total = prev + parseInt(curr);
       weight++;
       return total;
     }, 0);
 
-    if (denominator === 0) {
-      denominator = -1;
+    if (totalReviews === 0) {
+      totalReviews = -1;
     }
 
-    ratings = Math.round(numerator/denominator * 10) / 10;
+    ratings = Math.round(totalScore/totalReviews * 10) / 10;
   }
 
-    if (denominator > 0) {
+    if (totalReviews > 0) {
       return (
         <div className='Stars-And-Reviews'>
-          <div className='Stars'>
+          <div key={0} className='Style-Detail-Spacer'></div>
+          <div key={1}className='Stars'>
             <StaticRating rating={ratings}/>
           </div>
-            <div className='Review-Link'>
+          <div key={2} className='Review-Link'>
             {/* Link to Review Section later*/}
-            Read all {denominator} reviews
-            </div>
+            Read all {totalReviews} reviews
+          </div>
         </div>
       )
     } else {
