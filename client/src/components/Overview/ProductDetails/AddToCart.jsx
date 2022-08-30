@@ -3,6 +3,7 @@ import { CurrentStylesContext } from '../Overview.jsx'
 
 import SizeSelect from "./SizeSelect.jsx";
 import QuantitySelect from "./QuantitySelect.jsx";
+import { FaRegStar } from 'react-icons/fa';
 
 export const CurrentSKUContext = createContext({
   curSKU: {}
@@ -55,7 +56,7 @@ const AddToCart = () => {
       </CurrentSKUContext.Provider>
       <div className='CartAndFavRow'>
         <button className='CartButton'>Add To Cart!</button>
-        <button className='FavButton'>Favorite</button>
+        <button className='FavButton'><FaRegStar className='FavIcon'/></button>
       </div>
     </div>
   )

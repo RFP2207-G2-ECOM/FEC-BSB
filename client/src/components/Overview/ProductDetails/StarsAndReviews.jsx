@@ -23,10 +23,6 @@ const StarsAndReviews = () => {
       return total;
     }, 0);
 
-    if (totalReviews === 0) {
-      totalReviews = -1;
-    }
-
     ratings = Math.round(totalScore/totalReviews * 10) / 10;
   }
 
@@ -34,10 +30,9 @@ const StarsAndReviews = () => {
       return (
         <div className='Stars-And-Reviews'>
           <div key={0} className='Style-Detail-Spacer'></div>
-          <div key={1}className='Stars'>
-            <StaticRating rating={ratings}/>
-          </div>
-          <div key={2} className='Review-Link'>
+          <StaticRating key={1} rating={ratings}/>
+          <div key={2} className='Style-Detail-Spacer'></div>
+          <div key={3} className='Review-Link'>
             <a href='#LinkToReviews'>Read all {totalReviews} reviews</a>
           </div>
         </div>

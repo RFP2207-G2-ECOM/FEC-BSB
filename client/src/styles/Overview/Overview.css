@@ -168,6 +168,24 @@
   align-items: center;
 }
 
+.StarRatings {
+  color: #ccc;
+  font-size: 300%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.FillRatings {
+  color: #e7711b;
+  padding: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
 .Review-Link {
   display: flex;
   justify-content: center;
@@ -191,16 +209,14 @@
   border-color: blue;
   display: flex;
   height: 10%;
+  justify-content: center;
   align-items: center;
 }
 
 .SalePriceOG {
   font-size: 25px;
-  border: solid;
-  border-color: blue;
   background: linear-gradient(to right top, transparent 47.75%,
   currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
-
 }
 
 .SalePriceSale {
@@ -303,6 +319,11 @@
   width:25%
 }
 
+.FavIcon {
+  font-size: 30px;
+  border-color: black;
+}
+
 /* Bottom Bar */
 .BottomBar {
   width:82%;
@@ -333,6 +354,7 @@
   width: 50%;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .Feature {
