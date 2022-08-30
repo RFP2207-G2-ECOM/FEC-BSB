@@ -10,11 +10,15 @@ const SocialMediaButtons = () => {
     <IconContext.Provider value={{className:'btn'}} >
       <div className='Social-Media-Buttons' >
         <div className='SMBRow'>
-          <FaFacebookSquare /> {/* Add onClickHandler to go to FaceBook link */}
-          <FaInstagramSquare /> {/* Add onClickHandler to go to Instagram link */}
+          <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=example.org">
+          <FaFacebookSquare />
+          </a>
+          <FaInstagramSquare />
         </div>
         <div className='SMBRow'>
-          <FaTwitterSquare /> {/* Add onClickHandler to go to Twitter link */}
+          <a target="_blank" href="https://twitter.com/intent/tweet">
+            <FaTwitterSquare />
+          </a>
           <FaPinterestSquare /> {/* Add onClickHandler to go to Pinterest link */}
         </div>
       </div>
