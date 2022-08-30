@@ -36,7 +36,7 @@ const StyleSelector = () => {
           </div>
           )
         })}
-        <div className='StyleOptions'>
+        {/* <div className='StyleOptions'>
           <button className='StyleButton'>X</button>
           <button className='StyleButton'>X</button>
           <button className='StyleButton'>X</button>
@@ -53,7 +53,7 @@ const StyleSelector = () => {
           <button className='StyleButton'>X</button>
           <button className='StyleButton'>X</button>
           <button className='StyleButton'>X</button>
-        </div>
+        </div> */}
         {/* Figure out how to render rows & styles in those rows */}
         {/* User Map function to render instances of SinlgeStyle.jsx for each entry */}
 
