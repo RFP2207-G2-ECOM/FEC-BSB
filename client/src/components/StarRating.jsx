@@ -1,39 +1,43 @@
-import React, {useState} from "react"
+import React from 'react';
 
-import { MdStarOutline, MdStarHalf, MdStar } from "react-icons/md"
-import styles from "../styles/Reviews/starRating.css"
-
-
+// input rating should be a number between 0-5
 const StaticRating = (props) => {
-  let rating = props.rating || 0;
-  let stars = [];
-
-  while (stars.length < 5) {
-    if (rating >= .8) {
-      stars.push(1)
-    } else if (rating > .2) {
-      stars.push(.5)
-    } else {
-      stars.push(0)
-    }
-    rating = rating - 1
-  }
+  let ratings = props.rating;
+  ratings = ratings/5 * 100;
+  ratings = `${ratings}%`
+  console.log(ratings);
+  let style = {width: ratings};
+  console.log(style);
 
   return (
-    <div className="star-container">
-      {stars.map((item, index) => {
-        if (item === 0) {
-          return <div className="star-icon" key={index}><MdStarOutline /></div>
-        } else if (item === .5) {
-          return <div className="star-icon" key={index}><MdStarHalf /></div>
-        } else {
-          return <div className="star-icon" key={index}><MdStar /></div>
-        }
-      })}
-    </div>
+    <div className="StarRatings">
+  <div className="FillRatings" >
+    <span>★★★★★</span>
+  </div>
+    <span>★★★★★</span>
+</div>
   )
-
-
-}
+};
 
 export default StaticRating;
+
+
+// This is the CSS for the Star Components, in case you need to change the size for your component
+
+// .StarRatings {
+//   color: #ccc;
+//   font-size: 300%;
+//   position: relative;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .FillRatings {
+//   color: #e7711b;
+//   padding: 0;
+//   position: absolute;
+//   display: block;
+//   top: 0;
+//   left: 0;
+//   overflow: hidden;
+// }
