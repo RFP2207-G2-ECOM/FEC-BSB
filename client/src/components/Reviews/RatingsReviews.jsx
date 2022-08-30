@@ -59,12 +59,11 @@ const RatingsReviews = () => {
           setReviewCount={setReviewCount}
           setMoreReviews={setMoreReviews}
         />
-        { moreReviews === true &&
+        {/* { moreReviews === true &&
           <div className="Scroll-Buttons-Container">
-            <button className="scroll-add-a-review-button">Add+</button>
-            <button className="scroll-to-top-button">Top</button>
+            <button className="add-a-review-button">Add A Review</button>
           </div>
-        }
+        } */}
       </div>
       { moreReviews === false &&
         <div className="Buttons-Container">
