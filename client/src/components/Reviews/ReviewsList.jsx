@@ -9,6 +9,7 @@ const ReviewsList = ({ filteredReviews, ratingsCount, setReviewSort}) => {
     setReviewSort(e.target.value)
   }
 
+  // console.log('these are the filteredReviews:', filteredReviews)
   return (
     <>
       <div>
@@ -19,22 +20,24 @@ const ReviewsList = ({ filteredReviews, ratingsCount, setReviewSort}) => {
           <option value="helpful">helpful</option>
         </select>
       </div>
-      <div>
-        {filteredReviews.map(review =>
-          <ReviewTile
-            key={review.review_id}
-            id={review.review_id}
-            rating={review.rating}
-            username={review.reviewer_name}
-            date={review.date}
-            summary={review.summary}
-            body={review.body}
-            photos={review.photos}
-            recommend={review.recommend}
-            response={review.response}
-            helpful={review.helpfulness}
-          />)}
-      </div>
+      { filteredReviews !== undefined &&
+        <div>
+          {filteredReviews.map(review =>
+            <ReviewTile
+              key={review.review_id}
+              id={review.review_id}
+              rating={review.rating}
+              username={review.reviewer_name}
+              date={review.date}
+              summary={review.summary}
+              body={review.body}
+              photos={review.photos}
+              recommend={review.recommend}
+              response={review.response}
+              helpful={review.helpfulness}
+            />)}
+        </div>
+      }
     </>
   )
 }

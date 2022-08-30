@@ -7,28 +7,45 @@ import MoreReviewsButton from "./MoreReviewsButton.jsx";
 import ProductBreakdown from "./ProductBreakdown.jsx";
 import RatingsBreakdown from "./RatingsBreakdown.jsx";
 import ReviewsList from "./ReviewsList.jsx";
+import useReviewsSearch from "./useReviewsSearch.js";
 
 import styles from "../../styles/Reviews/reviews.css";
 
 const RatingsReviews = () => {
 
+  // let reviewsToRender = findReviews()
+  // console.log(reviewsToRender)
+
   // const gitHubToken = process.env.GITHUB_TOKEN
   // const baseURI = process.env.BASE_URI;
   // const productID = Number(process.env.PRODUCT_ID);
 
-  let { reviews } = useContext(ProductReviewsContext)
+  // let { reviews } = useContext(ProductReviewsContext)
   let { metadata } = useContext(ProductReviewsContext)
   let ratings = {...metadata.ratings}
+  const ratingsCount =
+    Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0);
 
-  const [reviewsToRender, setReviewsToRender] = useState(reviews);
-  const [filteredReviewsToRender, setFilteredReviewsToRender] = useState([]);
+
+  const [reviewsToRender, setReviewsToRender] = useState([]);
+  const [filteredReviews, setFilteredReviews] = useState([]);
   const [reviewSort, setReviewSort] = useState('relevant');
   const [reviewCount, setReviewCount] = useState(2);
   const [pageNumber, setPageNumber] = useState(1);
 
-  const ratingsCount =
-  Object.values(ratings)
-  .reduce((a, b) => Number(a) + Number(b), 0);
+  const {
+    reviews,
+    hasMore,
+    loading,
+    error
+  } = useReviewsSearch(pageNumber, reviewCount, reviewSort)
+
+  useEffect(() => {
+    if(reviews[0] !== undefined) {
+      setFilteredReviews(reviews[0])
+    }
+  }, [reviews])
+
 
   // const findReviews = () => {
   //   axios.get(`${baseURI}reviews/`, {
@@ -67,9 +84,22 @@ const RatingsReviews = () => {
   // }
 
   // useEffect(() => {
-  //   findReviews();
-  //   findReviewMetadata();
+  //   const reviewsResults = findReviews(1, 2, 'relevant')
+  //   console.log('these are reviewsResults:', reviewsResults)
+
+  //   // setReviews(findReviews())
+  //   // setReviewMetadata(findReviewMetadata())
   // }, [])
+
+  // useEffect(() => {
+  //   console.log('these are the reviewsToRender:', findReviews())
+  // }, [])
+
+  // useEffect(() => {
+  //   if (reviews !== undefined) {
+  //     setFilteredReviews(reviews => reviews)
+  //   }
+  // }, [reviews])
 
   // useEffect(() => {
   //   findReviews();
@@ -84,7 +114,7 @@ const RatingsReviews = () => {
       </div>
       <div className="ReviewsList-Container">
         <ReviewsList
-          filteredReviews={filteredReviewsToRender}
+          filteredReviews={filteredReviews}
           ratingsCount={ratingsCount}
           setReviewSort={setReviewSort}
         />
