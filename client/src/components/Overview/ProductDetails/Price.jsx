@@ -8,18 +8,19 @@ const Price = () => {
 
   if (!salePrice) {
     return (
-      <div className='BasePrice'>
-        ${basePrice}
+      <div className='SalePrice'>
+        <div key={0} className='Style-Detail-Spacer'></div>
+        <div className='BasePrice'>${basePrice}</div>
       </div>
   )
   } else {
     return (
-      <div className='SalePrice'>
-        <div key={0} className='SalePriceSpacer'></div>
+      <div key={0} className='SalePrice'>
+        <div key={0} className='Style-Detail-Spacer'></div>
         <div key={1} className='SalePriceOG'>
           ${basePrice}
         </div>
-        <div key={2} className='SalePriceSpacer'></div>
+        <div key={2} className='Style-Detail-Spacer'></div>
         <div key={3} className='SalePriceSale'>
           ${salePrice}
         </div>

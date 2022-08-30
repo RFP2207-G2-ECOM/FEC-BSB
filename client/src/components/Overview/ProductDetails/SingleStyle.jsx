@@ -19,13 +19,15 @@ const SingleStyle = ({style}) => {
   } else if (curStyle.name === style.name) {
     return (
       <div className='SingleStyleSelected' onClick={(e)=>{setCurStyle(style)}}>
-        <div className='StyleColorsSelected'></div>
+        {/*placeholder*/}
+        <div className='style'>{style.name}</div>
       </div>
     )
    } else {
     return (
       <div className='SingleStyle' onClick={(e)=>{setCurStyle(style)}}>
-        <div className='StyleColors'></div>
+        {/*placeholder*/}
+        <div className='style'>{style.name}</div>
       </div>
     )
    }

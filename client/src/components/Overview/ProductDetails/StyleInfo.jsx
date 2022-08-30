@@ -8,9 +8,9 @@ const StyleInfo = () => {
 
   return (
       <div className='StyleName'>
-        <p className='Style-Title-Left'></p>
-        <p className='bolded Style-Title-Center'>STYLE > </p>
-        <p className='Style-Title-Right'>{styleName}</p>
+        <p className='Style-Detail-Spacer'></p>
+        <p className='Style-Title-Center'>STYLE > </p>
+        <p className='bolded Style-Title-Right'>{styleName}</p>
       </div>
   )
 };
