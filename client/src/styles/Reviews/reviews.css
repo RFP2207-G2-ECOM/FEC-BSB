@@ -1,12 +1,20 @@
 .RR-Container {
+  display: grid;
+  grid-template-columns: 20% 70%;
+  grid-template-rows: auto;
+  grid-gap: 40px;
   width: 82%;
   border: 3px solid blue;
   margin: auto;
   margin-top: 10px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  /* max-height: 100vh; */
+  overflow: auto;
+  position: relative;
 }
 
 .rr-title {
+  grid-column: span 2;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -15,17 +23,9 @@
   font-size: large;
 }
 
-.Module-Container {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 .Breakdown-Container {
   display: flex;
   flex-direction: column;
-  width: 300px;
 }
 
 .RatingsBreakdown-Container {
@@ -44,15 +44,19 @@
 }
 
 .ReviewsList-Container {
-  max-width: 800px;
-  margin-left: 40px;
-  padding: 20px;
+  height: fit-content;
+  min-height: 50vh;
+  border: 1px solid purple;
 }
 
 .Buttons-Container {
+  grid-column: 2 / 3;
   display: flex;
   justify-content: flex-start;
-  padding-top: 10px;
+  gap: 20px;
+  /* position: sticky;
+  top: 0;
+  left: 25%; */
 }
 
 .more-reviews-button {
@@ -62,7 +66,6 @@
   border: 3px solid black;
   width: 150px;
   height: 50px;
-  margin-left: 20px;
 }
 
 .add-a-review-button {
@@ -72,7 +75,12 @@
   border: 3px solid black;
   width: 200px;
   height: 50px;
-  margin-left: 20px;
+}
+
+.Scroll-Buttons-Container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 
