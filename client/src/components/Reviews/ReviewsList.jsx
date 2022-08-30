@@ -3,12 +3,11 @@ import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 import ReviewTile from "./ReviewTile.jsx"
 
-const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCount, setMoreReviews, setReviewSort, setPageNumber, setReviewCount}) => {
+const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCount, reviewsToRender, setReviewsToRender, setMoreReviews, setReviewSort }) => {
 
   const change = (e) => {
     setReviewSort(e.target.value)
-    setPageNumber(1)
-    setReviewCount(2)
+    setReviewsToRender(2)
     setMoreReviews(false)
   }
 
@@ -23,7 +22,7 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
         </select>
       </div>
       <div>
-        {filteredReviews.map((review, index, array) =>
+        {(filteredReviews.slice(0, reviewsToRender)).map((review, index, array) =>
           <ReviewTile
             key={review.review_id}
             id={review.review_id}
@@ -41,7 +40,7 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
             recommend={review.recommend}
             response={review.response}
             helpful={review.helpfulness}
-            setPageNumber={setPageNumber}
+            setReviewsToRender={setReviewsToRender}
           />
         )}
       </div>

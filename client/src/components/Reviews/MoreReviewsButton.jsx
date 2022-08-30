@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useContext} from "react";
 
-const MoreReviewsButton = ({ moreReviews, setReviewCount, setMoreReviews, ratingsCount, loading }) => {
+const MoreReviewsButton = ({ moreReviews, setReviewsToRender, setMoreReviews, ratingsCount, loading }) => {
 
   const showAllReviews = () => {
-    setReviewCount(4)
+    setReviewsToRender(4)
     setMoreReviews(true)
   }
 

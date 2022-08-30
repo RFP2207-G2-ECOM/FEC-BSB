@@ -7,7 +7,7 @@ import PosterTag from "../PosterTag.jsx"
 
 import styles from "../../styles/Reviews/reviewTile.css"
 
-const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, username, date, summary, body, photos, recommend, response, helpful, setPageNumber }) => {
+const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, username, date, summary, body, photos, recommend, response, helpful, setReviewsToRender }) => {
 
   // observer references when last review tile is visible,
   // callback pulls more review data
@@ -17,7 +17,7 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
     if (observer.current) observer.current.disconnect()
     observer.current = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting && moreReviews && hasMore) {
-        setPageNumber(prevPageNumber => prevPageNumber + 1)
+        setReviewsToRender(prevNumber => prevNumber + 1)
       }
     })
     if (node) observer.current.observe(node)

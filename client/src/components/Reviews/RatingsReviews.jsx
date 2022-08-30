@@ -19,6 +19,7 @@ const RatingsReviews = () => {
     Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
 
   const [filteredReviews, setFilteredReviews] = useState([])
+  const [reviewsToRender, setReviewsToRender] = useState(2)
   const [reviewSort, setReviewSort] = useState('relevant')
   const [reviewCount, setReviewCount] = useState(2)
   const [pageNumber, setPageNumber] = useState(1)
@@ -29,7 +30,7 @@ const RatingsReviews = () => {
     hasMore,
     loading,
     error
-  } = useReviewsSearch(pageNumber, reviewCount, reviewSort)
+  } = useReviewsSearch(pageNumber, ratingsCount, reviewSort)
 
   useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
@@ -51,6 +52,8 @@ const RatingsReviews = () => {
           loading={loading}
           moreReviews={moreReviews}
           ratingsCount={ratingsCount}
+          reviewsToRender={reviewsToRender}
+          setReviewsToRender={setReviewsToRender}
           setReviewSort={setReviewSort}
           setPageNumber={setPageNumber}
           setReviewCount={setReviewCount}
@@ -62,6 +65,7 @@ const RatingsReviews = () => {
           loading={loading}
           moreReviews={moreReviews}
           ratingsCount={ratingsCount}
+          setReviewsToRender={setReviewsToRender}
           setMoreReviews={setMoreReviews}
           setReviewCount={setReviewCount}
         />
