@@ -3,33 +3,58 @@ import RelatedItemsAndComp from './RelatedItemsAndComp.jsx';
 import styles from '../../styles/Related/related.css';
 import RelatedProductsList from './RelatedProductsList.jsx';
 import YourOutfitList from './YourOutfitList.jsx';
+import axios from 'axios';
 
 
-const Card = ({style}) => {
-  const [styleItems, setStyle] = useState(style);
+const Card = ({relatedProduct}) => {
+
+  const [productInfo, setProduct] = useState(relatedProduct);
+  const [productStyle, setStyle] = useState([]);
 
   useEffect(()=>{
-    setStyle(style);
-  },[style])
+    setProduct(relatedProduct);
+    getProductStyles();
+  },[relatedProduct])
+
+  const getProductStyles = async () => {
+    var baseURI = process.env.BASE_URI;
+    const productID = productInfo ? productInfo.id : undefined;
+    if (productID) {
+      return await axios.get(`${baseURI}products/${productID}/styles`, {
+        headers: {
+          'Authorization': process.env.GITHUB_TOKEN
+        }
+      })
+      .then(result => {
+        setStyle(result.data.results)
+      })
+    }
+  }
 
   return (
     // <div className='card-container'>
     //   <button className='card-button'>Star</button>
     <div className='card-container'>
       <div className='card-media'>
-        { styleItems &&
+        {productStyle[0] &&
           <img
             className='card-image'
-            src={styleItems.photos[0].thumbnail_url}
+            src={productStyle[0].photos[0].thumbnail_url}
             alt='/'
           />
         }
         <i className='fa fa-star-o fa-lg card-button'></i>
       </div>
         <div className='card-content'>
-          <div>Category</div>
-          <div><b>Product Name</b></div>
-          <div>Price</div>
+          {productInfo &&
+          <div>{productInfo.category}</div>
+          }
+          {productInfo &&
+          <div><b>{productInfo.name}</b></div>
+          }
+          {productInfo &&
+          <div>{productInfo.default_price}</div>
+          }
           <div>Stars</div>
         </div>
     </div>
