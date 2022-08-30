@@ -43,6 +43,7 @@
 }
 
 .ReviewsList-Container {
+  min-height: 50vh;
   border: 1px solid purple;
 }
 

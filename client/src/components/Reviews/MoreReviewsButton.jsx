@@ -6,7 +6,9 @@ const MoreReviewsButton = ({setReviewCount, ratingsCount}) => {
 
   const showAllReviews = () => {
     setReviewCount(4)
-    setVisible(false)
+    if(!loading) {
+      setVisible(false)
+    }
   }
 
   return (

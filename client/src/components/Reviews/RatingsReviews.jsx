@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
 
 import axios from "axios";
@@ -18,12 +18,11 @@ const RatingsReviews = () => {
   const ratingsCount =
     Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0);
 
-
-  const [reviewsToRender, setReviewsToRender] = useState([]);
   const [filteredReviews, setFilteredReviews] = useState([]);
   const [reviewSort, setReviewSort] = useState('relevant');
   const [reviewCount, setReviewCount] = useState(2);
   const [pageNumber, setPageNumber] = useState(1);
+
 
   const {
     reviews,
@@ -33,7 +32,7 @@ const RatingsReviews = () => {
   } = useReviewsSearch(pageNumber, reviewCount, reviewSort)
 
   useEffect(() => {
-    if(reviews !== undefined) {
+    if(reviews !== undefined && reviews.length > 0) {
       setFilteredReviews(reviews)
     }
   }, [reviews])
@@ -47,13 +46,16 @@ const RatingsReviews = () => {
       </div>
       <div className="ReviewsList-Container">
         <ReviewsList
+          hasMore={hasMore}
           filteredReviews={filteredReviews}
+          loading={loading}
           ratingsCount={ratingsCount}
           setReviewSort={setReviewSort}
         />
       </div>
       <div className="Buttons-Container">
         <MoreReviewsButton
+          loading={loading}
           setReviewCount={setReviewCount}
           ratingsCount={ratingsCount}
         />

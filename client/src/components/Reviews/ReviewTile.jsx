@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useCallback } from "react"
 
 import Helpful from "../Helpful.jsx"
 import Report from "../Report.jsx"
@@ -7,17 +7,30 @@ import PosterTag from "../PosterTag.jsx"
 
 import styles from "../../styles/Reviews/reviewTile.css"
 
-const ReviewTile = ({ id, rating, username, date, summary, body, photos, recommend, response, helpful }) => {
+const ReviewTile = ({ id, array, index, loading, hasMore, rating, username, date, summary, body, photos, recommend, response, helpful }) => {
 
-  let summaryLine1 = summary;
-  let summaryLine2 = undefined;
+
+  const observer = useRef()
+  const lastReviewElementRef = useCallback(node => {
+    if (loading) return
+    if (observer.current) observer.current.disconnect()
+    observer.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        console.log('visible')
+      }
+    })
+    if (node) observer.current.observe(node)
+  }, [loading, hasMore])
+
+  let summaryLine1 = summary
+  let summaryLine2
   if (summary.length > 57) {
     let index = 57
     if (summary.indexOf(' ', 57) !== -1) {
       index = summary.lastIndexOf(' ', 57)
     }
-    summaryLine1 = summary.substring(0, index) + '...';
-    summaryLine2 = '...' + summary.substring(index + 1);
+    summaryLine1 = summary.substring(0, index) + '...'
+    summaryLine2 = '...' + summary.substring(index + 1)
   }
 
   return (
@@ -55,6 +68,9 @@ const ReviewTile = ({ id, rating, username, date, summary, body, photos, recomme
           />
         </div>
       </div>
+      {array.length === index + 1 &&
+        <div ref={lastReviewElementRef}></div>
+      }
     </div>
   )
 }

@@ -12,6 +12,10 @@ export default function useReviewsSearch(pageNumber, reviewCount, reviewSort) {
   const [hasMore, setHasMore] = useState(false)
 
   useEffect(() => {
+    setReviews([])
+  }, [reviewSort, reviewCount])
+
+  useEffect(() => {
     setLoading(true)
     setError(false)
     axios.get(`${baseURI}reviews/`, {
@@ -25,7 +29,8 @@ export default function useReviewsSearch(pageNumber, reviewCount, reviewSort) {
         product_id: productID
       }
     }).then(res => {
-      setReviews(res.data.results)
+      setReviews(prevReviews => {
+        return [...prevReviews, ...res.data.results]})
       setHasMore(res.data.results.length > 0)
       setLoading(false)
     }).catch(err => {
@@ -35,20 +40,3 @@ export default function useReviewsSearch(pageNumber, reviewCount, reviewSort) {
   }, [pageNumber, reviewCount, reviewSort])
   return { loading, error, reviews, hasMore }
 }
-
-
-// export const findReviewMetadata = () => {
-//   axios.get(`${baseURI}reviews/meta`, {
-//     headers: {
-//       Authorization: gitHubToken
-//     },
-//     params: {
-//       product_id: productID
-//     }
-//   })
-//     .then(results => {
-//       return results.data
-//     })
-//     .catch(err => console.log(err))
-// }
-
