@@ -103,6 +103,8 @@
   height: 100%;
   border: solid;
   border-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
 }
 
 .Name-And-Category {
@@ -110,7 +112,7 @@
   border-color: blue;
   display: flex;
   flex-direction: column;
-  height: 125px;
+  height: 20%;
 }
 
 .Stars-And-Reviews {
@@ -118,11 +120,13 @@
   border-color: blue;
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 10%;
 }
 
 .StyleContainer {
-  height: 40%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Name & Category */
@@ -186,7 +190,7 @@
   border: solid;
   border-color: blue;
   display: flex;
-  height: 40px;
+  height: 10%;
   align-items: center;
 }
 
@@ -211,7 +215,7 @@
   border: solid;
   border-color: blue;
   display: flex;
-  height: 50px;
+  height: 12.5%;
   position:inherit;
   align-items: center;
 }
@@ -236,7 +240,7 @@
 /* Style Selector */
 .StyleSelector {
   border: solid;
-  height: 200px;
+  height: 50%;
   border-color: blue;
   display: flex;
   flex-shrink: 1;
@@ -276,7 +280,7 @@
 
 /* AddToCart */
 .AddToCart {
-  height: 30%;
+  height: 20%;
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {
