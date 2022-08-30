@@ -25,10 +25,7 @@ export default function useReviewsSearch(pageNumber, reviewCount, reviewSort) {
         product_id: productID
       }
     }).then(res => {
-      console.log('query time:', res.data.results)
-      setReviews(prevReviews => {
-        return [...prevReviews, res.data.results]
-      })
+      setReviews(res.data.results)
       setHasMore(res.data.results.length > 0)
       setLoading(false)
     }).catch(err => {

@@ -13,14 +13,6 @@ import styles from "../../styles/Reviews/reviews.css";
 
 const RatingsReviews = () => {
 
-  // let reviewsToRender = findReviews()
-  // console.log(reviewsToRender)
-
-  // const gitHubToken = process.env.GITHUB_TOKEN
-  // const baseURI = process.env.BASE_URI;
-  // const productID = Number(process.env.PRODUCT_ID);
-
-  // let { reviews } = useContext(ProductReviewsContext)
   let { metadata } = useContext(ProductReviewsContext)
   let ratings = {...metadata.ratings}
   const ratingsCount =
@@ -41,69 +33,10 @@ const RatingsReviews = () => {
   } = useReviewsSearch(pageNumber, reviewCount, reviewSort)
 
   useEffect(() => {
-    if(reviews[0] !== undefined) {
-      setFilteredReviews(reviews[0])
+    if(reviews !== undefined) {
+      setFilteredReviews(reviews)
     }
   }, [reviews])
-
-
-  // const findReviews = () => {
-  //   axios.get(`${baseURI}reviews/`, {
-  //     headers: {
-  //       Authorization: gitHubToken
-  //     },
-  //     params: {
-  //       page: pageNumber,
-  //       count: reviewCount,
-  //       sort: reviewSort,
-  //       product_id: productID
-  //     }
-  //   })
-  //     .then(results => {
-  //       console.log('this is reviews data:', results)
-  //       setReviews(reviews => results.data.results)
-  //       setFilteredReviews(filteredReviews => results.data.results)
-  //     })
-  //     .catch(err => console.log(err))
-  // }
-
-  // const findReviewMetadata = () => {
-  //   axios.get(`${baseURI}reviews/meta`, {
-  //     headers: {
-  //       Authorization: gitHubToken
-  //     },
-  //     params: {
-  //       product_id: productID
-  //     }
-  //   })
-  //     .then(results => {
-  //       setReviewMetadata(reviewsMetadata => results.data)
-  //       setRatings(ratingsMetadata => results.data.ratings)
-  //     })
-  //     .catch(err => console.log(err))
-  // }
-
-  // useEffect(() => {
-  //   const reviewsResults = findReviews(1, 2, 'relevant')
-  //   console.log('these are reviewsResults:', reviewsResults)
-
-  //   // setReviews(findReviews())
-  //   // setReviewMetadata(findReviewMetadata())
-  // }, [])
-
-  // useEffect(() => {
-  //   console.log('these are the reviewsToRender:', findReviews())
-  // }, [])
-
-  // useEffect(() => {
-  //   if (reviews !== undefined) {
-  //     setFilteredReviews(reviews => reviews)
-  //   }
-  // }, [reviews])
-
-  // useEffect(() => {
-  //   findReviews();
-  // }, [reviewSort, reviewCount])
 
   return (
     <div className="RR-Container">

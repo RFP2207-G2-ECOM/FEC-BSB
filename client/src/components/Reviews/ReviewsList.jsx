@@ -9,7 +9,6 @@ const ReviewsList = ({ filteredReviews, ratingsCount, setReviewSort}) => {
     setReviewSort(e.target.value)
   }
 
-  // console.log('these are the filteredReviews:', filteredReviews)
   return (
     <>
       <div>
