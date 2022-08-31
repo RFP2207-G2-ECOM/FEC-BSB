@@ -215,21 +215,21 @@ html {
 .SalePrice {
   border: solid;
   border-color: blue;
-  display: flex;
   height: 10%;
-  justify-content: center;
+  display: flex;
+
   align-items: center;
 }
 
 .SalePriceOG {
-  font-size: 25px;
+  font-size: 27px;
   background: linear-gradient(to right top, transparent 47.75%,
   currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
 }
 
 .SalePriceSale {
   color:red;
-  font-size: 30px;
+  font-size: 33px;
 }
 
 /* Style Display, Selector, & AddToCart */
@@ -345,7 +345,7 @@ html {
 .SizeIconRegular {
   display: flex;
   border: solid;
-  border-color: grey;
+  border-color: rgb(179, 173, 6);
   border-radius: 50%;
   height: 56%;
   width: 13%;
