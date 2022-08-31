@@ -58,7 +58,7 @@ const QuestionAnswers = () => {
                 {
                   Object.values(data.answers).map((val, index) => {
                     if (index < answerCount[data.question_id]) {
-                      return <AnswerContainer key={index} data={val} />
+                      return <AnswerContainer key={index} data={val} asker_name={data.asker_name}/>
                     }
                   })
                 }

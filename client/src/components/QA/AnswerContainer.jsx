@@ -4,7 +4,7 @@ import AContainer from './AContainer.jsx';
 import AInfo from './AInfo.jsx';
 import ResponsePhotos from './ResponsePhotos.jsx';
 
-const AnswerContainer = ({ data }) => {
+const AnswerContainer = ({ data, asker_name }) => {
   const [answerCount, setAnswerCount] = useState(2);
 
     return (
@@ -16,6 +16,7 @@ const AnswerContainer = ({ data }) => {
         <AInfo
           id={data.id}
           answerer_name={data.answerer_name}
+          asker_name={asker_name}
           date={data.date}
           helpful={data.helpfulness}
           key={`aInfo-${data.id}`}
