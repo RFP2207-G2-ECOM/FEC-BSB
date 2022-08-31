@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ReactDom from 'react-dom';
-
 import axios from 'axios';
+
+import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 import '../../styles/QA/QuestionModal.css';
 
 const QuestionModal = ({ open, product_id, onClose }) => {
+  const { product } = useContext(ProductContext); // Object type
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
@@ -38,7 +41,8 @@ const QuestionModal = ({ open, product_id, onClose }) => {
     <>
       <div className='overlay-styles' />
       <div className='modal-styles'>
-        <div className='ans-mod-title'>Enter a Question</div>
+        <h1 className='ans-mod-title'>Ask Your Question</h1>
+        <h3 className='ans-mod-subtitle'>{`About the ${product.name}`}</h3>
         <hr></hr>
         <form className='modal-form' onSubmit={handleSubmit}>
           <label>
