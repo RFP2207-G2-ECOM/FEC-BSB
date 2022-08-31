@@ -37,7 +37,7 @@
 
 .ratings-breakdown-filter-bar {
   background-color: #ccc;
-  /* font-size: 100%; */
+  align-self: center;
   height: 10px;
   position: relative;
   margin: 0;

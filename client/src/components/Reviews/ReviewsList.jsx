@@ -11,15 +11,6 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
     setMoreReviews(false)
   }
 
-  let newFilteredReviews
-  if(starFilters.length === 0) {
-    newFilteredReviews = filteredReviews
-  } else {
-    newFilteredReviews = filteredReviews.filter(review => {
-      return starFilters.indexOf(review.rating) > -1
-    })
-  }
-
   return (
     <>
       <div className="reviewList-header">
@@ -36,26 +27,31 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
         }
       </div>
       <div>
-        {(newFilteredReviews.slice(0, reviewsToRender)).map((review, index, array) =>
-          <ReviewTile
-            key={review.review_id}
-            id={review.review_id}
-            array={array}
-            index={index}
-            loading={loading}
-            hasMore={hasMore}
-            moreReviews={moreReviews}
-            rating={review.rating}
-            username={review.reviewer_name}
-            date={review.date}
-            summary={review.summary}
-            body={review.body}
-            photos={review.photos}
-            recommend={review.recommend}
-            response={review.response}
-            helpful={review.helpfulness}
-            setReviewsToRender={setReviewsToRender}
-          />
+        {(filteredReviews
+          .filter(review => {
+            return starFilters.indexOf(review.rating) > -1
+          })
+          .slice(0, reviewsToRender))
+          .map((review, index, array) =>
+            <ReviewTile
+              key={review.review_id}
+              id={review.review_id}
+              array={array}
+              index={index}
+              loading={loading}
+              hasMore={hasMore}
+              moreReviews={moreReviews}
+              rating={review.rating}
+              username={review.reviewer_name}
+              date={review.date}
+              summary={review.summary}
+              body={review.body}
+              photos={review.photos}
+              recommend={review.recommend}
+              response={review.response}
+              helpful={review.helpfulness}
+              setReviewsToRender={setReviewsToRender}
+            />
         )}
       </div>
     </>

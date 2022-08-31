@@ -17,7 +17,7 @@ const RatingsReviews = () => {
   const ratingsCount =
     Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
 
-  const [starFilters, setStarFilters] = useState([])
+  const [starFilters, setStarFilters] = useState([1, 2, 3, 4, 5])
   const [filteredReviews, setFilteredReviews] = useState([])
   const [reviewsToRender, setReviewsToRender] = useState(2)
   const [reviewSort, setReviewSort] = useState('relevant')
@@ -32,20 +32,14 @@ const RatingsReviews = () => {
     error
   } = useReviewsSearch(pageNumber, ratingsCount, reviewSort)
 
-  // useEffect(() => {
-  //   if(filteredReviews.length > 0) {
-  //     // setFilteredReviews(reviews)
-  //     let newFilteredReviews = filteredReviews.filter(review => {
-  //       return starFilters.indexOf(review.rating) > -1
-  //     })
-  //     console.log('filteredReviews:', newFilteredReviews)
-  //     setFilteredReviews(newFilteredReviews)
-  //   }
-  // }, [starFilters])
+  useEffect(() => {
+    console.log('star filters:', starFilters)
+  }, [starFilters])
 
   useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
       setFilteredReviews(reviews)
+      console.log('these are the reviews', reviews)
     }
   }, [reviews])
 
