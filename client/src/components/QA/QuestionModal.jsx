@@ -7,11 +7,17 @@ import { ProductContext } from '../../contexts/product-info.context.jsx';
 import '../../styles/QA/QuestionModal.css';
 
 const QuestionModal = ({ open, product_id, onClose }) => {
-  const { product } = useContext(ProductContext); // Object type
+  const { product } = useContext(ProductContext);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
+
+  const handleBodyField = (e) => {
+    if (e.target.value.length <= 1000) {
+      setBody(e.target.value)
+    }
+  }
 
   const handleSubmit = (e) => {
     const data = {
@@ -51,7 +57,7 @@ const QuestionModal = ({ open, product_id, onClose }) => {
               value={name}
               type='text'
               placeholder='Enter Name...'
-              onChange={e => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             ></input>
           </label>
           <label>
@@ -69,7 +75,7 @@ const QuestionModal = ({ open, product_id, onClose }) => {
               value={body}
               type='text'
               placeholder='Enter Question'
-              onChange={e => setBody(e.target.value)}
+              onChange={handleBodyField}
             ></textarea>
           </label>
           <button onClick={e => onClose(e.preventDefault())}>Cancel</button>
