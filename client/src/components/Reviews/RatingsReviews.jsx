@@ -2,11 +2,13 @@ import React, { useState, useEffect, useContext, useRef, useCallback } from "rea
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
 import axios from "axios";
 
+import AddReviewButton from "./AddReviewButton.jsx";
 import MoreReviewsButton from "./MoreReviewsButton.jsx";
 import ProductBreakdown from "./ProductBreakdown.jsx";
 import RatingsBreakdown from "./RatingsBreakdown.jsx";
 import ReviewsList from "./ReviewsList.jsx";
 import useReviewsSearch from "./useReviewsSearch.js";
+import ReviewModal from "./ReviewModal.jsx";
 
 import styles from "../../styles/Reviews/reviews.css";
 
@@ -41,6 +43,7 @@ const RatingsReviews = () => {
   return (
     <div className="RR-Container">
       <div id='LinkToReviews'></div>
+      <ReviewModal />
       <div className="rr-title">RATINGS & REVIEWS</div>
       <div className="Breakdown-Container">
         <RatingsBreakdown
@@ -76,7 +79,7 @@ const RatingsReviews = () => {
             setMoreReviews={setMoreReviews}
             setReviewCount={setReviewCount}
           />
-          <button className="add-a-review-button">ADD A REVIEW</button>
+          <AddReviewButton />
         </div>
       }
     </div>
