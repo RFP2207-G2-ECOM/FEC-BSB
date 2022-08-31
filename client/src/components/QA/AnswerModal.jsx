@@ -20,6 +20,12 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
     setPhotoCount(photoCount + 1);
   };
 
+  const handleNameChange = (e) => {
+    if (e.target.value.length <= 60) {
+      setName(e.target.value)
+    }
+  }
+
   const handleOnChange = (e) => {
     const abc = {};
     abc[e.target.className] = e.target.value;
@@ -64,9 +70,13 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
             <input
               value={name}
               type='text'
-              placeholder='Enter Name...'
-              onChange={e => setName(e.target.value)}
+              placeholder='Example: jack543!'
+              onChange={handleNameChange}
             ></input>
+            { name ?
+              <p className='name-message'>For privacy reasons, do not use your full name or email address</p> :
+              <></>
+            }
           </label>
           <label>
             Email:
