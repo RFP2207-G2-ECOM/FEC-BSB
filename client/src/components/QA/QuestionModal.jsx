@@ -13,6 +13,13 @@ const QuestionModal = ({ open, product_id, onClose }) => {
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
 
+
+  const handleNameChange = (e) => {
+    if (e.target.value.length <= 60) {
+      setName(e.target.value)
+    }
+  }
+
   const handleBodyField = (e) => {
     if (e.target.value.length <= 1000) {
       setBody(e.target.value)
@@ -56,9 +63,13 @@ const QuestionModal = ({ open, product_id, onClose }) => {
             <input
               value={name}
               type='text'
-              placeholder='Enter Name...'
-              onChange={(e) => setName(e.target.value)}
+              placeholder='Example: jackson11!'
+              onChange={handleNameChange}
             ></input>
+            {name ?
+              <p className='name-message'>For privacy reasons, do not use your full name or email address</p> :
+              <></>
+            }
           </label>
           <label>
             Email:
