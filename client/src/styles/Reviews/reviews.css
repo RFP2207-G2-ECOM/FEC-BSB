@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: 25% 65%;
   grid-template-rows: auto;
-  grid-gap: 40px;
+  grid-column-gap: 60px;
+  grid-row-gap: 10px;
   width: 82%;
   margin: auto;
   margin-top: 10px;

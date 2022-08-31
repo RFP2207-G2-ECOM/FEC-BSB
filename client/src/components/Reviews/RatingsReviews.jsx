@@ -33,6 +33,16 @@ const RatingsReviews = () => {
   } = useReviewsSearch(pageNumber, ratingsCount, reviewSort)
 
   useEffect(() => {
+    if(filteredReviews.length > 0) {
+      let newFilteredReviews = filteredReviews.filter(review => {
+          return starFilters.indexOf(review.rating) > -1
+        })
+        console.log('filteredReviews:', newFilteredReviews)
+        setFilteredReviews(newFilteredReviews)
+    }
+  }, [starFilters])
+
+  useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
       setFilteredReviews(reviews)
     }

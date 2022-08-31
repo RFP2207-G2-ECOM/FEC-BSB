@@ -7,19 +7,17 @@ const RatingsBreakdownFilter = ({ rating, totalReviews, ratingsObject, setStarFi
   const ratings = (ratingsObject[rating] / totalReviews) * 100
   const fillStyle = {width: `${ratings}%`}
 
-  let selectStyle = {backgroundColor: "white"}
-
   const applyStarFilter = (e) => {
-    setFilterStatus(!filterStatus)
-    if (filterStatus) {
+    console.log('filterStatus:', filterStatus)
+    if (!filterStatus) {
       setStarFilters([...starFilters, rating])
-      selectStyle = {backgroundColor: "blue"}
     } else {
       const index = starFilters.indexOf(rating)
-      const newFilters = starFilters.splice(index, 1)
-      setStarFilters(newFilters)
-      selectStyle = {backgroundColor: "white"}
+      let tempFilters = starFilters
+      tempFilters.splice(index, 1)
+      setStarFilters(tempFilters)
     }
+    setFilterStatus(!filterStatus)
   }
 
   return (
@@ -27,7 +25,6 @@ const RatingsBreakdownFilter = ({ rating, totalReviews, ratingsObject, setStarFi
       <div
         className="ratings-breakdown-filter-button"
         value={rating}
-        style={selectStyle}
         onClick={applyStarFilter}
       >{`${rating} stars`}</div>
       <div className="ratings-breakdown-filter-bar">
