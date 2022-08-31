@@ -20,7 +20,7 @@ import { QuestionsContext } from '../../contexts/question.context.jsx';
 
 const QuestionAnswers = () => {
   const { productID, results } = useContext(QuestionsContext);
-  const [questionCount, setQuestionCount] = useState(2);
+  const [questionCount, setQuestionCount] = useState(4);
   const [countLimit, setCountLimit] = useState({});
   const [answerCount, setAnswerCount] = useState({});
   const [answerLimit, setAnswerLimit] = useState({});
@@ -30,7 +30,7 @@ const QuestionAnswers = () => {
       const temp = {};
       const tempTwo = {};
       results.forEach(({ question_id, answers }) => {
-        temp[question_id] = 1;
+        temp[question_id] = 2;
         tempTwo[question_id] = Object.keys(answers).length;
       })
       setAnswerCount(temp);
@@ -58,7 +58,7 @@ const QuestionAnswers = () => {
                 {
                   Object.values(data.answers).map((val, index) => {
                     if (index < answerCount[data.question_id]) {
-                      return <AnswerContainer key={index} data={val} />
+                      return <AnswerContainer key={index} data={val} asker_name={data.asker_name}/>
                     }
                   })
                 }

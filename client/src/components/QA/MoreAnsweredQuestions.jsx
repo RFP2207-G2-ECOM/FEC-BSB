@@ -20,10 +20,10 @@ const MoreAnsweredQuestions = ({product_id, setQuestionCount, questionCount}) =>
       >
         ADD A QUESTION <div id='plus'>+</div>
       </button>
-      {questionCount > 2 ?
+      {questionCount > 4 ?
         <button
           className='collapse-question-button'
-          onClick={() => setQuestionCount(2)}
+          onClick={() => setQuestionCount(4)}
           >
           COLLAPSE QUESTIONS <div id='plus'>-</div>
         </button>
