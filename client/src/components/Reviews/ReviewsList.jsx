@@ -3,7 +3,7 @@ import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 import ReviewTile from "./ReviewTile.jsx"
 
-const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCount, reviewsToRender, setReviewsToRender, setMoreReviews, setReviewSort }) => {
+const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCount, reviewsToRender, setReviewsToRender, setMoreReviews, setReviewSort, starFilters }) => {
 
   const change = (e) => {
     setReviewSort(e.target.value)
@@ -27,26 +27,35 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
         }
       </div>
       <div>
-        {(filteredReviews.slice(0, reviewsToRender)).map((review, index, array) =>
-          <ReviewTile
-            key={review.review_id}
-            id={review.review_id}
-            array={array}
-            index={index}
-            loading={loading}
-            hasMore={hasMore}
-            moreReviews={moreReviews}
-            rating={review.rating}
-            username={review.reviewer_name}
-            date={review.date}
-            summary={review.summary}
-            body={review.body}
-            photos={review.photos}
-            recommend={review.recommend}
-            response={review.response}
-            helpful={review.helpfulness}
-            setReviewsToRender={setReviewsToRender}
-          />
+        {(filteredReviews
+          .filter(review => {
+            if (starFilters.length === 0) {
+              return review
+            } else {
+              return starFilters.indexOf(review.rating) > -1
+            }
+          })
+          .slice(0, reviewsToRender))
+          .map((review, index, array) =>
+            <ReviewTile
+              key={review.review_id}
+              id={review.review_id}
+              array={array}
+              index={index}
+              loading={loading}
+              hasMore={hasMore}
+              moreReviews={moreReviews}
+              rating={review.rating}
+              username={review.reviewer_name}
+              date={review.date}
+              summary={review.summary}
+              body={review.body}
+              photos={review.photos}
+              recommend={review.recommend}
+              response={review.response}
+              helpful={review.helpfulness}
+              setReviewsToRender={setReviewsToRender}
+            />
         )}
       </div>
     </>
