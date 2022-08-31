@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import QuestionModal from '../QA/QuestionModal.jsx';
 
-const MoreAnsweredQuestions = ({product_id, setQuestionCount, questionCount}) => {
+const MoreAnsweredQuestions = ({product_id, setQuestionCount, questionCount, total_questions}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className='buttons-container'
       styles='buttonWrapperStyles'>
-      <button
+      { total_questions < 2 ?
+        <></> :
+        <button
         className='more-button'
         onClick={() => setQuestionCount(questionCount + 2)}
       >
         MORE QUESTIONS
       </button>
+      }
 
       <button
         className='add-question-button'
