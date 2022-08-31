@@ -16,7 +16,7 @@ const RatingsBreakdownFilter = ({ rating, totalReviews, ratingsObject, setStarFi
       let tempFilters = starFilters
       tempFilters.splice(index, 1)
       console.log('this is tempFilters', tempFilters)
-      setStarFilters([tempFilters])
+      setStarFilters(tempFilters)
     }
     setFilterStatus(!filterStatus)
   }

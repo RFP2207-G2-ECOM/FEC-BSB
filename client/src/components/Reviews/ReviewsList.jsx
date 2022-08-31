@@ -29,7 +29,11 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
       <div>
         {(filteredReviews
           .filter(review => {
-            return starFilters.indexOf(review.rating) > -1
+            if (starFilters.length === 0) {
+              return review
+            } else {
+              return starFilters.indexOf(review.rating) > -1
+            }
           })
           .slice(0, reviewsToRender))
           .map((review, index, array) =>

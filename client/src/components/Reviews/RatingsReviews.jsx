@@ -17,7 +17,7 @@ const RatingsReviews = () => {
   const ratingsCount =
     Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
 
-  const [starFilters, setStarFilters] = useState([1, 2, 3, 4, 5])
+  const [starFilters, setStarFilters] = useState([])
   const [filteredReviews, setFilteredReviews] = useState([])
   const [reviewsToRender, setReviewsToRender] = useState(2)
   const [reviewSort, setReviewSort] = useState('relevant')
