@@ -31,6 +31,7 @@ const QContainer = ({
       />
       <AddAnswer
         product_id={id}
+        question_body={question_body}
       />
       <div
         className='expand-icon'

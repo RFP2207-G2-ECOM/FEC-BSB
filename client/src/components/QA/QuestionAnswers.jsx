@@ -1,21 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react';
 
-import AContainer from './AContainer.jsx';
 import AnswerContainer from './AnswerContainer.jsx';
-import AddAQuestion from './AddAQuestion.jsx';
-import AInfo from './AInfo.jsx';
-import AnswerReponses from './AnswerResponses.jsx';
 import LoadMoreAnswers from './LoadMoreAnswers.jsx';
 import MoreAnsweredQuestions from './MoreAnsweredQuestions.jsx';
 import QContainer from './QContainer.jsx';
-import ResponsePhotos from './ResponsePhotos.jsx';
 import SearchBox from './SearchBox.jsx';
 import Title from './Title.jsx';
 
 import styles from '../../styles/QA/qa.css';
 
 import { FcCollapse } from 'react-icons/fc';
-
 import { QuestionsContext } from '../../contexts/question.context.jsx';
 
 const QuestionAnswers = () => {
