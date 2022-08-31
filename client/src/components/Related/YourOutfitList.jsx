@@ -50,6 +50,15 @@ const YourOutfitList = () => {
     }
   }
 
+  const deleteOutfit = (productID) => {
+    const outfits = [...outfitList]
+    const index = outfits.indexOf(JSON.stringify(productID))
+    if (index > -1) {
+      outfits.splice(index, 1)
+    }
+    setOutfit(outfits)
+  }
+
   const slideLeft = () => {
     var slider = document.getElementById('outfit-slider');
     slider.scrollLeft = slider.scrollLeft - 200;
@@ -78,7 +87,7 @@ const YourOutfitList = () => {
                    </div>
                  </div>
                {relatedProduct.map((relatedProduct, key) => (
-                 <Card relatedProduct={relatedProduct} key={key} />
+                 <Card relatedProduct={relatedProduct} key={key} deleteOutfit={deleteOutfit}/>
                ))}
           </div>
       <MdChevronRight className='slide' onClick={slideRight} size={40} />
