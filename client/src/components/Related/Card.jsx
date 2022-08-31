@@ -19,7 +19,6 @@ const Card = ({relatedProduct}) => {
   const getProductStyles = async () => {
     var baseURI = process.env.BASE_URI;
     const productID = productInfo ? productInfo.id : undefined;
-    console.log(productID)
     if (productID) {
       return await axios.get(`${baseURI}products/${productID}/styles`, {
         headers: {

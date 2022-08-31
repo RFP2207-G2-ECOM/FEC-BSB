@@ -19,7 +19,8 @@ export const QuestionsProvider = ({children}) => {
     })
       .then(result => {
         setProductID(result.data.product_id);
-        setResults(result.data.results);
+        var tempRes = result.data.results.sort((a, b) => b.question_helpfulness - a.question_helpfulness);
+        setResults(tempRes);
       })
   }, [])
 
