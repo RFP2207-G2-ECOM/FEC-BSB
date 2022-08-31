@@ -1,5 +1,5 @@
-.bolded {
-  font-weight: 900;
+html {
+  scroll-behavior: smooth;
 }
 
 .Style-Detail-Spacer {
@@ -142,6 +142,7 @@
 .ProductName {
   height: 80px;
   border: solid;
+  font-weight: bold;
   border-color: rgb(52, 190, 42);
   display: flex;
   align-items: center;
@@ -177,23 +178,13 @@
 }
 
 .FillRatings {
-  color: #e7711b;
+  color: #000000;
   padding: 0;
   position: absolute;
   display: block;
   top: 0;
   left: 0;
   overflow: hidden;
-}
-
-/* Allows us to grab the width of the span elements */
-span {
-  display: inline-block;
-}
-.EmptyRatings {
-  padding: 0;
-  display: block;
-  z-index: 0;
 }
 
 .Review-Link {
@@ -207,6 +198,10 @@ span {
   text-decoration: underline;
 }
 
+.ReviewLink {
+  text-align: center;
+}
+
 /* Price Display */
 .BasePrice {
   display: flex;
@@ -217,21 +212,21 @@ span {
 .SalePrice {
   border: solid;
   border-color: blue;
-  display: flex;
   height: 10%;
-  justify-content: center;
+  display: flex;
+
   align-items: center;
 }
 
 .SalePriceOG {
-  font-size: 25px;
+  font-size: 27px;
   background: linear-gradient(to right top, transparent 47.75%,
   currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
 }
 
 .SalePriceSale {
   color:red;
-  font-size: 30px;
+  font-size: 33px;
 }
 
 /* Style Display, Selector, & AddToCart */
@@ -242,34 +237,34 @@ span {
   border-color: blue;
   display: flex;
   height: 12.5%;
-  position:inherit;
   align-items: center;
 }
 
-.Style-Title-Center, .Style-Title-Right {
+.StyleTitle, .CurStyleTitle {
   border: solid;
   border-color:rgb(52, 190, 42);
   display: flex;
 }
 
-.Style-Title-Center {
+.StyleTitle {
   width: 25%;
   font-size: 20px;
 }
 
-.Style-Title-Right {
+.CurStyleTitle {
   width: 70%;
   font-size: 25px;
   justify-content: center;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* Style Selector */
 .StyleSelector {
   border: solid;
-  height: 40%;
+  height: 35%;
   border-color: blue;
   display: flex;
-  flex-shrink: 1;
   flex-direction: column;
 }
 
@@ -279,6 +274,7 @@ span {
   display: flex;
   flex: auto;
   justify-content: space-around;
+  align-items: center;
 }
 
 .SingleStyle {
@@ -289,8 +285,8 @@ span {
 
 .SingleStyleSelected {
   display: flex;
-  width: calc(25% - 6px);
-  border: solid 3px;
+  justify-content: center;
+  width: calc(25%);
 }
 
 .SingleStyleNull {
@@ -302,11 +298,22 @@ span {
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: rgb(179, 173, 6) solid;
+  max-height: 64px;
+}
+
+.styleSelected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid 3px;
+  max-height: 64px;
 }
 
 /* AddToCart */
 .AddToCart {
-  height: 30%;
+  height: 35%;
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {
@@ -314,19 +321,136 @@ span {
   border-color: blue;
   display: flex;
   justify-content: space-around;
-  height:50%;
 }
 
-.SizeSelect, .QuantitySelect {
-  width: 50%;
+.SizeAndQuanitityRow {
+  height: 55%;
+}
+
+.CartAndFavRow {
+  height: 45%;
+}
+
+.SizeSelect {
+  width: 85%;
+  font-size: 2.5vh;
+  display: flex;
+  flex: auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.SizeOptions {
+  display: flex;
+  justify-content: space-around;
+  flex: auto;
+}
+
+.SizeIconSelected {
+  display: flex;
+  border: solid;
+  border-radius: 50%;
+  width: fit-content;
+  min-width: 13%;
+  max-width: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.SizeIconRegular {
+  display: flex;
+  border: rgb(179, 173, 6) solid;
+  border-radius: 50%;
+  width: fit-content;
+  min-width: 13%;
+  max-width: 50px;
+  height:fit-content;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.SizeIconNull {
+  display: flex;
+  border: transparent solid;
+  border-radius: 50%;
+  height: 56%;
+  width: fit-content;
+  min-width: 13%;
+  max-width: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.EmptySizes {
+  width: 85%;
+  font-weight: bold;
+  font-size: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.QuantitySelect {
+  font-size: 200%;
+  width: 15%;
+  text-align: center;
+}
+
+.dropOptions {
+  text-align: center;
 }
 
 .CartButton {
-  width:75%
+  width: 75%;
+  font-size: 200%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-color: black;
+  background-color: black;
+  color: white;
+  border-radius: 40px;
+  transition: all 0.5s ease-out 100ms;
 }
 
-.FavButton {
-  width:25%
+.CartButton:hover {
+  width: 75%;
+  font-size: 200%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-color: black;
+  background-color: white;
+  color: black;
+  border-radius: 40px;
+}
+
+.CartButtonDisabled {
+  width: 75%;
+  font-size: 200%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-color: rgb(188, 182, 182);
+  color: rgb(84, 83, 83);
+  background-color: rgb(182, 182, 182);
+  border-radius: 40px;
+}
+
+.FavContainer {
+  width:25%;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .FavIcon {
@@ -348,7 +472,8 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 20%;
+  min-width: 20%;
+  width: fit-content;
 }
 
 .FeatureAndMaterial, .FeatureAndMaterialTitle {
@@ -364,6 +489,8 @@ span {
   width: 50%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .Feature {
@@ -398,6 +525,7 @@ span {
   border-color: rgb(0, 0, 0);
   display: flex;
   width: 75%;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
@@ -411,6 +539,10 @@ span {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.Description-Container {
+  width: 80%;
 }
 
 .SMBRow {

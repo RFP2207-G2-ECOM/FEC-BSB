@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ReactDom from 'react-dom';
-
 import axios from 'axios';
+
+import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 import '../../styles/QA/QuestionModal.css';
 
 const QuestionModal = ({ open, product_id, onClose }) => {
+  const { product } = useContext(ProductContext);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
+
+
+  const handleNameChange = (e) => {
+    if (e.target.value.length <= 60) {
+      setName(e.target.value)
+    }
+  }
+
+  const handleBodyField = (e) => {
+    if (e.target.value.length <= 1000) {
+      setBody(e.target.value)
+    }
+  }
 
   const handleSubmit = (e) => {
     const data = {
@@ -38,7 +54,8 @@ const QuestionModal = ({ open, product_id, onClose }) => {
     <>
       <div className='overlay-styles' />
       <div className='modal-styles'>
-        <div className='ans-mod-title'>Enter a Question</div>
+        <h1 className='ans-mod-title'>Ask Your Question</h1>
+        <h3 className='ans-mod-subtitle'>{`About the ${product.name}`}</h3>
         <hr></hr>
         <form className='modal-form' onSubmit={handleSubmit}>
           <label>
@@ -46,9 +63,13 @@ const QuestionModal = ({ open, product_id, onClose }) => {
             <input
               value={name}
               type='text'
-              placeholder='Enter Name...'
-              onChange={e => setName(e.target.value)}
+              placeholder='Example: jackson11!'
+              onChange={handleNameChange}
             ></input>
+            {name ?
+              <p className='name-message'>For privacy reasons, do not use your full name or email address</p> :
+              <></>
+            }
           </label>
           <label>
             Email:
@@ -65,7 +86,7 @@ const QuestionModal = ({ open, product_id, onClose }) => {
               value={body}
               type='text'
               placeholder='Enter Question'
-              onChange={e => setBody(e.target.value)}
+              onChange={handleBodyField}
             ></textarea>
           </label>
           <button onClick={e => onClose(e.preventDefault())}>Cancel</button>

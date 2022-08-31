@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
-
 import axios from "axios";
 
 import MoreReviewsButton from "./MoreReviewsButton.jsx";
@@ -18,6 +17,7 @@ const RatingsReviews = () => {
   const ratingsCount =
     Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
 
+  const [starFilters, setStarFilters] = useState([])
   const [filteredReviews, setFilteredReviews] = useState([])
   const [reviewsToRender, setReviewsToRender] = useState(2)
   const [reviewSort, setReviewSort] = useState('relevant')
@@ -25,45 +25,33 @@ const RatingsReviews = () => {
   const [pageNumber, setPageNumber] = useState(1)
   const [moreReviews, setMoreReviews] = useState(false)
 
-  const findReviews = () => {
-    axios.get(`${baseURI}reviews/`, {
-      headers: {
-        Authorization: gitHubToken
-      },
-      params: {
-        page: 1,
-        count: reviewCount,
-        sort: reviewSort,
-        product_id: productID
-      }
-    })
-      .then(results => {
-        // console.log('this is reviews data:', results)
-        setReviews(reviews => results.data.results)
-        setFilteredReviews(filteredReviews => results.data.results)
-      })
-      .catch(err => console.log(err))
-  }
-
   const {
     reviews,
     hasMore,
     loading,
     error
-  } = useReviewsSearch(pageNumber, ratingsCount, reviewSort)
+  } = useReviewsSearch(pageNumber, ratingsCount, reviewSort, starFilters)
+
+  useEffect(() => {
+    console.log('star filters:', starFilters)
+  }, [starFilters])
 
   useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
       setFilteredReviews(reviews)
+      console.log('these are the reviews', reviews)
     }
   }, [reviews])
 
   return (
     <div className="RR-Container">
-      <a id='LinkToReviews'></a>
+      <div id='LinkToReviews'></div>
       <div className="rr-title">RATINGS & REVIEWS</div>
       <div className="Breakdown-Container">
-        <RatingsBreakdown />
+        <RatingsBreakdown
+          starFilters={starFilters}
+          setStarFilters={setStarFilters}
+        />
         <ProductBreakdown />
       </div>
       <div className="ReviewsList-Container">
@@ -79,6 +67,7 @@ const RatingsReviews = () => {
           setPageNumber={setPageNumber}
           setReviewCount={setReviewCount}
           setMoreReviews={setMoreReviews}
+          starFilters={starFilters}
         />
       </div>
       { moreReviews === false &&

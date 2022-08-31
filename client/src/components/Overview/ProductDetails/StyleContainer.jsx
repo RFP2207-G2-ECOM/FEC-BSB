@@ -4,8 +4,6 @@ import StyleInfo from './StyleInfo.jsx';
 import StyleSelector from './StyleSelector.jsx';
 import AddToCart from './AddToCart.jsx';
 
-import { ProductStylesContext } from '../../../contexts/product-styles.context.jsx';
-
 const StyleContainer = () => {
 
   return (

@@ -28,6 +28,12 @@
   font-size: x-large;
 }
 
+.ans-mod-subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 input[type=text], input[type=email], textarea {
   width: 100%;
   padding: 12px 20px;
