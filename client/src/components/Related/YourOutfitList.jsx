@@ -45,7 +45,9 @@ const YourOutfitList = () => {
 
   const addOutfit = () => {
     var currentProduct = process.env.PRODUCT_ID;
-    setOutfit([...outfitList, currentProduct]);
+    if (outfitList.indexOf(currentProduct) === -1){
+      setOutfit([...outfitList, currentProduct]);
+    }
   }
 
   const slideLeft = () => {
