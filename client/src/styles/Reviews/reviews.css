@@ -7,7 +7,6 @@
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  /* max-height: 100vh; */
   overflow: auto;
   position: relative;
 }
@@ -18,7 +17,6 @@
   justify-content: flex-start;
   align-items: center;
   height: 5vh;
-  /* padding-left: 20px; */
   font-size: large;
 }
 
