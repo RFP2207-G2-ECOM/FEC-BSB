@@ -30,7 +30,7 @@ const RatingsReviews = () => {
     hasMore,
     loading,
     error
-  } = useReviewsSearch(pageNumber, ratingsCount, reviewSort)
+  } = useReviewsSearch(pageNumber, ratingsCount, reviewSort, starFilters)
 
   useEffect(() => {
     console.log('star filters:', starFilters)
