@@ -32,15 +32,16 @@ const RatingsReviews = () => {
     error
   } = useReviewsSearch(pageNumber, ratingsCount, reviewSort)
 
-  useEffect(() => {
-    if(filteredReviews.length > 0) {
-      let newFilteredReviews = filteredReviews.filter(review => {
-          return starFilters.indexOf(review.rating) > -1
-        })
-        console.log('filteredReviews:', newFilteredReviews)
-        setFilteredReviews(newFilteredReviews)
-    }
-  }, [starFilters])
+  // useEffect(() => {
+  //   if(filteredReviews.length > 0) {
+  //     // setFilteredReviews(reviews)
+  //     let newFilteredReviews = filteredReviews.filter(review => {
+  //       return starFilters.indexOf(review.rating) > -1
+  //     })
+  //     console.log('filteredReviews:', newFilteredReviews)
+  //     setFilteredReviews(newFilteredReviews)
+  //   }
+  // }, [starFilters])
 
   useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
@@ -72,6 +73,7 @@ const RatingsReviews = () => {
           setPageNumber={setPageNumber}
           setReviewCount={setReviewCount}
           setMoreReviews={setMoreReviews}
+          starFilters={starFilters}
         />
       </div>
       { moreReviews === false &&
