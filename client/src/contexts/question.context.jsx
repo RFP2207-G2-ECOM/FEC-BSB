@@ -12,7 +12,7 @@ export const QuestionsProvider = ({children}) => {
 
   useEffect(() => {
     var baseURI = process.env.BASE_URI;
-    axios.get(`${baseURI}qa/questions/?product_id=${process.env.PRODUCT_ID}&page=1&count=10`, {
+    axios.get(`${baseURI}qa/questions/?product_id=${process.env.PRODUCT_ID}&page=1&count=30`, {
       headers: {
         'Authorization': process.env.GITHUB_TOKEN
       }
