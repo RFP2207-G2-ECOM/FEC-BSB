@@ -5,7 +5,7 @@ const gitHubToken = process.env.GITHUB_TOKEN
 const baseURI = process.env.BASE_URI
 const productID = Number(process.env.PRODUCT_ID)
 
-export default function useReviewsSearch(pageNumber, reviewCount, reviewSort) {
+export default function useReviewsSearch(pageNumber, reviewCount, reviewSort, starFilters) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const [reviews, setReviews] = useState([])
@@ -13,7 +13,7 @@ export default function useReviewsSearch(pageNumber, reviewCount, reviewSort) {
 
   useEffect(() => {
     setReviews([])
-  }, [reviewSort, reviewCount])
+  }, [pageNumber, reviewSort, reviewCount, starFilters])
 
   useEffect(() => {
     setLoading(true)
@@ -37,6 +37,6 @@ export default function useReviewsSearch(pageNumber, reviewCount, reviewSort) {
       console.log(err)
       setError(true)
     })
-  }, [pageNumber, reviewCount, reviewSort])
+  }, [pageNumber, reviewCount, reviewSort, starFilters])
   return { loading, error, reviews, hasMore }
 }

@@ -1,0 +1,74 @@
+.RatingsBreakdown-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.ratingsBreakdown-header {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+.ratingsBreakdown-average {
+  font-weight: bold;
+  font-size: 300%;
+  justify-self: flex-start;
+}
+
+.Ratings-Filter-Container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.ratings-breakdown-filter {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: auto;
+  justify-content: space-between;
+}
+
+.ratings-breakdown-filter-button {
+  text-decoration: underline;
+}
+
+.ratings-breakdown-filter-bar {
+  background-color: #ccc;
+  align-self: center;
+  height: 10px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.ratings-breakdown-filter-fill {
+  background-color: black;
+  height: 10px;
+  padding: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.StarRatings {
+  color: #ccc;
+  font-size: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.FillRatings {
+  color: black;
+  padding: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}

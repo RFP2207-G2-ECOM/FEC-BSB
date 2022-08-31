@@ -1,11 +1,17 @@
-input[type="radio"] {
-  display: none;
+.StarRatings {
+  color: #ccc;
+  font-size: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
-.star-container {
-  display: inline-block
-}
-
-.star-icon {
-  display: inline-block;
+.FillRatings {
+  color: black;
+  padding: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }

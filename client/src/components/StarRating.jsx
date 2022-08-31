@@ -2,18 +2,18 @@ import React from 'react';
 
 // input rating should be a number between 0-5
 const StaticRating = (props) => {
-  let ratings = props.rating;
+  let ratings = props.rating || 0;
   ratings = ratings/5 * 100;
   ratings = `${ratings}%`
   let style = {width: ratings};
 
   return (
     <div className="StarRatings">
-  <div className="FillRatings" style={style}>
-    <span>★★★★★</span>
-  </div>
-    <span>★★★★★</span>
-</div>
+      <div className="FillRatings" style={style}>
+        <span>★★★★★</span>
+      </div>
+      <span>★★★★★</span>
+    </div>
   )
 };
 
