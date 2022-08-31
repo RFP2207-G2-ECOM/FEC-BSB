@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import axios from 'axios';
+
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const CartButton = () => {
@@ -10,9 +12,41 @@ const CartButton = () => {
     let obj = listOfSKUs[index];
     console.log('obj', obj)
     setCurSKU(obj);
-    // make axios post request to Cart API here
-    // trigger special effect on the button?
   };
+
+  useEffect(()=>{
+    // triggers on curSKU change,
+    // only changes on AddToCart & initial load
+
+    if (curSKU !== 'Fake SKU') {
+      // make axios post request to Cart API here
+      var baseURI = process.env.BASE_URI;
+      if (curSKU.length)
+      axios.post(`${baseURI}cart`,
+      {
+        sku_id: curSKU,
+        quantity: curQuantity
+      },
+      {
+        headers: {
+          'Authorization': process.env.GITHUB_TOKEN
+        }
+      }
+      ).then((success) => {
+        console.log(success);
+        alert('Posted To Cart');
+        // trigger special effect to let use know it worked!
+        // pop up window?
+      })
+      .catch((err) => {
+        console.log(err);
+        alert('Post Request Failed');
+        // trigger special effect to let user know it failed!
+        // pop up window?
+      });
+    }
+
+  },[curSKU])
 
   if (listOfSizes[0] === null) {
     return (

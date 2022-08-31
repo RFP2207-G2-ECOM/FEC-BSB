@@ -18,9 +18,17 @@ const StyleSelector = () => {
 
   let lastRow = arrOfFours[arrOfFours.length - 1] || [];
   for (let j = lastRow.length; j < 4; j++) {
-    lastRow.push({name:''})
+    lastRow.push({name:'',
+      skus: {
+        null: {
+          quantity: null,
+          size: null
+        }
+      }
+    })
   }
   // arrOfFours can be mapped into each row of StyleOptions
+
 
   return (
       <div className='StyleSelector'>
@@ -30,51 +38,14 @@ const StyleSelector = () => {
           <div key={index} className='StyleOptions'>
             {row.map((style, index) => {
               return (
-                <SingleStyle key={index} style={style}/>
+                <SingleStyle key={index} style={style} rowCount={arrOfFours.length}/>
               )
             })}
           </div>
           )
         })}
-        {/* <div className='StyleOptions'>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-        </div>
-        <div className='StyleOptions'>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-        </div>
-        <div className='StyleOptions'>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-        </div> */}
       </div>
   )
 };
 
 export default StyleSelector;
-
-{/* <div className='StyleOptions'>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-        </div>
-        <div className='StyleOptions'>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-        </div>
-        <div className='StyleOptions'>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-          <button className='StyleButton'>X</button>
-        </div> */}

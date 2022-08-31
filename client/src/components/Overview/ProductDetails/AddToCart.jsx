@@ -11,7 +11,6 @@ export const CurrentSKUContext = createContext({
 
 const AddToCart = () => {
   const { curStyle } = useContext(CurrentStylesContext);
-  // console.log('AddToCart', curStyle);
   let SKUs= [];
   let quantity = [];
   let sizes = [];
