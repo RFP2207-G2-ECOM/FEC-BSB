@@ -201,6 +201,10 @@ html {
   text-decoration: underline;
 }
 
+.ReviewLink {
+  text-align: center;
+}
+
 /* Price Display */
 .BasePrice {
   display: flex;
@@ -236,25 +240,25 @@ html {
   border-color: blue;
   display: flex;
   height: 12.5%;
-  position:inherit;
   align-items: center;
 }
 
-.Style-Title-Center, .Style-Title-Right {
+.StyleTitle, .CurStyleTitle {
   border: solid;
   border-color:rgb(52, 190, 42);
   display: flex;
 }
 
-.Style-Title-Center {
+.StyleTitle {
   width: 25%;
   font-size: 20px;
 }
 
-.Style-Title-Right {
+.CurStyleTitle {
   width: 70%;
   font-size: 25px;
   justify-content: center;
+  text-align: center;
 }
 
 /* Style Selector */
@@ -283,6 +287,7 @@ html {
 
 .SingleStyleSelected {
   display: flex;
+  justify-content: center;
   width: calc(25% - 6px);
   border: solid 3px;
 }
@@ -311,12 +316,33 @@ html {
   height:50%;
 }
 
-.SizeSelect, .QuantitySelect {
+.SizeSelect {
   width: 50%;
+  text-align: center;
+  font-size: 200%;
+}
+
+.QuantitySelect {
+  font-size: 200%;
+  width: 50%;
+  text-align: center;
+}
+
+.dropOptions {
+  text-align: center;
 }
 
 .CartButton {
-  width:75%
+  width:75%;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.CartButtonDisabled {
+  width:100%;
+  height:100%;
+  font-size: 200%;
+  font-weight: bold;
 }
 
 .FavButton {
@@ -342,7 +368,8 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 20%;
+  min-width: 20%;
+  width: fit-content;
 }
 
 .FeatureAndMaterial, .FeatureAndMaterialTitle {
@@ -358,6 +385,8 @@ html {
   width: 50%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .Feature {
@@ -392,6 +421,7 @@ html {
   border-color: rgb(0, 0, 0);
   display: flex;
   width: 75%;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
 }
@@ -405,6 +435,10 @@ html {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.Description-Container {
+  width: 80%;
 }
 
 .SMBRow {
