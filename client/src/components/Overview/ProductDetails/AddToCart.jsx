@@ -7,12 +7,11 @@ import CartButton from './CartButton.jsx';
 import FavButton from './FavButton.jsx';
 
 export const CurrentSKUContext = createContext({
-  curSKU: {}
 });
 
 const AddToCart = () => {
   const { curStyle } = useContext(CurrentStylesContext);
-  console.log('AddToCart', curStyle);
+  // console.log('AddToCart', curStyle);
   let SKUs= [];
   let quantity = [];
   let sizes = [];
@@ -23,6 +22,8 @@ const AddToCart = () => {
   let [ curSKU, setCurSKU ] = useState('Fake SKU');
   let [ curSize, setCurSize ] = useState('Select Size');
   let [ curQuantity, setCurQuantity ] = useState(1);
+  let [ sizeDrop, setSizeDrop] = useState(false);
+  let [ sizeQuantity, setQuantityDrop] = useState(false);
 
   useEffect(()=> {
     if (Object.keys(curStyle).length) {
@@ -53,8 +54,8 @@ const AddToCart = () => {
     <div className='AddToCart'>
       <CurrentSKUContext.Provider value={value} >
         <div className='SizeAndQuanitityRow'>
-          <SizeSelect />
           <QuantitySelect />
+          <SizeSelect />
         </div>
         <div className='CartAndFavRow'>
           <CartButton />

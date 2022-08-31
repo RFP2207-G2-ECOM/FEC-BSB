@@ -2,29 +2,41 @@ import React, { useContext } from 'react';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const CartButton = () => {
-  const { listOfSizes, setCurSize } = useContext(CurrentSKUContext);
-  console.log(listOfSizes[0]);
+  const { listOfSKUs, listOfSizes, curSKU, curSize, curQuantity, setCurSKU } = useContext(CurrentSKUContext);
 
   // handle situations where there is no sizes, just quantity
   let handleCartSubmit = (e) => {
-    console.log(curQuantity); // Quantity needed for cart POST
-    console.log(curSize);
     let index = listOfSizes.indexOf(curSize);
-    let copy = listOfSKUs[index];
-    console.log(copy)
-    setCurSKU(copy);
-    console.log(curSKU);
+    let obj = listOfSKUs[index];
+    console.log('obj', obj)
+    setCurSKU(obj);
+    // make axios post request to Cart API here
+    // trigger special effect on the button?
   };
 
   if (listOfSizes[0] === null) {
     return (
-      <button className='CartButtonDisabled' disabled>
+      <div className='CartButtonDisabled' disabled>
           Out of Stock!
-      </button>
+      </div>
     )
-  } else {
+  } else if (curSize === 'Select Size') {
     return (
-      <button className='CartButton' onClick={handleCartSubmit}>Add To Cart!</button>
+      <div className='CartButtonDisabled' disabled>
+        Select a Size!
+      </div>
+    )
+  } else if (curQuantity === 0) {
+    return (
+      <div className='CartButtonDisabled' disabled>
+        Select a Quantity!
+      </div>
+    )
+  }else {
+    return (
+      <div className='CartButton' onClick={handleCartSubmit}>
+        Add To Cart!
+      </div>
     )
   }
 };

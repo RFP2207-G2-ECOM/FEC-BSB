@@ -1,23 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const SizeSelect = () => {
-  const { listOfSizes, setCurSize } = useContext(CurrentSKUContext);
-  // console.log(listOfSizes);
+  const { listOfSizes, curSize, setCurSize } = useContext(CurrentSKUContext);
+  const [ curSizeDisplay, setCurSizeDisplay ] = useState(listOfSizes[1]);
 
-  if (listOfSizes[0] === null) {
-    return (
-      <select className='SizeSelect' disabled></select>
-    )
-  } else {
-    return (
-      <select className='SizeSelect' onChange={(e) =>{setCurSize(e.target.value)}}>
-        {listOfSizes.map((size, index) =>{
-          return <option key={index}>{size}</option>
-        })}
-      </select>
-    )
-  }
+  useEffect(()=> {
+    setCurSizeDisplay(curSize);
+  }, [curSize])
+
+  return (
+    <div className='SizeSelect'>
+       {listOfSizes.map((size, index) =>{
+        if (size === 'Select Size') {
+          return
+        } else if (size === curSizeDisplay) {
+          return (
+            <div className='SizeIconSelected' key={index} >
+              {size}
+            </div>
+          )
+        } else if (size !== null) {
+          return (
+            <div className='SizeIconRegular' key={index} onClick={(e)=>{setCurSize(size)}}>
+              {size}
+            </div>
+          )
+          } else if (size === null) {
+            return(
+              <div className='EmptySizes'>
+                No Sizes Available
+              </div>
+            )
+          }
+       })}
+    </div>
+  )
+
 };
 
 export default SizeSelect;
+
+// onChange={(e) =>{setCurSize(e.target.value)}}

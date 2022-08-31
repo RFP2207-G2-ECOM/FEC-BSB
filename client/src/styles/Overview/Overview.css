@@ -181,7 +181,7 @@ html {
 }
 
 .FillRatings {
-  color: #e7711b;
+  color: #000000;
   padding: 0;
   position: absolute;
   display: block;
@@ -264,7 +264,7 @@ html {
 /* Style Selector */
 .StyleSelector {
   border: solid;
-  height: 40%;
+  height: 35%;
   border-color: blue;
   display: flex;
   flex-shrink: 1;
@@ -305,7 +305,7 @@ html {
 
 /* AddToCart */
 .AddToCart {
-  height: 30%;
+  height: 35%;
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {
@@ -313,18 +313,54 @@ html {
   border-color: blue;
   display: flex;
   justify-content: space-around;
-  height:50%;
+}
+
+.SizeAndQuanitityRow {
+  height: 55%;
+}
+
+.CartAndFavRow {
+  height: 45%;
 }
 
 .SizeSelect {
-  width: 50%;
-  text-align: center;
-  font-size: 200%;
+  width: 85%;
+  font-size: 2.5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.SizeIconSelected {
+  display: flex;
+  border: solid;
+  border-radius: 50%;
+  height: 56%;
+  width: 13%;
+  max-width: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.SizeIconRegular {
+  display: flex;
+  border: solid;
+  border-color: grey;
+  border-radius: 50%;
+  height: 56%;
+  width: 13%;
+  max-width: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.EmptySizes {
+  font-size: 150%;
 }
 
 .QuantitySelect {
   font-size: 200%;
-  width: 50%;
+  width: 15%;
   text-align: center;
 }
 
@@ -333,20 +369,43 @@ html {
 }
 
 .CartButton {
-  width:75%;
+  width: 75%;
   font-size: 200%;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+}
+
+.CartButton:hover {
+  width: 75%;
+  font-size: 200%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  border: solid;
 }
 
 .CartButtonDisabled {
-  width:100%;
-  height:100%;
+  width: 75%;
   font-size: 200%;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
 }
 
-.FavButton {
-  width:25%
+.FavContainer {
+  width:25%;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .FavIcon {

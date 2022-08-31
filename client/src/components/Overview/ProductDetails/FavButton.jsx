@@ -1,11 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 
-import { FaRegStar } from 'react-icons/fa';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const FavButton = () => {
+
+  // Talk to Johnny about connectng w/ cookies
+  const [ favorited, setFavorited ] = useState(false);
+
+  if (favorited) {
     return (
-      <button className='FavButton'><FaRegStar className='FavIcon'/></button>
+      <div className='FavContainer'>
+        <div className='FavButton' onClick={()=>{setFavorited(!favorited)}}>
+            <FaStar className='FavIcon'/>
+        </div>
+      </div>
     )
+  } else {
+    return (
+      <div className='FavContainer'>
+        <div className='FavButton' onClick={()=>{setFavorited(!favorited)}}>
+            <FaRegStar className='FavIcon'/>
+        </div>
+      </div>
+    )
+  }
 };
 
 export default FavButton;
