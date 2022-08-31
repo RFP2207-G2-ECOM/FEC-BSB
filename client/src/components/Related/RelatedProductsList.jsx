@@ -32,21 +32,6 @@ const RelatedProductsList = () => {
     })
   }
 
-  // const getProductStyles = async (productID) => {
-  //   var baseURI = process.env.BASE_URI;
-  //   // const productID = productInfo ? productInfo.id : undefined;
-  //   if (productID) {
-  //     return await axios.get(`${baseURI}products/${productID}/styles`, {
-  //       headers: {
-  //         'Authorization': process.env.GITHUB_TOKEN
-  //       }
-  //     })
-  //     .then(result => {
-  //       return result.data
-  //     })
-  //   }
-  // }
-
   const getRelatedProducts = async () => {
     const productInfo = [];
     for (let i = 0; i < productRelated.length; i++) {
@@ -77,6 +62,8 @@ const RelatedProductsList = () => {
   //     setRelatedProductList(container)
   //   }
   // }
+
+
 
   const slideLeft = () => {
     var slider = document.getElementById('slider');

@@ -4,10 +4,13 @@ import styles from '../../styles/Related/related.css';
 import RelatedProductsList from './RelatedProductsList.jsx';
 import YourOutfitList from './YourOutfitList.jsx';
 import axios from 'axios';
+import ComparisonModal from './ComparisonModal.jsx'
 
 const Card = ({relatedProduct, deleteOutfit}) => {
   const [productInfo, setProduct] = useState(relatedProduct);
   const [productStyle, setStyle] = useState([]);
+
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(()=>{
     setProduct(relatedProduct);
@@ -40,7 +43,11 @@ const Card = ({relatedProduct, deleteOutfit}) => {
               src={productStyle[0].photos[0].url}
               alt='/'
             />
-          {/* <i className='fa fa-star-o fa-lg card-button' onClick={()=>{deleteOutfit(productInfo.id)}}></i> */}
+          {deleteOutfit === undefined &&
+          <i className='fa fa-star-o fa-lg card-button' onClick={()=>{setIsOpen(true)}}></i>}
+          <ComparisonModal open={isOpen} onClose={() => setIsOpen(false)}>
+            Fancy Modal
+          </ComparisonModal>
           {deleteOutfit &&
           <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(productInfo.id)}}></i>}
         </div>
