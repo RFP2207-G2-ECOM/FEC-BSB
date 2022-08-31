@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .bolded {
   font-weight: 900;
 }
@@ -184,16 +188,6 @@
   top: 0;
   left: 0;
   overflow: hidden;
-}
-
-/* Allows us to grab the width of the span elements */
-span {
-  display: inline-block;
-}
-.EmptyRatings {
-  padding: 0;
-  display: block;
-  z-index: 0;
 }
 
 .Review-Link {
