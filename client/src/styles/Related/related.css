@@ -1,9 +1,6 @@
 .related-items-and-comp-container {
   width: 1440px;
   margin: auto;
-  border: solid;
-  border-color: blue;
-  margin: auto;
   margin-top: 10px;
   margin-bottom: 10px
 }
@@ -86,17 +83,14 @@
   cursor: pointer;
   float: left;
   margin-right: 20px;
+  /*
+  Code below forces image to resize while keeping aspect ratio:
+  object-fit sets how content of a replaced element should be resized to fit its container
+  */
   object-fit: cover;
   width: 100%;
   height: 300px;
 }
-
-/* .card-image:hover {
-  transform: scale(1.05);
-  transition-timing-function: ease-in-out;
-  transition: 0.30s;
-} */
-
 
 .related-products-list-container {
   display: flex;
@@ -120,4 +114,3 @@
   opacity: 1;
 }
 
-/* opacity-50 cursor-pointer hover:opacity-100 */
