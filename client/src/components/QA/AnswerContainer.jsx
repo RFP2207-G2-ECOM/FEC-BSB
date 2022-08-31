@@ -8,7 +8,7 @@ const AnswerContainer = ({ data }) => {
   const [answerCount, setAnswerCount] = useState(1);
 
     return (
-      <div key={data.id}>
+      <div key={data.id} className='answer-container'>
         <AContainer
           body={data.body}
           key={`ans-${data.id}`}
