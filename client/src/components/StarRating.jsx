@@ -9,11 +9,11 @@ const StaticRating = (props) => {
 
   return (
     <div className="StarRatings">
-  <div className="FillRatings" style={style}>
-    <span>★★★★★</span>
-  </div>
-    <span>★★★★★</span>
-</div>
+      <div className="FillRatings" style={style}>
+        <span>★★★★★</span>
+      </div>
+      <span>★★★★★</span>
+    </div>
   )
 };
 

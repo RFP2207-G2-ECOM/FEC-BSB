@@ -11,18 +11,20 @@ const RatingsBreakdown = () => {
 
   console.log('this is metadata:', metadata)
 
+  const [totalReviews, setTotalReviews] = useState(0)
   const [averageRating, setAverageRating] = useState(0)
   const [recommended, setRecommended] = useState(0)
   const [ratingsObject, setRatingsObject] = useState({})
 
   useEffect(() => {
     if (metadata.ratings) {
-      const totalReviews = Object.values(metadata.ratings)
+      const totalReviewCount = Object.values(metadata.ratings)
         .reduce((a, b) => Number(a) + Number(b), 0)
       const average = Object.values(metadata.ratings)
-        .reduce((a, b, i) =>  Number(a) + Number(b) * (i + 1) ) / totalReviews
-      const recommendedRate = metadata.recommended.true / totalReviews
+        .reduce((a, b, i) =>  Number(a) + Number(b) * (i + 1) ) / totalReviewCount
+      const recommendedRate = metadata.recommended.true / totalReviewCount
 
+      setTotalReviews(totalReviewCount)
       setAverageRating(average)
       setRecommended(recommendedRate)
       setRatingsObject(metadata.ratings)
@@ -44,12 +46,15 @@ const RatingsBreakdown = () => {
       <div className="ratingsBreakdown-recommended">
         {`${Math.round(recommended * 100)}% of reviews recommend this product`}
       </div>
-      <div className="Ratings-Visual-Container">
-        {[5, 4, 3, 2, 1].map(rating => {
+      <div className="Ratings-Filter-Container">
+        {[5, 4, 3, 2, 1].map(rating =>
           <RatingsBreakdownFilter
+            key={rating}
             rating={rating}
+            totalReviews={totalReviews}
+            ratingsObject={ratingsObject}
           />
-        })}
+        )}
       </div>
     </div>
   )
