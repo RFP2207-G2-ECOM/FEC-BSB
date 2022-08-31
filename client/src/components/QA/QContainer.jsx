@@ -14,7 +14,7 @@ const QContainer = ({
 
   const handleExpandLess = () => {
     var cop = {...answerCount};
-    cop[id] = 1;
+    cop[id] = 2;
     setAnswerCount(cop);
 
   }

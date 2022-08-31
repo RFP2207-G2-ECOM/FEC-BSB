@@ -5,7 +5,7 @@ import AInfo from './AInfo.jsx';
 import ResponsePhotos from './ResponsePhotos.jsx';
 
 const AnswerContainer = ({ data }) => {
-  const [answerCount, setAnswerCount] = useState(1);
+  const [answerCount, setAnswerCount] = useState(2);
 
     return (
       <div key={data.id} className='answer-container'>
