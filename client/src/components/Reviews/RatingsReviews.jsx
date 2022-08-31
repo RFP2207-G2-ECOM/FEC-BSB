@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
-
 import axios from "axios";
 
 import MoreReviewsButton from "./MoreReviewsButton.jsx";
@@ -38,7 +37,6 @@ const RatingsReviews = () => {
       }
     })
       .then(results => {
-        // console.log('this is reviews data:', results)
         setReviews(reviews => results.data.results)
         setFilteredReviews(filteredReviews => results.data.results)
       })
@@ -63,7 +61,9 @@ const RatingsReviews = () => {
       <a id='LinkToReviews'></a>
       <div className="rr-title">RATINGS & REVIEWS</div>
       <div className="Breakdown-Container">
-        <RatingsBreakdown />
+        <RatingsBreakdown
+          ratings={ratings}
+        />
         <ProductBreakdown />
       </div>
       <div className="ReviewsList-Container">
