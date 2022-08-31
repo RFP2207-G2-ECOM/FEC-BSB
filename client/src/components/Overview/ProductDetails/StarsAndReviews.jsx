@@ -11,15 +11,12 @@ const StarsAndReviews = () => {
     ratings = 0;
     totalReviews = 0;
   } else {
-    let weight = 1;
-    let totalScore = ratings.reduce((prev, curr) => {
-      let total = prev + parseInt(curr) * weight;
-      weight++;
+    let totalScore = ratings.reduce((prev, curr, i) => {
+      let total = prev + parseInt(curr) * (i + 1);
       return total;
     }, 0);
     totalReviews = ratings.reduce((prev, curr) => {
       let total = prev + parseInt(curr);
-      weight++;
       return total;
     }, 0);
 
@@ -33,7 +30,7 @@ const StarsAndReviews = () => {
           <StaticRating key={1} rating={ratings}/>
           <div key={2} className='Style-Detail-Spacer'></div>
           <div key={3} className='Review-Link'>
-            <a href='#LinkToReviews'>Read all {totalReviews} reviews</a>
+            <a href='#LinkToReviews' className='ReviewLink'>Read all {totalReviews} reviews</a>
           </div>
         </div>
       )

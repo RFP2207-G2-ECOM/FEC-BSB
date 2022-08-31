@@ -1,8 +1,7 @@
 .QA-Container {
   width: 82%;
   margin: auto;
-  border: solid;
-  border-color: red;
+  border: solid red;
 }
 
 .qa-title {
@@ -79,9 +78,17 @@
   margin-top: 10px;
   padding-left: 20px;
   width: 98%;
-  height: 5vh;
+  height: 10vh;
   font-size: large;
+  border-style: solid;
+  border-width: 1px 0;
+  -webkit-box-shadow: 0 6px 4px -1px rgb(228, 228, 228);
+  -moz-box-shadow: 0 6px 4px -1px rgb(228, 228, 228);
+  box-shadow: 0 6px 4px -1px rgb(228, 228, 228);
 }
+/* .q-container:hover {
+  background-color: #d3d3d3;
+} */
 
 .q-or-a {
   display: flex;
@@ -106,7 +113,7 @@
 }
 
 .helpful {
-  display: flex;
+  display: grid;
   align-items: center;
   font-size: large;
   justify-content: center;
@@ -194,19 +201,19 @@
 }
 
 .load-more-answers {
-  margin-top: 20px;
   width: 250px;
   height: 30px;
   font-weight: bold;
   font-size: large;
-  padding-left: 55px;
   box-shadow: inset 0 0 0 0 #b6b19b;
   color: black;
-  margin: 0 -.25rem;
+  margin-left: 25px;
+  margin-top: 10px;
   padding: 0 .25rem;
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   font-family: sans-serif;
 }
+
 .load-more-answers:hover {
   box-shadow: inset 250px 0 0 0 black;
   color: white;
@@ -232,6 +239,7 @@
   color: white;
 }
 
+
 #plus {
   margin-left: 15px;
   margin-bottom: 5px;
@@ -240,6 +248,7 @@
 
 .photo-container {
   padding-left: 55px;
+  padding-bottom: 10px;
 }
 
 .more-button {
@@ -255,4 +264,36 @@
   margin-left: 25px;
   color: white;
   background-color: black;
+}
+
+.collapse-question-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  font-size: large;
+  font-weight:  bold;
+  width: 325px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 25px;
+  color: white;
+  background-color: rgb(11, 20, 102);
+}
+
+.answer-container {
+  border-radius: 3px;
+  border: 1px solid #d3d3d3;
+  width: calc(100% - 60px);
+  margin: 20px auto 0;
+}
+
+.expand-icon {
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  width: 10%;
+  margin-left: 50px;
+  font-size: 50px;
+  font-weight:lighter;
 }

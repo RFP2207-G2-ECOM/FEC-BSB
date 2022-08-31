@@ -10,39 +10,43 @@ import { HiOutlinePlusCircle } from 'react-icons/hi';
 import useLocalStorage from '../../contexts/useLocalStorage.jsx';
 
 const YourOutfitList = () => {
-
   const [outfitList, setOutfit] = useLocalStorage('outfits', []);
 
-  // useEffect(()=>{
-  //   setProductID(productRelated);
-  //   getRelatedProducts();
-  // },[productRelated])
+  const [relatedProduct, setRelatedProduct] = useState([]);
 
-  // const getProductInfo = async (productID) => {
-  //   var baseURI = process.env.BASE_URI;
-  //   return await axios.get(`${baseURI}products/${productID}`, {
-  //     headers: {
-  //       'Authorization': process.env.GITHUB_TOKEN
-  //     }
-  //   })
-  //   .then(result => {
-  //     return result.data;
-  //   })
-  // }
+  useEffect(()=>{
+      getRelatedProducts();
+  }, [outfitList])
+ //^use effeect will run every time [] <-- tracks this
 
-  // const getRelatedProducts = async () => {
-  //   const productInfo = [];
-  //   for (let i = 0; i < productRelated.length; i++) {
-  //     productInfo.push(getProductInfo(productRelated[i]))
-  //   }
-  //   await axios.all(productInfo)
-  //   .then((result)=>{
-  //     setRelatedProducts(result)
-  //   })
-  // }
+  const getProductInfo = async (productID) => {
+    var baseURI = process.env.BASE_URI;
+    return await axios.get(`${baseURI}products/${parseInt(productID)}`, {
+      headers: {
+        'Authorization': process.env.GITHUB_TOKEN
+      }
+    })
+    .then(result => {
+      return result.data;
+    })
+  }
+
+  const getRelatedProducts = async () => {
+    const productInfo = [];
+    for (let i = 0; i < outfitList.length; i++) {
+      productInfo.push(getProductInfo(outfitList[i]))
+    }
+    await axios.all(productInfo)
+    .then((result)=>{
+      setRelatedProduct(result)
+    })
+  }
+
   const addOutfit = () => {
-    var currentProduct = [process.env.PRODUCT_ID];
-    setOutfit(outfitList.concat(currentProduct));
+    var currentProduct = process.env.PRODUCT_ID;
+    if (outfitList.indexOf(currentProduct) === -1){
+      setOutfit([...outfitList, currentProduct]);
+    }
   }
 
   const slideLeft = () => {
@@ -69,11 +73,12 @@ const YourOutfitList = () => {
                    onClick={addOutfit}
                    size={100} />
                    <div className='card-add-outfit '>
-                   <b>Add to Outfit</b></div>
+                   <b>Add to Outfit</b>
+                   </div>
                  </div>
-          {/* {relatedProducts.map((relatedProduct, key) => (
-            <Card relatedProduct={relatedProduct} key={key} />
-          ))} */}
+               {relatedProduct.map((relatedProduct, key) => (
+                 <Card relatedProduct={relatedProduct} key={key} />
+               ))}
           </div>
       <MdChevronRight className='slide' onClick={slideRight} size={40} />
     </div>
