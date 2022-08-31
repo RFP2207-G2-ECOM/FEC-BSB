@@ -137,4 +137,22 @@
   background-Color: #FFF;
   padding: 50px;
   z-index: 1000;
+  /* overflow: scroll; */
+  width: 500px;
+}
+
+.comparison-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.camparison-column {
+  flex: 33.33%;
 }

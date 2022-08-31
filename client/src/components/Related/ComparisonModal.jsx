@@ -12,9 +12,43 @@ const ComparisonModal = ({ open, children, onClose }) => {
       <div className='overlay-styles'/>
       <div className='modal-styles'>
         <button onClick={onClose}>Close Modal</button>
-        {children}
         <div>Comparing</div>
-        <div>Current Product Name</div> <div>This product Name</div>
+        <div className='comparison-title'>
+          <div><b>Current Product Name</b></div> <div><b>This product Name</b></div>
+        </div>
+        <div className='columns'>
+        <div className='camparison-column'>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        </div>
+        <div className='camparison-column'>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        </div>
+        <div className='camparison-column'>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        <ul>Fabric</ul>
+        </div>
+        </div>
       </div>
     </>,
     document.getElementById('portal')
