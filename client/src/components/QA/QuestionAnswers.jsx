@@ -25,7 +25,7 @@ const QuestionAnswers = () => {
       const temp = {};
       const tempTwo = {};
       results.forEach(({ question_id, answers }) => {
-        temp[question_id] = 1;
+        temp[question_id] = 0;
         tempTwo[question_id] = Object.keys(answers).length;
       })
       setAnswerCount(temp);

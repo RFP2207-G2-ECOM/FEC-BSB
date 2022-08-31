@@ -79,8 +79,10 @@
   margin-top: 10px;
   padding-left: 20px;
   width: 98%;
-  height: 5vh;
+  height: 10vh;
   font-size: large;
+  border-style: solid;
+  border-width: 1px 0;
 }
 
 .q-or-a {
@@ -194,15 +196,14 @@
 }
 
 .load-more-answers {
-  margin-top: 20px;
   width: 250px;
   height: 30px;
   font-weight: bold;
   font-size: large;
-  padding-left: 55px;
+  padding-left: 100px;
   box-shadow: inset 0 0 0 0 #b6b19b;
   color: black;
-  margin: 0 -.25rem;
+  margin: 20px -.25rem;
   padding: 0 .25rem;
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   font-family: sans-serif;
@@ -255,4 +256,11 @@
   margin-left: 25px;
   color: white;
   background-color: black;
+}
+
+.answer-container {
+  border-radius: 3px;
+  border: 1px solid #d3d3d3;
+  width: calc(100% - 60px);
+  margin: 20px auto 0;
 }

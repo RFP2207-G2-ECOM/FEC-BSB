@@ -12,6 +12,7 @@ const QContainer = ({question_body, question_helpfulness, id}) => {
     <div className='q-container'>
       <div className='q-or-a'>Q:</div>
       <div className='question'>{question_body}</div>
+
       <Helpful
         helpfulType='questions'
         id={id}
