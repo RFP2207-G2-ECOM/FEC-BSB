@@ -186,6 +186,16 @@
   overflow: hidden;
 }
 
+/* Allows us to grab the width of the span elements */
+span {
+  display: inline-block;
+}
+.EmptyRatings {
+  padding: 0;
+  display: block;
+  z-index: 0;
+}
+
 .Review-Link {
   display: flex;
   justify-content: center;
@@ -354,7 +364,6 @@
   width: 50%;
   display: flex;
   justify-content: center;
-  text-align: center;
 }
 
 .Feature {

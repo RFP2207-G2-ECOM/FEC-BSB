@@ -13,13 +13,18 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
 
   return (
     <>
-      <div>
-        {ratingsCount} reviews, sorted by
-        <select onChange={change}>
-          <option value="relevant">relevant</option>
-          <option value="newest">newest</option>
-          <option value="helpful">helpful</option>
-        </select>
+      <div className="reviewList-header">
+        <div className="reviewList-sort">
+          {ratingsCount} reviews, sorted by
+          <select onChange={change}>
+            <option value="relevant">relevant</option>
+            <option value="newest">newest</option>
+            <option value="helpful">helpful</option>
+          </select>
+        </div>
+        { moreReviews === true &&
+          <button className="scroll-add-a-review-button add-a-review-button">Add A Review</button>
+        }
       </div>
       <div>
         {(filteredReviews.slice(0, reviewsToRender)).map((review, index, array) =>
