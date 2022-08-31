@@ -56,7 +56,9 @@ const QuestionAnswers = () => {
                   setAnswerCount={setAnswerCount}
                 />
                 {
-                  Object.values(data.answers).map((val, index) => {
+                  // Object.values(data.answers).sort((a, b) => b.helpfulness - a.helpfulness).map((val, index) => {
+                  Object.values(data.answers).sort((a, b) => a.answerer_name === data.asker_name ? -1 : b.helpfulness - a.helpfulness)
+                    .map((val, index) => {
                     if (index < answerCount[data.question_id]) {
                       return <AnswerContainer key={index} data={val} asker_name={data.asker_name}/>
                     }
