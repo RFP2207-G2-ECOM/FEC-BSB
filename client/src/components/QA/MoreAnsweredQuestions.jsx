@@ -9,7 +9,7 @@ const MoreAnsweredQuestions = ({product_id, setQuestionCount, questionCount}) =>
       styles='buttonWrapperStyles'>
       <button
         className='more-button'
-        onClick={() => setQuestionCount(questionCount + 1)}
+        onClick={() => setQuestionCount(questionCount + 2)}
       >
         MORE QUESTIONS
       </button>
