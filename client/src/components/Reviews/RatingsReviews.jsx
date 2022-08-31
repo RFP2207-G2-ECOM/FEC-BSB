@@ -17,31 +17,13 @@ const RatingsReviews = () => {
   const ratingsCount =
     Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
 
+  const [starFilters, setStarFilters] = useState([])
   const [filteredReviews, setFilteredReviews] = useState([])
   const [reviewsToRender, setReviewsToRender] = useState(2)
   const [reviewSort, setReviewSort] = useState('relevant')
   const [reviewCount, setReviewCount] = useState(2)
   const [pageNumber, setPageNumber] = useState(1)
   const [moreReviews, setMoreReviews] = useState(false)
-
-  const findReviews = () => {
-    axios.get(`${baseURI}reviews/`, {
-      headers: {
-        Authorization: gitHubToken
-      },
-      params: {
-        page: 1,
-        count: reviewCount,
-        sort: reviewSort,
-        product_id: productID
-      }
-    })
-      .then(results => {
-        setReviews(reviews => results.data.results)
-        setFilteredReviews(filteredReviews => results.data.results)
-      })
-      .catch(err => console.log(err))
-  }
 
   const {
     reviews,
@@ -62,7 +44,8 @@ const RatingsReviews = () => {
       <div className="rr-title">RATINGS & REVIEWS</div>
       <div className="Breakdown-Container">
         <RatingsBreakdown
-          ratings={ratings}
+          starFilters={starFilters}
+          setStarFilters={setStarFilters}
         />
         <ProductBreakdown />
       </div>

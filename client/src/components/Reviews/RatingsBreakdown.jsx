@@ -5,11 +5,9 @@ import RatingsBreakdownFilter from "./RatingsBreakdownFilter.jsx"
 
 import styles from "../../styles/Reviews/ratingsBreakdown.css"
 
-const RatingsBreakdown = () => {
+const RatingsBreakdown = ({ setStarFilters, starFilters }) => {
 
-  let { metadata } = useContext(ProductReviewsContext)
-
-  console.log('this is metadata:', metadata)
+  const { metadata } = useContext(ProductReviewsContext)
 
   const [totalReviews, setTotalReviews] = useState(0)
   const [averageRating, setAverageRating] = useState(0)
@@ -53,6 +51,8 @@ const RatingsBreakdown = () => {
             rating={rating}
             totalReviews={totalReviews}
             ratingsObject={ratingsObject}
+            starFilters={starFilters}
+            setStarFilters={setStarFilters}
           />
         )}
       </div>
