@@ -5,9 +5,7 @@ const StaticRating = (props) => {
   let ratings = props.rating;
   ratings = ratings/5 * 100;
   ratings = `${ratings}%`
-  console.log(ratings);
   let style = {width: ratings};
-  console.log(style);
 
   return (
     <div className="StarRatings">
