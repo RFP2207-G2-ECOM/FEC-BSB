@@ -1,6 +1,6 @@
 .RR-Container {
   display: grid;
-  grid-template-columns: 20% 70%;
+  grid-template-columns: 25% 65%;
   grid-template-rows: auto;
   grid-gap: 40px;
   width: 82%;
@@ -18,22 +18,23 @@
   justify-content: flex-start;
   align-items: center;
   height: 5vh;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   font-size: large;
 }
 
 .Breakdown-Container {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
-.RatingsBreakdown-Container {
+/* .RatingsBreakdown-Container {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 3px solid black;
   margin-bottom: 20px;
-}
+} */
 
 .ProductBreakdown-Container {
   display: flex;
