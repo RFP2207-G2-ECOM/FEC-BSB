@@ -33,7 +33,6 @@ const YourOutfitList = () => {
 
   const getRelatedProducts = async () => {
     const productInfo = [];
-    console.log('youroutlist', outfitList)
     for (let i = 0; i < outfitList.length; i++) {
       productInfo.push(getProductInfo(outfitList[i]))
     }
