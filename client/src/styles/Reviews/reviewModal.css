@@ -5,6 +5,7 @@
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 50px;
+  width: 40vw;
   z-index: 1000;
 }
 

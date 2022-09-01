@@ -56,7 +56,6 @@ const ReviewModalStarRating = ( { setStarRating } ) => {
               />
               <MdStar
                 className="modalStar"
-                // color={ratingValue <= rating || ratingValue <= hoverRating ? "000" : "#ccc"}
                 color={starsFilled}
               />
             </label>

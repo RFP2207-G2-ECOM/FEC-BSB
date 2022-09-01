@@ -15,20 +15,34 @@ const ReviewModalCharacteristic = ( { characteristic }) => {
     Fit: ["Runs tight", "Runs slightly tight", "Perfect", "Runs slightly long", "Runs long"]
   }
 
+  /// don't forget to add 1 to selection when you set state for characteristics
+
   return (
     <>
       <div>{characteristic}</div>
       <div>None Selected</div>
       {
         [...Array(5)].map((button, i) => {
+          let checkedOption = false
+          if (hovering) {
+            hoverSelection === i ? checkedOption = true : checkedOption = false
+          } else if (selection) {
+            selection === i ? checkedOption = true : checkedOption = false
+          }
+
           return (
             <label
               key={i}
+              onMouseOver={() => setHoverSelection(i)}
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
             >
               <input
                 type="radio"
                 id={`${characteristic}-${i + 1}`}
                 name={characteristic}
+                checked={checkedOption}
+                onChange={() => setSelection(i)}
               />
             </label>
           )
