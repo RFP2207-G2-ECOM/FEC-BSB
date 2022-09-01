@@ -3,8 +3,6 @@ import React, { useState } from "react"
 const ReviewModalCharacteristic = ( { characteristic }) => {
 
   const [selection, setSelection] = useState(null)
-  const [hoverSelection, setHoverSelection] = useState(null)
-  const [hovering, setHovering] = useState(false)
 
   const descriptors = {
     Size: ["A size too small", "1/2 a size too small", "Perfect", "1/2 a size too big", "A size too wide"],
@@ -23,25 +21,15 @@ const ReviewModalCharacteristic = ( { characteristic }) => {
       <div>None Selected</div>
       {
         [...Array(5)].map((button, i) => {
-          let checkedOption = false
-          if (hovering) {
-            hoverSelection === i ? checkedOption = true : checkedOption = false
-          } else if (selection) {
-            selection === i ? checkedOption = true : checkedOption = false
-          }
 
           return (
-            <label
-              key={i}
-              onMouseOver={() => setHoverSelection(i)}
-              onMouseEnter={() => setHovering(true)}
-              onMouseLeave={() => setHovering(false)}
-            >
+            <label key={i}>
               <input
                 type="radio"
                 id={`${characteristic}-${i + 1}`}
                 name={characteristic}
-                checked={checkedOption}
+                value={i}
+                checked={selection === i}
                 onChange={() => setSelection(i)}
               />
             </label>
