@@ -171,7 +171,6 @@ html {
 
 .StarRatings {
   color: #ccc;
-  font-size: 300%;
   position: relative;
   margin: 0;
   padding: 0;
@@ -299,6 +298,8 @@ html {
   align-items: center;
   text-align: center;
   border: rgb(179, 173, 6) solid;
+  border-radius: 50%;
+  object-fit: cover;
   max-height: 64px;
 }
 
@@ -308,6 +309,8 @@ html {
   align-items: center;
   text-align: center;
   border: solid 3px;
+  border-radius: 50%;
+  object-fit: cover;
   max-height: 64px;
 }
 
@@ -476,30 +479,49 @@ html {
   width: fit-content;
 }
 
-.FeatureAndMaterial, .FeatureAndMaterialTitle {
+.FeatureAndMaterialTitle {
   display: flex;
-  justify-content:space-around;
+  align-items: center;
+  height: 4vh;
 }
 
-.FeatureTitle, .MaterialTitle {
+.Feature-Spacer {
+  min-width: 15%;
+}
+
+.FeatureAndMaterial {
+  display: flex;
+}
+
+.FeatureTitle {
   border-bottom: 3px solid black;
+  height: fit-content;
+  font-size: 1.75vh;
+  display: flex;
+  align-items: center;
 }
 
-.Feature, .Material {
-  width: 50%;
+.FeatureMaterialSpacer {
+  width: 4%;
+}
+
+.FeatureNoMaterial, .MaterialNoFeature {
+  display: flex;
+}
+
+.Feature {
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.Feature {
-  border-right: 3px solid black;
-}
-
-.FeatureMaterialBoundary {
+.Material {
+  width: fit-content;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  text-align: left;
 }
 
 .FeatureSpacer {

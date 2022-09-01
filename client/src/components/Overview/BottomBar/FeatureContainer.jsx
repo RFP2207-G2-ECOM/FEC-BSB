@@ -9,7 +9,7 @@ const FeatureContainer = (props) => {
         return (
           <div key={index}>
             <FeatureAndMaterial detail={detail} index={index} />
-            <div className='FeatureSpacer'></div>
+
           </div>
         )
       })}
