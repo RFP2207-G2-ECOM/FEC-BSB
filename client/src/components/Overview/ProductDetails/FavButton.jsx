@@ -8,8 +8,6 @@ const FavButton = () => {
   const { outfitList, setOutfitList } = useContext(LocalStorageContext);
   const [ isFav, setIsFav ] = useState(false);
 
-  console.log(outfitList);
-
   useEffect(()=>{
     var productID = process.env.PRODUCT_ID;
     let outfits = [...outfitList];
