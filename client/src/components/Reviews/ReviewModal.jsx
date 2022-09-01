@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import ReactDom from "react-dom"
 
+import ReviewModalBody from "./ReviewModalBody.jsx"
 import ReviewModalCharacteristicsList from "./ReviewModalCharacteristicsList.jsx"
 import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
 import ReviewModalRecommended from "./ReviewModalRecommended.jsx"
@@ -12,15 +13,15 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [starRating, setStarRating] = useState(null)
   const [recommended, setRecommended] = useState(null)
   const [characteristics, setCharacteristics] = useState({})
-  const [reviewSummary, setReviewSummary] = useState("")
-  const [reviewBody, setReviewBody] = useState("")
+  const [reviewSummary, setReviewSummary] = useState(null)
+  const [reviewBody, setReviewBody] = useState(null)
   const [photos, setPhotos] = useState([])
   const [nickname, setNickname] = useState("")
   const [email, setEmail] = useState("")
 
   useEffect(() => {
-  console.log('characteristics changed!', characteristics)
-  },[characteristics])
+  console.log('body changed!', reviewBody)
+  },[reviewBody])
 
   if(!open) return null
 
@@ -57,15 +58,10 @@ const ReviewModal = ({ open, onClose, productName }) => {
           >
           </input>
         </div>
-        <div>
-          <div>Review Body</div>
-          <input
-            type="text"
-            minLength="50"
-            placeholder="Why did you like the product or not?"
-          >
-          </input>
-          <div>Minimum required characters left: ##</div>
+        <div className="review-modal-body">
+          <ReviewModalBody
+            setReviewBody={setReviewBody}
+          />
         </div>
         <div>Upload your photos</div>
         <div>What is your nickname</div>
