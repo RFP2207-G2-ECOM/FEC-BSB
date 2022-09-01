@@ -149,7 +149,7 @@
   display: flex;
   padding-left: 20px;
   font-size: large;
-  height: 5vh;
+  max-height: 550px;
 }
 
 .a-info-container {

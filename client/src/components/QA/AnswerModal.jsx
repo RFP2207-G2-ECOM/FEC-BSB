@@ -20,6 +20,18 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
     setPhotoCount(photoCount + 1);
   };
 
+  const handleEmailChange = (e) => {
+    if (e.target.value.length <= 60) {
+      setEmail(e.target.value)
+    }
+  }
+
+  const handleBodyChange = (e) =>{
+    if (e.target.value.length <= 1000) {
+      setBody(e.target.value)
+    }
+  }
+
   const handleNameChange = (e) => {
     if (e.target.value.length <= 60) {
       setName(e.target.value)
@@ -83,9 +95,13 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
             <input
               value={email}
               type='email'
-              placeholder='Enter Email...'
-              onChange={e => setEmail(e.target.value)}
+              placeholder='Example: jack@email.com'
+              onChange={handleEmailChange}
             ></input>
+            { email ?
+              <p className='name-message'>For authentication reasons, you will not be emailed</p> :
+              <></>
+            }
           </label>
           <label>
             Answer:
@@ -93,7 +109,7 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
               value={body}
               type='text'
               placeholder='Enter Answer'
-              onChange={e => setBody(e.target.value)}
+              onChange={handleBodyChange}
             ></textarea>
           </label>
           <div
