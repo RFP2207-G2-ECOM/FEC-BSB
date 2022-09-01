@@ -1,21 +1,28 @@
 import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
-import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
 import axios from "axios";
 
+import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
+import { ProductContext } from "../../contexts/product-info.context.jsx"
+
+import AddReviewButton from "./AddReviewButton.jsx";
 import MoreReviewsButton from "./MoreReviewsButton.jsx";
 import ProductBreakdown from "./ProductBreakdown.jsx";
 import RatingsBreakdown from "./RatingsBreakdown.jsx";
 import ReviewsList from "./ReviewsList.jsx";
 import useReviewsSearch from "./useReviewsSearch.js";
+import ReviewModal from "./ReviewModal.jsx";
 
 import styles from "../../styles/Reviews/reviews.css";
 
 const RatingsReviews = () => {
 
+  let { product } = useContext(ProductContext)
   let { metadata } = useContext(ProductReviewsContext)
   let ratings = {...metadata.ratings}
   const ratingsCount =
     Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
+
+
 
   const [starFilters, setStarFilters] = useState([])
   const [filteredReviews, setFilteredReviews] = useState([])
@@ -24,6 +31,7 @@ const RatingsReviews = () => {
   const [reviewCount, setReviewCount] = useState(2)
   const [pageNumber, setPageNumber] = useState(1)
   const [moreReviews, setMoreReviews] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
 
   const {
     reviews,
@@ -33,13 +41,8 @@ const RatingsReviews = () => {
   } = useReviewsSearch(pageNumber, ratingsCount, reviewSort, starFilters)
 
   useEffect(() => {
-    console.log('star filters:', starFilters)
-  }, [starFilters])
-
-  useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
       setFilteredReviews(reviews)
-      console.log('these are the reviews', reviews)
     }
   }, [reviews])
 
@@ -81,9 +84,18 @@ const RatingsReviews = () => {
             setMoreReviews={setMoreReviews}
             setReviewCount={setReviewCount}
           />
-          <button className="add-a-review-button">ADD A REVIEW</button>
+          <AddReviewButton
+            setModalOpen={setModalOpen}
+          />
         </div>
       }
+      <div className="Review-Modal-Container">
+        <ReviewModal
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+          productName={product.name}
+        />
+      </div>
     </div>
   )
 }

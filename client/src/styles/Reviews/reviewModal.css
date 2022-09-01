@@ -1,0 +1,93 @@
+.review-modal-styles {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 50px;
+  width: 40vw;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.overlay-styles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 1000;
+}
+
+.Review-Modal-Container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.review-modal-header {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.review-modal-header h2 {
+  align-self: center;
+  font-weight: normal;
+}
+
+.review-modal-section-header {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.review-modal-recommend-options {
+  display: flex;
+  gap: 15px;
+  color: black;
+}
+
+.characteristic-header {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.review-modal-characteristics {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.characteristic-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.characteristic-scale-selected {
+  display: flex;
+  justify-content: center;
+  font-size: 75%;
+  font-weight: bold;
+  color: grey;
+}
+
+.characteristic-scale-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.characteristic-scale-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 75%;
+  color: grey;
+}
+
+.review-modal-body-input {
+  height: 100px;
+}

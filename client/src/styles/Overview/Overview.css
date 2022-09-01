@@ -53,7 +53,7 @@ html {
 
 /* Product Display */
 .Product-Display {
-  width: 60%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,35 +71,99 @@ html {
   flex-direction: column;
 }
 
+.Scroll-Up-Down {
+  height: 30px;
+}
+
 .Selected-Picture {
-  width: 90%;
+  width: 100%;
   height: 100%;
   border: solid;
   border-color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.Scroll-Up-Down {
-  height: 30px;
+.MainPic {
+  height: 100%;
+  max-height: 650px;
+  width:fit-content;
+  max-width: 100%;
+  object-fit: scale-down;
 }
 
-.Scroll-Left-Right {
-  height: 30px;
-  width: 30px;
-}
-
-.Middle-Bar {
+.Arrow-Left {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  border: black solid;
+  height: 7%;
+  font-size: 5vh;
+  position: relative;
+  top: calc(50% - 3.5%);
+  width: 35px;
+  /* transition: all 0.5s ease-out 100ms; */
+}
+
+.Arrow-Left:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: black solid;
+  height: 7%;
+  font-size: 5vh;
+  color: grey;
+  position: relative;
+  top: calc(50% - 3.5%);
+  width: 35px;
+  transition: all 0.5s ease-out 100ms;
+}
+
+.PicInterface {
+  display: flex;
+  height:650px;
+  width:100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.Arrow-Right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: black solid;
+  height: 7%;
+  font-size: 5vh;
+  position: relative;
+  top: calc(50% - 3.5%);
+  width: 35px;
+  /* transition: all 0.5s ease-out 100ms; */
+}
+
+.Arrow-Right:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: black solid;
+  height: 7%;
+  font-size: 5vh;
+  color: grey;
+  position: relative;
+  top: calc(50% - 3.5%);
+  width: 35px;
+  transition: all 0.5s ease-out 100ms;
+}
+
+.ZoomInBox {
   width: 100%;
-  justify-content: space-between;
-  height: 30px;
 }
 
 /* Product Details */
 .Product-Details {
-  width: 40%;
+  width: 30%;
   height: 100%;
   border: solid;
   border-color: rgb(0, 0, 0);
@@ -171,7 +235,6 @@ html {
 
 .StarRatings {
   color: #ccc;
-  font-size: 300%;
   position: relative;
   margin: 0;
   padding: 0;
@@ -299,7 +362,10 @@ html {
   align-items: center;
   text-align: center;
   border: rgb(179, 173, 6) solid;
+  border-radius: 50%;
+  object-fit: cover;
   max-height: 64px;
+  max-width: 64px;
 }
 
 .styleSelected {
@@ -308,7 +374,10 @@ html {
   align-items: center;
   text-align: center;
   border: solid 3px;
+  border-radius: 50%;
+  object-fit: cover;
   max-height: 64px;
+  max-width: 64px;
 }
 
 /* AddToCart */
@@ -443,6 +512,7 @@ html {
   color: rgb(84, 83, 83);
   background-color: rgb(182, 182, 182);
   border-radius: 40px;
+  transition: all 0.5s ease-out 100ms;
 }
 
 .FavContainer {
@@ -476,30 +546,49 @@ html {
   width: fit-content;
 }
 
-.FeatureAndMaterial, .FeatureAndMaterialTitle {
+.FeatureAndMaterialTitle {
   display: flex;
-  justify-content:space-around;
+  align-items: center;
+  height: 4vh;
 }
 
-.FeatureTitle, .MaterialTitle {
+.Feature-Spacer {
+  min-width: 15%;
+}
+
+.FeatureAndMaterial {
+  display: flex;
+}
+
+.FeatureTitle {
   border-bottom: 3px solid black;
+  height: fit-content;
+  font-size: 1.75vh;
+  display: flex;
+  align-items: center;
 }
 
-.Feature, .Material {
-  width: 50%;
+.FeatureMaterialSpacer {
+  width: 4%;
+}
+
+.FeatureNoMaterial, .MaterialNoFeature {
+  display: flex;
+}
+
+.Feature {
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.Feature {
-  border-right: 3px solid black;
-}
-
-.FeatureMaterialBoundary {
+.Material {
+  width: fit-content;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  text-align: left;
 }
 
 .FeatureSpacer {

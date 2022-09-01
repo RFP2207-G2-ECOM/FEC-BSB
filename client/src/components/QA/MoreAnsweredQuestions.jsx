@@ -7,7 +7,7 @@ const MoreAnsweredQuestions = ({product_id, setQuestionCount, questionCount, tot
   return (
     <div className='buttons-container'
       styles='buttonWrapperStyles'>
-      { total_questions < 2 ?
+      { total_questions < 2 || questionCount >= total_questions ?
         <></> :
         <button
         className='more-button'

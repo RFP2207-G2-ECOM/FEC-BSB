@@ -15,7 +15,7 @@ import { QuestionsContext } from '../../contexts/question.context.jsx';
 const QuestionAnswers = () => {
   const { productID, results } = useContext(QuestionsContext);
   const [questionCount, setQuestionCount] = useState(4);
-  const [countLimit, setCountLimit] = useState({});
+  const [questionLimit, setQuestionLimit] = useState(0);
   const [answerCount, setAnswerCount] = useState({});
   const [answerLimit, setAnswerLimit] = useState({});
 
@@ -27,6 +27,7 @@ const QuestionAnswers = () => {
         temp[question_id] = 2;
         tempTwo[question_id] = Object.keys(answers).length;
       })
+      setQuestionLimit(results.length);
       setAnswerCount(temp);
       setAnswerLimit(tempTwo);
     }
