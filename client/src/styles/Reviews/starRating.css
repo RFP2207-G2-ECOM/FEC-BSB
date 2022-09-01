@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-input[type="radio"] {
+input[type="radio"].modalStar {
   display: none;
 }
 
