@@ -4,6 +4,16 @@ import ReactDom from "react-dom"
 import styles from "../../styles/Reviews/reviewModal.css"
 
 const ReviewModal = ({ open, onClose, productName }) => {
+
+  const [starRating, setStarRating] = useState(0)
+  const [recommended, setRecommended] = useState(false)
+  const [characteristics, setCharacteristics] = useState({})
+  const [reviewSummary, setReviewSummary] = useState("")
+  const [reviewBody, setReviewBody] = useState("")
+  const [photos, setPhotos] = useState([])
+  const [nickname, setNickname] = useState("")
+  const [email, setEmail] = useState("")
+
   if(!open) return null
 
   return ReactDom.createPortal (
@@ -19,6 +29,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
           <div>Review Summary</div>
           <input
             type="text"
+            maxlength="60"
             placeholder="Example: Best purchase ever!"
           >
           </input>
@@ -27,6 +38,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
           <div>Review Body</div>
           <input
             type="text"
+            minlength="50"
             placeholder="Why did you like the product or not?"
           >
           </input>
