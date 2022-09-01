@@ -1,11 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import ReactDom from "react-dom"
+
+import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
 
 import styles from "../../styles/Reviews/reviewModal.css"
 
 const ReviewModal = ({ open, onClose, productName }) => {
 
-  const [starRating, setStarRating] = useState(0)
+  const [starRating, setStarRating] = useState(null)
   const [recommended, setRecommended] = useState(false)
   const [characteristics, setCharacteristics] = useState({})
   const [reviewSummary, setReviewSummary] = useState("")
@@ -22,14 +24,20 @@ const ReviewModal = ({ open, onClose, productName }) => {
       <div className="review-modal-styles">
         <div>Write Your Review</div>
         <div>{`About the ${productName}`}</div>
-        <div>Overall rating</div>
+        <div>
+          <div>Overall rating</div>
+          <ReviewModalStarRating
+            key={productName}
+            setStarRating={setStarRating}
+          />
+        </div>
         <div>Do you recommend this product?</div>
         <div>Charateristics</div>
         <div className="review-modal-summary">
           <div>Review Summary</div>
           <input
             type="text"
-            maxlength="60"
+            maxLength="60"
             placeholder="Example: Best purchase ever!"
           >
           </input>
@@ -38,7 +46,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
           <div>Review Body</div>
           <input
             type="text"
-            minlength="50"
+            minLength="50"
             placeholder="Why did you like the product or not?"
           >
           </input>
