@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import ReactDom from "react-dom"
 
+import ReviewModalCharacteristics from "./ReviewModalCharacteristics.jsx"
 import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
 import ReviewModalRecommended from "./ReviewModalRecommended.jsx"
 
@@ -17,10 +18,9 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [nickname, setNickname] = useState("")
   const [email, setEmail] = useState("")
 
-  useEffect(() => {
-
-  console.log('recommended changed!', recommended)
-  },[recommended])
+  // useEffect(() => {
+  // console.log('recommended changed!', recommended)
+  // },[recommended])
 
   if(!open) return null
 
@@ -42,7 +42,10 @@ const ReviewModal = ({ open, onClose, productName }) => {
             setRecommended={setRecommended}
           />
         </div>
-        <div>Charateristics</div>
+        <div>
+          <div>Charateristics</div>
+          <ReviewModalCharacteristics />
+        </div>
         <div className="review-modal-summary">
           <div>Review Summary</div>
           <input

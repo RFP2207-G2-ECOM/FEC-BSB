@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
+import axios from "axios";
+
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
 import { ProductContext } from "../../contexts/product-info.context.jsx"
-import axios from "axios";
 
 import AddReviewButton from "./AddReviewButton.jsx";
 import MoreReviewsButton from "./MoreReviewsButton.jsx";
@@ -21,6 +22,8 @@ const RatingsReviews = () => {
   const ratingsCount =
     Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
 
+
+
   const [starFilters, setStarFilters] = useState([])
   const [filteredReviews, setFilteredReviews] = useState([])
   const [reviewsToRender, setReviewsToRender] = useState(2)
@@ -36,6 +39,8 @@ const RatingsReviews = () => {
     loading,
     error
   } = useReviewsSearch(pageNumber, ratingsCount, reviewSort, starFilters)
+
+  console.log( 'metadata:', metadata)
 
   useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
