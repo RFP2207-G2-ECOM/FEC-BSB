@@ -27,7 +27,7 @@ const StarsAndReviews = () => {
       return (
         <div className='Stars-And-Reviews'>
           <div key={0} className='Style-Detail-Spacer'></div>
-          <StaticRating key={1} rating={ratings}/>
+          <StaticRating key={1} rating={ratings} font={'300px'}/>
           <div key={2} className='Style-Detail-Spacer'></div>
           <div key={3} className='Review-Link'>
             <a href='#LinkToReviews' className='ReviewLink'>Read all {totalReviews} reviews</a>
