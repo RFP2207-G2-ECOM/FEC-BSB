@@ -3,7 +3,7 @@ import QuestionModal from '../QA/QuestionModal.jsx';
 
 const MoreAnsweredQuestions = ({product_id, setQuestionCount, questionCount, total_questions}) => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(questionCount, '\t', total_questions);
+
   return (
     <div className='buttons-container'
       styles='buttonWrapperStyles'>
