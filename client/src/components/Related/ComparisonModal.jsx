@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ReactDom from 'react-dom';
-import axios from 'axios';
+import ComparisonFeatures from './ComparisonFeatures.jsx'
 import styles from '../../styles/Related/related.css';
 
-const ComparisonModal = ({ open, children, onClose }) => {
+const ComparisonModal = ({ open, children, onClose, productInfo }) => {
 
   if (!open) return null;
 
@@ -14,7 +14,7 @@ const ComparisonModal = ({ open, children, onClose }) => {
         <button onClick={onClose}>Close Modal</button>
         <div>Comparing</div>
         <div className='comparison-title'>
-          <div><b>Current Product Name</b></div> <div><b>This product Name</b></div>
+          <div><b>{productInfo.name}</b></div> <div><b>{productInfo.name}</b></div>
         </div>
         <div className='columns'>
         <div className='camparison-column'>
@@ -28,15 +28,9 @@ const ComparisonModal = ({ open, children, onClose }) => {
         <ul>Fabric</ul>
         </div>
         <div className='camparison-column'>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
+          {productInfo.features.map((feature, key) =>
+            <ComparisonFeatures feature={feature} key={key}/>
+          )}
         </div>
         <div className='camparison-column'>
         <ul>Fabric</ul>

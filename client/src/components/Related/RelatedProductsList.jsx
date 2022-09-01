@@ -67,19 +67,19 @@ const RelatedProductsList = () => {
 
   const slideLeft = () => {
     var slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft - 200;
+    slider.scrollLeft = slider.scrollLeft - 250;
   };
 
   const slideRight = () => {
     var slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft + 200;
+    slider.scrollLeft = slider.scrollLeft + 250;
   };
 
   return (
     //related-products-list-container w-full
     <div className='products-list'>
-      <MdChevronLeft className='slide'    onClick={slideLeft} size={40} />
-        <div id='slider' className='related-products-list-container'>
+      <MdChevronLeft className='slide' onClick={slideLeft} size={40} />
+        <div id='slider' className='related-products-list-container snaps-inline'>
           {relatedProducts.map((relatedProduct, key) => (
             <Card relatedProduct={relatedProduct} key={key} />
           ))}

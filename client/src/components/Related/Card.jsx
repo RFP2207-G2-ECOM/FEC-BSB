@@ -45,9 +45,9 @@ const Card = ({relatedProduct, deleteOutfit}) => {
             />
           {deleteOutfit === undefined &&
           <i className='fa fa-star-o fa-lg card-button' onClick={()=>{setIsOpen(true)}}></i>}
-          <ComparisonModal open={isOpen} onClose={() => setIsOpen(false)}>
-            Fancy Modal
-          </ComparisonModal>
+          <ComparisonModal open={isOpen}
+                           onClose={() => setIsOpen(false)}
+                           productInfo={productInfo}/>
           {deleteOutfit &&
           <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(productInfo.id)}}></i>}
         </div>
