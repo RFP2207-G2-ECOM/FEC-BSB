@@ -4,19 +4,26 @@ import { ProductReviewsContext } from "../../contexts/product-reviews.context.js
 
 import ReviewModalCharacteristic from "./ReviewModalCharacteristic.jsx"
 
-const ReviewModalCharacteristicsList = () => {
+const ReviewModalCharacteristicsList = ( { setCharacteristics }) => {
 
   let { metadata } = useContext(ProductReviewsContext)
-  let characteristics = {...metadata.characteristics}
+  let characteristicValues = {...metadata.characteristics}
 
-  console.log('characteristics:', Object.keys(characteristics))
+  const [characteristicsObj, setCharacteristicsObj] = useState({})
+
+  useEffect(() => {
+    setCharacteristics(characteristicsObj)
+  }, [characteristicsObj])
 
   return (
     <>
-      {Object.keys(characteristics).map((characteristic, i) =>
+      {Object.keys(characteristicValues).map((characteristic, i) =>
          <ReviewModalCharacteristic
           key={i}
           characteristic={characteristic}
+          id={characteristicValues[characteristic].id}
+          characteristicsObj={characteristicsObj}
+          setCharacteristicsObj={setCharacteristicsObj}
         />
         // return <div key={i}>{characteristic}</div>
       )}

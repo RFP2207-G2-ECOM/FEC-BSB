@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
-const ReviewModalCharacteristic = ( { characteristic }) => {
+const ReviewModalCharacteristic = ( { characteristic, characteristicsObj, id, setCharacteristicsObj }) => {
 
   const [selection, setSelection] = useState(null)
 
@@ -13,29 +13,42 @@ const ReviewModalCharacteristic = ( { characteristic }) => {
     Fit: ["Runs tight", "Runs slightly tight", "Perfect", "Runs slightly long", "Runs long"]
   }
 
-  /// don't forget to add 1 to selection when you set state for characteristics
+  let descriptorRendered = "None Selected"
+  if (selection) {
+    descriptorRendered = descriptors[characteristic][selection]
+  }
+
+  useEffect(() => {
+    if(selection) {
+      setCharacteristicsObj({...characteristicsObj, [id]: selection + 1})
+    }
+  }, [selection])
 
   return (
     <>
       <div>{characteristic}</div>
-      <div>None Selected</div>
-      {
-        [...Array(5)].map((button, i) => {
+      <div>{descriptorRendered}</div>
+      <div>
+        <div>{descriptors[characteristic][0]}</div>
+        {
+          [...Array(5)].map((button, i) => {
 
-          return (
-            <label key={i}>
-              <input
-                type="radio"
-                id={`${characteristic}-${i + 1}`}
-                name={characteristic}
-                value={i}
-                checked={selection === i}
-                onChange={() => setSelection(i)}
-              />
-            </label>
-          )
-        })
-      }
+            return (
+              <label key={i}>
+                <input
+                  type="radio"
+                  id={`${characteristic}-${i + 1}`}
+                  name={characteristic}
+                  value={i}
+                  checked={selection === i}
+                  onChange={() => setSelection(i)}
+                />
+              </label>
+            )
+          })
+        }
+        <div>{descriptors[characteristic][4]}</div>
+      </div>
     </>
   )
 }

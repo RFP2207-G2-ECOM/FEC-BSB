@@ -18,9 +18,9 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [nickname, setNickname] = useState("")
   const [email, setEmail] = useState("")
 
-  // useEffect(() => {
-  // console.log('recommended changed!', recommended)
-  // },[recommended])
+  useEffect(() => {
+  console.log('characteristics changed!', characteristics)
+  },[characteristics])
 
   if(!open) return null
 
@@ -44,7 +44,9 @@ const ReviewModal = ({ open, onClose, productName }) => {
         </div>
         <div>
           <div>Charateristics</div>
-          <ReviewModalCharacteristicsList />
+          <ReviewModalCharacteristicsList
+            setCharacteristics={setCharacteristics}
+          />
         </div>
         <div className="review-modal-summary">
           <div>Review Summary</div>
