@@ -5,7 +5,7 @@ const SizeSelect = () => {
   const { listOfSizes, curSize, setCurSize } = useContext(CurrentSKUContext);
   const [ curSizeDisplay, setCurSizeDisplay ] = useState(listOfSizes[1]);
 
-  console.log(listOfSizes);
+  // console.log(listOfSizes);
 
   useEffect(()=> {
     setCurSizeDisplay(curSize);

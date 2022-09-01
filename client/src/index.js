@@ -9,6 +9,7 @@ import { ProductRelatedProvider } from './contexts/product-related.context.jsx';
 import { ProductStylesProvider } from './contexts/product-styles.context.jsx';
 import { QuestionsProvider } from './contexts/question.context.jsx';
 import { ProductReviewsProvider } from './contexts/product-reviews.context.jsx'
+import { LocalStorageProvider } from './contexts/local-storage.context.jsx';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -18,7 +19,9 @@ root.render(
       <ProductRelatedProvider>
         <QuestionsProvider>
           <ProductReviewsProvider>
-            <App />
+            <LocalStorageProvider>
+              <App />
+            </LocalStorageProvider>
           </ProductReviewsProvider>
         </QuestionsProvider>
       </ProductRelatedProvider>
