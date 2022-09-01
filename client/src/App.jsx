@@ -8,9 +8,9 @@ import RelatedItemsAndComp from './components/Related/RelatedItemsAndComp.jsx';
 import { ProductContext } from './contexts/product-info.context.jsx';
 import { ProductStylesContext } from './contexts/product-styles.context.jsx';
 import { ProductRelatedContext } from './contexts/product-related.context.jsx';
-
 import { QuestionsContext } from './contexts/question.context.jsx';
 import { ProductReviewsContext } from './contexts/product-reviews.context.jsx';
+import { LocalStorageContext } from './contexts/local-storage.context.jsx';
 
 const App = () => {
     // These are here for examples of how to use these
@@ -19,6 +19,7 @@ const App = () => {
     const { productRelated } = useContext(ProductRelatedContext); // Array type, you can map over this
     const { productID, results } = useContext(QuestionsContext);  // ProductID is an integer type --> results is an Object type
     const { reviews, metadata } = useContext(ProductReviewsContext);
+    const { outfitList } = useContext(LocalStorageContext);
 
     return (
       <>

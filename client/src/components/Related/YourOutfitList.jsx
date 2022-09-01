@@ -7,10 +7,10 @@ import { ProductContext } from '../../contexts/product-info.context.jsx';
 import axios from 'axios';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { HiOutlinePlusCircle } from 'react-icons/hi';
-import useLocalStorage from '../../contexts/useLocalStorage.jsx';
+import { LocalStorageContext } from '../../contexts/local-storage.context.jsx';
 
 const YourOutfitList = () => {
-  const [outfitList, setOutfit] = useLocalStorage('outfits', []);
+  const { outfitList, setOutfitList } = useContext(LocalStorageContext);
 
   const [relatedProduct, setRelatedProduct] = useState([]);
 
@@ -45,7 +45,7 @@ const YourOutfitList = () => {
   const addOutfit = () => {
     var currentProduct = process.env.PRODUCT_ID;
     if (outfitList.indexOf(currentProduct) === -1){
-      setOutfit([...outfitList, currentProduct]);
+      setOutfitList([...outfitList, currentProduct]);
     }
   }
 
@@ -55,7 +55,7 @@ const YourOutfitList = () => {
     if (index > -1) {
       outfits.splice(index, 1)
     }
-    setOutfit(outfits)
+    setOutfitList(outfits)
   }
 
   const slideLeft = () => {
