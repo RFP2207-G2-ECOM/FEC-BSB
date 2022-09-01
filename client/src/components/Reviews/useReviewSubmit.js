@@ -34,14 +34,14 @@ export default function useReviewSubmit (onClose, submitPressed, setSubmitPresse
         }
       }).then(() => {
         console.log('success!')
-        // setLoading(false)
-        // setSubmitPressed(false)
-        // onClose()
+        setLoading(false)
+        setSubmitPressed(false)
+        onClose()
       }).catch(err => {
         console.log(err)
-        // setError(true)
-        // setLoading(false)
-        // setSubmitPressed(false)
+        setError(true)
+        setLoading(false)
+        setSubmitPressed(false)
       })
     }
   }, [submitPressed])
