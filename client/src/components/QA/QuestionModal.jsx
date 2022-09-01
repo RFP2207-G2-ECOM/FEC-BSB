@@ -7,11 +7,29 @@ import { ProductContext } from '../../contexts/product-info.context.jsx';
 import '../../styles/QA/QuestionModal.css';
 
 const QuestionModal = ({ open, product_id, onClose }) => {
-  const { product } = useContext(ProductContext); // Object type
+  const { product } = useContext(ProductContext);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
+
+  const handleEmailChange = (e) => {
+    if (e.target.value.length <= 60) {
+      setEmail(e.target.value)
+    }
+  }
+
+  const handleNameChange = (e) => {
+    if (e.target.value.length <= 60) {
+      setName(e.target.value)
+    }
+  }
+
+  const handleBodyField = (e) => {
+    if (e.target.value.length <= 1000) {
+      setBody(e.target.value)
+    }
+  }
 
   const handleSubmit = (e) => {
     const data = {
@@ -50,18 +68,26 @@ const QuestionModal = ({ open, product_id, onClose }) => {
             <input
               value={name}
               type='text'
-              placeholder='Enter Name...'
-              onChange={e => setName(e.target.value)}
+              placeholder='Example: jackson11!'
+              onChange={handleNameChange}
             ></input>
+            {name ?
+              <p className='name-message'>For privacy reasons, do not use your full name or email address</p> :
+              <></>
+            }
           </label>
           <label>
             Email:
             <input
               value={email}
               type='email'
-              placeholder='Enter Email...'
-              onChange={e => setEmail(e.target.value)}
-            ></input>
+              placeholder='Why did you like the product or not?”'
+              onChange={handleEmailChange}
+              ></input>
+              { email ?
+                <p className='name-message'>For authentication reasons, you will not be emailed</p> :
+                <></>
+              }
           </label>
           <label>
             Question:
@@ -69,7 +95,7 @@ const QuestionModal = ({ open, product_id, onClose }) => {
               value={body}
               type='text'
               placeholder='Enter Question'
-              onChange={e => setBody(e.target.value)}
+              onChange={handleBodyField}
             ></textarea>
           </label>
           <button onClick={e => onClose(e.preventDefault())}>Cancel</button>

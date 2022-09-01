@@ -7,10 +7,10 @@ import { ProductContext } from '../../contexts/product-info.context.jsx';
 import axios from 'axios';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { HiOutlinePlusCircle } from 'react-icons/hi';
-import useLocalStorage from '../../contexts/useLocalStorage.jsx';
+import { LocalStorageContext } from '../../contexts/local-storage.context.jsx';
 
 const YourOutfitList = () => {
-  const [outfitList, setOutfit] = useLocalStorage('outfits', []);
+  const { outfitList, setOutfitList } = useContext(LocalStorageContext);
 
   const [relatedProduct, setRelatedProduct] = useState([]);
 
@@ -45,8 +45,17 @@ const YourOutfitList = () => {
   const addOutfit = () => {
     var currentProduct = process.env.PRODUCT_ID;
     if (outfitList.indexOf(currentProduct) === -1){
-      setOutfit([...outfitList, currentProduct]);
+      setOutfitList([...outfitList, currentProduct]);
     }
+  }
+
+  const deleteOutfit = (productID) => {
+    const outfits = [...outfitList]
+    const index = outfits.indexOf(JSON.stringify(productID))
+    if (index > -1) {
+      outfits.splice(index, 1)
+    }
+    setOutfitList(outfits)
   }
 
   const slideLeft = () => {
@@ -77,7 +86,7 @@ const YourOutfitList = () => {
                    </div>
                  </div>
                {relatedProduct.map((relatedProduct, key) => (
-                 <Card relatedProduct={relatedProduct} key={key} />
+                 <Card relatedProduct={relatedProduct} key={key} deleteOutfit={deleteOutfit}/>
                ))}
           </div>
       <MdChevronRight className='slide' onClick={slideRight} size={40} />

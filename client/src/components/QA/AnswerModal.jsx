@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ReactDom from 'react-dom';
+import axios from 'axios';
 
 import { BsPlusLg } from 'react-icons/bs'
-
-import axios from 'axios';
+import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 import '../../styles/QA/AnswerModal.css';
 
-const AnswerModal = ({ open, product_id, onClose }) => {
+const AnswerModal = ({ open, product_id, onClose, question_body }) => {
+  const { product } = useContext(ProductContext);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
@@ -17,6 +19,24 @@ const AnswerModal = ({ open, product_id, onClose }) => {
   const handleClick = () => {
     setPhotoCount(photoCount + 1);
   };
+
+  const handleEmailChange = (e) => {
+    if (e.target.value.length <= 60) {
+      setEmail(e.target.value)
+    }
+  }
+
+  const handleBodyChange = (e) =>{
+    if (e.target.value.length <= 1000) {
+      setBody(e.target.value)
+    }
+  }
+
+  const handleNameChange = (e) => {
+    if (e.target.value.length <= 60) {
+      setName(e.target.value)
+    }
+  }
 
   const handleOnChange = (e) => {
     const abc = {};
@@ -53,7 +73,8 @@ const AnswerModal = ({ open, product_id, onClose }) => {
     <>
       <div className='overlay-styles' />
       <div className='modal-styles'>
-        <div className='ans-mod-title'>Enter an Answer</div>
+        <h1 className='ans-mod-title'>Submit Answer</h1>
+        <h3 className='ans-mod-subtitle'>{`${product.name}: ${question_body}`}</h3>
         <hr></hr>
         <form className='modal-form' onSubmit={handleSubmit}>
           <label>
@@ -61,18 +82,26 @@ const AnswerModal = ({ open, product_id, onClose }) => {
             <input
               value={name}
               type='text'
-              placeholder='Enter Name...'
-              onChange={e => setName(e.target.value)}
+              placeholder='Example: jack543!'
+              onChange={handleNameChange}
             ></input>
+            { name ?
+              <p className='name-message'>For privacy reasons, do not use your full name or email address</p> :
+              <></>
+            }
           </label>
           <label>
             Email:
             <input
               value={email}
               type='email'
-              placeholder='Enter Email...'
-              onChange={e => setEmail(e.target.value)}
+              placeholder='Example: jack@email.com'
+              onChange={handleEmailChange}
             ></input>
+            { email ?
+              <p className='name-message'>For authentication reasons, you will not be emailed</p> :
+              <></>
+            }
           </label>
           <label>
             Answer:
@@ -80,7 +109,7 @@ const AnswerModal = ({ open, product_id, onClose }) => {
               value={body}
               type='text'
               placeholder='Enter Answer'
-              onChange={e => setBody(e.target.value)}
+              onChange={handleBodyChange}
             ></textarea>
           </label>
           <div

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AnswerModal from '../QA/AnswerModal.jsx';
 
-const AddAnswer = ({product_id}) => {
+const AddAnswer = ({product_id, question_body}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -14,6 +14,7 @@ const AddAnswer = ({product_id}) => {
         open={isOpen}
         onClose={() => setIsOpen(false)}
         product_id={product_id}
+        question_body={question_body}
         >
       </AnswerModal>
     </>
