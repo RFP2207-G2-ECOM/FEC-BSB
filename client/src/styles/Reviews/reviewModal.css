@@ -6,7 +6,8 @@
   background-color: white;
   padding: 50px;
   width: 40vw;
-  height: 90vh;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
   z-index: 1000;
 }
 

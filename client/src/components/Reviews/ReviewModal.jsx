@@ -3,6 +3,8 @@ import ReactDom from "react-dom"
 
 import ReviewModalBody from "./ReviewModalBody.jsx"
 import ReviewModalCharacteristicsList from "./ReviewModalCharacteristicsList.jsx"
+import ReviewModalEmail from "./ReviewModalEmail.jsx"
+import ReviewModalNickname from "./ReviewModalNickname.jsx"
 import ReviewModalRecommended from "./ReviewModalRecommended.jsx"
 import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
 import ReviewModalSummary from "./ReviewModalSummary.jsx"
@@ -21,8 +23,8 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [email, setEmail] = useState("")
 
   useEffect(() => {
-  console.log('summary changed!', reviewSummary)
-  },[reviewSummary])
+  console.log('email changed!', email)
+  },[email])
 
   if(!open) return null
 
@@ -61,8 +63,16 @@ const ReviewModal = ({ open, onClose, productName }) => {
           />
         </div>
         <div>Upload your photos</div>
-        <div>What is your nickname</div>
-        <div>Your email</div>
+        <div className="review-modal-nickname">
+          <ReviewModalNickname
+            setNickname={setNickname}
+          />
+        </div>
+        <div>
+          <ReviewModalEmail
+            setEmail={setEmail}
+          />
+        </div>
         <button onClick={onClose}>Submit review</button>
         <button onClick={onClose}>Cancel</button>
       </div>
