@@ -16,6 +16,7 @@ const AInfo = ({answerer_name, asker_name, date, helpful, id}) => {
       <Helpful
         id={id}
         helpful={helpful}
+        helpfulType='answers'
       />
       <Report
         id={id}
