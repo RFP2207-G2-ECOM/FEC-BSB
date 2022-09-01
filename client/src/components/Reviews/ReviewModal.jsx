@@ -1,16 +1,20 @@
 import React, { useState } from "react"
-import ReactDOM from "react-dom"
+import ReactDom from "react-dom"
 
 import styles from "../../styles/Reviews/reviewModal.css"
 
 const ReviewModal = ({ open, onClose }) => {
   if(!open) return null
 
-  return (
-    <div
-    >This is the review modal!
-      <button onClick={onClose}>Close Modal</button>
-    </div>
+  return ReactDom.createPortal (
+    <>
+      <div className="overlay-styles"></div>
+      <div className="review-modal-styles">
+        <div>This is the review modal!</div>
+        <button onClick={onClose}>Close Modal</button>
+      </div>
+    </>,
+    document.getElementById('portal')
   )
 }
 
