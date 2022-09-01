@@ -153,6 +153,7 @@
 .comparison-title {
   display: flex;
   justify-content: space-between;
+  margin-right: 10%;
 }
 
 .columns {
