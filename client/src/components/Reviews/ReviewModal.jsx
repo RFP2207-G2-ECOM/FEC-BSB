@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import ReactDom from "react-dom"
 
-import ReviewModalCharacteristics from "./ReviewModalCharacteristics.jsx"
+import ReviewModalCharacteristicsList from "./ReviewModalCharacteristicsList.jsx"
 import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
 import ReviewModalRecommended from "./ReviewModalRecommended.jsx"
 
@@ -44,7 +44,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
         </div>
         <div>
           <div>Charateristics</div>
-          <ReviewModalCharacteristics />
+          <ReviewModalCharacteristicsList />
         </div>
         <div className="review-modal-summary">
           <div>Review Summary</div>
