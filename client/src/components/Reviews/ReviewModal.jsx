@@ -8,6 +8,7 @@ import ReviewModalNickname from "./ReviewModalNickname.jsx"
 import ReviewModalRecommended from "./ReviewModalRecommended.jsx"
 import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
 import ReviewModalSummary from "./ReviewModalSummary.jsx"
+import useReviewSubmit from "./useReviewSubmit.js"
 
 import styles from "../../styles/Reviews/reviewModal.css"
 
@@ -19,8 +20,14 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [reviewSummary, setReviewSummary] = useState(null)
   const [reviewBody, setReviewBody] = useState(null)
   const [photos, setPhotos] = useState([])
-  const [nickname, setNickname] = useState("")
-  const [email, setEmail] = useState("")
+  const [nickname, setNickname] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [submitPressed, setSubmitPressed] = useState(false)
+
+  const {
+    loading, error
+  } = useReviewSubmit(submitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, photos, nickname, email
+  )
 
   useEffect(() => {
   console.log('email changed!', email)
