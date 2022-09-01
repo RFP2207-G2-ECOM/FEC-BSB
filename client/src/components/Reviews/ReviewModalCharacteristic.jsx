@@ -15,12 +15,12 @@ const ReviewModalCharacteristic = ( { characteristic, characteristicsObj, id, se
 
   let descriptorRendered = "None Selected"
   if (selection) {
-    descriptorRendered = descriptors[characteristic][selection]
+    descriptorRendered = descriptors[characteristic][selection - 1]
   }
 
   useEffect(() => {
     if(selection) {
-      setCharacteristicsObj({...characteristicsObj, [id]: selection + 1})
+      setCharacteristicsObj({...characteristicsObj, [id]: selection})
     }
   }, [selection])
 
@@ -40,8 +40,7 @@ const ReviewModalCharacteristic = ( { characteristic, characteristicsObj, id, se
                   id={`${characteristic}-${i + 1}`}
                   name={characteristic}
                   value={i}
-                  checked={selection === i}
-                  onChange={() => setSelection(i)}
+                  onClick={() => setSelection(i+1)}
                 />
               </label>
             )
