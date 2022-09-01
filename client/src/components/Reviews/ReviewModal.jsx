@@ -7,6 +7,7 @@ import ReviewModalEmail from "./ReviewModalEmail.jsx"
 import ReviewModalNickname from "./ReviewModalNickname.jsx"
 import ReviewModalRecommended from "./ReviewModalRecommended.jsx"
 import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
+import ReviewModalSubmitButton from "./ReviewModalSubmitButton.jsx"
 import ReviewModalSummary from "./ReviewModalSummary.jsx"
 import useReviewSubmit from "./useReviewSubmit.js"
 
@@ -26,7 +27,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
 
   const {
     loading, error
-  } = useReviewSubmit(submitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, photos, nickname, email
+  } = useReviewSubmit(onClose, submitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, photos, nickname, email
   )
 
   useEffect(() => {
@@ -80,7 +81,9 @@ const ReviewModal = ({ open, onClose, productName }) => {
             setEmail={setEmail}
           />
         </div>
-        <button onClick={onClose}>Submit review</button>
+        <ReviewModalSubmitButton
+          setSubmitPressed={setSubmitPressed}
+        />
         <button onClick={onClose}>Cancel</button>
       </div>
     </>,
