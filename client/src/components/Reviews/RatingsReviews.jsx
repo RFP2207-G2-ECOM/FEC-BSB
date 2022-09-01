@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
+import { ProductContext } from "../../contexts/product-info.context.jsx"
 import axios from "axios";
 
 import AddReviewButton from "./AddReviewButton.jsx";
@@ -14,6 +15,7 @@ import styles from "../../styles/Reviews/reviews.css";
 
 const RatingsReviews = () => {
 
+  let { product } = useContext(ProductContext)
   let { metadata } = useContext(ProductReviewsContext)
   let ratings = {...metadata.ratings}
   const ratingsCount =
@@ -88,6 +90,7 @@ const RatingsReviews = () => {
         <ReviewModal
           open={modalOpen}
           onClose={() => setModalOpen(false)}
+          productName={product.name}
         />
       </div>
     </div>
