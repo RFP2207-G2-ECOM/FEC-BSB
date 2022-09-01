@@ -9,7 +9,7 @@ const StyleInfo = () => {
   return (
       <div className='StyleName'>
         <p className='Style-Detail-Spacer'></p>
-        <p className='StyleTitle'>STYLE > </p>
+        <p className='StyleTitle'>STYLE </p>
         <p className='CurStyleTitle'>{styleName}</p>
       </div>
   )
