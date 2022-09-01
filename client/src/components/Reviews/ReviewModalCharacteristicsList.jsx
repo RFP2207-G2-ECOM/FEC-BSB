@@ -25,7 +25,6 @@ const ReviewModalCharacteristicsList = ( { setCharacteristics }) => {
           characteristicsObj={characteristicsObj}
           setCharacteristicsObj={setCharacteristicsObj}
         />
-        // return <div key={i}>{characteristic}</div>
       )}
     </>
   )

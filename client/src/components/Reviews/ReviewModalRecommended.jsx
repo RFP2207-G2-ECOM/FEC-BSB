@@ -9,7 +9,7 @@ const ReviewModalRecommended = ( { setRecommended } ) => {
   }, [selectedOption])
 
   return (
-    <>
+    <div className="review-modal-recommend-options">
       <div>
         <label htmlFor="review-modal-radio-yes">Yes</label>
         <input
@@ -32,7 +32,7 @@ const ReviewModalRecommended = ( { setRecommended } ) => {
           onChange={() => setSelectedOption(false)}
         />
       </div>
-    </>
+    </div>
   )
 }
 

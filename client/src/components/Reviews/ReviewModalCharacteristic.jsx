@@ -25,11 +25,11 @@ const ReviewModalCharacteristic = ( { characteristic, characteristicsObj, id, se
   }, [selection])
 
   return (
-    <>
-      <div>{characteristic}</div>
-      <div>{descriptorRendered}</div>
-      <div>
-        <div>{descriptors[characteristic][0]}</div>
+    <div>
+      <div className='characteristic-header'>{characteristic}</div>
+      <div className='characteristic-scale'>
+        <div className='characteristic-scale-selected'>{descriptorRendered}</div>
+        <div className='characteristic-scale-buttons'>
         {
           [...Array(5)].map((button, i) => {
 
@@ -46,9 +46,13 @@ const ReviewModalCharacteristic = ( { characteristic, characteristicsObj, id, se
             )
           })
         }
-        <div>{descriptors[characteristic][4]}</div>
+        </div>
+        <div className='characteristic-scale-footer'>
+          <div>{descriptors[characteristic][0]}</div>
+          <div>{descriptors[characteristic][4]}</div>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 

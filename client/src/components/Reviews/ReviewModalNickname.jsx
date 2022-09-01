@@ -10,7 +10,7 @@ const ReviewModalNickname = ( { setNickname } ) => {
 
   return (
     <>
-      <div>What is your nickname</div>
+      <div className="review-modal-section-header">What is your nickname</div>
       <input
         type="text"
         value={nicknameText}

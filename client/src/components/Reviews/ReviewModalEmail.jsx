@@ -10,7 +10,7 @@ const ReviewModalEmail = ( { setEmail } ) => {
 
   return (
     <>
-      <div>Your email</div>
+      <div className="review-modal-section-header">Your email</div>
       <input
         type="text"
         value={emailText}

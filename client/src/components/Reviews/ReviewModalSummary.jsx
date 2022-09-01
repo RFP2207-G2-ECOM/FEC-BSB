@@ -10,7 +10,7 @@ const ReviewModalSummary = ( { setReviewSummary } ) => {
 
   return (
     <>
-      <div>Review Summary</div>
+      <div className="review-modal-section-header">Review Summary</div>
       <input
         type="text"
         maxLength="60"

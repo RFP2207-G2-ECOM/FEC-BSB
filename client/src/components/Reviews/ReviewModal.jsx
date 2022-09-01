@@ -34,23 +34,25 @@ const ReviewModal = ({ open, onClose, productName }) => {
   return ReactDom.createPortal (
     <>
       <div className="overlay-styles"></div>
-      <div className="review-modal-styles">
-        <div>Write Your Review</div>
-        <div>{`About the ${productName}`}</div>
-        <div>
-          <div>Overall rating</div>
+      <div className="review-modal-styles Review-Modal-Container">
+        <div className="review-modal-header">
+          <h1>Write Your Review</h1>
+          <h2>{`About the ${productName}`}</h2>
+        </div>
+        <div className="review-modal-star-rating">
+          <div className="review-modal-section-header">Overall rating</div>
           <ReviewModalStarRating
             setStarRating={setStarRating}
           />
         </div>
         <div>
-          <div>Do you recommend this product?</div>
+          <div className="review-modal-section-header">Do you recommend this product?</div>
           <ReviewModalRecommended
             setRecommended={setRecommended}
           />
         </div>
-        <div>
-          <div>Charateristics</div>
+        <div className='review-modal-characteristics'>
+          <div className="review-modal-section-header">Charateristics</div>
           <ReviewModalCharacteristicsList
             setCharacteristics={setCharacteristics}
           />
@@ -65,7 +67,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
             setReviewBody={setReviewBody}
           />
         </div>
-        <div>Upload your photos</div>
+        <div className="review-modal-section-header">Upload your photos</div>
         <div className="review-modal-nickname">
           <ReviewModalNickname
             setNickname={setNickname}

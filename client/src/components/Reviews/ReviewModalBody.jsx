@@ -13,8 +13,9 @@ const ReviewModalBody = ( { setReviewBody } ) => {
 
   return (
     <>
-      <div>Review Body</div>
+      <div className="review-modal-section-header">Review Body</div>
       <input
+        className='review-modal-body-input'
         type="text"
         minLength="50"
         placeholder="Why did you like the product or not?"

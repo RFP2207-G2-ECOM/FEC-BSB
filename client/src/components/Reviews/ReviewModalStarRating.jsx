@@ -17,10 +17,16 @@ const ReviewModalStarRating = ( { setStarRating } ) => {
   ]
 
   let descriptorRendered
+  let style
   if (hovering) {
     descriptorRendered = descriptors[hoverRating -1]
+    style={visibility: 'visible'}
   } else if (rating) {
     descriptorRendered = descriptors[rating - 1]
+    style={visibility: 'visible'}
+  } else {
+    descriptorRendered = "whitespace"
+    style={visibility: 'hidden'}
   }
 
   useEffect(() => {
@@ -63,7 +69,7 @@ const ReviewModalStarRating = ( { setStarRating } ) => {
         })}
       </div>
       {
-        <div>{descriptorRendered}</div>
+        <div style={style}>{descriptorRendered}</div>
       }
     </div>
   )
