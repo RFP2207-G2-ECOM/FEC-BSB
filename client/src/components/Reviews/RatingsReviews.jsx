@@ -26,6 +26,7 @@ const RatingsReviews = () => {
   const [reviewCount, setReviewCount] = useState(2)
   const [pageNumber, setPageNumber] = useState(1)
   const [moreReviews, setMoreReviews] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
 
   const {
     reviews,
@@ -43,7 +44,6 @@ const RatingsReviews = () => {
   return (
     <div className="RR-Container">
       <div id='LinkToReviews'></div>
-      <ReviewModal />
       <div className="rr-title">RATINGS & REVIEWS</div>
       <div className="Breakdown-Container">
         <RatingsBreakdown
@@ -79,9 +79,17 @@ const RatingsReviews = () => {
             setMoreReviews={setMoreReviews}
             setReviewCount={setReviewCount}
           />
-          <AddReviewButton />
+          <AddReviewButton
+            setModalOpen={setModalOpen}
+          />
         </div>
       }
+      <div className="Review-Modal-Container">
+        <ReviewModal
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+        />
+      </div>
     </div>
   )
 }

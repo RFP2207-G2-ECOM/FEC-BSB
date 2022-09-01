@@ -1,9 +1,13 @@
 import React from "react"
 
-const AddReviewButton = () => {
+const AddReviewButton = ({ setModalOpen }) => {
   return (
     <>
-      <button className="add-a-review-button">ADD A REVIEW</button>
+      <button
+        className="add-a-review-button"
+        onClick={() => setModalOpen(true)}
+      >ADD A REVIEW
+      </button>
     </>
   )
 }
