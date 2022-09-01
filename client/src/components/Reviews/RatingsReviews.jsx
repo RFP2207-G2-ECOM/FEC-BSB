@@ -40,8 +40,6 @@ const RatingsReviews = () => {
     error
   } = useReviewsSearch(pageNumber, ratingsCount, reviewSort, starFilters)
 
-  console.log( 'metadata:', metadata)
-
   useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
       setFilteredReviews(reviews)

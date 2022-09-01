@@ -13,28 +13,35 @@ export default function useReviewSubmit (onClose, submitPressed, setSubmitPresse
     setLoading(true)
     setError(false)
     if (submitPressed) {
-      axios.post(`${baseURI}reviews/`, {
+
+      const data = {
+        product_id: productID,
+        rating: starRating,
+        summary: reviewSummary,
+        body: reviewBody,
+        recommend: recommended,
+        name: nickname,
+        email: email,
+        photos: photos,
+        characteristics: characteristics
+      }
+
+      console.log('this is data:', data)
+
+      axios.post(`${baseURI}reviews/`, data, {
         headers: {
           Authorization: gitHubToken
-        },
-        data: {
-          product_id: productID,
-          rating: starRating,
-          summary: reviewSummary,
-          body: reviewBody,
-          recommend: recommended,
-          name: nickname,
-          email: email,
-          photos: photos,
-          characteristics: characteristics
         }
-      }).then(res => {
-        setLoading(false)
-        setSubmitPressed(false)
-        onClose()
+      }).then(() => {
+        console.log('success!')
+        // setLoading(false)
+        // setSubmitPressed(false)
+        // onClose()
       }).catch(err => {
         console.log(err)
-        setError(true)
+        // setError(true)
+        // setLoading(false)
+        // setSubmitPressed(false)
       })
     }
   }, [submitPressed])

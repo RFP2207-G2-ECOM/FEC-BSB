@@ -27,12 +27,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
 
   const {
     loading, error
-  } = useReviewSubmit(onClose, submitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, photos, nickname, email
-  )
-
-  useEffect(() => {
-  console.log('email changed!', email)
-  },[email])
+  } = useReviewSubmit(onClose, submitPressed, setSubmitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, photos, nickname, email)
 
   if(!open) return null
 
