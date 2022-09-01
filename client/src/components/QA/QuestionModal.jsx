@@ -13,6 +13,11 @@ const QuestionModal = ({ open, product_id, onClose }) => {
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
 
+  const handleEmailChange = (e) => {
+    if (e.target.value.length <= 60) {
+      setEmail(e.target.value)
+    }
+  }
 
   const handleNameChange = (e) => {
     if (e.target.value.length <= 60) {
@@ -76,9 +81,13 @@ const QuestionModal = ({ open, product_id, onClose }) => {
             <input
               value={email}
               type='email'
-              placeholder='Enter Email...'
-              onChange={e => setEmail(e.target.value)}
-            ></input>
+              placeholder='Why did you like the product or not?”'
+              onChange={handleEmailChange}
+              ></input>
+              { email ?
+                <p className='name-message'>For authentication reasons, you will not be emailed</p> :
+                <></>
+              }
           </label>
           <label>
             Question:
