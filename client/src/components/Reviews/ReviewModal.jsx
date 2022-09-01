@@ -3,8 +3,9 @@ import ReactDom from "react-dom"
 
 import ReviewModalBody from "./ReviewModalBody.jsx"
 import ReviewModalCharacteristicsList from "./ReviewModalCharacteristicsList.jsx"
-import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
 import ReviewModalRecommended from "./ReviewModalRecommended.jsx"
+import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
+import ReviewModalSummary from "./ReviewModalSummary.jsx"
 
 import styles from "../../styles/Reviews/reviewModal.css"
 
@@ -20,8 +21,8 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [email, setEmail] = useState("")
 
   useEffect(() => {
-  console.log('body changed!', reviewBody)
-  },[reviewBody])
+  console.log('summary changed!', reviewSummary)
+  },[reviewSummary])
 
   if(!open) return null
 
@@ -50,13 +51,9 @@ const ReviewModal = ({ open, onClose, productName }) => {
           />
         </div>
         <div className="review-modal-summary">
-          <div>Review Summary</div>
-          <input
-            type="text"
-            maxLength="60"
-            placeholder="Example: Best purchase ever!"
-          >
-          </input>
+          <ReviewModalSummary
+            setReviewSummary={setReviewSummary}
+          />
         </div>
         <div className="review-modal-body">
           <ReviewModalBody
