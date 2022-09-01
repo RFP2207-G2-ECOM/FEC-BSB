@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useEffect } from "react";
 
 const MoreReviewsButton = ({ moreReviews, reviewsToRender, setReviewsToRender, setMoreReviews, ratingsCount, loading }) => {
 

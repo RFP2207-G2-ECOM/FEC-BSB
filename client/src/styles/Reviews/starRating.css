@@ -15,3 +15,12 @@
   left: 0;
   overflow: hidden;
 }
+
+input[type="radio"].modalStar {
+  display: none;
+}
+
+.modalStar {
+  cursor: pointer;
+  transition: color 200ms;
+}
