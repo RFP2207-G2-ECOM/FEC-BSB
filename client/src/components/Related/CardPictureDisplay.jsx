@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 const CardPictureDisplay = ({productStyle}) => {
-  const [ currentPic, setCurrentPic ] = useState(0); // curPic & setter
+  const [ currentPic, setCurrentPic ] = useState(0);
   const [ listOfPictures, SetListOfPictures ] = useState([]);
   const [ listOfThumbnails, setListOfThumbnails ] = useState([]);
 
@@ -32,22 +32,22 @@ const CardPictureDisplay = ({productStyle}) => {
     return (
       <>
         <img className='card-image' src={listOfPictures[currentPic]}/>
-          <MdChevronRight className='' onClick={handleRightClick} />
+          <MdChevronRight className='right-card-arrow' onClick={handleRightClick} />
       </>
     )
-  } else if (curCardPic === listOfCardPics.length - 1) {
+  } else if (currentPic === listOfPictures.length - 1) {
     return (
       <>
         <img className='card-image' src={listOfPictures[currentPic]}/>
-          <MdChevronLeft className='' onClick={handleLeftClick} />
+          <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick} />
       </>
     )
   } else {
     return (
       <>
         <img className='card-image' src={listOfPictures[currentPic]}/>
-          <MdChevronLeft className='' onClick={handleLeftClick} />
-          <MdChevronRight className='' onClick={handleRightClick} />
+          <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick} />
+          <MdChevronRight className='right-card-arrow' onClick={handleRightClick} />
       </>
     )
   }
