@@ -10,7 +10,7 @@ const CartButton = () => {
   let handleCartSubmit = (e) => {
     let index = listOfSizes.indexOf(curSize);
     let obj = listOfSKUs[index];
-    console.log('obj', obj)
+    // console.log('obj', obj)
     setCurSKU(obj);
   };
 

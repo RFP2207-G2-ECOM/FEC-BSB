@@ -33,13 +33,13 @@ const RatingsReviews = () => {
   } = useReviewsSearch(pageNumber, ratingsCount, reviewSort, starFilters)
 
   useEffect(() => {
-    console.log('star filters:', starFilters)
+    // console.log('star filters:', starFilters)
   }, [starFilters])
 
   useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
       setFilteredReviews(reviews)
-      console.log('these are the reviews', reviews)
+      // console.log('these are the reviews', reviews)
     }
   }, [reviews])
 

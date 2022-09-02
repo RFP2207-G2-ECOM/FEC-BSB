@@ -8,14 +8,14 @@ const RatingsBreakdownFilter = ({ rating, totalReviews, ratingsObject, setStarFi
   const fillStyle = {width: `${ratings}%`}
 
   const applyStarFilter = (e) => {
-    console.log('filterStatus:', filterStatus)
+    // console.log('filterStatus:', filterStatus)
     if (!filterStatus) {
       setStarFilters([...starFilters, rating])
     } else {
       const index = starFilters.indexOf(rating)
       let tempFilters = [...starFilters]
       tempFilters.splice(index, 1)
-      console.log('this is tempFilters', tempFilters)
+      // console.log('this is tempFilters', tempFilters)
       setStarFilters(tempFilters)
     }
     setFilterStatus(!filterStatus)

@@ -1,24 +1,29 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import ReactDom from 'react-dom';
 import axios from 'axios';
 
 import { BsPlusLg } from 'react-icons/bs'
 import { ProductContext } from '../../contexts/product-info.context.jsx';
+import { QuestionsContext } from '../../contexts/question.context.jsx';
 
 import '../../styles/QA/AnswerModal.css';
 
 const AnswerModal = ({ open, product_id, onClose, question_body }) => {
   const { product } = useContext(ProductContext);
+  const { results, setResults } = useContext(QuestionsContext);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [body, setBody] = useState('');
   const [photoCount, setPhotoCount] = useState(0);
-  const [photoValues, setPhotoValues] = useState({});
+  const [photos, setPhotos] = useState(null);
 
-  const handleClick = () => {
-    setPhotoCount(photoCount + 1);
-  };
+  const initState = () => {
+    setPhotos(null);
+    setName('');
+    setEmail('');
+    setBody('');
+  }
 
   const handleEmailChange = (e) => {
     if (e.target.value.length <= 60) {
@@ -26,7 +31,7 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
     }
   }
 
-  const handleBodyChange = (e) =>{
+  const handleBodyChange = (e) => {
     if (e.target.value.length <= 1000) {
       setBody(e.target.value)
     }
@@ -38,32 +43,76 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
     }
   }
 
-  const handleOnChange = (e) => {
-    const abc = {};
-    abc[e.target.className] = e.target.value;
-    setPhotoValues({ ...photoValues, ...abc });
-  };
-
   const handleSubmit = (e) => {
+    const counter = 0;
+
     const data = {
       body,
       name,
       email,
       product_id: parseInt(product_id),
-      photos: Object.values(photoValues).map(val => val)
+      photos: [],
     }
 
-    axios.post(`${process.env.BASE_URI}qa/questions/${product_id}/answers`, data, {
-      headers: {
-        'Authorization': process.env.GITHUB_TOKEN
-      }
-    })
-      .then(result => {
-        onClose();
+    if (photos !== null) {
+      const photoLength = photos.length;
+      var arrPhotos = [...photos];
+
+      arrPhotos.map((photo, index) => {
+        var formData = new FormData();
+        formData.append('file', photo);
+        formData.append('upload_preset', 'nfpy2dhh');
+
+        axios.post('https://api.cloudinary.com/v1_1/ase-boogy-cloudinator/image/upload', formData)
+          .then(response => {
+            data.photos = [...data.photos, response.data.url];
+            if (data.photos.length >= photoLength) {
+              axios.post(`${process.env.BASE_URI}qa/questions/${product_id}/answers`, data, {
+                headers: {
+                  'Authorization': process.env.GITHUB_TOKEN
+                }
+              })
+                .then(result => {
+                  var baseURI = process.env.BASE_URI;
+                  axios.get(`${baseURI}qa/questions/?product_id=${process.env.PRODUCT_ID}&page=1&count=30`, {
+                    headers: {
+                      'Authorization': process.env.GITHUB_TOKEN
+                    }
+                  })
+                    .then(result => {
+                      setResults(result.data.results);
+                    })
+                  onClose();
+                })
+                .catch(error => {
+                  console.log('ERROR:', error);
+                })
+            }
+          })
       })
-      .catch(error => {
-        console.log('ERROR:', error);
+    } else {
+      axios.post(`${process.env.BASE_URI}qa/questions/${product_id}/answers`, data, {
+        headers: {
+          'Authorization': process.env.GITHUB_TOKEN
+        }
       })
+        .then(result => {
+          var baseURI = process.env.BASE_URI;
+          axios.get(`${baseURI}qa/questions/?product_id=${process.env.PRODUCT_ID}&page=1&count=30`, {
+            headers: {
+              'Authorization': process.env.GITHUB_TOKEN
+            }
+          })
+            .then(result => {
+              setResults(result.data.results);
+            })
+          onClose();
+        })
+        .catch(error => {
+          console.log('ERROR:', error);
+        })
+    }
+    initState();
     e.preventDefault();
   }
 
@@ -85,7 +134,7 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
               placeholder='Example: jack543!'
               onChange={handleNameChange}
             ></input>
-            { name ?
+            {name ?
               <p className='name-message'>For privacy reasons, do not use your full name or email address</p> :
               <></>
             }
@@ -98,7 +147,7 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
               placeholder='Example: jack@email.com'
               onChange={handleEmailChange}
             ></input>
-            { email ?
+            {email ?
               <p className='name-message'>For authentication reasons, you will not be emailed</p> :
               <></>
             }
@@ -112,25 +161,13 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
               onChange={handleBodyChange}
             ></textarea>
           </label>
-          <div
-            onClick={handleClick}
-            className='add-photo'
-          >
-            Click me to add a photo!
-          </div>
-          <br></br>
-          {Array.from(Array(photoCount)).map((c, index) => {
-            return (
-              <input
-                onChange={handleOnChange}
-                key={index}
-                className={index}
-                type="text"
-                placeholder='Enter photo URL'
-              ></input>
-            );
-          })}
 
+          <input
+            label='Photo Upload'
+            type='file'
+            onChange={(e) => setPhotos(e.target.files)}
+            multiple
+          />
           <div className='more-answers'>
             <button onClick={e => onClose(e.preventDefault())}>Cancel</button>
             <button className='mod-sub-but'>Submit Answer</button>
