@@ -34,11 +34,15 @@ const QuantitySelect = () => {
 
   if (curSize === 'Select Size') {
     return (
-      <input type='number' className='QuantitySelect' value={0} disabled ></input>
+      <div className='QuantityFormatter'>
+        <input type='number' className='QuantitySelect' value={0} disabled ></input>
+      </div>
     )
   } else {
     return (
-      <input type='number' className='QuantitySelect' onChange={handleQuantityChange} value={quantityDisplay}></input>
+      <div className='QuantityFormatter'>
+        <input type='number' className='QuantitySelect' onChange={handleQuantityChange} value={quantityDisplay}></input>
+      </div>
     )
   }
 };
