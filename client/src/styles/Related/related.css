@@ -28,8 +28,8 @@
   height: 30px; */
   /* position: absolute; */
   position: relative;
-  left: 220px;
-  top: -290px;
+  left: 190px;
+  top: -305px;
 
   /* display: flex;
   justify-content: center;
@@ -43,12 +43,6 @@
 
 .card-button:hover {
   color: white;
-}
-
-.card-media {
-  min-width: 250px;
-  max-height: 300px;
-  overflow: hidden;
 }
 
 .card-add-button {
@@ -76,6 +70,12 @@
   padding: 0px 10px;
   position: relative;
   top: 20px;
+}
+
+.card-media {
+  min-width: 250px;
+  max-height: 300px;
+  overflow: hidden;
 }
 
 .card-image {
@@ -217,3 +217,44 @@ tr:nth-child(even) {
   left: 0;
   overflow: hidden;
 }
+
+.right-card-arrow {
+  position: relative;
+  /* left: 190px; */
+  left: 220px;
+  top: -150px;
+  color: black;
+  font-weight: 550;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  color: black;
+  border-radius: 5px;
+  font-family: 'Lato';
+  font-size: 30px;
+}
+
+/* .right-card-arrow:hover {
+  background-color: white;
+} */
+
+.left-card-arrow {
+  position: relative;
+  left: 0px;
+  top: -150px;
+  color: black;
+  font-weight: 550;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  /* background-color: #5AB753; */
+  border-radius: 5px;
+  font-family: 'Lato';
+  font-size: 30px;
+  /* color: #FFFFFF; */
+}
+
+/* .left-card-arrow:hover {
+    background-color: white;
+} */
+
