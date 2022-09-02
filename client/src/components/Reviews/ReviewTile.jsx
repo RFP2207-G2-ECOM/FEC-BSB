@@ -1,4 +1,5 @@
 import React, { useRef, useCallback } from "react"
+import { FiCheck } from "react-icons/fi"
 
 import Helpful from "../Helpful.jsx"
 import Report from "../Report.jsx"
@@ -9,7 +10,6 @@ import styles from "../../styles/Reviews/reviewTile.css"
 
 const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, username, date, summary, body, photos, recommend, response, helpful, setReviewsToRender }) => {
 
-  console.log(photos)
   // observer references when last review tile is visible,
   // callback pulls more review data
   const observer = useRef()
@@ -55,7 +55,10 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
           </div>
         }
         {recommend === true &&
-          <div className="review-tile-recommend">I recommend this product</div>
+          <div className="review-tile-recommend">
+            <div className='review-tile-recommend-icon'><FiCheck /></div>
+            <div>I recommend this product</div>
+          </div>
         }
         {response !== null &&
           <div className="review-tile-response">{response}</div>

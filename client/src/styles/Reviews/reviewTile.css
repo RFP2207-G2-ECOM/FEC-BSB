@@ -47,7 +47,15 @@
 }
 
 .review-tile-recommend {
+  display: flex;
   flex-basis: 100%;
+  font-size: 1em;
+  align-items: center;
+  gap: 5px;
+}
+
+.review-tile-recommend-icon {
+  font-size: 1.5em;
 }
 
 .review-tile-response {

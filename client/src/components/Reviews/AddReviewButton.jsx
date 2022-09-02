@@ -1,4 +1,5 @@
 import React from "react"
+import { GoPlus } from "react-icons/go";
 
 const AddReviewButton = ({ setModalOpen }) => {
   return (
@@ -6,7 +7,11 @@ const AddReviewButton = ({ setModalOpen }) => {
       <button
         className="add-a-review-button"
         onClick={() => setModalOpen(true)}
-      >ADD A REVIEW
+      >
+        <span className='add-a-review-text'>
+          <span>ADD A REVIEW</span>
+          <span className='add-a-review-icon'><GoPlus /></span>
+        </span>
       </button>
     </>
   )

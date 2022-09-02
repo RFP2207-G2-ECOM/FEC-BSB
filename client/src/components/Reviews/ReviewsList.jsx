@@ -17,7 +17,7 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
         <div className="reviewList-sort">
           {ratingsCount} reviews, sorted by
           <select onChange={change}>
-            <option value="relevant">relevant</option>
+            <option value="relevant">relevance</option>
             <option value="newest">newest</option>
             <option value="helpful">helpful</option>
           </select>

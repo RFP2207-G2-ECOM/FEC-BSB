@@ -40,12 +40,20 @@
   justify-self: flex-start;
   justify-content: space-between;
   align-items: flex-start;
+  font-weight: bold;
+}
+
+.reviewList-sort select {
+  font-weight: bold;
+  border-width: 0px;
+  text-decoration: underline;
 }
 
 .Buttons-Container {
   grid-column: 2 / 3;
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -53,18 +61,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
-  width: 150px;
-  height: 50px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  background-color: white;
+  padding: 20px;
+  font-weight: bold;
 }
 
 .add-a-review-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
-  width: 200px;
-  height: 50px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  background-color: white;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.add-a-review-text {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.add-a-review-icon {
+  display: flex;
+  font-size: 1.2em;
+  bottom: 20px;
 }
 
 
