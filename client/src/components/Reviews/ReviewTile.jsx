@@ -24,6 +24,18 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
+  const isValidHttpUrl = (string) => {
+    let url;
+
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;
+    }
+    return url.protocol === "http:" || url.protocol === "https:";
+  }
+
+
   return (
     <>
       <div className="Review-Tile-Container">
@@ -36,9 +48,9 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
         {photos.length > 0 &&
           <div className="review-tile-photos">
             {
-              photos.map(photo =>
-                <img className='review-tile-photo' src={photo.url}/>
-              )
+              photos.map(photo => {
+                if (isValidHttpUrl(photo.url)) { return (<img className='review-tile-photo' src={photo.url} alt=''/>) }
+              })
             }
           </div>
         }
