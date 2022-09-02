@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useContext } from "react";
 
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
 import { ProductContext } from "../../contexts/product-info.context.jsx"
@@ -21,8 +20,6 @@ const RatingsReviews = () => {
   let ratings = {...metadata.ratings}
   const ratingsCount =
     Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
-
-
 
   const [starFilters, setStarFilters] = useState([])
   const [filteredReviews, setFilteredReviews] = useState([])
@@ -73,8 +70,8 @@ const RatingsReviews = () => {
           starFilters={starFilters}
         />
       </div>
-      { moreReviews === false &&
-        <div className="Buttons-Container">
+      <div className="Buttons-Container">
+        { moreReviews === false &&
           <MoreReviewsButton
             loading={loading}
             moreReviews={moreReviews}
@@ -84,11 +81,12 @@ const RatingsReviews = () => {
             setMoreReviews={setMoreReviews}
             setReviewCount={setReviewCount}
           />
-          <AddReviewButton
-            setModalOpen={setModalOpen}
-          />
+        }
+        <AddReviewButton
+          setModalOpen={setModalOpen}
+          moreReviews={moreReviews}
+        />
         </div>
-      }
       <div className="Review-Modal-Container">
         <ReviewModal
           open={modalOpen}

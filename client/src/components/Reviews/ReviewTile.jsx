@@ -1,4 +1,5 @@
 import React, { useRef, useCallback } from "react"
+import { FiCheck } from "react-icons/fi"
 
 import Helpful from "../Helpful.jsx"
 import Report from "../Report.jsx"
@@ -23,6 +24,18 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
+  const isValidHttpUrl = (string) => {
+    let url;
+
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;
+    }
+    return url.protocol === "http:" || url.protocol === "https:";
+  }
+
+
   return (
     <>
       <div className="Review-Tile-Container">
@@ -33,10 +46,19 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
         <div className="review-tile-summary">{summary}</div>
         <div className="review-tile-body">{body}</div>
         {photos.length > 0 &&
-          <div className="review-tile-photos">Photos go here!</div>
+          <div className="review-tile-photos">
+            {
+              photos.map((photo, i) => {
+                if (isValidHttpUrl(photo.url)) { return (<img key={i} className='review-tile-photo' src={photo.url} alt=''/>) }
+              })
+            }
+          </div>
         }
         {recommend === true &&
-          <div className="review-tile-recommend">I recommend this product</div>
+          <div className="review-tile-recommend">
+            <div className='review-tile-recommend-icon'><FiCheck /></div>
+            <div>I recommend this product</div>
+          </div>
         }
         {response !== null &&
           <div className="review-tile-response">{response}</div>

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext, useRef, useCallback } from "react"
-import { ProductContext } from '../../contexts/product-info.context.jsx';
+import React from 'react'
 
-import ReviewTile from "./ReviewTile.jsx"
+import AddReviewButton from './AddReviewButton.jsx'
+import ReviewTile from './ReviewTile.jsx'
 
 const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCount, reviewsToRender, setReviewsToRender, setMoreReviews, setReviewSort, starFilters }) => {
 
@@ -17,14 +17,14 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
         <div className="reviewList-sort">
           {ratingsCount} reviews, sorted by
           <select onChange={change}>
-            <option value="relevant">relevant</option>
+            <option value="relevant">relevance</option>
             <option value="newest">newest</option>
             <option value="helpful">helpful</option>
           </select>
         </div>
-        { moreReviews === true &&
-          <button className="scroll-add-a-review-button add-a-review-button">Add A Review</button>
-        }
+        {/* { moreReviews === true &&
+          <AddReviewButton />
+        } */}
       </div>
       <div>
         {(filteredReviews
