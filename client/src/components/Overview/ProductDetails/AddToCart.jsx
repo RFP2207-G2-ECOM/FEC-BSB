@@ -53,7 +53,9 @@ const AddToCart = () => {
     <div className='AddToCart'>
       <CurrentSKUContext.Provider value={value} >
         <div className='SizeAndQuanitityRow'>
+          <p className='Style-Detail-Spacer'></p>
           <QuantitySelect />
+          <p className='Style-Detail-Spacer'></p>
           <SizeSelect />
         </div>
         <div className='CartAndFavRow'>

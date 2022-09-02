@@ -24,16 +24,15 @@ const ProductDisplay = () => {
 
   useEffect(()=>{
     if (Object.keys(curStyle).length) {
-      console.log(curStyle.photos);
       let allPhotos = curStyle.photos;
 
       let mainPics = [];
       let thumbnails = [];
-      // separate into two arrays
       for (let i = 0; i < allPhotos.length; i++) {
         mainPics.push(allPhotos[i].url);
         thumbnails.push(allPhotos[i].thumbnail_url)
       }
+
       setListOfPics(mainPics);
       setListOfThumbnails(thumbnails);
     }
