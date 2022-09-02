@@ -217,3 +217,17 @@ tr:nth-child(even) {
   left: 0;
   overflow: hidden;
 }
+
+/* .related-stars-and-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 10%;
+}
+
+.related-stars {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 4vh;
+} */
