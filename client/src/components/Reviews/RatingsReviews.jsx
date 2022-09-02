@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext, useRef, useCallback } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useContext } from "react";
 
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
 import { ProductContext } from "../../contexts/product-info.context.jsx"
