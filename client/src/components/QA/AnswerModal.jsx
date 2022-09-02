@@ -168,6 +168,7 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
             onChange={(e) => setPhotos(e.target.files)}
             multiple
           />
+          <p className='photo-message'>Up to 5 images can be added</p>
           <div className='more-answers'>
             <button onClick={e => onClose(e.preventDefault())}>Cancel</button>
             <button className='mod-sub-but'>Submit Answer</button>
