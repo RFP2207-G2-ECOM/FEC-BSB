@@ -61,37 +61,16 @@ const ComparisonModal = ({ open, children, onClose, productInfo }) => {
       <div className='overlay-styles'/>
       <div className='modal-styles'>
         <button onClick={onClose}>Close Modal</button>
-        <div>Comparing</div>
-        <div className='comparison-title'>
-          <div><b>{productInfo.name}</b></div> <div><b>{productInfo.name}</b></div>
-        </div>
-        <div className='columns'>
-        <div className='camparison-column'>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        </div>
-        <div className='camparison-column'>
-          {productInfo.features.map((feature, key) =>
+        <table>
+        <tr>
+          <th>{product.name}</th>
+          <th>Features</th>
+          <th>{productInfo.name}</th>
+        </tr>
+          {productFeatures.map((feature, key) =>
             <ComparisonFeatures feature={feature} key={key}/>
           )}
-        </div>
-        <div className='camparison-column'>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        </div>
-        </div>
+        </table>
       </div>
     </>,
     document.getElementById('portal')

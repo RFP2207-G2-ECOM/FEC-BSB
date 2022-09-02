@@ -133,24 +133,23 @@
   bottom: 0;
   background-Color: rgba(0, 0, 0, 0.1);
   z-index: 1000;
-
 }
 
 .modal-styles {
   position: fixed;
-  /* top: 50%;
-  left: 50%; */
   margin-left: auto;
   margin-right: auto;
   transform: translate(-50%, -50%);
   background-Color: #FFF;
   padding: 50px;
   z-index: 1000;
-  /* overflow: scroll; */
-  width: 500px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 35%;
+  border: 1px solid #ddd;
 }
 
-.comparison-title {
+/* .comparison-title {
   display: flex;
   justify-content: space-between;
   margin-right: 10%;
@@ -165,4 +164,34 @@
 
 .camparison-column {
   flex: 33.33%;
+} */
+
+/*Table for Comparison Modal*/
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+/* th:first-child, td:first-child {
+  text-align: left;
+} */
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
 }
