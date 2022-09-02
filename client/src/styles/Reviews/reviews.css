@@ -24,22 +24,7 @@
 .Breakdown-Container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-/* .RatingsBreakdown-Container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid black;
-  margin-bottom: 20px;
-} */
-
-.ProductBreakdown-Container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid black;
+  gap: 2.5em;
 }
 
 .ReviewsList-Container {
@@ -55,16 +40,23 @@
   justify-self: flex-start;
   justify-content: space-between;
   align-items: flex-start;
+  font-weight: bold;
 }
 
-/* .scroll-add-a-review-button {
-  align-self: flex-end;
-} */
+.reviewList-sort select {
+  font-weight: bold;
+  font-size: 1em;
+  border-width: 0px;
+  border-bottom: 1px solid black;
+}
 
 .Buttons-Container {
   grid-column: 2 / 3;
+  /* position: sticky;
+  bottom: 400px; */
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -72,18 +64,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
-  width: 150px;
-  height: 50px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  background-color: white;
+  padding: 20px;
+  font-weight: bold;
 }
 
 .add-a-review-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
-  width: 200px;
-  height: 50px;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  background-color: white;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.add-a-review-text {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.add-a-review-icon {
+  display: flex;
+  font-size: 1.2em;
+  bottom: 20px;
 }
 
 

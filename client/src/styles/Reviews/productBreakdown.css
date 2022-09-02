@@ -1,0 +1,50 @@
+.ProductBreakdown-Container {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-breakdown-characteristic {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-breakdown-characteristic-name {
+  margin-bottom: 5px;
+}
+
+.product-breakdown-scale {
+  display: flex;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.product-breakdown-pointer {
+  position: absolute;
+  top: -5px;
+  transform: rotate(180deg);
+  z-index: 99;
+}
+
+.product-breakdown-scale-blocks {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: .25em;
+}
+
+.product-breakdown-scale-blocks > * {
+  top: 0;
+  background-color: #ccc;
+  height: 10px;
+  min-width: 32.5%;
+}
+.product-breakdown-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.product-breakdown-descriptor {
+  font-size: 75%;
+}
