@@ -63,14 +63,16 @@ const ComparisonModal = ({ open, children, onClose, productInfo }) => {
         <button className='modal-button' onClick={onClose}>Close Modal</button>
         <div className='comparison-title'><b>Comparing</b></div>
         <table>
-        <tr>
-          <th>{product.name}</th>
-          <th>Features</th>
-          <th>{productInfo.name}</th>
-        </tr>
-          {productFeatures.map((feature, key) =>
-            <ComparisonFeatures feature={feature} key={key}/>
-          )}
+          <tbody>
+            <tr>
+              <th>{product.name}</th>
+              <th>Features</th>
+              <th>{productInfo.name}</th>
+            </tr>
+              {productFeatures.map((feature, key) =>
+                <ComparisonFeatures feature={feature} key={key}/>
+              )}
+          </tbody>
         </table>
       </div>
     </>,

@@ -4,10 +4,10 @@ import StaticRating from '../StarRating.jsx';
 import Card from './Card.jsx'
 import styles from '../../styles/Related/related.css';
 
-const CardStarRating = () => {
-  let { metadata } = useContext(ProductReviewsContext);
-  let ratings = {...metadata.ratings};
+const CardStarRating = (props) => {
+  let ratings = props.ratings;
   let totalReviews = 0;
+
   ratings = Object.values(ratings);
   if (ratings.length === 0) {
     ratings = 0;
@@ -35,7 +35,7 @@ const CardStarRating = () => {
       return (
         <div className='Stars-And-Reviews'>
           <div className='Stars'>
-            <StaticRating rating={ratings}/>
+            <StaticRating rating={ratings} font='16px'/>
           </div>
         </div>
       )

@@ -6,7 +6,7 @@ const ComparisonFeatures = ({feature}) =>  {
     return (
       <>
         <tr>
-          <th><i class="fa fa-check"></i></th>
+          <th><i className="fa fa-check"></i></th>
           <th>{feature.feature}</th>
           <th>{feature.related}</th>
         </tr>
@@ -18,7 +18,7 @@ const ComparisonFeatures = ({feature}) =>  {
         <tr>
           <th>{feature.current}</th>
           <th>{feature.feature}</th>
-          <th><i class="fa fa-check"></i></th>
+          <th><i className="fa fa-check"></i></th>
         </tr>
       </>
     );

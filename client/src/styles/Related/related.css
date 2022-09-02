@@ -75,7 +75,7 @@
 .card-content {
   padding: 0px 10px;
   position: relative;
-  top: 10px;
+  top: 20px;
 }
 
 .card-image {
@@ -185,10 +185,6 @@ th, td {
   padding: 16px;
 }
 
-/* th:first-child, td:first-child {
-  text-align: left;
-} */
-
 tr:nth-child(even) {
   background-color: #f2f2f2
 }
@@ -209,6 +205,7 @@ tr:nth-child(even) {
   margin: 0;
   padding: 0;
   font: 16px"Times New Roman";
+  top: -1.5em;
 }
 
 .FillRatings {
@@ -220,22 +217,3 @@ tr:nth-child(even) {
   left: 0;
   overflow: hidden;
 }
-
-/* .RatingsBreakdown-Container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1em;
-}
-
-.ratingsBreakdown-header {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 10px;
-}
-
-.ratingsBreakdown-average {
-  font-weight: bold;
-  font-size: 300%;
-  justify-self: flex-start;
-} */
