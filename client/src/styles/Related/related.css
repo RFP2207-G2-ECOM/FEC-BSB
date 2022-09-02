@@ -1,5 +1,5 @@
 .related-items-and-comp-container {
-  width: 80%;
+  width: 82%;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -75,7 +75,7 @@
 .card-content {
   padding: 0px 10px;
   position: relative;
-  top: 10px;
+  top: 20px;
 }
 
 .card-image {
@@ -97,6 +97,7 @@
   flex-wrap: nowrap;
   overflow: hidden;
   margin: 20px;
+  padding: 1.2rem;
 }
 
 /*Snaps in line, scrolls 1 card container at a time*/
@@ -133,29 +134,32 @@
   bottom: 0;
   background-Color: rgba(0, 0, 0, 0.1);
   z-index: 1000;
-
 }
 
 .modal-styles {
   position: fixed;
-  /* top: 50%;
-  left: 50%; */
   margin-left: auto;
   margin-right: auto;
   transform: translate(-50%, -50%);
   background-Color: #FFF;
   padding: 50px;
   z-index: 1000;
-  /* overflow: scroll; */
-  width: 500px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 35%;
+  border: 1px solid #ddd;
 }
 
 .comparison-title {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 10%;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
+.modal-button {
+  display: block;
+  float: right;
+}
+/*
 .columns {
   display: flex;
   flex-direction: row;
@@ -165,4 +169,51 @@
 
 .camparison-column {
   flex: 33.33%;
+} */
+
+/*Table for Comparison Modal*/
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+
+/* For Star Rating*/
+
+.StarRatings {
+  color: #ccc;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font: 16px"Times New Roman";
+  top: -1.5em;
+}
+
+.FillRatings {
+  color: black;
+  padding: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }

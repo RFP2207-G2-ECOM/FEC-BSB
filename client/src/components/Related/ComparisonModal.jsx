@@ -60,38 +60,20 @@ const ComparisonModal = ({ open, children, onClose, productInfo }) => {
     <>
       <div className='overlay-styles'/>
       <div className='modal-styles'>
-        <button onClick={onClose}>Close Modal</button>
-        <div>Comparing</div>
-        <div className='comparison-title'>
-          <div><b>{productInfo.name}</b></div> <div><b>{productInfo.name}</b></div>
-        </div>
-        <div className='columns'>
-        <div className='camparison-column'>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        </div>
-        <div className='camparison-column'>
-          {productInfo.features.map((feature, key) =>
-            <ComparisonFeatures feature={feature} key={key}/>
-          )}
-        </div>
-        <div className='camparison-column'>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        <ul>Fabric</ul>
-        </div>
-        </div>
+        <button className='modal-button' onClick={onClose}>Close Modal</button>
+        <div className='comparison-title'><b>Comparing</b></div>
+        <table>
+          <tbody>
+            <tr>
+              <th>{product.name}</th>
+              <th>Features</th>
+              <th>{productInfo.name}</th>
+            </tr>
+              {productFeatures.map((feature, key) =>
+                <ComparisonFeatures feature={feature} key={key}/>
+              )}
+          </tbody>
+        </table>
       </div>
     </>,
     document.getElementById('portal')
