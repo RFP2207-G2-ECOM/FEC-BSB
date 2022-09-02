@@ -14,6 +14,7 @@ import { QuestionsContext } from '../../contexts/question.context.jsx';
 
 const QuestionAnswers = () => {
   const { productID, results } = useContext(QuestionsContext);
+  const [searchResults, setSearchResults] = useState(results);
   const [questionCount, setQuestionCount] = useState(4);
   const [questionLimit, setQuestionLimit] = useState(0);
   const [answerCount, setAnswerCount] = useState({});
@@ -30,16 +31,20 @@ const QuestionAnswers = () => {
       setQuestionLimit(results.length);
       setAnswerCount(temp);
       setAnswerLimit(tempTwo);
+      setSearchResults(results);
     }
   }, [results])
 
   return (
     <div className='QA-Container'>
       <Title />
-      <SearchBox />
+      <SearchBox
+        searchResults={results}
+        setSearchResults={setSearchResults}
+      />
       {
-        results ?
-          results.map((data, index) => {
+        searchResults ?
+          searchResults.map((data, index) => {
             if (index < questionCount) {
               return (<div key={data.question_id}>
                 <QContainer
@@ -78,7 +83,7 @@ const QuestionAnswers = () => {
         questionCount={questionCount}
         setQuestionCount={setQuestionCount}
         product_id={productID}
-        total_questions={results.length}
+        total_questions={searchResults.length}
       />
     </div>
   )
