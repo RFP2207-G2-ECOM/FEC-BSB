@@ -60,7 +60,8 @@ const ComparisonModal = ({ open, children, onClose, productInfo }) => {
     <>
       <div className='overlay-styles'/>
       <div className='modal-styles'>
-        <button onClick={onClose}>Close Modal</button>
+        <button className='modal-button' onClick={onClose}>Close Modal</button>
+        <div className='comparison-title'><b>Comparing</b></div>
         <table>
         <tr>
           <th>{product.name}</th>

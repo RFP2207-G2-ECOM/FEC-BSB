@@ -97,6 +97,7 @@
   flex-wrap: nowrap;
   overflow: hidden;
   margin: 20px;
+  padding: 2rem;
 }
 
 /*Snaps in line, scrolls 1 card container at a time*/
@@ -149,12 +150,16 @@
   border: 1px solid #ddd;
 }
 
-/* .comparison-title {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 10%;
+.comparison-title {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
+.modal-button {
+  display: block;
+  float: right;
+}
+/*
 .columns {
   display: flex;
   flex-direction: row;
