@@ -31,8 +31,6 @@ const ProductBreakdownCharacteristic = ( { characteristic, characteristicsObj } 
   let scale = ( characteristicsObj[characteristic].value / 5 ) * 100
   let pointerStyle = {left: `${scale}%`}
 
-  console.log(`this is the scale for ${characteristic}:`, scale)
-
   return (
     <div className='product-breakdown-characteristic'>
       <div className='product-breakdown-characteristic-name'>{characteristic}</div>

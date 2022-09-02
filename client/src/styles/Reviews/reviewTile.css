@@ -22,6 +22,7 @@
 .review-tile-summary {
   flex-basis: 100%;
   font-weight: bold;
+  overflow-wrap: break-word;
 }
 
 .review-tile-body {
@@ -29,6 +30,20 @@
   flex-wrap: wrap;
   max-width: 100%;
   overflow-wrap: break-word;
+}
+
+.review-tile-photos {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 2px;
+}
+
+.review-tile-photo {
+  /* float: left; */
+  width: 20%;
+  height: 100px;
+  /* object-fit: cover; */
 }
 
 .review-tile-recommend {
@@ -43,10 +58,14 @@
   display: flex;
   flex-basis: 100%;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .review-tile-helpful {
   display: flex;
+}
+
+.review-tile-report {
+  text-decoration: underline;
 }
 

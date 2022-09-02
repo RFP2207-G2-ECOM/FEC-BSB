@@ -11,8 +11,6 @@ const ProductBreakdown = () => {
   let { metadata } = useContext(ProductReviewsContext)
   let characteristicsObj = {...metadata.characteristics}
 
-  console.log('this is metadata', metadata)
-
   return (
     <div className="ProductBreakdown-Container">
       {Object.keys(characteristicsObj).map((characteristic, i) =>

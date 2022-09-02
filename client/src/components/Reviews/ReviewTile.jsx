@@ -9,6 +9,7 @@ import styles from "../../styles/Reviews/reviewTile.css"
 
 const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, username, date, summary, body, photos, recommend, response, helpful, setReviewsToRender }) => {
 
+  console.log(photos)
   // observer references when last review tile is visible,
   // callback pulls more review data
   const observer = useRef()
@@ -33,7 +34,13 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
         <div className="review-tile-summary">{summary}</div>
         <div className="review-tile-body">{body}</div>
         {photos.length > 0 &&
-          <div className="review-tile-photos">Photos go here!</div>
+          <div className="review-tile-photos">
+            {
+              photos.map(photo =>
+                <img className='review-tile-photo' src={photo.url}/>
+              )
+            }
+          </div>
         }
         {recommend === true &&
           <div className="review-tile-recommend">I recommend this product</div>
