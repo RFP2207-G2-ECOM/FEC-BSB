@@ -1,15 +1,15 @@
 .related-items-and-comp-container {
-  width: 1440px;
+  width: 82%;
   margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .card-container {
   /* margin-top: 10px;
   margin-bottom: 10px; */
-  width: 250px;
-  height: 400px;
+  max-width: 250px;
+  min-height: 400px;
   margin: 10px 30px 10px 0px;
   background-color: #fff;
   transition: box-shadow 0.3s ease-in-out;
@@ -46,8 +46,8 @@
 }
 
 .card-media {
-  width: 250px;
-  height: 300px;
+  min-width: 250px;
+  max-height: 300px;
   overflow: hidden;
 }
 
@@ -75,7 +75,7 @@
 .card-content {
   padding: 0px 10px;
   position: relative;
-  top: 10px;
+  top: 20px;
 }
 
 .card-image {
@@ -97,6 +97,16 @@
   flex-wrap: nowrap;
   overflow: hidden;
   margin: 20px;
+  padding: 1.2rem;
+}
+
+/*Snaps in line, scrolls 1 card container at a time*/
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
 }
 
 .products-list {
@@ -124,28 +134,32 @@
   bottom: 0;
   background-Color: rgba(0, 0, 0, 0.1);
   z-index: 1000;
-
 }
 
 .modal-styles {
   position: fixed;
-  /* top: 50%;
-  left: 50%; */
   margin-left: auto;
   margin-right: auto;
   transform: translate(-50%, -50%);
   background-Color: #FFF;
   padding: 50px;
   z-index: 1000;
-  /* overflow: scroll; */
-  width: 500px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 35%;
+  border: 1px solid #ddd;
 }
 
 .comparison-title {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
+.modal-button {
+  display: block;
+  float: right;
+}
+/*
 .columns {
   display: flex;
   flex-direction: row;
@@ -155,4 +169,51 @@
 
 .camparison-column {
   flex: 33.33%;
+} */
+
+/*Table for Comparison Modal*/
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+
+/* For Star Rating*/
+
+.related-stars .StarRatings {
+  color: black;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font: 16px"Times New Roman";
+  top: -.3em;
+}
+
+.related-stars .FillRatings {
+  color: black;
+  padding: 0;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }

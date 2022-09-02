@@ -10,8 +10,8 @@ const CartButton = () => {
   let handleCartSubmit = (e) => {
     let index = listOfSizes.indexOf(curSize);
     let obj = listOfSKUs[index];
-    // console.log('obj', obj)
     setCurSKU(obj);
+    // changes SKU, which triggers the useEffect
   };
 
   useEffect(()=>{
@@ -21,11 +21,11 @@ const CartButton = () => {
     if (curSKU !== 'Fake SKU') {
       // make axios post request to Cart API here
       var baseURI = process.env.BASE_URI;
-      if (curSKU.length)
+      for (let i = 0; i < curQuantity; i++){
+        console.log(i);
       axios.post(`${baseURI}cart`,
       {
-        sku_id: curSKU,
-        quantity: curQuantity
+        sku_id: curSKU
       },
       {
         headers: {
@@ -34,7 +34,7 @@ const CartButton = () => {
       }
       ).then((success) => {
         console.log(success);
-        alert('Posted To Cart');
+        console.log('Posted To Cart ' + (i+1) + ' times');
         // trigger special effect to let use know it worked!
         // pop up window?
       })
@@ -44,7 +44,7 @@ const CartButton = () => {
         // trigger special effect to let user know it failed!
         // pop up window?
       });
-    }
+    }};
 
   },[curSKU])
 

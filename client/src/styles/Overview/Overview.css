@@ -10,8 +10,6 @@ html {
   width: 82%;
   margin: auto;
   height: 650px;
-  border: solid;
-  border-color: red;
   display: flex;
 }
 
@@ -53,7 +51,7 @@ html {
 
 /* Product Display */
 .Product-Display {
-  width: 60%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,60 +69,193 @@ html {
   flex-direction: column;
 }
 
+.Arrow-Up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  height: 30px;
+  color: grey;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.Arrow-Up:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  height: 30px;
+  color: black;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.SelectorWheel {
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+}
+
+.snaps-incol {
+  scroll-snap-type: inline mandatory;
+}
+
+.snaps-incol > * {
+  scroll-snap-align: start;
+}
+
+.ThumbnailFrameSelected {
+  height: 63px;
+  width: 63px;
+  border: solid 3px;
+}
+
+.ThumbnailFrame {
+  height: 63px;
+  width: 63px;
+  border: rgb(179, 173, 6) solid;
+}
+
+.ThumbnailPic {
+  object-fit: scale-down;
+}
+
+.ThumbnailSpace {
+  height: 15px;
+}
+
+.Arrow-Down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  height: 30px;
+  color: grey;
+  transition: color 0.5s ease-out 100ms;
+}
+
+
+.Arrow-Down:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  height: 30px;
+  color: black;
+  transition: color 0.5s ease-out 100ms;
+}
+
 .Selected-Picture {
-  width: 90%;
+  width: 100%;
   height: 100%;
   border: solid;
   border-color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.Scroll-Up-Down {
-  height: 30px;
+.MainPic {
+  height: 100%;
+  max-height: 650px;
+  width:fit-content;
+  max-width: 100%;
+  object-fit: scale-down;
 }
 
-.Scroll-Left-Right {
-  height: 30px;
-  width: 30px;
-}
-
-.Middle-Bar {
+.Arrow-Left {
   display: flex;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 7%;
+  font-size: 5vh;
+  color: grey;
+  position: relative;
+  top: calc(50% - 3.5%);
+  width: 35px;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.Arrow-Left:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  height: 7%;
+  font-size: 5vh;
+  position: relative;
+  top: calc(50% - 3.5%);
+  width: 35px;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.PicInterface {
+  display: flex;
   justify-content: space-between;
-  height: 30px;
+  height:650px;
+  width:100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.Arrow-Right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7%;
+  color: grey;
+  font-size: 5vh;
+  position: relative;
+  top: calc(50% - 3.5%);
+  width: 35px;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.Arrow-Right:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  height: 7%;
+  font-size: 5vh;
+  position: relative;
+  top: calc(50% - 3.5%);
+  width: 35px;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.ZoomInBox {
+  width: 100%;
 }
 
 /* Product Details */
 .Product-Details {
-  width: 40%;
+  width: 30%;
   height: 100%;
-  border: solid;
-  border-color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
 }
 
 .Name-And-Category {
-  border: solid;
-  border-color: blue;
   display: flex;
   flex-direction: column;
-  height: 20%;
+  height: 10%;
 }
 
 .Stars-And-Reviews {
-  border: solid;
-  border-color: blue;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   height: 10%;
 }
 
 .StyleContainer {
-  height: 70%;
+  height: 55%;
   display: flex;
   flex-direction: column;
 }
@@ -133,17 +264,13 @@ html {
 
 .Category {
   height: 45px;
-  border: solid;
-  border-color: rgb(52, 190, 42);
   display: flex;
   align-items: center;
 }
 
 .ProductName {
-  height: 80px;
-  border: solid;
+  height: 70px;
   font-weight: bold;
-  border-color: rgb(52, 190, 42);
   display: flex;
   align-items: center;
 }
@@ -161,17 +288,14 @@ html {
 
 .Stars {
   height: 60px;
-  width: 55%;
-  border: solid;
-  border-color: rgb(52, 190, 42);
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  font-size: 4vh;
 }
 
 .StarRatings {
   color: #ccc;
-  font-size: 300%;
   position: relative;
   margin: 0;
   padding: 0;
@@ -193,8 +317,6 @@ html {
   align-items:flex-end;
   width: 45%;
   height: auto;
-  border: solid;
-  border-color: rgb(52, 190, 42);
   text-decoration: underline;
 }
 
@@ -210,11 +332,8 @@ html {
 }
 
 .SalePrice {
-  border: solid;
-  border-color: blue;
   height: 10%;
   display: flex;
-
   align-items: center;
 }
 
@@ -233,16 +352,12 @@ html {
 
 /* Style Display */
 .StyleName {
-  border: solid;
-  border-color: blue;
   display: flex;
   height: 12.5%;
   align-items: center;
 }
 
 .StyleTitle, .CurStyleTitle {
-  border: solid;
-  border-color:rgb(52, 190, 42);
   display: flex;
 }
 
@@ -261,16 +376,12 @@ html {
 
 /* Style Selector */
 .StyleSelector {
-  border: solid;
-  height: 35%;
-  border-color: blue;
+  height: 52.5%;
   display: flex;
   flex-direction: column;
 }
 
 .StyleOptions {
-  border: solid;
-  border-color: rgb(233, 11, 207);
   display: flex;
   flex: auto;
   justify-content: space-around;
@@ -299,7 +410,10 @@ html {
   align-items: center;
   text-align: center;
   border: rgb(179, 173, 6) solid;
+  border-radius: 50%;
+  object-fit: cover;
   max-height: 64px;
+  max-width: 64px;
 }
 
 .styleSelected {
@@ -308,7 +422,10 @@ html {
   align-items: center;
   text-align: center;
   border: solid 3px;
+  border-radius: 50%;
+  object-fit: cover;
   max-height: 64px;
+  max-width: 64px;
 }
 
 /* AddToCart */
@@ -317,18 +434,16 @@ html {
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {
-  border: solid;
-  border-color: blue;
   display: flex;
   justify-content: space-around;
 }
 
 .SizeAndQuanitityRow {
-  height: 55%;
+  height: 65%;
 }
 
 .CartAndFavRow {
-  height: 45%;
+  height: 35%;
 }
 
 .SizeSelect {
@@ -386,20 +501,26 @@ html {
 .EmptySizes {
   width: 85%;
   font-weight: bold;
-  font-size: 4vh;
+  font-size: 200%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.QuantitySelect {
-  font-size: 200%;
+.QuantityFormatter {
   width: 15%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+
 }
 
-.dropOptions {
+.QuantitySelect {
+  font-size: 3vh;
+  width:100%;
+  height: 50%;
   text-align: center;
+  border: solid 2px;
+  border-radius: 45%;
 }
 
 .CartButton {
@@ -443,11 +564,11 @@ html {
   color: rgb(84, 83, 83);
   background-color: rgb(182, 182, 182);
   border-radius: 40px;
+  transition: all 0.5s ease-out 100ms;
 }
 
 .FavContainer {
   width:25%;
-  border: solid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -476,30 +597,49 @@ html {
   width: fit-content;
 }
 
-.FeatureAndMaterial, .FeatureAndMaterialTitle {
+.FeatureAndMaterialTitle {
   display: flex;
-  justify-content:space-around;
+  align-items: center;
+  height: 4vh;
 }
 
-.FeatureTitle, .MaterialTitle {
+.Feature-Spacer {
+  min-width: 15%;
+}
+
+.FeatureAndMaterial {
+  display: flex;
+}
+
+.FeatureTitle {
   border-bottom: 3px solid black;
+  height: fit-content;
+  font-size: 1.75vh;
+  display: flex;
+  align-items: center;
 }
 
-.Feature, .Material {
-  width: 50%;
+.FeatureMaterialSpacer {
+  width: 4%;
+}
+
+.FeatureNoMaterial, .MaterialNoFeature {
+  display: flex;
+}
+
+.Feature {
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.Feature {
-  border-right: 3px solid black;
-}
-
-.FeatureMaterialBoundary {
+.Material {
+  width: fit-content;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  text-align: left;
 }
 
 .FeatureSpacer {

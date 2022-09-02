@@ -7,9 +7,9 @@ const BottomBar = () => {
 
   return(
     <div className='BottomBar'>
-        <FeatureDescription />
-        <ProductDescription />
         <SocialMediaButtons />
+        <ProductDescription />
+        <FeatureDescription />
     </div>
     )
 }

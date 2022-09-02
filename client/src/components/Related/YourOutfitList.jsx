@@ -60,12 +60,12 @@ const YourOutfitList = () => {
 
   const slideLeft = () => {
     var slider = document.getElementById('outfit-slider');
-    slider.scrollLeft = slider.scrollLeft - 200;
+    slider.scrollLeft = slider.scrollLeft - 250;
   };
 
   const slideRight = () => {
     var slider = document.getElementById('outfit-slider');
-    slider.scrollLeft = slider.scrollLeft + 200;
+    slider.scrollLeft = slider.scrollLeft + 250;
   };
 
   return (
@@ -75,7 +75,7 @@ const YourOutfitList = () => {
         onClick={slideLeft}
         size={40} />
           <div id='outfit-slider'
-               className='related-products-list-container'>
+               className='related-products-list-container snaps-inline'>
                  <div className='card-container'>
                    <HiOutlinePlusCircle
                    className='card-add-button'

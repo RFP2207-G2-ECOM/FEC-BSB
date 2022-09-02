@@ -1,4 +1,5 @@
 import React, { useRef, useCallback } from "react"
+import { FiCheck } from "react-icons/fi"
 
 import Helpful from "../Helpful.jsx"
 import Report from "../Report.jsx"
@@ -23,17 +24,17 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
-  // finds word break in summary line and pushes overflow text to next line
-  let summaryLine1 = summary
-  let summaryLine2
-  if (summary.length > 57) {
-    let index = 57
-    if (summary.indexOf(' ', 57) !== -1) {
-      index = summary.lastIndexOf(' ', 57)
+  const isValidHttpUrl = (string) => {
+    let url;
+
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;
     }
-    summaryLine1 = summary.substring(0, index) + '...'
-    summaryLine2 = '...' + summary.substring(index + 1)
+    return url.protocol === "http:" || url.protocol === "https:";
   }
+
 
   return (
     <>
@@ -42,16 +43,22 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
           <div className="review-tile-rating"><StaticRating key={id} rating={rating}/></div>
           <div className="review-tile-posterTag"><PosterTag username={username} date={date}/></div>
         </div>
-        <div className="review-tile-summaryLine1">{summaryLine1}</div>
-        {summaryLine2 !== undefined &&
-          <div className="review-tile-summaryLine2">{summaryLine2}</div>
-        }
+        <div className="review-tile-summary">{summary}</div>
         <div className="review-tile-body">{body}</div>
         {photos.length > 0 &&
-          <div className="review-tile-photos">Photos go here!</div>
+          <div className="review-tile-photos">
+            {
+              photos.map((photo, i) => {
+                if (isValidHttpUrl(photo.url)) { return (<img key={i} className='review-tile-photo' src={photo.url} alt=''/>) }
+              })
+            }
+          </div>
         }
         {recommend === true &&
-          <div className="review-tile-recommend">I recommend this product</div>
+          <div className="review-tile-recommend">
+            <div className='review-tile-recommend-icon'><FiCheck /></div>
+            <div>I recommend this product</div>
+          </div>
         }
         {response !== null &&
           <div className="review-tile-response">{response}</div>
