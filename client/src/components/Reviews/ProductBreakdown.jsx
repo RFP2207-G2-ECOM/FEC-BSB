@@ -9,16 +9,17 @@ import styles from "../../styles/Reviews/productBreakdown.css";
 const ProductBreakdown = () => {
 
   let { metadata } = useContext(ProductReviewsContext)
-  let characteristics = {...metadata.characteristics}
+  let characteristicsObj = {...metadata.characteristics}
 
-  console.log('this is metadata', characteristics)
+  console.log('this is metadata', metadata)
 
   return (
     <div className="ProductBreakdown-Container">
-      {Object.keys(characteristics).map((characteristic, i) =>
+      {Object.keys(characteristicsObj).map((characteristic, i) =>
         <ProductBreakdownCharacteristic
           key={i}
           characteristic={characteristic}
+          characteristicsObj={characteristicsObj}
         />
       )}
     </div>
