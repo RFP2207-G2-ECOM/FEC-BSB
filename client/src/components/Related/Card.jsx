@@ -5,6 +5,7 @@ import RelatedProductsList from './RelatedProductsList.jsx';
 import YourOutfitList from './YourOutfitList.jsx';
 import axios from 'axios';
 import ComparisonModal from './ComparisonModal.jsx'
+import CardStarRating from './CardStarRating.jsx'
 
 const Card = ({relatedProduct, deleteOutfit}) => {
   const [productInfo, setProduct] = useState(relatedProduct);
@@ -55,7 +56,7 @@ const Card = ({relatedProduct, deleteOutfit}) => {
             <div>{productInfo.category}</div>
             <div><b>{productInfo.name}</b></div>
             <div>{productInfo.default_price}</div>
-            <div>Stars</div>
+            <CardStarRating/>
           </div>
       </div>
     )
