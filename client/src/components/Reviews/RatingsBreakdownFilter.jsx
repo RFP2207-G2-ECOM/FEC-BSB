@@ -22,7 +22,7 @@ const RatingsBreakdownFilter = ({ rating, totalReviews, ratingsObject, setStarFi
   return (
     <div className="ratings-breakdown-filter">
       <div
-        className="ratings-breakdown-filter-button"
+        className="ratings-breakdown-filter-button hover"
         value={rating}
         onClick={applyStarFilter}
       >{`${rating} stars`}</div>
