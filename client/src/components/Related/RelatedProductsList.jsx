@@ -43,28 +43,6 @@ const RelatedProductsList = () => {
     })
   }
 
-  // const listRelatedProducts = () => {
-  //   const products = relatedProducts[0] ? relatedProducts : undefined;
-  //   let container = []
-  //   if (products) {
-  //     for (let i = 0; i < products.length; i++) {
-  //       const currentProd = products[i]
-  //       const productID = currentProd.product_id;
-  //       const results = currentProd.results
-  //       for (let i = 0; i < results.length; i++) {
-  //         let obj = {};
-  //         obj.product_id = productID
-  //         obj.productStyles = results[i]
-  //         container.push(obj)
-  //         console.log(container)
-  //       }
-  //     }
-  //     setRelatedProductList(container)
-  //   }
-  // }
-
-
-
   const slideLeft = () => {
     var slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft - 250;

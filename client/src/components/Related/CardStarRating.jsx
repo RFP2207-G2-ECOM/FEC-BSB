@@ -6,8 +6,8 @@ import styles from '../../styles/Related/related.css';
 
 const CardStarRating = (props) => {
   let ratings = props.ratings;
-  let totalReviews = 0;
 
+  let totalReviews = 0;
   ratings = Object.values(ratings);
   if (ratings.length === 0) {
     ratings = 0;
@@ -33,7 +33,7 @@ const CardStarRating = (props) => {
       )
     } else {
       return (
-        <div className='Stars-And-Reviews'>
+        <div className='related-stars-and-reviews'>
           <div className='related-stars'>
             <StaticRating rating={ratings} font='16px'/>
           </div>

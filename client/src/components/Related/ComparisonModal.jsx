@@ -4,7 +4,7 @@ import ComparisonFeatures from './ComparisonFeatures.jsx'
 import styles from '../../styles/Related/related.css';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 
-const ComparisonModal = ({ open, children, onClose, productInfo }) => {
+const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
   const [productFeatures, setFeatures] = useState([]);
   const { product } = useContext(ProductContext);
 
@@ -14,7 +14,7 @@ const ComparisonModal = ({ open, children, onClose, productInfo }) => {
 
   const compare = () => {
     const currentProductFeatures = product.features
-    const relatedProductFeatures = productInfo.features;
+    const relatedProductFeatures = relatedProduct.features;
     let currentFeatures = [];
     const features = new Set();
 
@@ -67,7 +67,7 @@ const ComparisonModal = ({ open, children, onClose, productInfo }) => {
             <tr>
               <th>{product.name}</th>
               <th>Features</th>
-              <th>{productInfo.name}</th>
+              <th>{relatedProduct.name}</th>
             </tr>
               {productFeatures.map((feature, key) =>
                 <ComparisonFeatures feature={feature} key={key}/>
