@@ -27,14 +27,14 @@ const CardStarRating = (props) => {
 
     if (totalReviews > 0) {
       return (
-          <div className='Stars'>
+          <div className='related-stars'>
             <StaticRating rating={ratings}/>
           </div>
       )
     } else {
       return (
         <div className='Stars-And-Reviews'>
-          <div className='Stars'>
+          <div className='related-stars'>
             <StaticRating rating={ratings} font='16px'/>
           </div>
         </div>
