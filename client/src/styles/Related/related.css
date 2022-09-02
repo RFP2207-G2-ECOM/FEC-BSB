@@ -199,16 +199,16 @@ tr:nth-child(even) {
 
 /* For Star Rating*/
 
-.StarRatings {
-  color: #ccc;
+.related-stars .StarRatings {
+  color: black;
   position: relative;
   margin: 0;
   padding: 0;
   font: 16px"Times New Roman";
-  top: -1.5em;
+  top: -.3em;
 }
 
-.FillRatings {
+.related-stars .FillRatings {
   color: black;
   padding: 0;
   position: absolute;
