@@ -48,8 +48,8 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
         {photos.length > 0 &&
           <div className="review-tile-photos">
             {
-              photos.map(photo => {
-                if (isValidHttpUrl(photo.url)) { return (<img className='review-tile-photo' src={photo.url} alt=''/>) }
+              photos.map((photo, i) => {
+                if (isValidHttpUrl(photo.url)) { return (<img key={i} className='review-tile-photo' src={photo.url} alt=''/>) }
               })
             }
           </div>

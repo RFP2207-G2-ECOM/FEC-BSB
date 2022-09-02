@@ -1,7 +1,13 @@
 import React from "react"
 import { GoPlus } from "react-icons/go";
 
-const AddReviewButton = ({ setModalOpen }) => {
+const AddReviewButton = ({ moreReviews, setModalOpen }) => {
+
+  // let style
+  // if (moreReviews) {
+  //   style = {position: 'absolute'}
+  // }
+
   return (
     <>
       <button
