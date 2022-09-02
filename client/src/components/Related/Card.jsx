@@ -50,8 +50,6 @@ const Card = ({relatedProduct, deleteOutfit}) => {
 
   if (productInfo && productStyle[0]) {
     return (
-      // <div className='card-container'>
-      //   <button className='card-button'>Star</button>
       <div className='card-container'>
         <div className='card-media'>
             <img
