@@ -220,7 +220,8 @@ tr:nth-child(even) {
 
 .right-card-arrow {
   position: relative;
-  left: 190px;
+  /* left: 190px; */
+  left: 220px;
   top: -150px;
   color: black;
   font-weight: 550;
