@@ -247,6 +247,16 @@ html {
   position: absolute;
   top: 0.5vw;
   right: 0.5vw;
+  color: grey;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.CloseModalButton:hover {
+  position: absolute;
+  top: 0.5vw;
+  right: 0.5vw;
+  color: black;
+  transition: color 0.5s ease-out 100ms;
 }
 
 .ZoomInPopUp {
@@ -265,24 +275,26 @@ html {
 }
 
 .ZoomInImage {
+  object-fit: scale-down;
   height: 80vh;
   width: fit-content;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin:3px;
+  display: block;
+  margin: 3px;
   border: black solid;
   cursor: zoom-in;
+  position: relative;
 }
 
 .UltraZoomInImage {
   object-fit: scale-down;
-  position: absolute;
   height: 80vh;
   width: fit-content;
-  margin:3px;
+  display: block;
+  margin: 3px;
   border: black solid;
   cursor: zoom-out;
+  position: relative;
+  overflow: hidden;
 }
 
 .zoom-lens {
@@ -306,8 +318,13 @@ html {
   align-items: center;
 }
 
-.ZoomedImage {
-  object-fit: scale-down;
+#OverlayZoomedImage{
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background-size: 250% 250%;
 }
 
 .ZoomedInArrows {

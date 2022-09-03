@@ -43,12 +43,12 @@ const ZoomInModal = ({ open, curPic, listOfPics, setCurPic, onClose}) => {
         <div key={1} className='ZoomInDisplay'>
             { ultraZoom ?
             (
-              <ZoomToMouse image={listOfPics[curPic]} />
+              <ZoomToMouse key={0} image={listOfPics[curPic]} setUltraZoom={setUltraZoom} />
             )
             :
             (
               <div key={0} className='ZoomInImage' onClick={()=>{setUltraZoom(true)}} >
-                <img key={1} className='ZoomedImage' src={listOfPics[curPic]} ></img>
+                <img src={listOfPics[curPic]} ></img>
               </div>
             )
             }
