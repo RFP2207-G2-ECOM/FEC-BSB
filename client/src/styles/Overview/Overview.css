@@ -94,7 +94,6 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   flex-wrap: nowrap;
   overflow-y: hidden;
 }
@@ -111,21 +110,21 @@ html {
   height: 63px;
   width: 63px;
   border: solid 3px;
+  margin: 9px;
 }
 
 .ThumbnailFrame {
   height: 63px;
   width: 63px;
   border: rgb(179, 173, 6) solid;
+  margin: 9px;
 }
 
 .ThumbnailPic {
+  min-width: 60px;
   object-fit: scale-down;
 }
 
-.ThumbnailSpace {
-  height: 15px;
-}
 
 .Arrow-Down {
   display: flex;
@@ -231,6 +230,138 @@ html {
 
 .ZoomInBox {
   width: 100%;
+  cursor: cell;
+}
+
+.ZoomInModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-Index: 1;
+}
+
+.CloseModalButton {
+  position: absolute;
+  top: 0.5vw;
+  right: 0.5vw;
+  color: grey;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.CloseModalButton:hover {
+  position: absolute;
+  top: 0.5vw;
+  right: 0.5vw;
+  color: black;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.ZoomInPopUp {
+  position: fixed;
+  border: black solid;
+  top:5%;
+  left:5%;
+  background-color: #FFF;
+  z-Index: 1000;
+  height:90%;
+  width:90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.ZoomInImage {
+  object-fit: scale-down;
+  height: 80vh;
+  width: fit-content;
+  display: block;
+  margin: 3px;
+  border: black solid;
+  cursor: zoom-in;
+  position: relative;
+}
+
+.UltraZoomInImage {
+  object-fit: scale-down;
+  height: 80vh;
+  width: fit-content;
+  display: block;
+  margin: 3px;
+  border: black solid;
+  cursor: zoom-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.ZoomInDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85vw;
+}
+
+.ZoomInSelector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#OverlayZoomedImage{
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background-size: 250% 250%;
+}
+
+.ZoomedInArrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  height: 30px;
+  width: 30px;
+  color: grey;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.ZoomedInArrows:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  height: 30px;
+  width: 30px;
+  color: black;
+  transition: color 0.5s ease-out 100ms;
+}
+
+.ZoomInSpacer {
+  width: 30px;
+}
+
+.ZoomInThumbnails {
+  margin:3px;
+  border: black solid;
+  height: 7vh;
+  width:fit-content;
+  max-width: 650px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 /* Product Details */
@@ -430,16 +561,17 @@ html {
 
 /* AddToCart */
 .AddToCart {
-  height: 35%;
+  height: 100%;
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {
   display: flex;
   justify-content: space-around;
+  margin: 3px;
 }
 
 .SizeAndQuanitityRow {
-  height: 65%;
+  height: 75%;
 }
 
 .CartAndFavRow {
@@ -447,6 +579,7 @@ html {
 }
 
 .SizeSelect {
+  height: 85%;
   width: 85%;
   font-size: 2.5vh;
   display: flex;

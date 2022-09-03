@@ -42,29 +42,3 @@ const SingleStyle = ({style, rowCount}) => {
 };
 
 export default SingleStyle;
-
-// } else if (curStyle.name === style.name) { //yes name
-//   if (style.photos[0].thumbnail_url) { // yes pic
-//     if(Object.keys(style.skus)[0] !== 'null') // yes skus
-
-//     if(!!Object.keys(style.skus)[0] === 'null) // no skus
-
-//   } else if (!style.photos[0].thumbnail_url) { // no pic
-//     if(Object.keys(style.skus)[0] !== 'null') // yes skus
-
-//     if(!!Object.keys(style.skus)[0] === 'null) // no skus
-
-//   }
-// } else if (curStyle.name !== style.name) { // no name
-//   if (style.photos[0].thumbnail_url) { // yes pic
-//     if(Object.keys(style.skus)[0] !== 'null') // yes skus
-
-//     if(!!Object.keys(style.skus)[0] === 'null) // no skus
-
-//   } else if (!style.photos[0].thumbnail_url) { // no pic
-//     if(Object.keys(style.skus)[0] !== 'null') // yes skus
-
-//     if(!!Object.keys(style.skus)[0] === 'null) // no skus
-
-//   }
-// }

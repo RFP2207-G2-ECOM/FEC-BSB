@@ -32,10 +32,10 @@ const StyleSelector = () => {
 
   return (
       <div className='StyleSelector'>
-        {/* Map the array to output Rows of 4 of styles */}
         {arrOfFours.map((row, index) => {
           return (
           <div key={index} className='StyleOptions'>
+            <p className='Style-Detail-Spacer'></p>
             {row.map((style, index) => {
               return (
                 <SingleStyle key={index} style={style} rowCount={arrOfFours.length}/>

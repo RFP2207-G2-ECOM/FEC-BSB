@@ -1,10 +1,7 @@
 import React, { useContext } from 'react';
-import { CurrentPicContext } from '../ProductDisplay.jsx';
 
-const ThumbnailDisplay = ({ thumbnail, index }) => {
+const ThumbnailDisplay = ({ thumbnail, index, curPic, setCurPic }) => {
   // console.log(thumbnail);
-
-  const { curPic, setCurPic } = useContext(CurrentPicContext);
 
   let changeCurPic = (e) => {
     setCurPic(index);
