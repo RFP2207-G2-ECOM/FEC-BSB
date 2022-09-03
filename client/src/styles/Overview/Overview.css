@@ -230,7 +230,7 @@ html {
 
 .ZoomInBox {
   width: 100%;
-  cursor: zoom-in;
+  cursor: cell;
 }
 
 .ZoomInModal {
@@ -240,7 +240,7 @@ html {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  z-Index: 1000;
+  z-Index: 1;
 }
 
 .CloseModalButton {
@@ -261,6 +261,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .ZoomInImage {
@@ -271,8 +272,25 @@ html {
   align-items: center;
   margin:3px;
   border: black solid;
-  /* cursor: cell; */
-  cursor: cell;
+  cursor: zoom-in;
+}
+
+.UltraZoomInImage {
+  object-fit: scale-down;
+  position: absolute;
+  height: 80vh;
+  width: fit-content;
+  margin:3px;
+  border: black solid;
+  cursor: zoom-out;
+}
+
+.zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
 }
 
 .ZoomInDisplay {
@@ -526,16 +544,17 @@ html {
 
 /* AddToCart */
 .AddToCart {
-  height: 35%;
+  height: 100%;
 }
 
 .SizeAndQuanitityRow, .CartAndFavRow {
   display: flex;
   justify-content: space-around;
+  margin: 3px;
 }
 
 .SizeAndQuanitityRow {
-  height: 65%;
+  height: 75%;
 }
 
 .CartAndFavRow {
@@ -543,6 +562,7 @@ html {
 }
 
 .SizeSelect {
+  height: 85%;
   width: 85%;
   font-size: 2.5vh;
   display: flex;

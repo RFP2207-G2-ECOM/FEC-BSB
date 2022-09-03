@@ -3,7 +3,7 @@ import { CurrentPicContext } from '../ProductDisplay.jsx';
 
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi';
 
-import ThumbnailDisplay from './ThumbnailDisplay.jsx';
+import ThumbnailDisplay from '../../ThumbnailDisplay.jsx';
 
 const PictureSelector = () => {
 

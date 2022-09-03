@@ -20,10 +20,6 @@ const SelectedPicture = () => {
     setCurPic(curPic + 1);
   };
 
-  // -------------------------------
-  // handle on click of main photo, modal pop-up
-  // -------------------------------
-
   if (curPic === 0) {
     return (
       <div className='Selected-Picture'>
@@ -65,4 +61,3 @@ const SelectedPicture = () => {
 };
 
 export default SelectedPicture;
-// Zoom-In/Expanded View Functionality
