@@ -49,14 +49,14 @@ const Card = ({relatedProduct, deleteOutfit}) => {
     return (
       <div className='card-container'>
         <div className='card-media'>
-            <CardPictureDisplay productStyle={productStyle}/>
-          {deleteOutfit === undefined &&
-          <i className='fa fa-star-o fa-lg card-button' onClick={()=>{setIsOpen(true)}}></i>}
+            <CardPictureDisplay productStyle={productStyle}
+                                onOpen={() => setIsOpen(true)}
+                                open={isOpen}
+                                deleteOutfit={deleteOutfit}
+                                relatedProduct={relatedProduct}/>
           <ComparisonModal open={isOpen}
                            onClose={() => setIsOpen(false)}
                            relatedProduct={relatedProduct}/>
-          {deleteOutfit &&
-          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(relatedProduct.id)}}></i>}
         </div>
           <div className='card-content'>
             <div>{relatedProduct.category}</div>

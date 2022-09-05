@@ -28,7 +28,7 @@
   height: 30px; */
   /* position: absolute; */
   position: relative;
-  left: 190px;
+  left: 220px;
   top: -305px;
 
   /* display: flex;
@@ -221,17 +221,18 @@ tr:nth-child(even) {
 .right-card-arrow {
   position: relative;
   /* left: 190px; */
-  left: 220px;
+  left: 170px;
   top: -150px;
   color: black;
   font-weight: 550;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-
-  color: black;
+  background-color: #0707085d;
+  color: whitesmoke;
   border-radius: 5px;
   font-family: 'Lato';
   font-size: 30px;
+  opacity: .8;
 }
 
 /* .right-card-arrow:hover {
@@ -240,20 +241,37 @@ tr:nth-child(even) {
 
 .left-card-arrow {
   position: relative;
-  left: 0px;
+  right: 20px;
   top: -150px;
-  color: black;
+  color: whitesmoke;
   font-weight: 550;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
-  /* background-color: #5AB753; */
+  background-color: #0707085d;
   border-radius: 5px;
   font-family: 'Lato';
   font-size: 30px;
+  opacity: .8;
   /* color: #FFFFFF; */
 }
 
+.left-card-arrow-invis {
+  position: relative;
+  right: 20px;
+  top: -150px;
+  color: whitesmoke;
+  font-weight: 550;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #0707085d;
+  border-radius: 5px;
+  font-family: 'Lato';
+  font-size: 30px;
+  opacity: .8;
+  visibility: hidden;
+  /* color: #FFFFFF; */
+}
 /* .left-card-arrow:hover {
     background-color: white;
 } */

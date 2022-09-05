@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
-
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import Card from './Card.jsx'
 
-const CardPictureDisplay = ({productStyle}) => {
+const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct}) => {
   const [ currentPic, setCurrentPic ] = useState(0);
   const [ listOfPictures, SetListOfPictures ] = useState([]);
   const [ listOfThumbnails, setListOfThumbnails ] = useState([]);
@@ -32,6 +32,11 @@ const CardPictureDisplay = ({productStyle}) => {
     return (
       <>
         <img className='card-image' src={listOfPictures[currentPic]}/>
+        {deleteOutfit === undefined &&
+          <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
+        {deleteOutfit &&
+          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(relatedProduct.id)}}></i>}
+          <MdChevronLeft className='left-card-arrow-invis'/>
           <MdChevronRight className='right-card-arrow' onClick={handleRightClick} />
       </>
     )
@@ -39,6 +44,10 @@ const CardPictureDisplay = ({productStyle}) => {
     return (
       <>
         <img className='card-image' src={listOfPictures[currentPic]}/>
+        {deleteOutfit === undefined &&
+          <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
+        {deleteOutfit &&
+          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(relatedProduct.id)}}></i>}
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick} />
       </>
     )
@@ -46,6 +55,10 @@ const CardPictureDisplay = ({productStyle}) => {
     return (
       <>
         <img className='card-image' src={listOfPictures[currentPic]}/>
+        {deleteOutfit === undefined &&
+          <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
+        {deleteOutfit &&
+          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(relatedProduct.id)}}></i>}
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick} />
           <MdChevronRight className='right-card-arrow' onClick={handleRightClick} />
       </>
