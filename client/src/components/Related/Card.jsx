@@ -12,6 +12,7 @@ const Card = ({relatedProduct, deleteOutfit}) => {
   const [productStyle, setStyle] = useState([]);
   const [isOpen, setIsOpen] = useState(false)
   const [ratings, setRatings] = useState({})
+  const [isHover, setIsHover] = useState(false)
 
   //API Call Data
   const productID = relatedProduct.id
@@ -47,13 +48,14 @@ const Card = ({relatedProduct, deleteOutfit}) => {
 
   if (productStyle[0]) {
     return (
-      <div className='card-container'>
+      <div className='card-container' onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
         <div className='card-media'>
             <CardPictureDisplay productStyle={productStyle}
                                 onOpen={() => setIsOpen(true)}
                                 open={isOpen}
                                 deleteOutfit={deleteOutfit}
-                                relatedProduct={relatedProduct}/>
+                                relatedProduct={relatedProduct}
+                                hover={isHover}/>
           <ComparisonModal open={isOpen}
                            onClose={() => setIsOpen(false)}
                            relatedProduct={relatedProduct}/>

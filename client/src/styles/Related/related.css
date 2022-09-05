@@ -260,15 +260,11 @@ tr:nth-child(even) {
   position: relative;
   right: 20px;
   top: -150px;
-  color: whitesmoke;
   font-weight: 550;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  background-color: #0707085d;
   border-radius: 5px;
   font-family: 'Lato';
   font-size: 30px;
-  opacity: .8;
   visibility: hidden;
   /* color: #FFFFFF; */
 }
