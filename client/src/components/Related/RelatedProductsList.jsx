@@ -9,12 +9,16 @@ import axios from 'axios';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 const RelatedProductsList = () => {
+  const slider = document.getElementById('slider');
+
   const { productRelated } = useContext(ProductRelatedContext);
   const [productID, setProductID] = useState(productRelated);
 
   const [relatedProducts, setRelatedProducts] = useState([]);
 
-  const [ currentProd, setCurrentProd ] = useState(0);
+  // const [ currentProd, setCurrentProd ] = useState(0);
+  const [scrollPosition, setScrollPositon] = useState(0);
+  const [maxScrollPositon, setMaxScroll] = useState(0);
 
   useEffect(()=>{
     setProductID(productRelated);
@@ -44,31 +48,38 @@ const RelatedProductsList = () => {
     })
   }
 
+  // const maxScroll = () => {
+  //   var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+  //   setMaxScroll(maxScrollLeft)
+  // };
+
   const slideLeft = () => {
-    var slider = document.getElementById('slider');
+    // var slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft - 250;
     var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
     console.log('slide left amount:', slider.scrollLeft)
     console.log('max slide left:', maxScrollLeft)
-    setCurrentProd(currentProd - 1)
+    setScrollPositon(slider.scrollLeft)
+    setMaxScroll(maxScrollLeft)
+    // setCurrentProd(currentProd - 1)
   };
 
   const slideRight = () => {
-    var slider = document.getElementById('slider');
+    // var slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft + 250;
     var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
     console.log('slide right amount:', slider.scrollLeft)
     console.log('max slide right:', maxScrollLeft)
-    setCurrentProd(currentProd + 1)
+    setScrollPositon(slider.scrollLeft)
+    setMaxScroll(maxScrollLeft)
+    // setCurrentProd(currentProd + 1)
   };
 
 
-
+if (scrollPosition <= 40) {
   return (
-    //related-products-list-container w-full
     <div className='products-list'>
       <div className='slide-container'>
-      <MdChevronLeft className='slide' onClick={slideLeft}/>
       </div>
         <div id='slider' className='related-products-list-container snaps-inline'>
           {relatedProducts.map((relatedProduct, key) => (
@@ -80,6 +91,36 @@ const RelatedProductsList = () => {
       </div>
     </div>
   )
+} else if (scrollPosition >= maxScrollPositon){
+  return (
+    <div className='products-list'>
+      <div className='slide-container'>
+      <MdChevronLeft className='slide' onClick={slideLeft}/>
+      </div>
+        <div id='slider' className='related-products-list-container snaps-inline'>
+          {relatedProducts.map((relatedProduct, key) => (
+            <Card relatedProduct={relatedProduct} key={key} />
+          ))}
+        </div>
+    </div>
+  )
+  } else {
+    return (
+      <div className='products-list'>
+        <div className='slide-container'>
+        <MdChevronLeft className='slide' onClick={slideLeft}/>
+        </div>
+          <div id='slider' className='related-products-list-container snaps-inline'>
+            {relatedProducts.map((relatedProduct, key) => (
+              <Card relatedProduct={relatedProduct} key={key} />
+            ))}
+          </div>
+          <div className='slide-container'>
+        <MdChevronRight className='slide' onClick={slideRight}/>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default RelatedProductsList;
