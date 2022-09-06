@@ -1,5 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
+
+import InteractionsAPI from './InteractionsAPI.js';
 import Overview from './components/Overview/Overview.jsx';
 import QuestionAnswers from './components/QA/QuestionAnswers.jsx';
 import RatingsReviews from './components/Reviews/RatingsReviews.jsx';
@@ -12,23 +14,40 @@ import { QuestionsContext } from './contexts/question.context.jsx';
 import { ProductReviewsContext } from './contexts/product-reviews.context.jsx';
 import { LocalStorageContext } from './contexts/local-storage.context.jsx';
 
-const App = () => {
-    // These are here for examples of how to use these
-    const { product } = useContext(ProductContext); // Object type
-    const { productStyles } = useContext(ProductStylesContext); // Array type, you can map over this
-    const { productRelated } = useContext(ProductRelatedContext); // Array type, you can map over this
-    const { productID, results } = useContext(QuestionsContext);  // ProductID is an integer type --> results is an Object type
-    const { reviews, metadata } = useContext(ProductReviewsContext);
-    const { outfitList } = useContext(LocalStorageContext);
+document.addEventListener('click', (event) => {
+  event.path.forEach(path => {
+    if (path.className === 'Overview') {
+      InteractionsAPI(event.target.outerHTML, 'Overview');
+    }
+    if (path.className === 'related-items-and-comp-container') {
+      InteractionsAPI(event.target.outerHTML, 'Related Items & Comparison');
+    }
+    if (path.className === 'QA-Container') {
+      InteractionsAPI(event.target.outerHTML, 'Questions & Answers');
+    }
+    if (path.className === 'RR-Container') {
+      InteractionsAPI(event.target.outerHTML, 'Ratings & Reviews');
+    }
+  })
+});
 
-    return (
-      <>
-        <Overview />
-        <RelatedItemsAndComp />
-        <QuestionAnswers />
-        <RatingsReviews />
-      </>
-    )
+const App = () => {
+  // These are here for examples of how to use these
+  const { product } = useContext(ProductContext); // Object type
+  const { productStyles } = useContext(ProductStylesContext); // Array type, you can map over this
+  const { productRelated } = useContext(ProductRelatedContext); // Array type, you can map over this
+  const { productID, results } = useContext(QuestionsContext);  // ProductID is an integer type --> results is an Object type
+  const { reviews, metadata } = useContext(ProductReviewsContext);
+  const { outfitList } = useContext(LocalStorageContext);
+
+  return (
+    <>
+      <Overview />
+      <RelatedItemsAndComp />
+      <QuestionAnswers />
+      <RatingsReviews />
+    </>
+  )
 }
 
 export default App;
