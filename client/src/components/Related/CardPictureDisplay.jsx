@@ -3,13 +3,13 @@ import { render } from 'react-dom';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Card from './Card.jsx'
 import CardThumbnail from './CardThumbnail.jsx'
-// import { LocalStorageContext } from '../../contexts/local-storage.context.jsx';
+import { LocalStorageContext } from '../../contexts/local-storage.context.jsx';
 
 const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct, hover}) => {
   const [ currentPic, setCurrentPic ] = useState(0);
   const [ listOfPictures, SetListOfPictures ] = useState([]);
   const [ listOfThumbnails, setListOfThumbnails ] = useState([]);
-  // const { outfitList, setOutfitList } = useContext(LocalStorageContext);
+  const { outfitList, setOutfitList } = useContext(LocalStorageContext);
 
   let handleLeftClick = (e) => {
     var slider = document.getElementById(`card-slider${relatedProduct.id}`);
@@ -34,7 +34,7 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
       SetListOfPictures(listOfPhotos);
       setListOfThumbnails(listOfThumbs);
     }
-  }, [relatedProduct]);
+  }, [productStyle]);
 
   //onHover={console.log(relatedProduct.id)}
 
@@ -45,7 +45,7 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
         {deleteOutfit === undefined &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
         {deleteOutfit &&
-          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(relatedProduct.id)}}></i>}
+          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>deleteOutfit(relatedProduct.id)}></i>}
           {hover &&
           <MdChevronLeft className='left-card-arrow-invis'/>}
           {hover &&
@@ -61,7 +61,7 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
         {deleteOutfit === undefined &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
         {deleteOutfit &&
-          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(relatedProduct.id)}}></i>}
+          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>deleteOutfit(relatedProduct.id)}></i>}
           {hover &&
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick}/>}
           {hover &&
@@ -77,7 +77,7 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
         {deleteOutfit === undefined &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
         {deleteOutfit &&
-          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(relatedProduct.id)}}></i>}
+          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>deleteOutfit(relatedProduct.id)}></i>}
           {hover &&
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick}/>}
           {hover &&

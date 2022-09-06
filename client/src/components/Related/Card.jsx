@@ -26,7 +26,7 @@ const Card = ({relatedProduct, deleteOutfit}) => {
   useEffect(()=>{
     getProductStyles();
     getReviews();
-  },[])
+  },[relatedProduct])
 
   const getProductStyles = async () => {
     if (productID) {

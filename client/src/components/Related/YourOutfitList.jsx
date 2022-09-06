@@ -51,7 +51,7 @@ const YourOutfitList = () => {
 
   const deleteOutfit = (productID) => {
     const outfits = [...outfitList]
-    const index = outfitList.indexOf(JSON.stringify(productID))
+    const index = outfits.indexOf(JSON.stringify(productID))
     if (index > -1) {
       outfits.splice(index, 1)
     }
