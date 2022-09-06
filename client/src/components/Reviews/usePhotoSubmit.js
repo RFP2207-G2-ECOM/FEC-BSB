@@ -9,7 +9,6 @@ export default function usePhotoSubmit (files, photoURLs, setPhotoURLs, setLoadi
     if (files) {
       setPicLoading(true)
       setPicError(false)
-
       files.map(photo => {
         var formData = new FormData();
         formData.append('file', photo);
