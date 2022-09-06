@@ -66,12 +66,13 @@ const RatingsReviews = () => {
           setReviewSort={setReviewSort}
           setPageNumber={setPageNumber}
           setReviewCount={setReviewCount}
+          setModalOpen={setModalOpen}
           setMoreReviews={setMoreReviews}
           starFilters={starFilters}
         />
       </div>
-      <div className="Buttons-Container">
-        { moreReviews === false &&
+      { moreReviews === false &&
+        <div className="Buttons-Container">
           <MoreReviewsButton
             loading={loading}
             moreReviews={moreReviews}
@@ -81,12 +82,12 @@ const RatingsReviews = () => {
             setMoreReviews={setMoreReviews}
             setReviewCount={setReviewCount}
           />
-        }
-        <AddReviewButton
-          setModalOpen={setModalOpen}
-          moreReviews={moreReviews}
-        />
+          <AddReviewButton
+            setModalOpen={setModalOpen}
+            moreReviews={moreReviews}
+          />
         </div>
+      }
       <div className="Review-Modal-Container">
         <ReviewModal
           open={modalOpen}
