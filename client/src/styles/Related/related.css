@@ -303,7 +303,7 @@ tr:nth-child(even) {
   top: -100px;
   position: relative;
   margin:3px;
-  border: black solid;
+  /* border: black solid; */
   height: 7vh;
   /* width:fit-content; */
   max-width: 250px;
@@ -311,4 +311,21 @@ tr:nth-child(even) {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
+}
+
+.card-thumbnail-frame-selected {
+  height: 55px;
+  width: 55px;
+  border: red solid 1px;
+}
+
+.card-thumbnail-frame {
+  height: 55px;
+  width: 55px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-thumbnail-pic {
+  min-width: 55px;
+  object-fit: cover;
 }

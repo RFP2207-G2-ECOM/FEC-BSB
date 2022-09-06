@@ -10,14 +10,14 @@ const CardThumbnailDisplay = ({ thumbnail, index, currentPic, setCurrentPic }) =
 
   if (index === currentPic) {
     return (
-      <div className='ThumbnailFrameSelected' index={index}>
-        <img className='ThumbnailPic' src={thumbnail} onClick={changeCurPic} index={index}></img>
+      <div className='card-thumbnail-frame-selected' index={index}>
+        <img className='card-thumbnail-pic' src={thumbnail} onClick={changeCurPic} index={index}></img>
       </div>
     )
   } else {
     return (
-      <div className='ThumbnailFrame' index={index}>
-        <img className='ThumbnailPic' src={thumbnail} onClick={changeCurPic} index={index}></img>
+      <div className='card-thumbnail-frame' index={index}>
+        <img className='card-thumbnail-pic' src={thumbnail} onClick={changeCurPic} index={index}></img>
       </div>
     )
   }

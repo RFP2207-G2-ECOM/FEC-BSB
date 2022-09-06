@@ -11,12 +11,12 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
 
   let handleLeftClick = (e) => {
     var slider = document.getElementById(`card-slider${relatedProduct.id}`);
-    slider.scrollLeft = slider.scrollLeft - 75;
+    slider.scrollLeft = slider.scrollLeft - 25;
     setCurrentPic(currentPic - 1);
   };
   let handleRightClick = (e) => {
     var slider = document.getElementById(`card-slider${relatedProduct.id}`);
-    slider.scrollLeft = slider.scrollLeft + 75;
+    slider.scrollLeft = slider.scrollLeft + 25;
     setCurrentPic(currentPic + 1);
   };
 
