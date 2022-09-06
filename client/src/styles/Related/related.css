@@ -1,5 +1,5 @@
 .related-items-and-comp-container {
-  width: 82%;
+  width: 75%;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -28,9 +28,10 @@
   height: 30px; */
   /* position: absolute; */
   position: relative;
-  left: 190px;
-  top: -305px;
-
+  /* left: 220px;
+  top: -305px; */
+  left: 220px;
+  top: -290px;
   /* display: flex;
   justify-content: center;
   align-items: center;
@@ -44,6 +45,16 @@
 .card-button:hover {
   color: white;
 }
+
+/* .card-button-isHover {
+  position: relative;
+  left: 220px;
+  top: -290px;
+  color: white;
+  font-weight: 550;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+} */
 
 .card-add-button {
   position: relative;
@@ -93,11 +104,15 @@
 }
 
 .related-products-list-container {
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   overflow: hidden;
+  /* overflow-x: scroll; */
   margin: 20px;
   padding: 1.2rem;
+  /* flex-direction: 'row-reverse'; */
 }
 
 /*Snaps in line, scrolls 1 card container at a time*/
@@ -110,14 +125,21 @@
 }
 
 .products-list {
-  position: relative;
   display: flex;
   align-items: center;
 }
 
+.slide-container {
+  min-height: 20%;
+  max-width: 50%;
+}
+
 .slide {
+  display: flex;
   cursor: pointer;
   opacity: .5;
+  font-size: 40px;
+  align-items: center;
 }
 
 .slide:hover {
@@ -198,40 +220,55 @@ tr:nth-child(even) {
 }
 
 /* For Star Rating*/
+/* related-stars .StarRatings */
 
 .related-stars .StarRatings {
-  color: black;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  font: 16px"Times New Roman";
-  top: -.3em;
+color: #ccc;
+font-size: 100%;
+position: relative;
+margin: 0;
+padding: 0;
 }
 
-.related-stars .FillRatings {
-  color: black;
-  padding: 0;
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+.related-stars .RelatedFillRatings {
+color: black;
+padding: 0;
+position: absolute;
+display: block;
+top: 0;
+left: 0;
+overflow: hidden;
 }
+
+.related-stars {
+  display: flex;
+  align-items: center;
+}
+
+.related-stars-and-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 10%;
+}
+
+/* Card Carousel Arrow key CSS */
 
 .right-card-arrow {
   position: relative;
   /* left: 190px; */
-  left: 220px;
+  left: 170px;
   top: -150px;
   color: black;
   font-weight: 550;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-
-  color: black;
+  background-color: #0707085d;
+  color: whitesmoke;
   border-radius: 5px;
   font-family: 'Lato';
   font-size: 30px;
+  opacity: .8;
 }
 
 /* .right-card-arrow:hover {
@@ -240,21 +277,80 @@ tr:nth-child(even) {
 
 .left-card-arrow {
   position: relative;
-  left: 0px;
+  right: 20px;
   top: -150px;
-  color: black;
+  color: whitesmoke;
   font-weight: 550;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
-  /* background-color: #5AB753; */
+  background-color: #0707085d;
   border-radius: 5px;
   font-family: 'Lato';
   font-size: 30px;
+  opacity: .8;
   /* color: #FFFFFF; */
 }
 
+.left-card-arrow-invis {
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  right: 20px;
+  top: -150px;
+  font-weight: 550;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Lato';
+  font-size: 30px;
+  visibility: hidden;
+  /* color: #FFFFFF; */
+}
+
+.right-card-arrow-invis {
+  position: relative;
+  right: 20px;
+  top: -150px;
+  font-weight: 550;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Lato';
+  font-size: 30px;
+  visibility: hidden;
+  /* color: #FFFFFF; */
+}
 /* .left-card-arrow:hover {
     background-color: white;
 } */
 
+/* For Card Carousel*/
+
+.card-thumbnail-carousel {
+  top: -100px;
+  position: relative;
+  margin:3px;
+  /* border: black solid; */
+  height: 7vh;
+  /* width:fit-content; */
+  max-width: 250px;
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.card-thumbnail-frame-selected {
+  height: 55px;
+  width: 55px;
+  border: red solid 1px;
+}
+
+.card-thumbnail-frame {
+  height: 55px;
+  width: 55px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-thumbnail-pic {
+  min-width: 55px;
+  object-fit: cover;
+}
