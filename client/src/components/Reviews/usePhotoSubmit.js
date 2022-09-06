@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-export default function usePhotoSubmit (files, photos, setPhotos) {
+export default function usePhotoSubmit (files, photoURLs, setPhotoURLs, setLoadingPhotos) {
   const [picLoading, setPicLoading] = useState(true)
   const [picError, setPicError] = useState(false)
 
   useEffect(() => {
-
     if (files) {
-
       setPicLoading(true)
       setPicError(false)
 
@@ -19,15 +17,18 @@ export default function usePhotoSubmit (files, photos, setPhotos) {
 
         axios.post('https://api.cloudinary.com/v1_1/dmxak8uva/image/upload', formData)
           .then(response => {
-            setPhotos([...photos, response.data.url])
+            setPhotoURLs([...photoURLs, response.data.url])
             setPicLoading(false)
+            setLoadingPhotos(false)
           }).catch(err => {
             console.log(err)
             setPicLoading(false)
             setPicError(true)
+            setLoadingPhotos(false)
           })
-      })}
-    }, [files])
+      })
+    }
+  }, [loadingPhotos])
 
   return { picLoading, picError }
 }

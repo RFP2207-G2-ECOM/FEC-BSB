@@ -28,11 +28,9 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [submitPressed, setSubmitPressed] = useState(false)
   const [files, setFiles] = useState(null)
 
-  const { picLoading, picError } = usePhotoSubmit(files, photos, setPhotos)
-
   const {
     loading, error
-  } = useReviewSubmit(onClose, submitPressed, setSubmitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, photos, nickname, email)
+  } = useReviewSubmit(onClose, submitPressed, setSubmitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, files, nickname, email)
 
   useEffect(() => {
     console.log('files:', files)
