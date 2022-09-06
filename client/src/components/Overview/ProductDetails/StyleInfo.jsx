@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { CurrentStylesContext } from '../Overview.jsx';
+import FavButton from './FavButton.jsx';
 
 const StyleInfo = () => {
   const { curStyle } = useContext(CurrentStylesContext); // obj of current style
@@ -7,11 +8,13 @@ const StyleInfo = () => {
   const styleName = curStyle.name;
 
   return (
+    <div className='StyleInfoAndFav'>
       <div className='StyleName'>
-        <p className='Style-Detail-Spacer'></p>
-        <p className='StyleTitle'>STYLE </p>
+        <p className='StyleTitle'>Style</p>
         <p className='CurStyleTitle'>{styleName}</p>
       </div>
+      <FavButton />
+    </div>
   )
 };
 

@@ -4,7 +4,6 @@ import { CurrentStylesContext } from '../Overview.jsx'
 import SizeSelect from "./SizeSelect.jsx";
 import QuantitySelect from "./QuantitySelect.jsx";
 import CartButton from './CartButton.jsx';
-import FavButton from './FavButton.jsx';
 
 export const CurrentSKUContext = createContext({
 });
@@ -52,15 +51,13 @@ const AddToCart = () => {
   return (
     <div className='AddToCart'>
       <CurrentSKUContext.Provider value={value} >
-        <div className='SizeAndQuanitityRow'>
-          <p className='Style-Detail-Spacer'></p>
-          <QuantitySelect />
-          <p className='Style-Detail-Spacer'></p>
+        {/* Add Size Title? */}
+        <div className='SizeRows'>
           <SizeSelect />
         </div>
-        <div className='CartAndFavRow'>
+        <div className='QuantityAndCartRow'>
+          <QuantitySelect />
           <CartButton />
-          <FavButton />
         </div>
       </CurrentSKUContext.Provider>
     </div>

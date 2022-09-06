@@ -26,13 +26,14 @@ const StarsAndReviews = () => {
     if (totalReviews > 0) {
       return (
         <div className='Stars-And-Reviews'>
-            <p className='Style-Detail-Spacer'></p>
           <div className='Stars'>
-            <StaticRating key={1} rating={ratings} font={'300px'}/>
+            <StaticRating key={1} rating={ratings}/>
           </div>
-          <div key={2} className='Style-Detail-Spacer'></div>
           <div key={3} className='Review-Link'>
-              <a href='#LinkToReviews' className='ReviewLink'>Read all {totalReviews} reviews</a>
+              <a href='#LinkToReviews' className='ReviewLink'>
+                {/* Read all  */}
+                {totalReviews} reviews
+                </a>
           </div>
         </div>
       )

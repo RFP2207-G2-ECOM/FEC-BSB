@@ -35,7 +35,6 @@ const StyleSelector = () => {
         {arrOfFours.map((row, index) => {
           return (
           <div key={index} className='StyleOptions'>
-            <p className='Style-Detail-Spacer'></p>
             {row.map((style, index) => {
               return (
                 <SingleStyle key={index} style={style} rowCount={arrOfFours.length}/>
