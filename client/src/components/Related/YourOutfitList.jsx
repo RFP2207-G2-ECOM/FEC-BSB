@@ -51,11 +51,13 @@ const YourOutfitList = () => {
 
   const deleteOutfit = (productID) => {
     const outfits = [...outfitList]
-    const index = outfits.indexOf(JSON.stringify(productID))
+    const index = outfitList.indexOf(JSON.stringify(productID))
     if (index > -1) {
       outfits.splice(index, 1)
     }
     setOutfitList(outfits)
+    console.log('within delete outfit', productID)
+    console.log('within delete outfit outiftlist', outfitList)
   }
 
   const slideLeft = () => {
@@ -70,10 +72,11 @@ const YourOutfitList = () => {
 
   return (
     <div className='products-list'>
+      <div className='slide-container'>
       <MdChevronLeft
         className='slide'
-        onClick={slideLeft}
-        size={40} />
+        onClick={slideLeft}/>
+      </div>
           <div id='outfit-slider'
                className='related-products-list-container snaps-inline'>
                  <div className='card-container'>
@@ -89,7 +92,9 @@ const YourOutfitList = () => {
                  <Card relatedProduct={relatedProduct} key={key} deleteOutfit={deleteOutfit}/>
                ))}
           </div>
-      <MdChevronRight className='slide' onClick={slideRight} size={40} />
+          <div className='slide-container'>
+      <MdChevronRight className='slide' onClick={slideRight}/>
+      </div>
     </div>
   )
 }
