@@ -1,5 +1,5 @@
 .related-items-and-comp-container {
-  width: 82%;
+  width: 75%;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -104,11 +104,15 @@
 }
 
 .related-products-list-container {
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   overflow: hidden;
+  /* overflow-x: scroll; */
   margin: 20px;
   padding: 1.2rem;
+  /* flex-direction: 'row-reverse'; */
 }
 
 /*Snaps in line, scrolls 1 card container at a time*/
@@ -121,14 +125,21 @@
 }
 
 .products-list {
-  position: relative;
   display: flex;
   align-items: center;
 }
 
+.slide-container {
+  min-height: 20%;
+  max-width: 50%;
+}
+
 .slide {
+  display: flex;
   cursor: pointer;
   opacity: .5;
+  font-size: 40px;
+  align-items: center;
 }
 
 .slide:hover {

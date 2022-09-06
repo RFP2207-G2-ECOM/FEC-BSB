@@ -13,7 +13,8 @@ const RelatedProductsList = () => {
   const [productID, setProductID] = useState(productRelated);
 
   const [relatedProducts, setRelatedProducts] = useState([]);
-  const [relatedProductList, setRelatedProductList] = useState([]);
+
+  const [ currentProd, setCurrentProd ] = useState(0);
 
   useEffect(()=>{
     setProductID(productRelated);
@@ -46,23 +47,37 @@ const RelatedProductsList = () => {
   const slideLeft = () => {
     var slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft - 250;
+    var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    console.log('slide left amount:', slider.scrollLeft)
+    console.log('max slide left:', maxScrollLeft)
+    setCurrentProd(currentProd - 1)
   };
 
   const slideRight = () => {
     var slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft + 250;
+    var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    console.log('slide right amount:', slider.scrollLeft)
+    console.log('max slide right:', maxScrollLeft)
+    setCurrentProd(currentProd + 1)
   };
+
+
 
   return (
     //related-products-list-container w-full
     <div className='products-list'>
-      <MdChevronLeft className='slide' onClick={slideLeft} size={40} />
+      <div className='slide-container'>
+      <MdChevronLeft className='slide' onClick={slideLeft}/>
+      </div>
         <div id='slider' className='related-products-list-container snaps-inline'>
           {relatedProducts.map((relatedProduct, key) => (
             <Card relatedProduct={relatedProduct} key={key} />
           ))}
         </div>
-      <MdChevronRight className='slide' onClick={slideRight} size={40} />
+        <div className='slide-container'>
+      <MdChevronRight className='slide' onClick={slideRight}/>
+      </div>
     </div>
   )
 }
