@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { render } from 'react-dom';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Card from './Card.jsx'
+import CardThumbnail from './CardThumbnail.jsx'
 
 const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct, hover}) => {
   const [ currentPic, setCurrentPic ] = useState(0);
@@ -28,6 +30,12 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
     }
   }, []);
 
+  // render() {
+  //   let cardButton = 'card-button'
+  // };
+
+  // hover? cardButton = 'card-button-isHover' : cardButton;
+
   if (currentPic === 0) {
     return (
       <>
@@ -40,6 +48,8 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
           <MdChevronLeft className='left-card-arrow-invis'/>}
           {hover &&
           <MdChevronRight className='right-card-arrow' onClick={handleRightClick} />}
+          {hover &&
+          <CardThumbnail currentPic={currentPic} listOfThumbnails={listOfThumbnails} setCurrentPic={setCurrentPic}/>}
       </>
     )
   } else if (currentPic === listOfPictures.length - 1) {
@@ -52,6 +62,8 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
           <i className='fa fa-times-circle fa-lg card-button' onClick={()=>{deleteOutfit(relatedProduct.id)}}></i>}
           {hover &&
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick} />}
+          {hover &&
+          <CardThumbnail currentPic={currentPic} listOfThumbnails={listOfThumbnails} setCurrentPic={setCurrentPic}/>}
       </>
     )
   } else {
@@ -66,6 +78,8 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick} />}
           {hover &&
           <MdChevronRight className='right-card-arrow' onClick={handleRightClick} />}
+          {hover &&
+          <CardThumbnail currentPic={currentPic} listOfThumbnails={listOfThumbnails} setCurrentPic={setCurrentPic}/>}
       </>
     )
   }

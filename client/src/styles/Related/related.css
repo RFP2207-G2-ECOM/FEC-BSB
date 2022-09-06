@@ -28,9 +28,10 @@
   height: 30px; */
   /* position: absolute; */
   position: relative;
+  /* left: 220px;
+  top: -305px; */
   left: 220px;
-  top: -305px;
-
+  top: -290px;
   /* display: flex;
   justify-content: center;
   align-items: center;
@@ -44,6 +45,16 @@
 .card-button:hover {
   color: white;
 }
+
+/* .card-button-isHover {
+  position: relative;
+  left: 220px;
+  top: -290px;
+  color: white;
+  font-weight: 550;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+} */
 
 .card-add-button {
   position: relative;
@@ -272,3 +283,17 @@ tr:nth-child(even) {
     background-color: white;
 } */
 
+/* For Card Carousel*/
+
+.card-thumbnail-carousel {
+  top: -100px;
+  position: relative;
+  margin:3px;
+  border: black solid;
+  height: 7vh;
+  width:fit-content;
+  max-width: 250px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
