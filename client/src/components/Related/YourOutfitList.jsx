@@ -51,11 +51,13 @@ const YourOutfitList = () => {
 
   const deleteOutfit = (productID) => {
     const outfits = [...outfitList]
-    const index = outfits.indexOf(JSON.stringify(productID))
+    const index = outfitList.indexOf(JSON.stringify(productID))
     if (index > -1) {
       outfits.splice(index, 1)
     }
     setOutfitList(outfits)
+    console.log('within delete outfit', productID)
+    console.log('within delete outfit outiftlist', outfitList)
   }
 
   const slideLeft = () => {

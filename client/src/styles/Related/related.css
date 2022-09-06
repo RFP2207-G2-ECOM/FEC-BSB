@@ -220,25 +220,39 @@ tr:nth-child(even) {
 }
 
 /* For Star Rating*/
+/* related-stars .StarRatings */
 
 .related-stars .StarRatings {
-  color: black;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  font: 16px"Times New Roman";
-  top: -.3em;
+color: #ccc;
+font-size: 100%;
+position: relative;
+margin: 0;
+padding: 0;
 }
 
-.related-stars .FillRatings {
-  color: black;
-  padding: 0;
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+.related-stars .RelatedFillRatings {
+color: black;
+padding: 0;
+position: absolute;
+display: block;
+top: 0;
+left: 0;
+overflow: hidden;
 }
+
+.related-stars {
+  display: flex;
+  align-items: center;
+}
+
+.related-stars-and-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 10%;
+}
+
+/* Card Carousel Arrow key CSS */
 
 .right-card-arrow {
   position: relative;

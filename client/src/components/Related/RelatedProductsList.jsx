@@ -48,10 +48,11 @@ const RelatedProductsList = () => {
     })
   }
 
-  // const maxScroll = () => {
-  //   var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-  //   setMaxScroll(maxScrollLeft)
-  // };
+  const maxScroll = () => {
+    slider.scrollLeft = slider.scrollLeft - 1;
+    var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    setMaxScroll(maxScrollLeft)
+  };
 
   const slideLeft = () => {
     // var slider = document.getElementById('slider');
@@ -91,7 +92,7 @@ if (scrollPosition <= 40) {
       </div>
     </div>
   )
-} else if (scrollPosition >= maxScrollPositon){
+} else if (scrollPosition === maxScrollPositon){
   return (
     <div className='products-list'>
       <div className='slide-container'>
