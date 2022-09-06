@@ -14,16 +14,6 @@ const ZoomInModal = ({ open, curPic, listOfPics, setCurPic, onClose}) => {
 
   const [ ultraZoom, setUltraZoom ] = useState(false);
 
-  useEffect(()=>{
-
-    if (ultraZoom === true){
-      console.log('yes ultrazoom')
-    } else if (ultraZoom === false) {
-      console.log('no ultrazoom')
-    }
-
-  },[ultraZoom])
-
    const slideRight = () => {
     var slider = document.getElementById('ZoomInSlider');
     slider.scrollLeft = slider.scrollLeft + 84;
