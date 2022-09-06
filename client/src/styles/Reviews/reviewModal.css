@@ -64,6 +64,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-width: 500px;
   margin-top: 15px;
   margin-bottom: 30px;
 }
@@ -78,7 +79,7 @@
 
 .characteristic-scale-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .characteristic-scale-footer {
@@ -90,4 +91,15 @@
 
 .review-modal-body-input {
   height: 100px;
+}
+
+.reivew-modal-photos {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-modal-exit-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
 }

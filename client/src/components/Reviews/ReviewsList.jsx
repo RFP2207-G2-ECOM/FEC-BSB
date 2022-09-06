@@ -3,7 +3,7 @@ import React from 'react'
 import AddReviewButton from './AddReviewButton.jsx'
 import ReviewTile from './ReviewTile.jsx'
 
-const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCount, reviewsToRender, setReviewsToRender, setMoreReviews, setReviewSort, starFilters }) => {
+const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCount, reviewsToRender, setReviewsToRender, setModalOpen, setMoreReviews, setReviewSort, starFilters }) => {
 
   const change = (e) => {
     setReviewSort(e.target.value)
@@ -22,9 +22,12 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
             <option value="helpful">helpful</option>
           </select>
         </div>
-        {/* { moreReviews === true &&
-          <AddReviewButton />
-        } */}
+        { moreReviews === true &&
+          <AddReviewButton
+            setModalOpen={setModalOpen}
+            moreReviews={moreReviews}
+          />
+        }
       </div>
       <div>
         {(filteredReviews

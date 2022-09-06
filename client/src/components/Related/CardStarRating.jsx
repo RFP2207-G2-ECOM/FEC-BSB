@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { ProductReviewsContext } from '../../contexts/product-reviews.context.jsx';
-import StaticRating from '../StarRating.jsx';
 import Card from './Card.jsx'
 import styles from '../../styles/Related/related.css';
+import StaticRating from '../StarRating.jsx';
 
 const CardStarRating = (props) => {
   let ratings = props.ratings;
@@ -28,14 +28,14 @@ const CardStarRating = (props) => {
     if (totalReviews > 0) {
       return (
           <div className='related-stars'>
-            <StaticRating rating={ratings}/>
+            <StaticRating rating={ratings} font={'16px'}/>
           </div>
       )
     } else {
       return (
         <div className='related-stars-and-reviews'>
           <div className='related-stars'>
-            <StaticRating rating={ratings} font='16px'/>
+            <StaticRating rating={ratings} font={'16px'}/>
           </div>
         </div>
       )
