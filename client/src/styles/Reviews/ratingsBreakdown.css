@@ -29,6 +29,7 @@
   grid-template-columns: 20% 80%;
   grid-template-rows: auto;
   justify-content: space-between;
+  position: relative;
 }
 
 .ratings-breakdown-filter-button {
