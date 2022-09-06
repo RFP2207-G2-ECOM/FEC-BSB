@@ -4,7 +4,6 @@ import axios from "axios"
 export default function usePhotoSubmit (files, photoURLs, setPhotoURLs, setLoadingPhotos) {
   const [picLoading, setPicLoading] = useState(true)
   const [picError, setPicError] = useState(false)
-
   useEffect(() => {
     if (files) {
       setPicLoading(true)
