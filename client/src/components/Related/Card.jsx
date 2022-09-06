@@ -48,7 +48,7 @@ const Card = ({relatedProduct, deleteOutfit}) => {
 
   if (productStyle[0]) {
     return (
-      <div className='card-container' onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(true)}>
+      <div className='card-container' onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
         <div className='card-media'>
             <CardPictureDisplay productStyle={productStyle}
                                 onOpen={() => setIsOpen(true)}
