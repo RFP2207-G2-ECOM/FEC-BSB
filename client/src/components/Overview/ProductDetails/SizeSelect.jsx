@@ -2,14 +2,18 @@ import React, { useContext, useState, useEffect } from 'react';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const SizeSelect = () => {
-  const { listOfSizes, curSize, setCurSize } = useContext(CurrentSKUContext);
-  const [ curSizeDisplay, setCurSizeDisplay ] = useState();
+  const { listOfSizes, listOfSKUs, curSize, setCurSize, curSKU, setCurSKU } = useContext(CurrentSKUContext);
 
-  // console.log(listOfSizes);
+  // potentially refactor to not need curSize?
 
-  useEffect(()=> {
-    setCurSizeDisplay(curSize);
-  }, [curSize])
+  console.log(curSize);
+  console.log(curSKU);
+
+  const updateCurVals = (size)=> {
+    setCurSize(size);
+    let index = listOfSizes.indexOf(size);
+    setCurSKU(listOfSKUs[index]);
+  };
 
   let copyOfLoS = [...listOfSizes];
   copyOfLoS.shift();
@@ -31,7 +35,7 @@ const SizeSelect = () => {
                   return (
                     <div className='SizeIconNull' key={index}></div>
                   )
-                } else if (size === curSizeDisplay) {
+                } else if (size === curSize) {
                   return (
                     <div className='SizeIconSelected' key={index} style={heightStyling} >
                       {size}
@@ -39,7 +43,7 @@ const SizeSelect = () => {
                   )
                 } else if (size !== null) {
                   return (
-                    <div className='SizeIconRegular' key={index} style={heightStyling} onClick={(e)=>{setCurSize(size)}}>
+                    <div className='SizeIconRegular' key={index} style={heightStyling} onClick={(e)=>{updateCurVals(size)}}>
                       {size}
                     </div>
                   )

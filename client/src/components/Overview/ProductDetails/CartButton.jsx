@@ -8,16 +8,6 @@ const CartButton = () => {
 
   // handle situations where there is no sizes, just quantity
   let handleCartSubmit = (e) => {
-    let index = listOfSizes.indexOf(curSize);
-    let obj = listOfSKUs[index];
-    setCurSKU(obj);
-    // changes SKU, which triggers the useEffect
-  };
-
-  useEffect(()=>{
-    // triggers on curSKU change,
-    // only changes on AddToCart & initial load
-
     if (curSKU !== 'Fake SKU') {
       // make axios post request to Cart API here
       var baseURI = process.env.BASE_URI;
@@ -45,8 +35,7 @@ const CartButton = () => {
         // pop up window?
       });
     }};
-
-  },[curSKU])
+  };
 
   if (listOfSizes[0] === null) {
     return (
