@@ -12,6 +12,7 @@ export default function useReviewSubmit (onClose, submitPressed, setSubmitPresse
   useEffect(() => {
     setLoading(true)
     setError(false)
+
     if (submitPressed) {
 
       const data = {
@@ -26,7 +27,7 @@ export default function useReviewSubmit (onClose, submitPressed, setSubmitPresse
         characteristics: characteristics
       }
 
-      console.log('this is data:', data)
+      // insert cloudinary post request here
 
       axios.post(`${baseURI}reviews/`, data, {
         headers: {

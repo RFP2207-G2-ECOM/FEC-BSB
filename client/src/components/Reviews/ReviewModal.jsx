@@ -10,6 +10,7 @@ import ReviewModalRecommended from "./ReviewModalRecommended.jsx"
 import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
 import ReviewModalSubmitButton from "./ReviewModalSubmitButton.jsx"
 import ReviewModalSummary from "./ReviewModalSummary.jsx"
+import usePhotoSubmit from "./usePhotoSubmit.js"
 import useReviewSubmit from "./useReviewSubmit.js"
 
 import styles from "../../styles/Reviews/reviewModal.css"
@@ -25,7 +26,9 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [nickname, setNickname] = useState(null)
   const [email, setEmail] = useState(null)
   const [submitPressed, setSubmitPressed] = useState(false)
-  const [files, setFiles] = useState([])
+  const [files, setFiles] = useState(null)
+
+  const { picLoading, picError } = usePhotoSubmit(files, photos, setPhotos)
 
   const {
     loading, error
@@ -34,6 +37,10 @@ const ReviewModal = ({ open, onClose, productName }) => {
   useEffect(() => {
     console.log('files:', files)
   }, [files])
+
+  useEffect(() => {
+    console.log('photos:', photos)
+  }, [photos])
 
   if(!open) return null
 
@@ -79,7 +86,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
             label='photoUpload'
             type='file'
             multiple
-            onChange={(e) => setFiles(e.target.value)}
+            onChange={(e) => setFiles([...e.target.files])}
           />
         </div>
         <div className="review-modal-nickname">
