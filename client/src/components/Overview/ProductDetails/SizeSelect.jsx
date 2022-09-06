@@ -2,22 +2,16 @@ import React, { useContext, useState, useEffect } from 'react';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const SizeSelect = () => {
-  const { listOfSizes, curSize, setCurSize } = useContext(CurrentSKUContext);
-  const [ curSizeDisplay, setCurSizeDisplay ] = useState(listOfSizes[1]);
+  const { listOfSizes, listOfSKUs, curSize, setCurSize, curSKU, setCurSKU } = useContext(CurrentSKUContext);
 
-  // console.log(listOfSizes);
-
-  useEffect(()=> {
-    setCurSizeDisplay(curSize);
-  }, [curSize])
+  const updateCurVals = (size)=> {
+    setCurSize(size);
+    let index = listOfSizes.indexOf(size);
+    setCurSKU(listOfSKUs[index]);
+  };
 
   let copyOfLoS = [...listOfSizes];
   copyOfLoS.shift();
-  let totalSizes = (Math.ceil(copyOfLoS.length/6)*6);
-
-  for (let j = copyOfLoS.length; j < totalSizes; j++) {
-    copyOfLoS.push('Select Size');
-  }
 
   if (copyOfLoS.length) {
     return (
@@ -25,9 +19,9 @@ const SizeSelect = () => {
         {copyOfLoS.map((size, index) =>{
                 if (size === 'Select Size') {
                   return (
-                    <div className='SizeIconNull' key={index} ></div>
+                    <div className='SizeIconNull' key={index}></div>
                   )
-                } else if (size === curSizeDisplay) {
+                } else if (size === curSize) {
                   return (
                     <div className='SizeIconSelected' key={index} >
                       {size}
@@ -35,7 +29,7 @@ const SizeSelect = () => {
                   )
                 } else if (size !== null) {
                   return (
-                    <div className='SizeIconRegular' key={index} onClick={(e)=>{setCurSize(size)}}>
+                    <div className='SizeIconRegular' key={index} onClick={(e)=>{updateCurVals(size)}}>
                       {size}
                     </div>
                   )

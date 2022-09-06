@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import Price from './Price.jsx';
 import { ProductContext } from '../../../contexts/product-info.context.jsx';
 
 const NameAndCategory = () => {
@@ -7,15 +8,16 @@ const NameAndCategory = () => {
   const { product } = useContext(ProductContext);
 
   return (
-    <div className='Name-And-Category'>
-      <div className='ProductName'>
-        <div className='Style-Detail-Spacer'></div>
-        <div className='ProductTitle'>{product.name}</div>
+    <div className='NameCategoryPrice'>
+      <div className='Name-And-Category'>
+        <div className='Category'>
+          <div className='CategoryTitle'>Category / {product.category}</div>
+        </div>
+        <div className='ProductName'>
+          <div className='ProductTitle'>{product.name}</div>
+        </div>
       </div>
-      <div className='Category'>
-        <div className='Style-Detail-Spacer'></div>
-        <div className='CategoryTitle'>{product.category}</div>
-      </div>
+      <Price />
     </div>
   )
 };
