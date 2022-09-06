@@ -56,8 +56,6 @@ const YourOutfitList = () => {
       outfits.splice(index, 1)
     }
     setOutfitList(outfits)
-    console.log('within delete outfit', productID)
-    console.log('within delete outfit outiftlist', outfitList)
   }
 
   const slideLeft = () => {

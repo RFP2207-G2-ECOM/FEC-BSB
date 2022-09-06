@@ -49,7 +49,6 @@ const RelatedProductsList = () => {
   }
 
   const maxScroll = () => {
-    slider.scrollLeft = slider.scrollLeft - 1;
     var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
     setMaxScroll(maxScrollLeft)
   };
