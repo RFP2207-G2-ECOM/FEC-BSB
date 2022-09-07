@@ -32,7 +32,6 @@ a:active {
 
 /* TopBar */
 .TopBar {
-  height: 125px;
   width: 82%;
   margin:auto;
   flex-direction: column;
@@ -64,6 +63,7 @@ a:active {
 .Announcements {
   display: flex;
   justify-content: center;
+  height: 50px;
 }
 
 /* Product Display */
@@ -71,15 +71,11 @@ a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid;
-  border-color: rgb(0, 0, 0);
 }
 
 .Picture-Selector {
-  width: 15%;
+  width: 100px;
   height: 100%;
-  border: solid;
-  border-color: rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -106,7 +102,7 @@ a:active {
 }
 
 .SelectorWheel {
-  height:100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,16 +119,20 @@ a:active {
 }
 
 .ThumbnailFrameSelected {
-  height: 63px;
-  width: 63px;
-  border: solid 3px;
+  height: 74px;
+  width: 74px;
+  border: solid 1px;
+  padding: 1px;
+  border-radius: 7px;
   margin: 9px;
 }
 
 .ThumbnailFrame {
-  height: 63px;
-  width: 63px;
-  border: rgb(179, 173, 6) solid;
+  height: 74px;
+  width: 74px;
+  border: transparent solid 1px;
+  padding: 1px;
+  border-radius: 7px;
   margin: 9px;
 }
 
@@ -163,22 +163,38 @@ a:active {
 }
 
 .Selected-Picture {
-  width: 100%;
+  width: 800px;
   height: 100%;
-  border: solid;
-  border-color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
+.PicContainer {
+  height: 725px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PicInterface {
+  display: flex;
+  justify-content: space-between;
+  height: 725px;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
 .MainPic {
-  height: 100%;
-  max-height: 650px;
-  width:fit-content;
-  max-width: 100%;
   object-fit: scale-down;
+  border: black solid 1px;
+  border-radius: 7px;
+  height: 100%;
+  max-height: 725px;
 }
 
 .Arrow-Left {
@@ -205,16 +221,6 @@ a:active {
   top: calc(50% - 3.5%);
   width: 35px;
   transition: color 0.5s ease-out 100ms;
-}
-
-.PicInterface {
-  display: flex;
-  justify-content: space-between;
-  height:650px;
-  width:100%;
-  position: absolute;
-  top:0;
-  left:0;
 }
 
 .Arrow-Right {
@@ -244,6 +250,7 @@ a:active {
 }
 
 .ZoomInBox {
+  height: 100%;
   width: 100%;
   cursor: cell;
 }
@@ -276,7 +283,8 @@ a:active {
 
 .ZoomInPopUp {
   position: fixed;
-  border: black solid;
+  border: black solid 1px;
+  border-radius: 7px;
   top:5%;
   left:5%;
   background-color: #FFF;
@@ -291,40 +299,33 @@ a:active {
 
 .ZoomInImage {
   object-fit: scale-down;
-  height: 80vh;
+  height: 74.5vh;
   width: fit-content;
   display: block;
   margin: 3px;
-  border: black solid;
+  border: black solid 1px;
+  border-radius: 7px;
   cursor: zoom-in;
   position: relative;
 }
 
 .UltraZoomInImage {
   object-fit: scale-down;
-  height: 80vh;
+  height: 74.5vh;
   width: fit-content;
   display: block;
   margin: 3px;
-  border: black solid;
+  border: black solid 1px;
+  border-radius: 7px;
   cursor: zoom-out;
   position: relative;
   overflow: hidden;
-}
-
-.zoom-lens {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  /*set the size of the lens:*/
-  width: 40px;
-  height: 40px;
 }
 
 .ZoomInDisplay {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 85vw;
 }
 
 .ZoomInSelector {
@@ -369,9 +370,7 @@ a:active {
 }
 
 .ZoomInThumbnails {
-  margin:3px;
-  border: black solid;
-  height: 7vh;
+  height: 100px;
   width:fit-content;
   max-width: 650px;
   display: flex;
@@ -556,11 +555,12 @@ a:active {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: transparent solid;
+  border: transparent solid 1px;
   border-radius: 50%;
   object-fit: cover;
   max-height: 30px;
   max-width: 30px;
+  padding: 2px;
 }
 
 .styleSelected {
@@ -573,7 +573,7 @@ a:active {
   object-fit: cover;
   max-height: 30px;
   max-width: 30px;
-  padding:3px;
+  padding: 2px;
 }
 
 /* AddToCart */
@@ -596,6 +596,7 @@ a:active {
 
 .SoldOutWarning {
   font-size: 14px;
+  font-weight: bold;
   color: #95250F;
 }
 
@@ -684,6 +685,7 @@ a:active {
   background-color: #262626;
   color: white;
   border-radius: 7px;
+  transition: all 0.5s ease-out 100ms;
 }
 
 .CartButton:hover {
@@ -699,20 +701,7 @@ a:active {
   background-color: black;
   color: white;
   border-radius: 7px;
-}
-
-.CartButtonDisabled {
-  width: 75%;
-  font-size: 200%;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid;
-  border-color: rgb(188, 182, 182);
-  color: rgb(84, 83, 83);
-  background-color: rgb(182, 182, 182);
-  border-radius: 7px;
+  transition: all 0.5s ease-out 100ms;
 }
 
 /* Bottom Bar */

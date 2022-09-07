@@ -20,9 +20,11 @@ const SelectedPicture = () => {
   if (curPic === 0) {
     return (
       <div className='Selected-Picture'>
-        <img className='MainPic' src={listOfPics[curPic]}></img>
+        <div className='PicContainer' >
+          <img className='MainPic' src={listOfPics[curPic]}></img>
+        </div>
         <div className='PicInterface'>
-          <div className='ZoomInBox' onClick={() => (setIsZoomIn(true))} ></div> {/* onClick={() => (setIsZoomIn(true))} */}
+          <div className='ZoomInBox' onClick={() => (setIsZoomIn(true))} ></div>
           <BsChevronRight className='Arrow-Right' onClick={handleRightClick} />
         </div>
         <ZoomInModal open={isZoomIn} onClose={()=>setIsZoomIn(false)}

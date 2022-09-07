@@ -4,9 +4,6 @@ import { CurrentSKUContext } from './AddToCart.jsx';
 const SizeTitle = () => {
   const { curSize, listOfSizes, listOfQuantity, addEmpty } = useContext(CurrentSKUContext);
 
-  console.log('addEmpty', addEmpty);
-
-
   if (addEmpty) {
     return (
       <div className='SizeTitleContainer'>
