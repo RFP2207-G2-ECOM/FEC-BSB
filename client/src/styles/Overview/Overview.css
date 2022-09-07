@@ -122,18 +122,16 @@ a:active {
   height: 74px;
   width: 74px;
   border: solid 1px;
-  padding: 1px;
   border-radius: 7px;
-  margin: 9px;
+  margin: 10px;
 }
 
 .ThumbnailFrame {
   height: 74px;
   width: 74px;
   border: transparent solid 1px;
-  padding: 1px;
   border-radius: 7px;
-  margin: 9px;
+  margin: 10px;
 }
 
 .ThumbnailPic {
