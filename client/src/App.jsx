@@ -29,7 +29,7 @@ document.addEventListener('click', (event) => {
       || path.className === 'modal-styles question-modal-class') {
       InteractionsAPI(event.target.outerHTML, 'Questions & Answers');
     }
-    if (path.className === 'RR-Container' || path.className === 'modal-styles review-modal-class') {
+    if (path.className === 'RR-Container' || path.className === 'review-modal-styles Review-Modal-Container review-modal-class') {
       InteractionsAPI(event.target.outerHTML, 'Ratings & Reviews');
     }
   })
