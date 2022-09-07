@@ -10,23 +10,21 @@ import ReviewModalRecommended from "./ReviewModalRecommended.jsx"
 import ReviewModalStarRating from "./ReviewModalStarRating.jsx"
 import ReviewModalSubmitButton from "./ReviewModalSubmitButton.jsx"
 import ReviewModalSummary from "./ReviewModalSummary.jsx"
-import usePhotoSubmit from "./usePhotoSubmit.js"
 import useReviewSubmit from "./useReviewSubmit.js"
 
 import styles from "../../styles/Reviews/reviewModal.css"
 
 const ReviewModal = ({ open, onClose, productName }) => {
 
-  const [starRating, setStarRating] = useState(null)
-  const [recommended, setRecommended] = useState(null)
   const [characteristics, setCharacteristics] = useState({})
-  const [reviewSummary, setReviewSummary] = useState(null)
-  const [reviewBody, setReviewBody] = useState(null)
-  // const [photos, setPhotos] = useState([])
-  const [nickname, setNickname] = useState(null)
   const [email, setEmail] = useState(null)
+  const [files, setFiles] = useState([])
+  const [nickname, setNickname] = useState(null)
+  const [recommended, setRecommended] = useState(null)
+  const [reviewBody, setReviewBody] = useState(null)
+  const [reviewSummary, setReviewSummary] = useState(null)
+  const [starRating, setStarRating] = useState(null)
   const [submitPressed, setSubmitPressed] = useState(false)
-  const [files, setFiles] = useState(null)
 
   const {
     loading, error

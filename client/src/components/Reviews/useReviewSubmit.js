@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-import usePhotoSubmit from "./usePhotoSubmit.js"
-
 const gitHubToken = process.env.GITHUB_TOKEN
 const baseURI = process.env.BASE_URI
 const productID = Number(process.env.PRODUCT_ID)
@@ -28,6 +26,24 @@ export default function useReviewSubmit (onClose, submitPressed, setSubmitPresse
     }
 
     if (submitPressed) {
+
+      if (files.length === 0) {
+        axios.post(`${baseURI}reviews/`, data, {
+          headers: {
+            Authorization: gitHubToken
+          }
+        }).then(() => {
+          setLoading(false)
+          setSubmitPressed(false)
+          onClose()
+        }).catch(err => {
+          console.log(err)
+          setError(true)
+          setLoading(false)
+          setSubmitPressed(false)
+        })
+        return
+      }
 
       files.map(photo => {
         var formData = new FormData();
