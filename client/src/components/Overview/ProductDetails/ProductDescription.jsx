@@ -10,28 +10,20 @@ const ProductDescription = () => {
   if (product.slogan && product.description){
     return (
       <div className='Info-Container'>
-        <div className='Slogan-Container'>
-          <p className='Slogan'>{product.slogan}</p>
-        </div>
-        <div className='Description-Container'>
-          <p className='Description'>{product.description}</p>
-        </div>
+        <p className='Slogan'>{product.slogan}</p>
+        <p className='Description'>{product.description}</p>
       </div>
     )
   } else if (!product.slogan && product.description) {
     return (
       <div className='Info-Container'>
-        <div className='Description-Container'>
-          <p className='Description'>{product.description}</p>
-        </div>
+        <p className='Description'>{product.description}</p>
       </div>
     )
   } else if (!product.description && product.slogan) {
     return (
       <div className='Info-Container'>
-        <div className='Slogan-Container'>
-          <p className='Slogan'>{product.slogan}</p>
-        </div>
+        <p className='Slogan'>{product.slogan}</p>
       </div>
     )
   } else {
