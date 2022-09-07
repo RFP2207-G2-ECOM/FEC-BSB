@@ -8,7 +8,7 @@ body {
   --lightFont: #737373;
   --select: #f5f4f4;
   --divider: #e1e0e0;
-  --iconNoFill: gray;
+  --iconNoFill: #ccc;
 }
 
 .hover:hover {
@@ -26,6 +26,7 @@ body {
   padding: 1rem;
   background-color: black;
   color: white;
+  width: fit-content;
 }
 
 
