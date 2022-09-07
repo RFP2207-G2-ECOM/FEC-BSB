@@ -18,11 +18,11 @@ export default function useReviewSubmit (
   starRating,
   submitPressed
 ) {
-  const [loading, setLoading] = useState(false)
+  const [loadingModal, setLoadingModal] = useState(true)
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    setLoading(true)
+    setLoadingModal(true)
     setError(false)
 
     const data = {
@@ -44,14 +44,15 @@ export default function useReviewSubmit (
           headers: {
             Authorization: gitHubToken
           }
-        }).then(() => {
-          setLoading(false)
+        }).then(res => {
+          console.log(res)
+          setLoadingModal(false)
           setSubmitPressed(false)
           onClose()
         }).catch(err => {
           console.log(err)
           setError(true)
-          setLoading(false)
+          setLoadingModal(false)
           setSubmitPressed(false)
         })
         return
@@ -71,14 +72,15 @@ export default function useReviewSubmit (
                 headers: {
                   Authorization: gitHubToken
                 }
-              }).then(() => {
-                setLoading(false)
+              }).then(res => {
+                console.log(res)
+                setLoadingModal(false)
                 setSubmitPressed(false)
                 onClose()
               }).catch(err => {
                 console.log(err)
                 setError(true)
-                setLoading(false)
+                setLoadingModal(false)
                 setSubmitPressed(false)
               })
             }
@@ -86,5 +88,5 @@ export default function useReviewSubmit (
       })
     }
   }, [submitPressed])
-  return { loading, error }
+  return { loadingModal, error }
 }

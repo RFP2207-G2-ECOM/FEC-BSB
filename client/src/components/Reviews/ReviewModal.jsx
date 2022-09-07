@@ -26,7 +26,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [starRating, setStarRating] = useState(null)
   const [submitPressed, setSubmitPressed] = useState(false)
 
-  const { loading, error } = useReviewSubmit(
+  const { loadingModal, error } = useReviewSubmit(
     characteristics,
     onClose,
     email,
@@ -54,6 +54,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
           <div className="review-modal-section-header">Overall rating</div>
           <ReviewModalStarRating
             setStarRating={setStarRating}
+            error={error}
           />
         </div>
         <div>
@@ -86,6 +87,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
             multiple
             onChange={(e) => setFiles([...e.target.files])}
           />
+          <div>You can upload up to five photos</div>
         </div>
         <div className="review-modal-nickname">
           <ReviewModalNickname
