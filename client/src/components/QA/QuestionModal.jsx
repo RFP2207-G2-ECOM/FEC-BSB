@@ -59,7 +59,7 @@ const QuestionModal = ({ open, product_id, onClose }) => {
   return ReactDom.createPortal(
     <>
       <div className='overlay-styles' onClick={onClose}/>
-      <div className='modal-styles'>
+      <div className='modal-styles question-modal-class'>
         <h1 className='ans-mod-title'>Ask Your Question</h1>
         <h3 className='ans-mod-subtitle'>{`About the ${product.name}`}</h3>
         <hr></hr>

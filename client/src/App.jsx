@@ -18,16 +18,18 @@ import styles from './styles/styles.css'
 
 document.addEventListener('click', (event) => {
   event.path.forEach(path => {
-    if (path.className === 'Overview') {
+    if (path.className === 'Overview' || path.className === 'modal-styles overview-modal-class') {
       InteractionsAPI(event.target.outerHTML, 'Overview');
     }
-    if (path.className === 'related-items-and-comp-container') {
+    if (path.className === 'related-items-and-comp-container' || path.className === 'modal-styles related-modal-class') {
+      console.log('REl clicked!!');
       InteractionsAPI(event.target.outerHTML, 'Related Items & Comparison');
     }
-    if (path.className === 'QA-Container') {
+    if (path.className === 'QA-Container' || path.className === 'modal-styles answer-modal-class'
+      || path.className === 'modal-styles question-modal-class') {
       InteractionsAPI(event.target.outerHTML, 'Questions & Answers');
     }
-    if (path.className === 'RR-Container') {
+    if (path.className === 'RR-Container' || path.className === 'modal-styles review-modal-class') {
       InteractionsAPI(event.target.outerHTML, 'Ratings & Reviews');
     }
   })
