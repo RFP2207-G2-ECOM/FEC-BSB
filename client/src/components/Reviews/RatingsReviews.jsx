@@ -18,8 +18,7 @@ const RatingsReviews = () => {
   let { product } = useContext(ProductContext)
   let { metadata } = useContext(ProductReviewsContext)
   let ratings = {...metadata.ratings}
-  const ratingsCount =
-    Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
+  const ratingsCount = Object.values(ratings).reduce((a, b) => Number(a) + Number(b), 0)
 
   const [starFilters, setStarFilters] = useState([])
   const [filteredReviews, setFilteredReviews] = useState([])
