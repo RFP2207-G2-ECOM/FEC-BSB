@@ -69,7 +69,7 @@ const YourOutfitList = () => {
   };
 
   return (
-    <div className='products-list'>
+    <div className='outfit-products-list'>
       <div className='slide-container'>
       <MdChevronLeft
         className='slide'

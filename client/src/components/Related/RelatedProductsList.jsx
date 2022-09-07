@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect, createContext, useContext, useLayoutEffect } from 'react';
 import RelatedItemsAndComp from './RelatedItemsAndComp.jsx';
 import styles from '../../styles/Related/related.css';
 import Card from './Card.jsx'
@@ -16,9 +16,10 @@ const RelatedProductsList = () => {
 
   const [relatedProducts, setRelatedProducts] = useState([]);
 
-  // const [ currentProd, setCurrentProd ] = useState(0);
+  const [ currentProd, setCurrentProd ] = useState(0);
+
   const [scrollPosition, setScrollPositon] = useState(0);
-  const [maxScrollPositon, setMaxScroll] = useState(0);
+  const [maxScrollPositon, setMaxScroll] = useState(window.innerWidth);
 
   useEffect(()=>{
     setProductID(productRelated);
@@ -48,55 +49,34 @@ const RelatedProductsList = () => {
     })
   }
 
-  const maxScroll = () => {
-    var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    setMaxScroll(maxScrollLeft)
-  };
-
   const slideLeft = () => {
     // var slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft - 250;
+    slider.scrollLeft = slider.scrollLeft - (slider.clientWidth * .25);
     var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    console.log('slide left amount:', slider.scrollLeft)
-    console.log('max slide left:', maxScrollLeft)
     setScrollPositon(slider.scrollLeft)
     setMaxScroll(maxScrollLeft)
-    // setCurrentProd(currentProd - 1)
+    setCurrentProd(currentProd - 1)
   };
 
   const slideRight = () => {
-    // var slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft + 250;
+    slider.scrollLeft = slider.scrollLeft + (slider.clientWidth * .25);
     var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    console.log('slide right amount:', slider.scrollLeft)
-    console.log('max slide right:', maxScrollLeft)
     setScrollPositon(slider.scrollLeft)
     setMaxScroll(maxScrollLeft)
-    // setCurrentProd(currentProd + 1)
+    setCurrentProd(currentProd + 1)
+  };
+
+  const setToZero = (length) => {
+    slider.scrollLeft = slider.scrollLeft - 250 * length;
+    var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+    setScrollPositon(slider.scrollLeft)
+    setMaxScroll(maxScrollLeft)
   };
 
 
-if (scrollPosition <= 40) {
+if (relatedProducts.length <= 4) {
   return (
     <div className='products-list'>
-      <div className='slide-container'>
-      </div>
-        <div id='slider' className='related-products-list-container snaps-inline'>
-          {relatedProducts.map((relatedProduct, key) => (
-            <Card relatedProduct={relatedProduct} key={key} />
-          ))}
-        </div>
-        <div className='slide-container'>
-      <MdChevronRight className='slide' onClick={slideRight}/>
-      </div>
-    </div>
-  )
-} else if (scrollPosition === maxScrollPositon){
-  return (
-    <div className='products-list'>
-      <div className='slide-container'>
-      <MdChevronLeft className='slide' onClick={slideLeft}/>
-      </div>
         <div id='slider' className='related-products-list-container snaps-inline'>
           {relatedProducts.map((relatedProduct, key) => (
             <Card relatedProduct={relatedProduct} key={key} />
@@ -104,20 +84,40 @@ if (scrollPosition <= 40) {
         </div>
     </div>
   )
-  } else {
+} else if (relatedProducts.length > 4 && currentProd < 4) {
+  // setToZero(relatedProducts.length - 1)
+  return (
+    <div className='products-list'>
+      <MdChevronLeft className='slide' onClick={()=>setToZero(relatedProducts.length - 1)}/>
+        <div id='slider' className='related-products-list-container snaps-inline'>
+          {relatedProducts.map((relatedProduct, key) => (
+            <Card relatedProduct={relatedProduct} key={key} />
+          ))}
+        </div>
+        <MdChevronRight className='slide' onClick={slideRight}/>
+    </div>
+  )
+  } else if (currentProd === relatedProducts.length - 4) {
     return (
       <div className='products-list'>
-        <div className='slide-container'>
-        <MdChevronLeft className='slide' onClick={slideLeft}/>
-        </div>
+        <MdChevronLeft className='slide' onClick={slideLeft} onScroll={console.log('scolling scroll')}/>
           <div id='slider' className='related-products-list-container snaps-inline'>
             {relatedProducts.map((relatedProduct, key) => (
               <Card relatedProduct={relatedProduct} key={key} />
             ))}
           </div>
-          <div className='slide-container'>
-        <MdChevronRight className='slide' onClick={slideRight}/>
-        </div>
+      </div>
+    )
+  } else {
+    return (
+      <div className='products-list'>
+        <MdChevronLeft className='slide' onClick={slideLeft} onScroll={console.log('scolling scroll')}/>
+          <div id='slider' className='related-products-list-container snaps-inline'>
+            {relatedProducts.map((relatedProduct, key) => (
+              <Card relatedProduct={relatedProduct} key={key} />
+            ))}
+          </div>
+          <MdChevronRight className='slide' onClick={slideRight} onScroll={console.log('scolling scroll')}/>
       </div>
     )
   }

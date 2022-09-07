@@ -1,4 +1,5 @@
 .related-items-and-comp-container {
+  display: block;
   width: 75%;
   margin: auto;
   margin-top: 20px;
@@ -108,11 +109,13 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* justify-content: flex-start; */
   /* overflow-x: scroll; */
-  margin: 20px;
-  padding: 1.2rem;
+  /* margin: 20px; */
+  /* padding: 1.2rem; */
   /* flex-direction: 'row-reverse'; */
+
 }
 
 /*Snaps in line, scrolls 1 card container at a time*/
@@ -125,21 +128,36 @@
 }
 
 .products-list {
+  flex-wrap: nowrap;
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
-.slide-container {
+.outfit-products-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* .slide-container {
+  display: flex;
+  align-items: center;
   min-height: 20%;
   max-width: 50%;
-}
+  justify-content: center;
+} */
 
 .slide {
   display: flex;
   cursor: pointer;
   opacity: .5;
   font-size: 40px;
-  align-items: center;
+  justify-content: flex-start;
+  /* align-items: center; */
 }
 
 .slide:hover {
