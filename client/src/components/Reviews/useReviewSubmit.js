@@ -5,7 +5,19 @@ const gitHubToken = process.env.GITHUB_TOKEN
 const baseURI = process.env.BASE_URI
 const productID = Number(process.env.PRODUCT_ID)
 
-export default function useReviewSubmit (onClose, submitPressed, setSubmitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, files, nickname, email) {
+export default function useReviewSubmit (
+  characteristics,
+  onClose,
+  email,
+  files,
+  nickname,
+  recommended,
+  reviewBody,
+  reviewSummary,
+  setSubmitPressed,
+  starRating,
+  submitPressed
+) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 

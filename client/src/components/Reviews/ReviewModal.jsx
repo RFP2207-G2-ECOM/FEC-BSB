@@ -26,9 +26,19 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [starRating, setStarRating] = useState(null)
   const [submitPressed, setSubmitPressed] = useState(false)
 
-  const {
-    loading, error
-  } = useReviewSubmit(onClose, submitPressed, setSubmitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, files, nickname, email)
+  const { loading, error } = useReviewSubmit(
+    characteristics,
+    onClose,
+    email,
+    files,
+    nickname,
+    recommended,
+    reviewBody,
+    reviewSummary,
+    setSubmitPressed,
+    starRating,
+    submitPressed
+  )
 
   if(!open) return null
 
