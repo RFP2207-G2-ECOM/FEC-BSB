@@ -72,7 +72,7 @@ const Helpful = ({ helpful, helpfulType, id }) => {
     <>
       <div className='helpful'>Helpful?</div>
       <div
-        className='yes-count'
+        className='yes-count hover'
         onClick={handleClick}
       >Yes</div>
       <div className='helpful'>&nbsp;({help})</div>
