@@ -14,6 +14,8 @@ import { QuestionsContext } from './contexts/question.context.jsx';
 import { ProductReviewsContext } from './contexts/product-reviews.context.jsx';
 import { LocalStorageContext } from './contexts/local-storage.context.jsx';
 
+import styles from './styles/styles.css'
+
 document.addEventListener('click', (event) => {
   event.path.forEach(path => {
     if (path.className === 'Overview') {

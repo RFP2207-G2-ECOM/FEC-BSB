@@ -38,7 +38,7 @@
 }
 
 .ratings-breakdown-filter-bar {
-  background-color: #ccc;
+  background-color: var(--select);
   align-self: center;
   height: 10px;
   position: relative;
