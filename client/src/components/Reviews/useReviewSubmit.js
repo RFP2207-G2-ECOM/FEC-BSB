@@ -9,9 +9,7 @@ const productID = Number(process.env.PRODUCT_ID)
 
 export default function useReviewSubmit (onClose, submitPressed, setSubmitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, files, nickname, email) {
   const [loading, setLoading] = useState(false)
-  // const [loadingPhotos, setLoadingPhotos] = useState(false)
   const [error, setError] = useState(false)
-  // const [photoURLs, setPhotoURLs] = useState([])
 
   useEffect(() => {
     setLoading(true)
@@ -46,7 +44,6 @@ export default function useReviewSubmit (onClose, submitPressed, setSubmitPresse
                   Authorization: gitHubToken
                 }
               }).then(() => {
-                console.log('success!')
                 setLoading(false)
                 setSubmitPressed(false)
                 onClose()
