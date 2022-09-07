@@ -25,13 +25,13 @@ a:active {
 .Overview-Container {
   width: 82%;
   margin: auto;
-  height: 650px;
+  height: 725px;
   display: flex;
+  justify-content: center;
 }
 
 /* TopBar */
 .TopBar {
-  height: 125px;
   width: 82%;
   margin:auto;
   flex-direction: column;
@@ -63,23 +63,19 @@ a:active {
 .Announcements {
   display: flex;
   justify-content: center;
+  height: 50px;
 }
 
 /* Product Display */
 .Product-Display {
-  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid;
-  border-color: rgb(0, 0, 0);
 }
 
 .Picture-Selector {
-  width: 15%;
+  width: 100px;
   height: 100%;
-  border: solid;
-  border-color: rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -91,8 +87,10 @@ a:active {
   align-items: center;
   font-size: 3vh;
   height: 30px;
-  color: grey;
+  color: var(--lightFont);
+  border-radius: 7px;
   transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .Arrow-Up:hover {
@@ -101,12 +99,15 @@ a:active {
   align-items: center;
   font-size: 3vh;
   height: 30px;
-  color: black;
+  color: var(--mainFont);
+  border-radius: 7px;
+  background-color: var(--select);
   transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .SelectorWheel {
-  height:100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -123,17 +124,19 @@ a:active {
 }
 
 .ThumbnailFrameSelected {
-  height: 63px;
-  width: 63px;
-  border: solid 3px;
-  margin: 9px;
+  height: 74px;
+  width: 74px;
+  border: solid 1px;
+  border-radius: 7px;
+  margin: 10px;
 }
 
 .ThumbnailFrame {
-  height: 63px;
-  width: 63px;
-  border: rgb(179, 173, 6) solid;
-  margin: 9px;
+  height: 74px;
+  width: 74px;
+  border: transparent solid 1px;
+  border-radius: 7px;
+  margin: 10px;
 }
 
 .ThumbnailPic {
@@ -147,8 +150,10 @@ a:active {
   align-items: center;
   font-size: 3vh;
   height: 30px;
-  color: grey;
+  color: var(--lightFont);
+  border-radius: 7px;
   transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 
@@ -158,27 +163,45 @@ a:active {
   align-items: center;
   font-size: 3vh;
   height: 30px;
-  color: black;
+  color: var(--mainFont);
+  border-radius: 7px;
+  background-color: var(--select);
   transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .Selected-Picture {
-  width: 100%;
+  width: 800px;
   height: 100%;
-  border: solid;
-  border-color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
+.PicContainer {
+  height: 725px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PicInterface {
+  display: flex;
+  height: 725px;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
 .MainPic {
-  height: 100%;
-  max-height: 650px;
-  width:fit-content;
-  max-width: 100%;
   object-fit: scale-down;
+  border: var(--mainFont) solid 1px;
+  border-radius: 7px;
+  height: 100%;
+  max-height: 725px;
 }
 
 .Arrow-Left {
@@ -187,34 +210,29 @@ a:active {
   justify-content: center;
   height: 7%;
   font-size: 5vh;
-  color: grey;
+  color: var(--lightFont);
+  border-radius: 7px;
   position: relative;
   top: calc(50% - 3.5%);
   width: 35px;
   transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .Arrow-Left:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: var(--mainFont);
+  border-radius: 7px;
+  background-color: var(--select);
   height: 7%;
   font-size: 5vh;
   position: relative;
   top: calc(50% - 3.5%);
   width: 35px;
   transition: color 0.5s ease-out 100ms;
-}
-
-.PicInterface {
-  display: flex;
-  justify-content: space-between;
-  height:650px;
-  width:100%;
-  position: absolute;
-  top:0;
-  left:0;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .Arrow-Right {
@@ -222,29 +240,35 @@ a:active {
   align-items: center;
   justify-content: center;
   height: 7%;
-  color: grey;
+  color: var(--lightFont);
+  border-radius: 7px;
   font-size: 5vh;
   position: relative;
   top: calc(50% - 3.5%);
   width: 35px;
   transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .Arrow-Right:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: var(--mainFont);
+  border-radius: 7px;
+  background-color: var(--select);
   height: 7%;
   font-size: 5vh;
   position: relative;
   top: calc(50% - 3.5%);
   width: 35px;
   transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .ZoomInBox {
-  width: 100%;
+  height: 100%;
+  width: 95.75%;
   cursor: cell;
 }
 
@@ -262,7 +286,7 @@ a:active {
   position: absolute;
   top: 0.5vw;
   right: 0.5vw;
-  color: grey;
+  color: var(--lightFont);
   transition: color 0.5s ease-out 100ms;
 }
 
@@ -270,61 +294,54 @@ a:active {
   position: absolute;
   top: 0.5vw;
   right: 0.5vw;
-  color: black;
+  color: var(--mainFont);
   transition: color 0.5s ease-out 100ms;
 }
 
 .ZoomInPopUp {
   position: fixed;
-  border: black solid;
+  border: var(--mainFont) solid 1px;
+  border-radius: 7px;
   top:5%;
   left:5%;
-  background-color: #FFF;
-  z-Index: 1000;
+  background-color: white;
   height:90%;
   width:90%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-Index: 2;
 }
 
 .ZoomInImage {
   object-fit: scale-down;
-  height: 80vh;
+  height: 74.5vh;
   width: fit-content;
   display: block;
   margin: 3px;
-  border: black solid;
+  border: var(--mainFont) solid 1px;
+  border-radius: 7px;
   cursor: zoom-in;
   position: relative;
 }
 
 .UltraZoomInImage {
   object-fit: scale-down;
-  height: 80vh;
+  height: 74.5vh;
   width: fit-content;
   display: block;
   margin: 3px;
-  border: black solid;
+  border: var(--mainFont) solid 1px;
+  border-radius: 7px;
   cursor: zoom-out;
   position: relative;
   overflow: hidden;
-}
-
-.zoom-lens {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  /*set the size of the lens:*/
-  width: 40px;
-  height: 40px;
 }
 
 .ZoomInDisplay {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 85vw;
 }
 
 .ZoomInSelector {
@@ -349,7 +366,7 @@ a:active {
   font-size: 3vh;
   height: 30px;
   width: 30px;
-  color: grey;
+  color: var(--lightFont);
   transition: color 0.5s ease-out 100ms;
 }
 
@@ -360,7 +377,9 @@ a:active {
   font-size: 3vh;
   height: 30px;
   width: 30px;
-  color: black;
+  color: var(--mainFont);
+  border-radius: 7px;
+  background-color: var(--select);
   transition: color 0.5s ease-out 100ms;
 }
 
@@ -369,9 +388,7 @@ a:active {
 }
 
 .ZoomInThumbnails {
-  margin:3px;
-  border: black solid;
-  height: 7vh;
+  height: 100px;
   width:fit-content;
   max-width: 650px;
   display: flex;
@@ -381,7 +398,7 @@ a:active {
 
 /* Product Details */
 .Product-Details {
-  width: 350px;
+  width: 392px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -390,7 +407,6 @@ a:active {
 .Name-And-Category {
   display: flex;
   flex-direction: column;
-  width:70%;
 }
 
 .Stars-And-Reviews {
@@ -399,12 +415,13 @@ a:active {
   justify-content: flex-start;
   padding-top: 4px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #f5f4f4;
+  border-bottom: 1px solid var(--divider);
 }
 
 
 .NameCategoryPrice {
   display: flex;
+  justify-content: space-between;
 }
 
 /* Name & Category */
@@ -428,7 +445,7 @@ a:active {
 .CategoryTitle {
   font-size: 12px;
   margin-bottom: 3px;
-  color: #737373;
+  color: var(--lightFont);
 }
 
 /* Price Display */
@@ -446,7 +463,7 @@ a:active {
 .SalePriceOG {
   font-size: 24px;
   text-decoration: line-through;
-  color: #737373;
+  color: var(--lightFont);
   /* background: linear-gradient(to right top, transparent 47.75%,
   currentColor 49.5%, currentColor 50.5%, transparent 52.25%); */
 }
@@ -467,14 +484,14 @@ a:active {
 }
 
 .StarRatings {
-  color: #ccc;
+  color: var(--lightFont);
   position: relative;
   margin: 0;
   padding: 0;
 }
 
 .FillRatings {
-  color: #000000;
+  color: var(--mainFont);
   padding: 0;
   position: absolute;
   display: block;
@@ -490,7 +507,7 @@ a:active {
 
 .ReviewLink {
   text-align: center;
-  color:#737373;
+  color: var(--lightFont);
 }
 
 /* Style Display, Selector, & AddToCart */
@@ -506,9 +523,28 @@ a:active {
   align-items: center;
 }
 
-.FavIcon {
+.FavIconInactive {
   font-size: 20px;
-  border-color: black;
+  color: var(--mainFont);
+  transition: color 0.25s ease-out 100ms;
+}
+
+.FavIconInactive:hover {
+  font-size: 20px;
+  color: var(--iconNoFill);
+  transition: color 0.25s ease-out 100ms;
+}
+
+.FavIconActive {
+  font-size: 20px;
+  color: var(--mainFont);
+  transition: color 0.25s ease-out 100ms;
+}
+
+.FavIconActive:hover {
+  font-size: 20px;
+  color: var(--iconNoFill);
+  transition: color 0.25s ease-out 100ms;
 }
 
 /* Style Display */
@@ -525,6 +561,7 @@ a:active {
 .StyleTitle {
   font-size: 14px;
   padding-right: 8px;
+  font-weight: bold;
 }
 
 .CurStyleTitle {
@@ -534,30 +571,20 @@ a:active {
 /* Style Selector */
 .StyleSelector {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  width: 384px;
 }
 
 .StyleOptions {
   display: flex;
   flex: auto;
-  justify-content: space-around;
   align-items: center;
 }
 
 .SingleStyle {
-  display: flex;
-  justify-content: center;
-  width: calc(25%);
-}
-
-.SingleStyleSelected {
-  display: flex;
-  justify-content: center;
-  width: calc(25%);
-}
-
-.SingleStyleNull {
-  width: 25%;
+  width: 40px;
+  height: 40px;
+  margin: 0 6px 1px 0;
 }
 
 .style {
@@ -565,12 +592,12 @@ a:active {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: transparent solid;
+  border: transparent solid 1px;
   border-radius: 50%;
   object-fit: cover;
-  max-height: 34px;
-  max-width: 34px;
-  margin-bottom: 10px;
+  max-height: 30px;
+  max-width: 30px;
+  padding: 2px;
 }
 
 .styleSelected {
@@ -581,21 +608,46 @@ a:active {
   border: solid 1px;
   border-radius: 50%;
   object-fit: cover;
-  max-height: 34px;
-  max-width: 34px;
-  padding:3px;
-  margin-bottom: 10px;
+  max-height: 30px;
+  max-width: 30px;
+  padding: 2px;
 }
 
 /* AddToCart */
-.AddToCart {
-  height: 100%;
+
+.SizeTitleContainer {
+  display: flex;
+  padding: 8px 0 7px 0;
 }
 
-.SizeRows, .QuantityAndCartRow {
+.SizeTitle {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 8px 0 0;
+}
+
+.SizeWarning {
+  font-size: 14px;
+  color: var(--lightFont);
+}
+
+.SoldOutWarning {
+  font-size: 14px;
+  font-weight: bold;
+  color: #95250F;
+}
+
+.SizeRows {
   display: flex;
   justify-content: space-around;
   margin: 3px;
+}
+
+.QuantityAndCartRow {
+  display: flex;
+  justify-content: space-around;
+  padding: 14px 0 20px 0;
+  border-bottom: 1px solid var(--divider);
 }
 
 .SizeSelect {
@@ -603,19 +655,20 @@ a:active {
   flex: auto;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 10px;
+  width: 378px;
 }
 
 .SizeIconSelected {
   display: flex;
-  border: solid black 1px;
+  border: solid var(--mainFont) 1px;
   justify-content: center;
   align-items: center;
-  height: 42px;
-  width: 42px;
-  background-color: #F5F4F4;
+  text-align: center;
+  height: 46px;
+  width: 46px;
+  background-color: var(--select);
   font-size: 14px;
-  margin: 0 10px 10px 0;
+  margin: 0 6px 6px 0;
 }
 
 .SizeIconRegular {
@@ -623,22 +676,12 @@ a:active {
   border: transparent solid 1px;
   justify-content: center;
   align-items: center;
-  height: 42px;
-  width: 42px;
-  background-color: #F5F4F4;
+  text-align: center;
+  height: 46px;
+  width: 46px;
+  background-color: var(--select);
   font-size: 14px;
-  margin: 0 10px 10px 0;
-}
-
-.SizeIconNull {
-  display: flex;
-  border: transparent solid;
-  border-radius: 50%;
-  width: fit-content;
-  min-width: 13%;
-  max-width: 50px;
-  justify-content: center;
-  align-items: center;
+  margin: 0 6px 6px 0;
 }
 
 .EmptySizes {
@@ -654,19 +697,35 @@ a:active {
   width: 15%;
   display: flex;
   align-items: center;
-
 }
 
 .QuantitySelect {
   font-size: 3vh;
   width:100%;
-  height: 50%;
+  height: 42px;
   text-align: center;
   border: solid 2px;
-  border-radius: 45%;
+  border-radius: 7px;
 }
 
 .CartButton {
+  height: 42px;
+  width: 75%;
+  font-size: 200%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-color: #262626;
+  background-color: #262626;
+  color: white;
+  border-radius: 7px;
+  transition: all 0.5s ease-out 100ms;
+}
+
+.CartButton:hover {
+  height: 42px;
   width: 75%;
   font-size: 200%;
   font-weight: bold;
@@ -677,36 +736,7 @@ a:active {
   border-color: black;
   background-color: black;
   color: white;
-  border-radius: 40px;
-  transition: all 0.5s ease-out 100ms;
-}
-
-.CartButton:hover {
-  width: 75%;
-  font-size: 200%;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid;
-  border-color: black;
-  background-color: white;
-  color: black;
-  border-radius: 40px;
-}
-
-.CartButtonDisabled {
-  width: 75%;
-  font-size: 200%;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid;
-  border-color: rgb(188, 182, 182);
-  color: rgb(84, 83, 83);
-  background-color: rgb(182, 182, 182);
-  border-radius: 40px;
+  border-radius: 7px;
   transition: all 0.5s ease-out 100ms;
 }
 
@@ -719,43 +749,23 @@ a:active {
 }
 
 .FeatureContainer {
-  border: solid;
-  border-color: rgb(0, 0, 0);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 20%;
-  width: fit-content;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid var(--select);
 }
 
 .FeatureAndMaterialTitle {
   display: flex;
-  align-items: center;
-  height: 4vh;
-}
-
-.Feature-Spacer {
-  min-width: 15%;
+  width: 110px;
+  font-size: 14px;
+  color: var(--lightFont);
 }
 
 .FeatureAndMaterial {
   display: flex;
-}
-
-.FeatureTitle {
-  border-bottom: 3px solid black;
-  height: fit-content;
-  font-size: 1.75vh;
-  display: flex;
-  align-items: center;
-}
-
-.FeatureMaterialSpacer {
-  width: 4%;
-}
-
-.FeatureNoMaterial, .MaterialNoFeature {
-  display: flex;
+  justify-content: space-between;
+  width: 274px;
+  padding: 0 0 8px 0;
 }
 
 .Feature {
@@ -764,6 +774,7 @@ a:active {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 14px;
 }
 
 .Material {
@@ -771,19 +782,14 @@ a:active {
   display: flex;
   align-items: center;
   text-align: left;
-}
-
-.FeatureSpacer {
-  height: 10px;
+  font-size: 14px;
 }
 
 .Social-Media-Buttons {
-  width: 25%;
   display: flex;
   justify-content: space-around;
   align-items: stretch;
-  border: solid;
-  border-color: rgb(0, 0, 0);
+  border-bottom: 1px solid var(--select);
 }
 
 .btn {
@@ -792,32 +798,24 @@ a:active {
 }
 
 .Info-Container {
-  border: solid;
-  border-color: rgb(0, 0, 0);
-  display: flex;
-  width: 75%;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.Underline {
-  border-bottom: 3px solid black;
-}
-
-.Slogan, .Description,
-.Slogan-Container, .Description-Container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.Description-Container {
-  width: 80%;
-}
-
-.SMBRow {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  border-bottom: 1px solid var(--select);
+  padding: 20px 0;
+}
+
+.Slogan {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+}
+
+.Description {
+  font-size: 14px;
+  margin: 0;
+}
+
+.SMButton {
+  font-size: 30px;
+  padding: 20px 0;
 }

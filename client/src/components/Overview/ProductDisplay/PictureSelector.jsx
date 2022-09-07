@@ -13,12 +13,12 @@ const PictureSelector = () => {
 
   const slideUp = () => {
     var slider = document.getElementById('SlideUpDown');
-    slider.scrollTop = slider.scrollTop - 78;
+    slider.scrollTop = slider.scrollTop - 94;
   };
 
   const slideDown = () => {
     var slider = document.getElementById('SlideUpDown');
-    slider.scrollTop = slider.scrollTop + 78;
+    slider.scrollTop = slider.scrollTop + 94;
   };
 
   return (
