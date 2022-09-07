@@ -12,7 +12,7 @@ const MoreReviewsButton = ({ moreReviews, reviewsToRender, setReviewsToRender, s
       { moreReviews === false &&
         ratingsCount - reviewsToRender > 0 &&
         <button
-          className="more-reviews-button"
+          className="more-reviews-button button1"
           onClick={showAllReviews}
         >MORE REVIEWS</button>
       }

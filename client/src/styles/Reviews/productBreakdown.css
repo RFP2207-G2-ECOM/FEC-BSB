@@ -35,7 +35,7 @@
 
 .product-breakdown-scale-blocks > * {
   top: 0;
-  background-color: #ccc;
+  background-color: var(--iconNoFill);
   height: 10px;
   min-width: 32.5%;
 }

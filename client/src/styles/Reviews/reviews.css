@@ -54,8 +54,6 @@
 
 .Buttons-Container {
   grid-column: 2 / 3;
-  /* position: sticky;
-  bottom: 400px; */
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
