@@ -4,7 +4,7 @@ const ReviewModalSubmitButton = ( { setSubmitPressed }) => {
 
   return (
     <>
-      <button onClick={() => setSubmitPressed(true)}>Submit review</button>
+      <button className='button1' onClick={() => setSubmitPressed(true)}>Submit review</button>
     </>
   )
 }

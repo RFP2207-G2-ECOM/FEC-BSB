@@ -19,7 +19,7 @@ const Report = ({reportType, id}) => {
 
   return (
     <div
-      className='report'
+      className='report hover'
       onClick={handleReport}
     >{report}</div>
   )

@@ -25,7 +25,7 @@ const RatingsBreakdownFilter = ({ rating, totalReviews, ratingsObject, setStarFi
 
   let highlightStyle
   filterStatus ? highlightStyle = {
-    backgroundColor: '#ccc',
+    backgroundColor: '#f5f4f4',
     width: '2.5em',
     height: '1em',
     padding: '3px',

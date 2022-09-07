@@ -45,7 +45,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
   return ReactDom.createPortal (
     <>
       <div className="overlay-styles" onClick={onClose}></div>
-      <div className="review-modal-styles Review-Modal-Container">
+      <div className="review-modal-styles Review-Modal-Container review-modal-class">
         <div className="review-modal-header">
           <h1>Write Your Review</h1>
           <h2>{`About the ${productName}`}</h2>
@@ -87,7 +87,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
             multiple
             onChange={(e) => setFiles([...e.target.files])}
           />
-          <div>You can upload up to five photos</div>
+          <div className='review-modal-photo-subText'>You can upload up to five photos</div>
         </div>
         <div className="review-modal-nickname">
           <ReviewModalNickname

@@ -93,9 +93,19 @@
   height: 100px;
 }
 
+.review-modal-body-subText {
+  color: var(--lightFont);
+  font-size: 75%;
+}
+
 .reivew-modal-photos {
   display: flex;
   flex-direction: column;
+}
+
+.review-modal-photo-subText {
+  color: var(--lightFont);
+  font-size: 75%;
 }
 
 .review-modal-exit-icon {

@@ -23,7 +23,7 @@ const ReviewModalBody = ( { setReviewBody } ) => {
         onChange={(e) => setBodyText(e.target.value)}
       >
       </input>
-      <div>{`Minimum required characters left: ${charactersLeft}`}</div>
+      <div className='review-modal-body-subText'>{`Minimum required characters left: ${charactersLeft}`}</div>
     </>
   )
 }
