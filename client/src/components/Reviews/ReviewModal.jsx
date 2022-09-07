@@ -22,7 +22,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const [characteristics, setCharacteristics] = useState({})
   const [reviewSummary, setReviewSummary] = useState(null)
   const [reviewBody, setReviewBody] = useState(null)
-  const [photos, setPhotos] = useState([])
+  // const [photos, setPhotos] = useState([])
   const [nickname, setNickname] = useState(null)
   const [email, setEmail] = useState(null)
   const [submitPressed, setSubmitPressed] = useState(false)
@@ -31,14 +31,6 @@ const ReviewModal = ({ open, onClose, productName }) => {
   const {
     loading, error
   } = useReviewSubmit(onClose, submitPressed, setSubmitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, files, nickname, email)
-
-  useEffect(() => {
-    console.log('files:', files)
-  }, [files])
-
-  useEffect(() => {
-    console.log('photos:', photos)
-  }, [photos])
 
   if(!open) return null
 
