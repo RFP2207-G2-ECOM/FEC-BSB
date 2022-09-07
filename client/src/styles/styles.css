@@ -1,0 +1,25 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: var(--black)
+}
+
+:root {
+  --mainFont: #000;
+  --lightFont: #737373;
+  --select: #f5f4f4;
+  --divider: #e1e0e0;
+  --iconNoFill: gray;
+}
+
+.hover:hover {
+  background-color: var(--select);
+  cursor: pointer;
+}
+
+
+/* -fonts: roboto condensed
+-colors:
+  -mainFont / icon-fill-color : black (#000)
+  -lightFont : #737373
+  -select-background : #f5f4f4
+  -bar-dividers: #e1e0e0 */
