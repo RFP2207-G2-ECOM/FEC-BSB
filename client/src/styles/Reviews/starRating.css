@@ -1,5 +1,5 @@
 .StarRatings {
-  color: #ccc;
+  color: var(--iconNoFill);
   font-size: 100%;
   position: relative;
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 .FillRatings {
-  color: black;
+  color: var(--mainFont);
   padding: 0;
   position: absolute;
   display: block;
