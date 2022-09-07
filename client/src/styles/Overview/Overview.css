@@ -25,8 +25,9 @@ a:active {
 .Overview-Container {
   width: 82%;
   margin: auto;
-  height: 650px;
+  height: 750px;
   display: flex;
+  justify-content: center;
 }
 
 /* TopBar */
@@ -67,7 +68,6 @@ a:active {
 
 /* Product Display */
 .Product-Display {
-  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -381,7 +381,7 @@ a:active {
 
 /* Product Details */
 .Product-Details {
-  width: 350px;
+  width: 392px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -390,7 +390,6 @@ a:active {
 .Name-And-Category {
   display: flex;
   flex-direction: column;
-  width:70%;
 }
 
 .Stars-And-Reviews {
@@ -405,6 +404,7 @@ a:active {
 
 .NameCategoryPrice {
   display: flex;
+  justify-content: space-between;
 }
 
 /* Name & Category */
@@ -525,6 +525,7 @@ a:active {
 .StyleTitle {
   font-size: 14px;
   padding-right: 8px;
+  font-weight: bold;
 }
 
 .CurStyleTitle {
@@ -534,30 +535,20 @@ a:active {
 /* Style Selector */
 .StyleSelector {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  width: 384px;
 }
 
 .StyleOptions {
   display: flex;
   flex: auto;
-  justify-content: space-around;
   align-items: center;
 }
 
 .SingleStyle {
-  display: flex;
-  justify-content: center;
-  width: calc(25%);
-}
-
-.SingleStyleSelected {
-  display: flex;
-  justify-content: center;
-  width: calc(25%);
-}
-
-.SingleStyleNull {
-  width: 25%;
+  width: 40px;
+  height: 40px;
+  margin: 0 6px 1px 0;
 }
 
 .style {
@@ -568,9 +559,8 @@ a:active {
   border: transparent solid;
   border-radius: 50%;
   object-fit: cover;
-  max-height: 34px;
-  max-width: 34px;
-  margin-bottom: 10px;
+  max-height: 30px;
+  max-width: 30px;
 }
 
 .styleSelected {
@@ -581,21 +571,46 @@ a:active {
   border: solid 1px;
   border-radius: 50%;
   object-fit: cover;
-  max-height: 34px;
-  max-width: 34px;
+  max-height: 30px;
+  max-width: 30px;
   padding:3px;
-  margin-bottom: 10px;
 }
 
 /* AddToCart */
-.AddToCart {
-  height: 100%;
+
+.SizeTitleContainer {
+  display: flex;
+  padding: 8px 0 7px 0;
 }
 
-.SizeRows, .QuantityAndCartRow {
+.SizeTitle {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 8px 0 0;
+}
+
+.SizeWarning {
+  font-size: 14px;
+  color: #737373;
+}
+
+.SoldOutWarning {
+  font-size: 14px;
+  color: #95250F;
+}
+
+.SizeRows {
   display: flex;
   justify-content: space-around;
   margin: 3px;
+}
+
+.QuantityAndCartRow {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f5f4f4;
 }
 
 .SizeSelect {
@@ -603,7 +618,7 @@ a:active {
   flex: auto;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 10px;
+  width: 378px;
 }
 
 .SizeIconSelected {
@@ -611,11 +626,12 @@ a:active {
   border: solid black 1px;
   justify-content: center;
   align-items: center;
-  height: 42px;
-  width: 42px;
+  text-align: center;
+  height: 46px;
+  width: 46px;
   background-color: #F5F4F4;
   font-size: 14px;
-  margin: 0 10px 10px 0;
+  margin: 0 6px 6px 0;
 }
 
 .SizeIconRegular {
@@ -623,22 +639,12 @@ a:active {
   border: transparent solid 1px;
   justify-content: center;
   align-items: center;
-  height: 42px;
-  width: 42px;
+  text-align: center;
+  height: 46px;
+  width: 46px;
   background-color: #F5F4F4;
   font-size: 14px;
-  margin: 0 10px 10px 0;
-}
-
-.SizeIconNull {
-  display: flex;
-  border: transparent solid;
-  border-radius: 50%;
-  width: fit-content;
-  min-width: 13%;
-  max-width: 50px;
-  justify-content: center;
-  align-items: center;
+  margin: 0 6px 6px 0;
 }
 
 .EmptySizes {
@@ -660,13 +666,29 @@ a:active {
 .QuantitySelect {
   font-size: 3vh;
   width:100%;
-  height: 50%;
+  height: 42px;
   text-align: center;
   border: solid 2px;
-  border-radius: 45%;
+  border-radius: 7px;
 }
 
 .CartButton {
+  height: 42px;
+  width: 75%;
+  font-size: 200%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-color: #262626;
+  background-color: #262626;
+  color: white;
+  border-radius: 7px;
+}
+
+.CartButton:hover {
+  height: 42px;
   width: 75%;
   font-size: 200%;
   font-weight: bold;
@@ -677,22 +699,7 @@ a:active {
   border-color: black;
   background-color: black;
   color: white;
-  border-radius: 40px;
-  transition: all 0.5s ease-out 100ms;
-}
-
-.CartButton:hover {
-  width: 75%;
-  font-size: 200%;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid;
-  border-color: black;
-  background-color: white;
-  color: black;
-  border-radius: 40px;
+  border-radius: 7px;
 }
 
 .CartButtonDisabled {
@@ -706,8 +713,7 @@ a:active {
   border-color: rgb(188, 182, 182);
   color: rgb(84, 83, 83);
   background-color: rgb(182, 182, 182);
-  border-radius: 40px;
-  transition: all 0.5s ease-out 100ms;
+  border-radius: 7px;
 }
 
 /* Bottom Bar */
@@ -792,28 +798,26 @@ a:active {
 }
 
 .Info-Container {
-  border: solid;
-  border-color: rgb(0, 0, 0);
   display: flex;
-  width: 75%;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
-.Underline {
-  border-bottom: 3px solid black;
+.Slogan {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0 16px 0;
 }
 
-.Slogan, .Description,
-.Slogan-Container, .Description-Container {
+.SloganContainer {
   display: flex;
-  justify-content: center;
-  text-align: center;
+  height: fit-content;
 }
 
-.Description-Container {
-  width: 80%;
+.Description {
+  font-size: 14px;
+  margin: 0;
+  padding: 0 0 12px 0;
+  border-bottom: 1px solid #f5f4f4;
 }
 
 .SMBRow {

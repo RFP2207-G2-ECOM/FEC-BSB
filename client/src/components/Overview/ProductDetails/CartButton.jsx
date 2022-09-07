@@ -4,15 +4,14 @@ import axios from 'axios';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const CartButton = () => {
-  const { listOfSKUs, listOfSizes, curSKU, curSize, curQuantity, setCurSKU } = useContext(CurrentSKUContext);
+  const { listOfSKUs, listOfSizes, listOfQuantity, curSKU, curSize, curQuantity, setCurSKU, setAddEmpty } = useContext(CurrentSKUContext);
 
   // handle situations where there is no sizes, just quantity
   let handleCartSubmit = (e) => {
     if (curSKU !== 'Fake SKU') {
       // make axios post request to Cart API here
       var baseURI = process.env.BASE_URI;
-      for (let i = 0; i < curQuantity; i++){
-        console.log(i);
+      for (let i = 0; i < curQuantity; i++) {
       axios.post(`${baseURI}cart`,
       {
         sku_id: curSKU
@@ -21,44 +20,33 @@ const CartButton = () => {
         headers: {
           'Authorization': process.env.GITHUB_TOKEN
         }
-      }
-      ).then((success) => {
+      }).then((success) => {
         console.log(success);
-        console.log('Posted To Cart ' + (i+1) + ' times');
+        // console.log('Posted To Cart ' + (i+1) + ' times');
         // trigger special effect to let use know it worked!
         // pop up window?
-      })
-      .catch((err) => {
+      }).catch((err) => {
         console.log(err);
         alert('Post Request Failed');
         // trigger special effect to let user know it failed!
         // pop up window?
       });
-    }};
+      }
+    } else {
+      setAddEmpty(true);
+    }
   };
 
-  if (listOfSizes[0] === null) {
+  if (listOfQuantity[listOfSizes.indexOf(curSize)] === 0) {
     return (
       <div className='CartButtonDisabled' disabled>
           Out of Stock!
       </div>
     )
-  } else if (curSize === 'Select Size') {
-    return (
-      <div className='CartButtonDisabled' disabled>
-        Select a Size!
-      </div>
-    )
-  } else if (curQuantity === 0) {
-    return (
-      <div className='CartButtonDisabled' disabled>
-        Select a Quantity!
-      </div>
-    )
-  }else {
+  } else {
     return (
       <div className='CartButton' onClick={handleCartSubmit}>
-        Add To Cart!
+        Add To Bag!
       </div>
     )
   }

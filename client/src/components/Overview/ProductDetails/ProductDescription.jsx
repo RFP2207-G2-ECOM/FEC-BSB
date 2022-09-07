@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../../contexts/product-info.context.jsx';
 
+
 const ProductDescription = () => {
 
   const { product } = useContext(ProductContext);
@@ -10,9 +11,7 @@ const ProductDescription = () => {
     return (
       <div className='Info-Container'>
         <div className='Slogan-Container'>
-          <div className='Underline'>
-            <p className='Slogan'>{product.slogan}</p>
-          </div>
+          <p className='Slogan'>{product.slogan}</p>
         </div>
         <div className='Description-Container'>
           <p className='Description'>{product.description}</p>
