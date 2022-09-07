@@ -2,8 +2,24 @@ html {
   scroll-behavior: smooth;
 }
 
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
 .Style-Detail-Spacer {
-  width: 5%;
+  width: 1%;
 }
 
 .Overview-Container {
@@ -124,7 +140,6 @@ html {
   min-width: 60px;
   object-fit: scale-down;
 }
-
 
 .Arrow-Down {
   display: flex;
@@ -366,7 +381,7 @@ html {
 
 /* Product Details */
 .Product-Details {
-  width: 30%;
+  width: 350px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -375,54 +390,80 @@ html {
 .Name-And-Category {
   display: flex;
   flex-direction: column;
-  height: 10%;
+  width:70%;
 }
 
 .Stars-And-Reviews {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 10%;
+  padding-top: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f5f4f4;
 }
 
-.StyleContainer {
-  height: 55%;
+
+.NameCategoryPrice {
   display: flex;
-  flex-direction: column;
 }
 
 /* Name & Category */
 
 .Category {
-  height: 45px;
   display: flex;
   align-items: center;
 }
 
 .ProductName {
-  height: 70px;
-  font-weight: bold;
+  height: 100%;
   display: flex;
   align-items: center;
 }
 
 .ProductTitle {
-  font-size: 35px;
-  height: 50%;
+  font-size: 24px;
+  margin-top: 4px;
 }
 
 .CategoryTitle {
-  font-size: 18px;
+  font-size: 12px;
+  margin-bottom: 3px;
+  color: #737373;
+}
+
+/* Price Display */
+.BasePrice {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.SalePrice {
+  display: flex;
+  align-items: center;
+}
+
+.SalePriceOG {
+  font-size: 24px;
+  text-decoration: line-through;
+  color: #737373;
+  /* background: linear-gradient(to right top, transparent 47.75%,
+  currentColor 49.5%, currentColor 50.5%, transparent 52.25%); */
+}
+
+.SalePriceSale {
+  color:rgb(0, 0, 0);
+  /* color:red; */
+  font-size: 24px;
 }
 
 /* Stars & Review Link */
 
 .Stars {
-  height: 60px;
-
+  width: 80px;
   display: flex;
   align-items: center;
-  font-size: 4vh;
+  font-size: 15px;
 }
 
 .StarRatings {
@@ -444,48 +485,37 @@ html {
 
 .Review-Link {
   display: flex;
-  justify-content: center;
-  align-items:flex-end;
-  width: 45%;
-  height: auto;
-  text-decoration: underline;
+  font-size: 13px;
 }
 
 .ReviewLink {
   text-align: center;
-}
-
-/* Price Display */
-.BasePrice {
-  display: flex;
-  align-items: center;
-  font-size: 27px;
-}
-
-.SalePrice {
-  height: 10%;
-  display: flex;
-  align-items: center;
-}
-
-.SalePriceOG {
-  font-size: 27px;
-  background: linear-gradient(to right top, transparent 47.75%,
-  currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
-}
-
-.SalePriceSale {
-  color:red;
-  font-size: 33px;
+  color:#737373;
 }
 
 /* Style Display, Selector, & AddToCart */
 
+.StyleInfoAndFav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.FavContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FavIcon {
+  font-size: 20px;
+  border-color: black;
+}
+
 /* Style Display */
 .StyleName {
   display: flex;
-  height: 12.5%;
   align-items: center;
+  height: 30px;
 }
 
 .StyleTitle, .CurStyleTitle {
@@ -493,21 +523,16 @@ html {
 }
 
 .StyleTitle {
-  width: 25%;
-  font-size: 20px;
+  font-size: 14px;
+  padding-right: 8px;
 }
 
 .CurStyleTitle {
-  width: 70%;
-  font-size: 25px;
-  justify-content: center;
-  text-align: center;
-  font-weight: bold;
+  font-size: 14px;
 }
 
 /* Style Selector */
 .StyleSelector {
-  height: 52.5%;
   display: flex;
   flex-direction: column;
 }
@@ -540,11 +565,12 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: rgb(179, 173, 6) solid;
+  border: transparent solid;
   border-radius: 50%;
   object-fit: cover;
-  max-height: 64px;
-  max-width: 64px;
+  max-height: 34px;
+  max-width: 34px;
+  margin-bottom: 10px;
 }
 
 .styleSelected {
@@ -552,11 +578,13 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: solid 3px;
+  border: solid 1px;
   border-radius: 50%;
   object-fit: cover;
-  max-height: 64px;
-  max-width: 64px;
+  max-height: 34px;
+  max-width: 34px;
+  padding:3px;
+  margin-bottom: 10px;
 }
 
 /* AddToCart */
@@ -564,66 +592,48 @@ html {
   height: 100%;
 }
 
-.SizeAndQuanitityRow, .CartAndFavRow {
+.SizeRows, .QuantityAndCartRow {
   display: flex;
   justify-content: space-around;
   margin: 3px;
 }
 
-.SizeAndQuanitityRow {
-  height: 75%;
-}
-
-.CartAndFavRow {
-  height: 35%;
-}
-
 .SizeSelect {
-  height: 85%;
-  width: 85%;
-  font-size: 2.5vh;
   display: flex;
   flex: auto;
   flex-wrap: wrap;
-  justify-content: space-around;
   align-items: center;
-}
-
-.SizeOptions {
-  display: flex;
-  justify-content: space-around;
-  flex: auto;
+  margin-bottom: 10px;
 }
 
 .SizeIconSelected {
   display: flex;
-  border: solid;
-  border-radius: 50%;
-  width: fit-content;
-  min-width: 13%;
-  max-width: 50px;
+  border: solid black 1px;
   justify-content: center;
   align-items: center;
+  height: 42px;
+  width: 42px;
+  background-color: #F5F4F4;
+  font-size: 14px;
+  margin: 0 10px 10px 0;
 }
 
 .SizeIconRegular {
   display: flex;
-  border: rgb(179, 173, 6) solid;
-  border-radius: 50%;
-  width: fit-content;
-  min-width: 13%;
-  max-width: 50px;
-  height:fit-content;
-
+  border: transparent solid 1px;
   justify-content: center;
   align-items: center;
+  height: 42px;
+  width: 42px;
+  background-color: #F5F4F4;
+  font-size: 14px;
+  margin: 0 10px 10px 0;
 }
 
 .SizeIconNull {
   display: flex;
   border: transparent solid;
   border-radius: 50%;
-  height: 56%;
   width: fit-content;
   min-width: 13%;
   max-width: 50px;
@@ -698,18 +708,6 @@ html {
   background-color: rgb(182, 182, 182);
   border-radius: 40px;
   transition: all 0.5s ease-out 100ms;
-}
-
-.FavContainer {
-  width:25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.FavIcon {
-  font-size: 30px;
-  border-color: black;
 }
 
 /* Bottom Bar */

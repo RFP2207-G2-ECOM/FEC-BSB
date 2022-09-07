@@ -26,13 +26,15 @@
 
 .ratings-breakdown-filter {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 30% 70%;
   grid-template-rows: auto;
   justify-content: space-between;
+  position: relative;
 }
 
 .ratings-breakdown-filter-button {
   text-decoration: underline;
+  min-width: 6em;
 }
 
 .ratings-breakdown-filter-bar {

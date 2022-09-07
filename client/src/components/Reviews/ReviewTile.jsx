@@ -86,6 +86,4 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
   )
 }
 
-
-
 export default ReviewTile

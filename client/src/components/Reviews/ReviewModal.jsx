@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import ReactDom from "react-dom"
+import { ImCross } from "react-icons/im";
 
 import ReviewModalBody from "./ReviewModalBody.jsx"
 import ReviewModalCharacteristicsList from "./ReviewModalCharacteristicsList.jsx"
@@ -15,25 +16,35 @@ import styles from "../../styles/Reviews/reviewModal.css"
 
 const ReviewModal = ({ open, onClose, productName }) => {
 
-  const [starRating, setStarRating] = useState(null)
-  const [recommended, setRecommended] = useState(null)
   const [characteristics, setCharacteristics] = useState({})
-  const [reviewSummary, setReviewSummary] = useState(null)
-  const [reviewBody, setReviewBody] = useState(null)
-  const [photos, setPhotos] = useState([])
-  const [nickname, setNickname] = useState(null)
   const [email, setEmail] = useState(null)
+  const [files, setFiles] = useState([])
+  const [nickname, setNickname] = useState(null)
+  const [recommended, setRecommended] = useState(null)
+  const [reviewBody, setReviewBody] = useState(null)
+  const [reviewSummary, setReviewSummary] = useState(null)
+  const [starRating, setStarRating] = useState(null)
   const [submitPressed, setSubmitPressed] = useState(false)
 
-  const {
-    loading, error
-  } = useReviewSubmit(onClose, submitPressed, setSubmitPressed, starRating, recommended, characteristics, reviewSummary, reviewBody, photos, nickname, email)
+  const { loadingModal, error } = useReviewSubmit(
+    characteristics,
+    onClose,
+    email,
+    files,
+    nickname,
+    recommended,
+    reviewBody,
+    reviewSummary,
+    setSubmitPressed,
+    starRating,
+    submitPressed
+  )
 
   if(!open) return null
 
   return ReactDom.createPortal (
     <>
-      <div className="overlay-styles"></div>
+      <div className="overlay-styles" onClick={onClose}></div>
       <div className="review-modal-styles Review-Modal-Container">
         <div className="review-modal-header">
           <h1>Write Your Review</h1>
@@ -43,6 +54,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
           <div className="review-modal-section-header">Overall rating</div>
           <ReviewModalStarRating
             setStarRating={setStarRating}
+            error={error}
           />
         </div>
         <div>
@@ -67,7 +79,16 @@ const ReviewModal = ({ open, onClose, productName }) => {
             setReviewBody={setReviewBody}
           />
         </div>
-        <div className="review-modal-section-header">Upload your photos</div>
+        <div className='review-modal-photos'>
+          <div className='review-modal-section-header'>Upload Photos</div>
+          <input
+            label='photoUpload'
+            type='file'
+            multiple
+            onChange={(e) => setFiles([...e.target.files])}
+          />
+          <div>You can upload up to five photos</div>
+        </div>
         <div className="review-modal-nickname">
           <ReviewModalNickname
             setNickname={setNickname}
@@ -81,7 +102,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
         <ReviewModalSubmitButton
           setSubmitPressed={setSubmitPressed}
         />
-        <button onClick={onClose}>Cancel</button>
+        <span className='review-modal-exit-icon' onClick={onClose}><ImCross /></span>
       </div>
     </>,
     document.getElementById('portal')

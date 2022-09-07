@@ -10,9 +10,6 @@ const SelectedPicture = () => {
   const { curPic, listOfPics, setCurPic } = useContext(CurrentPicContext);
   const [ isZoomIn, setIsZoomIn ] = useState(false);
 
-  // console.log(curPic);
-  // console.log(listOfPics);
-
   let handleLeftClick = (e) => {
     setCurPic(curPic - 1);
   };
