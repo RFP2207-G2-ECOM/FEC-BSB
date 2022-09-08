@@ -215,6 +215,7 @@ a:active {
 
 .Selected-Picture {
   height: 100%;
+  width: calc(81vw - 500px);
   display: flex;
   justify-content: center;
   align-items: center;
