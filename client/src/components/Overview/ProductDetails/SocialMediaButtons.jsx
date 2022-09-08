@@ -9,18 +9,19 @@ const SocialMediaButtons = () => {
   return (
     <IconContext.Provider value={{className:'btn'}} >
       <div className='Social-Media-Buttons' >
-          <div className='SMButton' target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=example.org">
+          <a className='SMButton' target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=InsertOurURLHere.com">
             <FaFacebookSquare />
-          </div>
-          <div className='SMButton' target='_blank' href='https://www.pinterest.com/pin/create/button/'>
+          </a>
+          <a className='SMButton' target='_blank' href='https://www.pinterest.com/pin/create/button/'>
             <FaPinterestSquare />
-          </div>
-          <div className='SMButton' target="_blank" href="https://twitter.com/intent/tweet">
+          </a>
+          <a className='SMButton' target="_blank" href="https://twitter.com/intent/tweet">
             <FaTwitterSquare />
-          </div>
-          <div className='SMButton' target='_blank' href={`https://www.reddit.com/r/test/submit?title=What%20An%20Amazing%20Deal&url=${`Insert Our Own URL Here`}`}>
+          </a>
+          <a className='SMButton' target='_blank' href={`https://www.reddit.com/r/test/submit?title=What%20An%20Amazing%20Deal&url=${`Insert Our Own URL Here`}`}>
             <FaRedditSquare />
-          </div>
+          </a>
+
       </div>
     </IconContext.Provider>
   )

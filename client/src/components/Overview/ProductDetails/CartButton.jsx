@@ -4,15 +4,16 @@ import axios from 'axios';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const CartButton = () => {
-  const { listOfSKUs, listOfSizes, listOfQuantity, curSKU, curSize, curQuantity, setCurSKU, setAddEmpty } = useContext(CurrentSKUContext);
+  const { listOfSKUs, listOfSizes, listOfQuantity, curSKU, curSize, curQuantity, setCurSKU, setAddEmpty, setAddNoQuant } = useContext(CurrentSKUContext);
 
   // handle situations where there is no sizes, just quantity
   let handleCartSubmit = (e) => {
-    if (curSKU !== 'Fake SKU') {
+    if (curSKU !== 'Fake SKU' && curQuantity !== 0) {
       // make axios post request to Cart API here
       var baseURI = process.env.BASE_URI;
+      var arrOfOrders = [];
       for (let i = 0; i < curQuantity; i++) {
-      axios.post(`${baseURI}cart`,
+      arrOfOrders.push(axios.post(`${baseURI}cart`,
       {
         sku_id: curSKU
       },
@@ -20,19 +21,23 @@ const CartButton = () => {
         headers: {
           'Authorization': process.env.GITHUB_TOKEN
         }
-      }).then((success) => {
+      }))
+      }
+      Promise.all(arrOfOrders)
+      .then((success) => {
         console.log(success);
-        // console.log('Posted To Cart ' + (i+1) + ' times');
-        // trigger special effect to let use know it worked!
-        // pop up window?
+        // trigger opening Cart Modal to show cart contents?
+        alert(`Added to cart ${curQuantity} times`);
       }).catch((err) => {
         console.log(err);
         alert('Post Request Failed');
         // trigger special effect to let user know it failed!
         // pop up window?
       });
-      }
-    } else {
+
+    } else if (curSKU !== 'Fake SKU' && curQuantity === 0) {
+      setAddNoQuant(true);
+    } else if (curSKU === 'Fake SKU') {
       setAddEmpty(true);
     }
   };

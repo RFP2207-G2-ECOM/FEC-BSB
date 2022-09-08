@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const QuantitySelect = () => {
-  const { listOfQuantity, listOfSizes, setCurQuantity, curSize } = useContext(CurrentSKUContext);
+  const { listOfQuantity, listOfSizes, curSize, setCurQuantity, setAddNoQuant } = useContext(CurrentSKUContext);
   const [ quantityDisplay, setQuantityDisplay ] = useState(1);
 
   let index = listOfSizes.indexOf(curSize);
@@ -29,6 +29,7 @@ const QuantitySelect = () => {
     }
     setQuantityDisplay(newQuantity);
     setCurQuantity(newQuantity);
+    setAddNoQuant(false);
   };
 
 
