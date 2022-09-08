@@ -3,13 +3,14 @@ import RelatedItemsAndComp from './RelatedItemsAndComp.jsx';
 import styles from '../../styles/Related/related.css';
 import Card from './Card.jsx'
 import { ProductRelatedContext } from '../../contexts/product-related.context.jsx';
-import { ProductContext } from '../../contexts/product-info.context.jsx';
 import axios from 'axios';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { HiOutlinePlusCircle } from 'react-icons/hi';
 import { LocalStorageContext } from '../../contexts/local-storage.context.jsx';
+import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 const YourOutfitList = () => {
+  const { productID: PID} = useContext(ProductContext);
   const { outfitList, setOutfitList } = useContext(LocalStorageContext);
 
   const [relatedProduct, setRelatedProduct] = useState([]);
@@ -19,6 +20,12 @@ const YourOutfitList = () => {
   useEffect(()=>{
       getRelatedProducts();
   }, [outfitList])
+
+  useEffect(() => {
+    var slider = document.getElementById('outfit-slider');
+    slider.scrollLeft = 0;
+    setCurrentProd(0);
+  }, [PID])
 
   const getProductInfo = async (productID) => {
     var baseURI = process.env.BASE_URI;
@@ -44,7 +51,7 @@ const YourOutfitList = () => {
   }
 
   const addOutfit = () => {
-    var currentProduct = process.env.PRODUCT_ID;
+    var currentProduct = PID;
     if (outfitList.indexOf(currentProduct) === -1){
       setOutfitList([...outfitList, currentProduct]);
     }
