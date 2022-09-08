@@ -7,9 +7,6 @@ export const ProductReviewsContext = createContext({
   metadata: {}
 });
 
-// IMPORTANT TODO
-// Ask Daniel about how he wants data to be stored & handled
-
 export const ProductReviewsProvider = ({children}) => {
   const { productID } = useContext(ProductContext);
   const [reviews, setReviews] = useState([]);

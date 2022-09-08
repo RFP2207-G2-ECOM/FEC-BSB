@@ -25,16 +25,15 @@
 }
 
 .ratings-breakdown-filter {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  grid-template-rows: auto;
+  display: flex;
   justify-content: space-between;
   position: relative;
+  width: 100%;
 }
 
 .ratings-breakdown-filter-button {
   text-decoration: underline;
-  min-width: 6em;
+  width: 3rem;
 }
 
 .ratings-breakdown-filter-bar {
@@ -44,6 +43,7 @@
   position: relative;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .ratings-breakdown-filter-fill {
@@ -55,6 +55,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  width: 100%
 }
 
 .StarRatings {

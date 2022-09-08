@@ -3,7 +3,7 @@ import { MdStar } from "react-icons/md"
 
 import styles from "../../styles/Reviews/starRating.css"
 
-const ReviewModalStarRating = ( { setStarRating, error } ) => {
+const ReviewModalStarRating = ( { setStarRating } ) => {
   const [rating, setRating] = useState(null)
   const [hoverRating, setHoverRating] = useState(null)
   const [hovering, setHovering] = useState(false)
@@ -35,9 +35,6 @@ const ReviewModalStarRating = ( { setStarRating, error } ) => {
 
   return (
     <div>
-      { error === true &&
-        <div className='review-modal-error'>Please enter a product rating</div>
-      }
       <div>
         {[...Array(5)].map((star, i) => {
           const ratingValue = i + 1
