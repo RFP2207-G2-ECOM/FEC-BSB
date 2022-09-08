@@ -21,7 +21,7 @@ export const ProductProvider = ({ children }) => {
       .then(result => {
         setProduct(result.data);
       })
-  }, [])
+  }, [productID])
 
   const value = { product, setProduct, productID, setProductID };
 
