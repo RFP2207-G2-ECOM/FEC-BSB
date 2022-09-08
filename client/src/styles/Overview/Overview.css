@@ -1,4 +1,5 @@
-html {
+html, .ZoomInThumbnails, .SelectorWheel,
+.related-products-list-container {
   scroll-behavior: smooth;
 }
 
@@ -48,7 +49,7 @@ a:active {
 }
 
 .innerNavBar {
-  width: 82%;
+  width: 77%;
   display: flex;
   justify-content: space-between;
 }
@@ -397,6 +398,10 @@ a:active {
   align-items: center;
 }
 
+.ZoomedImage:hover {
+  opacity: 0;
+}
+
 #OverlayZoomedImage{
   position: absolute;
   top:0;
@@ -446,7 +451,7 @@ a:active {
 /* Product Details */
 .Product-Details {
   width: 392px;
-  height: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
 }

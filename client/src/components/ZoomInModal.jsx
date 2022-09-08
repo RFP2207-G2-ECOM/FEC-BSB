@@ -24,12 +24,17 @@ const ZoomInModal = ({ open, curPic, listOfPics, setCurPic, onClose }) => {
     slider.scrollLeft = slider.scrollLeft - 84;
   };
 
+  const closeModal = (e) => {
+    onClose();
+    setUltraZoom(false);
+  }
+
   if (!open) return null;
   return ReactDom.createPortal(
   <>
-    <div className='ZoomInModal' onClick={onClose} />
+    <div className='ZoomInModal' onClick={closeModal} />
       <div className='ZoomInPopUp overview-modal-class' >
-        <ImCross key={0} className='CloseModalButton' onClick={onClose} />
+        <ImCross key={0} className='CloseModalButton' onClick={closeModal} />
         <div key={1} className='ZoomInDisplay'>
             { ultraZoom ?
             (

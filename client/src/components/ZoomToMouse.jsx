@@ -6,7 +6,6 @@ const ZoomToMouse = ({ image, setUltraZoom }) => {
   const containerRef = useRef(null);
 
   const [ opacity, setOpacity ] = useState(0);
-  const [ offset, setOffset ] = useState({ left: 0, top: 0 });
   const [ xCoord, setXCoord ] = useState(0);
   const [ YCoord, setYCoord ] = useState(0);
 
@@ -19,7 +18,6 @@ const ZoomToMouse = ({ image, setUltraZoom }) => {
 
   const handleMouseMove = (e) => {
     let element = e.target.getBoundingClientRect();
-    let ZoomIn = document.getElementById('OverlayZoomedImage');
     let x = e.clientX - element.left;
     let y = e.clientY - element.top;
     setXCoord(-x * 1.5);
@@ -28,7 +26,6 @@ const ZoomToMouse = ({ image, setUltraZoom }) => {
 
   let styling = {
     'opacity': opacity,
-    'offset': offset,
     'backgroundImage': `url(${image})`,
     'backgroundRepeat': `no-repeat`,
     'backgroundPosition': `${xCoord}px ${YCoord}px`
