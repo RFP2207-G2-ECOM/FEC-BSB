@@ -22,7 +22,6 @@ document.addEventListener('click', (event) => {
       InteractionsAPI(event.target.outerHTML, 'Overview');
     }
     if (path.className === 'related-items-and-comp-container' || path.className === 'modal-styles related-modal-class') {
-      console.log('REl clicked!!');
       InteractionsAPI(event.target.outerHTML, 'Related Items & Comparison');
     }
     if (path.className === 'QA-Container' || path.className === 'modal-styles answer-modal-class'
