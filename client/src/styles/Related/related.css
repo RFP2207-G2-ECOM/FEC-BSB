@@ -80,24 +80,26 @@
 } */
 
 .card-content {
-  padding: 0px 15px;
+  padding: 1em 1em;
   position: relative;
-  top: 20px;
 }
 
 .card-category {
-  font-size: 14px;
+  margin-bottom: .2em;
+  font-size: 16px;
   color: var(--lightFont);
 }
 
 .card-prod-name {
   display: flex;
-  font-size: 14px;
+  margin-bottom: .25em;
+  font-size: 16px;
 }
 
 .card-price {
   display: flex;
-  font-size: 14px;
+  margin-bottom: .1em;
+  font-size: 16px;
 }
 
 .card-media {
@@ -277,6 +279,7 @@ overflow: hidden;
 }
 
 .related-stars {
+  margin-top: -.2em;
   display: flex;
   align-items: center;
 }
@@ -392,6 +395,9 @@ overflow: hidden;
 }
 
 .related-title-container {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
   font-size: large;
   color: var(--mainFont);
 }
