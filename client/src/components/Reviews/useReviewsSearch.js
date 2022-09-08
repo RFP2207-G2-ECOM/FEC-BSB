@@ -1,11 +1,16 @@
-import { useEffect, useState} from "react"
+import { useEffect, useState, useContext } from "react"
 import axios from "axios"
+
+import { ProductContext } from "../../contexts/product-info.context.jsx"
 
 const gitHubToken = process.env.GITHUB_TOKEN
 const baseURI = process.env.BASE_URI
-const productID = Number(process.env.PRODUCT_ID)
+// const productID = Number(process.env.PRODUCT_ID)
 
 export default function useReviewsSearch(pageNumber, reviewCount, reviewSort, starFilters) {
+
+  let { productID } = useContext(ProductContext)
+
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
   const [reviews, setReviews] = useState([])
@@ -26,7 +31,7 @@ export default function useReviewsSearch(pageNumber, reviewCount, reviewSort, st
         page: pageNumber,
         count: reviewCount,
         sort: reviewSort,
-        product_id: productID
+        product_id: Number(productID)
       }
     }).then(res => {
       setReviews(prevReviews => {
