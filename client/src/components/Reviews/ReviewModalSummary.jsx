@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 const ReviewModalSummary = ( { setReviewSummary } ) => {
 
-  const [summaryText, setSummaryText] = useState("")
+  const [summaryText, setSummaryText] = useState("WOW! what a fantastic product!!") /// added preset for product demo
 
   useEffect(() => {
     setReviewSummary(summaryText)

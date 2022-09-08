@@ -35,6 +35,8 @@ const CartButton = () => {
         // pop up window?
       });
 
+    } else if (listOfSizes[0] === null) {
+      // do nothing
     } else if (curSKU !== 'Fake SKU' && curQuantity === 0) {
       setAddNoQuant(true);
     } else if (curSKU === 'Fake SKU') {

@@ -6,8 +6,7 @@ import SizeSelect from "./SizeSelect.jsx";
 import QuantitySelect from "./QuantitySelect.jsx";
 import CartButton from './CartButton.jsx';
 
-export const CurrentSKUContext = createContext({
-});
+export const CurrentSKUContext = createContext({});
 
 const AddToCart = () => {
   const { curStyle } = useContext(CurrentStylesContext);
@@ -22,7 +21,7 @@ const AddToCart = () => {
 
   let [ curSKU, setCurSKU ] = useState('Fake SKU');
   let [ curSize, setCurSize ] = useState('Select Size');
-  let [ curQuantity, setCurQuantity ] = useState(1);
+  let [ curQuantity, setCurQuantity ] = useState(0);
   let [ addEmpty, setAddEmpty ] = useState(false);
   let [ addNoQuant, setAddNoQuant ] = useState(false);
 
@@ -50,7 +49,7 @@ const AddToCart = () => {
   // Data is formatted as array with each index matching
   //  listOfSizes={listOfSizes} curSize={curSize} setCurSize={setCurSize}
   let value = { listOfSKUs, listOfSizes, listOfQuantity,
-    curSKU, curSize, curQuantity, addEmpty, addNoQuant,
+    curSKU, curSize, curQuantity, addEmpty, addNoQuant, curStyle,
     setCurSKU, setCurSize, setCurQuantity, setAddEmpty, setAddNoQuant };
 
   return (

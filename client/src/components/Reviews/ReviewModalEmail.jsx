@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 const ReviewModalEmail = ( { setEmail } ) => {
 
-  const [emailText, setEmailText] = useState("")
+  const [emailText, setEmailText] = useState("dz@dz.com") /// preset added for product demo
 
   useEffect(() => {
     setEmail(emailText)

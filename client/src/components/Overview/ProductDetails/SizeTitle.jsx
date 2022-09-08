@@ -30,7 +30,7 @@ const SizeTitle = () => {
             Size
           </div>
           {
-          listOfQuantity[listOfSizes.indexOf(curSize)] === 0?
+          listOfQuantity[listOfSizes.indexOf(curSize)] === 0 || listOfQuantity[0] === null ?
             <div className='SoldOutWarning'>
               (Sold Out)
             </div>

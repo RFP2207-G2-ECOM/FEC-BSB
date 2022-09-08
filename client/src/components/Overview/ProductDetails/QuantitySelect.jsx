@@ -2,8 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const QuantitySelect = () => {
-  const { listOfQuantity, listOfSizes, curSize, setCurQuantity, setAddNoQuant } = useContext(CurrentSKUContext);
-  const [ quantityDisplay, setQuantityDisplay ] = useState(1);
+  const { listOfQuantity, listOfSizes, curSize, curStyle, curQuantity, setCurQuantity, setAddNoQuant } = useContext(CurrentSKUContext);
 
   let index = listOfSizes.indexOf(curSize);
   let totalAmount = listOfQuantity[index];
@@ -14,24 +13,25 @@ const QuantitySelect = () => {
   }
 
   useEffect(() => {
-    if (quantityDisplay > totalAmount) {
-      setQuantityDisplay(totalAmount);
+    if (curQuantity > totalAmount) {
       setCurQuantity(totalAmount);
     }
   }, [curSize]);
 
+  useEffect(()=> {
+    setCurQuantity(0);
+  }, [curStyle])
+
   let handleQuantityChange = (e)=>{
-    let newQuantity = e.target.value;
+    let newQuantity = parseInt(e.target.value);
     if (e.target.value > totalAmount) {
       newQuantity = totalAmount;
-    } else if (e.target.value < 1 ) {
-      newQuantity = 1;
+    } else if (e.target.value < 0 ) {
+      newQuantity = 0;
     }
-    setQuantityDisplay(newQuantity);
     setCurQuantity(newQuantity);
     setAddNoQuant(false);
   };
-
 
   if (curSize === 'Select Size') {
     return (
@@ -42,7 +42,7 @@ const QuantitySelect = () => {
   } else {
     return (
       <div className='QuantityFormatter'>
-        <input type='number' className='QuantitySelect' onChange={handleQuantityChange} value={quantityDisplay}></input>
+        <input type='number' className='QuantitySelect' onChange={handleQuantityChange} value={curQuantity}></input>
       </div>
     )
   }

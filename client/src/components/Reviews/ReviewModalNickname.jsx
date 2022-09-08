@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 const ReviewModalNickname = ( { setNickname } ) => {
 
-  const [nicknameText, setNicknameText] = useState("")
+  const [nicknameText, setNicknameText] = useState("backstreetFan1992") // preset added for product demo
 
   useEffect(() => {
     setNickname(nicknameText)
