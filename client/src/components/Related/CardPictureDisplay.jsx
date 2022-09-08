@@ -4,8 +4,10 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Card from './Card.jsx'
 import CardThumbnail from './CardThumbnail.jsx'
 import { ImCross } from 'react-icons/im';
+import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct, hover}) => {
+  const { productID: PID, setProductID } = useContext(ProductContext);
   const [ currentPic, setCurrentPic ] = useState(0);
   const [ listOfPictures, SetListOfPictures ] = useState([]);
   const [ listOfThumbnails, setListOfThumbnails ] = useState([]);
@@ -40,12 +42,20 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
     }
   }, [productStyle]);
 
-  //onHover={console.log(relatedProduct.id)}
+  const changeCurrProd = () => {
+    setProductID(relatedProduct.id)
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+    slider.scrollLeft = 0;
+  }
 
   if (currentPic === 0) {
     return (
       <>
-        <img className='card-image' src={listOfPictures[currentPic]}/>
+        <img className='card-image' src={listOfPictures[currentPic]} onClick={changeCurrProd}/>
         {deleteOutfit === undefined && hover === false &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
         {deleteOutfit && hover === false &&
@@ -65,7 +75,7 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
   } else if (currentPic === listOfPictures.length - 1) {
     return (
       <>
-        <img className='card-image' src={listOfPictures[currentPic]}/>
+        <img className='card-image' src={listOfPictures[currentPic]} onClick={changeCurrProd}/>
         {deleteOutfit === undefined && hover === false &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
         {deleteOutfit && hover === false &&
@@ -85,7 +95,7 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
   } else {
     return (
       <>
-        <img className='card-image' src={listOfPictures[currentPic]}/>
+        <img className='card-image' src={listOfPictures[currentPic]} onClick={changeCurrProd}/>
         {deleteOutfit === undefined && hover === false &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
         {deleteOutfit && hover === false &&

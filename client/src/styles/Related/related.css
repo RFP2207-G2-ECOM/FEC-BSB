@@ -1,8 +1,8 @@
 .related-items-and-comp-container {
   display: inline block;
   /* width: 100%; */
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 20%;
+  margin-right: 20.5%;
   margin-top: 6.3rem;
   margin-bottom: 8rem;
 }
@@ -98,7 +98,6 @@
 .card-price {
   display: flex;
   font-size: 14px;
-  font-weight: bold;
 }
 
 .card-media {
@@ -124,9 +123,12 @@
 .related-products-list-container {
   display: flex;
   position: relative;
-  width: calc(100% - 6.5rem);
+  /* width: calc(100% - 6.5rem); */
   overflow: hidden;
   flex-direction: row;
+  padding-left: 10px;
+  padding-right: 10px;
+  scroll-padding: 1em;
     /* overflow: scroll; */
 }
 
@@ -144,11 +146,10 @@
   position: relative;
   display: flex;
   /* flex-wrap: nowrap; */
-  width: calc(100% - 6.5rem);
+  /* width: calc(100% - 6.5rem); */
   /* overflow: hidden; */
   /* overflow: hidden; */
   margin-bottom: 1rem;
-  margin-top: .5rem;
 }
 
 .slide-container {
@@ -169,11 +170,11 @@
 }
 
 .related-left-slide {
-  right: 32px;
+  right: 22px;
 }
 
 .related-right-slide {
-  left: 2px;
+  left: 12px;
 }
 
 .related-left-slide:hover, .related-right-slide:hover {
@@ -188,7 +189,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-Color: rgba(0, 0, 0, 0.1);
+  background-Color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 }
 
@@ -391,7 +392,6 @@ overflow: hidden;
 }
 
 .related-title-container {
-  font-size: 16px;
+  font-size: large;
   color: var(--mainFont);
-  font-weight: bold;
 }

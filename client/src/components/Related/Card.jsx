@@ -49,12 +49,18 @@ const Card = ({relatedProduct, deleteOutfit}) => {
   }
 
   const changeCurrProd = () => {
-    setProductID(productID)
+    setProductID(productID);
+    // window.scrollTo(0, 0);
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
   }
 
   if (productStyle[0]) {
     return (
-      <div className='card-container' onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} onClick={changeCurrProd}>
+      <div className='card-container' onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
         <div className='card-media'>
             <CardPictureDisplay productStyle={productStyle}
                                 onOpen={() => setIsOpen(true)}
@@ -67,9 +73,9 @@ const Card = ({relatedProduct, deleteOutfit}) => {
                            relatedProduct={relatedProduct}/>
         </div>
           <div className='card-content'>
-            <div className='card-prod-name'>{relatedProduct.name}</div>
-            <div className='card-price'>${relatedProduct.default_price}</div>
             <div className='card-category'>{relatedProduct.category}</div>
+            <div className='card-prod-name' onClick={changeCurrProd}>{relatedProduct.name}</div>
+            <div className='card-price'>${relatedProduct.default_price}</div>
             <CardStarRating ratings={ratings}/>
           </div>
       </div>
