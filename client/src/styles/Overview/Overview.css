@@ -46,6 +46,8 @@ a:active {
   justify-content: space-around;
   border-bottom: solid 1px var(--divider);
   padding: 2px;
+  color: white;
+  background-color: black;
 }
 
 .innerNavBar {
