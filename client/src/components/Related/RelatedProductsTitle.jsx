@@ -4,8 +4,8 @@ import styles from '../../styles/Related/related.css';
 
 const RelatedProductsTitle = () => {
   return (
-    <div className='related-products-title-container'>
-      RELATED PRODUCTS
+    <div className='related-title-container'>
+      RECOMMENDED PRODUCTS
     </div>
   )
 }

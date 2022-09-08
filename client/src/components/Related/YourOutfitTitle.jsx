@@ -4,7 +4,7 @@ import styles from '../../styles/Related/related.css';
 
 const YourOutfitTitle = () => {
   return (
-    <div className='outfit-tltle-container'>
+    <div className='related-title-container'>
       YOUR OUTFIT
     </div>
   )

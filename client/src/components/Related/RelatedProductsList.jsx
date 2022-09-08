@@ -1,24 +1,23 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect, createContext, useContext, useLayoutEffect } from 'react';
 import RelatedItemsAndComp from './RelatedItemsAndComp.jsx';
 import styles from '../../styles/Related/related.css';
 import Card from './Card.jsx'
 import { ProductRelatedContext } from '../../contexts/product-related.context.jsx';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 import axios from 'axios';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-
+import { HiOutlinePlusCircle } from 'react-icons/hi';
 const RelatedProductsList = () => {
   const slider = document.getElementById('slider');
 
+  const { productID: PID } = useContext(ProductContext);
   const { productRelated } = useContext(ProductRelatedContext);
   const [productID, setProductID] = useState(productRelated);
-
   const [relatedProducts, setRelatedProducts] = useState([]);
 
-  // const [ currentProd, setCurrentProd ] = useState(0);
-  const [scrollPosition, setScrollPositon] = useState(0);
-  const [maxScrollPositon, setMaxScroll] = useState(0);
+  const [ currentProd, setCurrentProd ] = useState(0);
+
 
   useEffect(()=>{
     setProductID(productRelated);
@@ -48,80 +47,38 @@ const RelatedProductsList = () => {
     })
   }
 
-  const maxScroll = () => {
-    slider.scrollLeft = slider.scrollLeft - 1;
-    var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    setMaxScroll(maxScrollLeft)
-  };
-
   const slideLeft = () => {
     // var slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft - 250;
+    slider.scrollLeft = slider.scrollLeft - (slider.clientWidth * .25);
     var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    console.log('slide left amount:', slider.scrollLeft)
-    console.log('max slide left:', maxScrollLeft)
-    setScrollPositon(slider.scrollLeft)
-    setMaxScroll(maxScrollLeft)
-    // setCurrentProd(currentProd - 1)
+    setCurrentProd(currentProd - 1)
   };
 
   const slideRight = () => {
-    // var slider = document.getElementById('slider');
-    slider.scrollLeft = slider.scrollLeft + 250;
+    slider.scrollLeft = slider.scrollLeft + (slider.clientWidth * .25);
     var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    console.log('slide right amount:', slider.scrollLeft)
-    console.log('max slide right:', maxScrollLeft)
-    setScrollPositon(slider.scrollLeft)
-    setMaxScroll(maxScrollLeft)
-    // setCurrentProd(currentProd + 1)
+    setCurrentProd(currentProd + 1)
   };
 
-
-if (scrollPosition <= 40) {
-  return (
-    <div className='products-list'>
-      <div className='slide-container'>
-      </div>
-        <div id='slider' className='related-products-list-container snaps-inline'>
-          {relatedProducts.map((relatedProduct, key) => (
-            <Card relatedProduct={relatedProduct} key={key} />
-          ))}
-        </div>
-        <div className='slide-container'>
-      <MdChevronRight className='slide' onClick={slideRight}/>
-      </div>
-    </div>
-  )
-} else if (scrollPosition === maxScrollPositon){
-  return (
-    <div className='products-list'>
-      <div className='slide-container'>
-      <MdChevronLeft className='slide' onClick={slideLeft}/>
-      </div>
-        <div id='slider' className='related-products-list-container snaps-inline'>
-          {relatedProducts.map((relatedProduct, key) => (
-            <Card relatedProduct={relatedProduct} key={key} />
-          ))}
-        </div>
-    </div>
-  )
-  } else {
+//onClick={()=>setToZero(relatedProducts.length - 1)}
     return (
       <div className='products-list'>
+        {currentProd !== 0 && relatedProducts.length > 4 &&
         <div className='slide-container'>
-        <MdChevronLeft className='slide' onClick={slideLeft}/>
-        </div>
+        <BsChevronLeft className='related-left-slide' onClick={slideLeft}/>
+        </div>}
           <div id='slider' className='related-products-list-container snaps-inline'>
+          <div></div>
             {relatedProducts.map((relatedProduct, key) => (
               <Card relatedProduct={relatedProduct} key={key} />
             ))}
           </div>
+          {currentProd !== relatedProducts.length - 4 && relatedProducts.length > 4 &&
           <div className='slide-container'>
-        <MdChevronRight className='slide' onClick={slideRight}/>
-        </div>
+          <BsChevronRight className='related-right-slide' onClick={slideRight}/>
+          </div>}
       </div>
     )
-  }
 }
 
 export default RelatedProductsList;

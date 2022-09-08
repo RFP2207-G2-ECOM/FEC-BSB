@@ -7,8 +7,10 @@ import axios from 'axios';
 import ComparisonModal from './ComparisonModal.jsx'
 import CardStarRating from './CardStarRating.jsx'
 import CardPictureDisplay from './CardPictureDisplay.jsx';
+import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 const Card = ({relatedProduct, deleteOutfit}) => {
+  const { productID: PID, setProductID } = useContext(ProductContext);
   const [productStyle, setStyle] = useState([]);
   const [isOpen, setIsOpen] = useState(false)
   const [ratings, setRatings] = useState({})
@@ -26,7 +28,7 @@ const Card = ({relatedProduct, deleteOutfit}) => {
   useEffect(()=>{
     getProductStyles();
     getReviews();
-  },[])
+  },[relatedProduct])
 
   const getProductStyles = async () => {
     if (productID) {
@@ -46,9 +48,13 @@ const Card = ({relatedProduct, deleteOutfit}) => {
     }
   }
 
+  const changeCurrProd = () => {
+    setProductID(productID)
+  }
+
   if (productStyle[0]) {
     return (
-      <div className='card-container' onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
+      <div className='card-container' onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} onClick={changeCurrProd}>
         <div className='card-media'>
             <CardPictureDisplay productStyle={productStyle}
                                 onOpen={() => setIsOpen(true)}
@@ -61,9 +67,9 @@ const Card = ({relatedProduct, deleteOutfit}) => {
                            relatedProduct={relatedProduct}/>
         </div>
           <div className='card-content'>
-            <div>{relatedProduct.category}</div>
-            <div><b>{relatedProduct.name}</b></div>
-            <div>${relatedProduct.default_price}</div>
+            <div className='card-prod-name'>{relatedProduct.name}</div>
+            <div className='card-price'>${relatedProduct.default_price}</div>
+            <div className='card-category'>{relatedProduct.category}</div>
             <CardStarRating ratings={ratings}/>
           </div>
       </div>

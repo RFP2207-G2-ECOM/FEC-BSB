@@ -1,8 +1,10 @@
 .related-items-and-comp-container {
-  width: 75%;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  display: inline block;
+  /* width: 100%; */
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 6.3rem;
+  margin-bottom: 8rem;
 }
 
 .card-container {
@@ -21,40 +23,40 @@
 }
 
 .card-button {
-  /* display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 210px;
-  height: 30px; */
-  /* position: absolute; */
   position: relative;
-  /* left: 220px;
-  top: -305px; */
   left: 220px;
   top: -290px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
   color: black;
   font-weight: 550;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  transition: color 0.5s ease-out 100ms;
+  opacity: .7;
 }
 
 .card-button:hover {
-  color: white;
+  opacity: 1;
+  transition: color 0.5s ease-out 100ms;
 }
 
-/* .card-button-isHover {
+.card-button-hover {
   position: relative;
   left: 220px;
-  top: -290px;
-  color: white;
+  /* top: -305px; */
+  top: -305px;
+  color: black;
   font-weight: 550;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-} */
+  transition: color 0.5s ease-out 100ms;
+  opacity: .7;
+}
+
+.card-button-hover:hover {
+  opacity: 1;
+  transition: color 0.5s ease-out 100ms;
+}
+
 
 .card-add-button {
   position: relative;
@@ -78,9 +80,25 @@
 } */
 
 .card-content {
-  padding: 0px 10px;
+  padding: 0px 15px;
   position: relative;
   top: 20px;
+}
+
+.card-category {
+  font-size: 14px;
+  color: var(--lightFont);
+}
+
+.card-prod-name {
+  display: flex;
+  font-size: 14px;
+}
+
+.card-price {
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .card-media {
@@ -104,15 +122,12 @@
 }
 
 .related-products-list-container {
-  position: relative;
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
+  position: relative;
+  width: calc(100% - 6.5rem);
   overflow: hidden;
-  /* overflow-x: scroll; */
-  margin: 20px;
-  padding: 1.2rem;
-  /* flex-direction: 'row-reverse'; */
+  flex-direction: row;
+    /* overflow: scroll; */
 }
 
 /*Snaps in line, scrolls 1 card container at a time*/
@@ -125,24 +140,43 @@
 }
 
 .products-list {
+  /* overflow: hidden; */
+  position: relative;
   display: flex;
-  align-items: center;
+  /* flex-wrap: nowrap; */
+  width: calc(100% - 6.5rem);
+  /* overflow: hidden; */
+  /* overflow: hidden; */
+  margin-bottom: 1rem;
+  margin-top: .5rem;
 }
 
 .slide-container {
-  min-height: 20%;
-  max-width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.slide {
+.related-left-slide, .related-right-slide {
+  position: absolute;
   display: flex;
   cursor: pointer;
-  opacity: .5;
-  font-size: 40px;
+  opacity: .8;
+  font-size: 28px;
   align-items: center;
+  justify-content: center;
 }
 
-.slide:hover {
+.related-left-slide {
+  right: 32px;
+}
+
+.related-right-slide {
+  left: 2px;
+}
+
+.related-left-slide:hover, .related-right-slide:hover {
   opacity: 1;
 }
 
@@ -168,13 +202,10 @@
   z-index: 1000;
   border-collapse: collapse;
   border-spacing: 0;
+  /* height: 35%;*/
   width: 35%;
+  height: auto;
   border: 1px solid #ddd;
-}
-
-.comparison-title {
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 
 .modal-button {
@@ -205,6 +236,7 @@ table {
 th, td {
   text-align: center;
   padding: 16px;
+  font-weight: 400;
 }
 
 tr:nth-child(even) {
@@ -219,6 +251,9 @@ tr:nth-child(even) {
   color: red;
 }
 
+.comparison-modal-title {
+  font-weight: bold;
+}
 /* For Star Rating*/
 /* related-stars .StarRatings */
 
@@ -353,4 +388,10 @@ overflow: hidden;
 .card-thumbnail-pic {
   min-width: 55px;
   object-fit: cover;
+}
+
+.related-title-container {
+  font-size: 16px;
+  color: var(--mainFont);
+  font-weight: bold;
 }

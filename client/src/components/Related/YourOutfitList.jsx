@@ -5,7 +5,7 @@ import Card from './Card.jsx'
 import { ProductRelatedContext } from '../../contexts/product-related.context.jsx';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 import axios from 'axios';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { HiOutlinePlusCircle } from 'react-icons/hi';
 import { LocalStorageContext } from '../../contexts/local-storage.context.jsx';
 
@@ -14,10 +14,11 @@ const YourOutfitList = () => {
 
   const [relatedProduct, setRelatedProduct] = useState([]);
 
+  const [ currentProd, setCurrentProd ] = useState(0);
+
   useEffect(()=>{
       getRelatedProducts();
   }, [outfitList])
- //^use effeect will run every time [] <-- tracks this
 
   const getProductInfo = async (productID) => {
     var baseURI = process.env.BASE_URI;
@@ -51,32 +52,31 @@ const YourOutfitList = () => {
 
   const deleteOutfit = (productID) => {
     const outfits = [...outfitList]
-    const index = outfitList.indexOf(JSON.stringify(productID))
+    const index = outfits.indexOf(JSON.stringify(productID))
     if (index > -1) {
       outfits.splice(index, 1)
     }
     setOutfitList(outfits)
-    console.log('within delete outfit', productID)
-    console.log('within delete outfit outiftlist', outfitList)
   }
 
   const slideLeft = () => {
     var slider = document.getElementById('outfit-slider');
     slider.scrollLeft = slider.scrollLeft - 250;
+    setCurrentProd(currentProd - 1)
   };
 
   const slideRight = () => {
     var slider = document.getElementById('outfit-slider');
     slider.scrollLeft = slider.scrollLeft + 250;
+    setCurrentProd(currentProd + 1)
   };
 
   return (
     <div className='products-list'>
-      <div className='slide-container'>
-      <MdChevronLeft
-        className='slide'
-        onClick={slideLeft}/>
-      </div>
+        {currentProd !== 0 && outfitList.length > 3 &&
+        <div className='slide-container'>
+        <BsChevronLeft className='related-left-slide' onClick={slideLeft}/>
+        </div>}
           <div id='outfit-slider'
                className='related-products-list-container snaps-inline'>
                  <div className='card-container'>
@@ -92,9 +92,10 @@ const YourOutfitList = () => {
                  <Card relatedProduct={relatedProduct} key={key} deleteOutfit={deleteOutfit}/>
                ))}
           </div>
+          {currentProd !== outfitList.length - 3 && outfitList.length > 3 &&
           <div className='slide-container'>
-      <MdChevronRight className='slide' onClick={slideRight}/>
-      </div>
+          <BsChevronRight className='related-right-slide' onClick={slideRight}/>
+          </div>}
     </div>
   )
 }
