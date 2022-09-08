@@ -24,6 +24,12 @@ const RelatedProductsList = () => {
     getRelatedProducts();
   },[productRelated])
 
+  useEffect(() => {
+    var slider = document.getElementById('outfit-slider');
+    slider.scrollLeft = 0;
+    setCurrentProd(0);
+  }, [PID])
+
   const getProductInfo = async (productID) => {
     var baseURI = process.env.BASE_URI;
     return await axios.get(`${baseURI}products/${productID}`, {

@@ -1,14 +1,18 @@
-import React, { useRef, useCallback } from "react"
+import React, { useState, useRef, useCallback } from "react"
 import { FiCheck } from "react-icons/fi"
 
 import Helpful from "../Helpful.jsx"
 import Report from "../Report.jsx"
 import StaticRating from "../StarRating.jsx"
 import PosterTag from "../PosterTag.jsx"
+import ZoomInModal from "../ZoomInModal.jsx"
 
 import styles from "../../styles/Reviews/reviewTile.css"
 
 const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, username, date, summary, body, photos, recommend, response, helpful, setReviewsToRender }) => {
+
+  const [curPic, setCurPic] = useState(0)
+  const [isZoomIn, setIsZoomIn] = useState(false)
 
   // observer references when last review tile is visible,
   // callback pulls more review data
@@ -24,6 +28,7 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
+  // picture url validator
   const isValidHttpUrl = (string) => {
     let url;
 
@@ -34,7 +39,6 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
     }
     return url.protocol === "http:" || url.protocol === "https:";
   }
-
 
   return (
     <>
@@ -49,7 +53,7 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
           <div className="review-tile-photos">
             {
               photos.map((photo, i) => {
-                if (isValidHttpUrl(photo.url)) { return (<img key={i} className='review-tile-photo' src={photo.url} alt=''/>) }
+                if (isValidHttpUrl(photo.url)) { return (<img key={i} className='review-tile-photo hover' src={photo.url} alt='' onClick={() => setIsZoomIn(true)}/>) }
               })
             }
           </div>
@@ -82,6 +86,13 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
       {array.length === index + 1 &&
         <div ref={lastReviewElementRef} className='invisible'></div>
       }
+      <ZoomInModal
+        open={isZoomIn}
+        curPic={curPic}
+        listOfPics={photos.map(photo => photo.url)}
+        setCurPic={setCurPic}
+        onClose={() => setIsZoomIn(false)}
+      />
     </>
   )
 }

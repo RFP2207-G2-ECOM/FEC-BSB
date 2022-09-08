@@ -22,7 +22,7 @@
   position: absolute;
   top: -5px;
   transform: rotate(180deg);
-  z-index: 99;
+  z-index: 1;
 }
 
 .product-breakdown-scale-blocks {

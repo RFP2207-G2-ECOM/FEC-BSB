@@ -15,7 +15,9 @@
 .review-tile-header {
   flex-basis: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .review-tile-summary {
@@ -56,7 +58,8 @@
 }
 
 .review-tile-response {
-  background-color: var(--lightFont);
+  background-color: var(--iconNoFill);
+  padding: 1rem;
 }
 
 .review-tile-footer {

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 25% 65%;
   grid-template-rows: auto;
-  grid-column-gap: 60px;
+  grid-column-gap: 2rem;
   grid-row-gap: 10px;
   width: 82%;
   margin: auto;
@@ -24,6 +24,7 @@
 .Breakdown-Container {
   display: flex;
   flex-direction: column;
+  max-width: 20rem;
   gap: 2.5em;
 }
 
@@ -42,7 +43,8 @@
   flex-wrap: wrap;
   align-items: flex-start;
   font-weight: bold;
-  height: 3em;
+  min-height: 3rem;
+  gap: 1rem
 }
 
 .reviewList-sort select {
@@ -58,28 +60,6 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 20px;
-}
-
-.more-reviews-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border: 1px solid black;
-  background-color: white;
-  padding: 20px;
-  font-weight: bold;
-}
-
-.add-a-review-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border: 1px solid black;
-  background-color: white;
-  padding: 20px;
-  font-weight: bold;
 }
 
 .add-a-review-text {
