@@ -10,14 +10,10 @@ const RelatedItemsAndComp = () => {
 
   return (
     <div className='related-items-and-comp-container'>
-      <div>
       <RelatedProductsTitle />
       <RelatedProductsList />
-      </div>
-{/* <div>
-<YourOutfitTitle />
+      <YourOutfitTitle />
       <YourOutfitList />
-</div> */}
     </div>
   )
 }

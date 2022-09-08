@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import ComparisonFeatures from './ComparisonFeatures.jsx'
 import styles from '../../styles/Related/related.css';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
+import { ImCross } from 'react-icons/im';
 
 const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
   const [productFeatures, setFeatures] = useState([]);
@@ -58,16 +59,15 @@ const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
 
   return ReactDom.createPortal(
     <>
-      <div className='overlay-styles'/>
-      <div className='modal-styles'>
-        <button className='modal-button' onClick={onClose}>Close Modal</button>
-        <div className='comparison-title'><b>Comparing</b></div>
+      <div className='overlay-styles' onClick={onClose}/>
+      <div className='modal-styles related-modal-class'>
+      <ImCross className='CloseModalButton' onClick={onClose}/>
         <table>
           <tbody>
             <tr>
-              <th>{product.name}</th>
-              <th>Features</th>
-              <th>{relatedProduct.name}</th>
+              <th className='comparison-modal-title'>{product.name}</th>
+              <th className='comparison-modal-title'>Features</th>
+              <th className='comparison-modal-title'>{relatedProduct.name}</th>
             </tr>
               {productFeatures.map((feature, key) =>
                 <ComparisonFeatures feature={feature} key={key}/>

@@ -9,7 +9,7 @@ const CardThumbnail = ({ listOfThumbnails, currentPic, setCurrentPic, productID 
   return (
     <div id={`card-slider${productID}`} className='card-thumbnail-carousel'>
   {listOfThumbnails.map((thumbnail, index) => (
-        <CardThumbnailDisplay index={index} thumbnail={thumbnail} currentPic={currentPic} setCurrentPic={setCurrentPic}  />
+        <CardThumbnailDisplay index={index} key={index} thumbnail={thumbnail} currentPic={currentPic} setCurrentPic={setCurrentPic}  />
   ))}
   </div>
   )

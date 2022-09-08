@@ -14,6 +14,8 @@ const YourOutfitList = () => {
 
   const [relatedProduct, setRelatedProduct] = useState([]);
 
+  const [ currentProd, setCurrentProd ] = useState(0);
+
   useEffect(()=>{
       getRelatedProducts();
   }, [outfitList])
@@ -61,22 +63,24 @@ const YourOutfitList = () => {
   const slideLeft = () => {
     var slider = document.getElementById('outfit-slider');
     slider.scrollLeft = slider.scrollLeft - 250;
+    setCurrentProd(currentProd - 1)
   };
 
   const slideRight = () => {
     var slider = document.getElementById('outfit-slider');
     slider.scrollLeft = slider.scrollLeft + 250;
+    setCurrentProd(currentProd + 1)
   };
 
   return (
-    <div className='outfit-products-list'>
-      <div className='slide-container'>
-      <MdChevronLeft
-        className='slide'
-        onClick={slideLeft}/>
-      </div>
+    <div className='products-list'>
+        {currentProd !== 0 && outfitList.length > 3 &&
+        <div className='slide-container'>
+        <MdChevronLeft className='slide' onClick={slideLeft}/>
+        </div>}
           <div id='outfit-slider'
                className='related-products-list-container snaps-inline'>
+                 <div className='card-container'></div>
                  <div className='card-container'>
                    <HiOutlinePlusCircle
                    className='card-add-button'
@@ -90,9 +94,10 @@ const YourOutfitList = () => {
                  <Card relatedProduct={relatedProduct} key={key} deleteOutfit={deleteOutfit}/>
                ))}
           </div>
+          {currentProd !== outfitList.length - 3 && outfitList.length > 3 &&
           <div className='slide-container'>
-      <MdChevronRight className='slide' onClick={slideRight}/>
-      </div>
+          <MdChevronRight className='slide' onClick={slideRight}/>
+          </div>}
     </div>
   )
 }

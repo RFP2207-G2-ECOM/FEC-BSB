@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Card from './Card.jsx'
 import CardThumbnail from './CardThumbnail.jsx'
+import { ImCross } from 'react-icons/im';
 
 const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct, hover}) => {
   const [ currentPic, setCurrentPic ] = useState(0);
@@ -43,7 +44,7 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
         {deleteOutfit === undefined &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
         {deleteOutfit &&
-          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>deleteOutfit(relatedProduct.id)}></i>}
+          <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
           {hover &&
           <MdChevronLeft className='left-card-arrow-invis'/>}
           {hover &&

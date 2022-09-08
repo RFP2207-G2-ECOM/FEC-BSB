@@ -1,7 +1,8 @@
 .related-items-and-comp-container {
-  display: block;
-  width: 75%;
-  margin: auto;
+  display: inline block;
+  /* width: 100%; */
+  margin-left: 15%;
+  margin-right: 15%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -41,21 +42,14 @@
   font-weight: 550;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  transition: color 0.5s ease-out 100ms;
+  opacity: .7;
 }
 
 .card-button:hover {
-  color: white;
+  opacity: 1;
+  transition: color 0.5s ease-out 100ms;
 }
-
-/* .card-button-isHover {
-  position: relative;
-  left: 220px;
-  top: -290px;
-  color: white;
-  font-weight: 550;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-} */
 
 .card-add-button {
   position: relative;
@@ -105,17 +99,12 @@
 }
 
 .related-products-list-container {
-  position: relative;
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  /* overflow: hidden; */
-  /* justify-content: flex-start; */
-  /* overflow-x: scroll; */
-  /* margin: 20px; */
-  /* padding: 1.2rem; */
-  /* flex-direction: 'row-reverse'; */
-
+  position: relative;
+  width: calc(100% - 6rem);
+  overflow: hidden;
+  flex-direction: row;
+    /* overflow: scroll; */
 }
 
 /*Snaps in line, scrolls 1 card container at a time*/
@@ -128,36 +117,40 @@
 }
 
 .products-list {
-  flex-wrap: nowrap;
+  /* overflow: hidden; */
+  position: relative;
+  display: flex;
+  /* flex-wrap: nowrap; */
+  width: calc(100% - 6rem);
+  /* overflow: hidden; */
+  /* overflow: hidden; */
+}
+
+.slide-container {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
-}
-
-.outfit-products-list {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-/* .slide-container {
-  display: flex;
-  align-items: center;
-  min-height: 20%;
-  max-width: 50%;
   justify-content: center;
-} */
+}
 
-.slide {
+.related-left-slide, .related-right-slide {
+  position: absolute;
   display: flex;
   cursor: pointer;
   opacity: .5;
   font-size: 40px;
-  justify-content: flex-start;
-  /* align-items: center; */
+  z-index: 10;
+  font-size: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.related-left-slide {
+  right: 20px;
+}
+
+.related-right-slide {
+  left: 20px;
 }
 
 .slide:hover {
@@ -186,13 +179,10 @@
   z-index: 1000;
   border-collapse: collapse;
   border-spacing: 0;
+  /* height: 35%;*/
   width: 35%;
+  height: auto;
   border: 1px solid #ddd;
-}
-
-.comparison-title {
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 
 .modal-button {
@@ -223,6 +213,7 @@ table {
 th, td {
   text-align: center;
   padding: 16px;
+  font-weight: 400;
 }
 
 tr:nth-child(even) {
@@ -237,6 +228,9 @@ tr:nth-child(even) {
   color: red;
 }
 
+.comparison-modal-title {
+  font-weight: bold;
+}
 /* For Star Rating*/
 /* related-stars .StarRatings */
 
