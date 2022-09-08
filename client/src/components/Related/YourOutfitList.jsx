@@ -5,7 +5,7 @@ import Card from './Card.jsx'
 import { ProductRelatedContext } from '../../contexts/product-related.context.jsx';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 import axios from 'axios';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { HiOutlinePlusCircle } from 'react-icons/hi';
 import { LocalStorageContext } from '../../contexts/local-storage.context.jsx';
 
@@ -75,11 +75,10 @@ const YourOutfitList = () => {
     <div className='products-list'>
         {currentProd !== 0 && outfitList.length > 3 &&
         <div className='slide-container'>
-        <MdChevronLeft className='related-left-slide' onClick={slideLeft}/>
+        <BsChevronLeft className='related-left-slide' onClick={slideLeft}/>
         </div>}
           <div id='outfit-slider'
                className='related-products-list-container snaps-inline'>
-                 <div className='card-container'></div>
                  <div className='card-container'>
                    <HiOutlinePlusCircle
                    className='card-add-button'
@@ -95,7 +94,7 @@ const YourOutfitList = () => {
           </div>
           {currentProd !== outfitList.length - 3 && outfitList.length > 3 &&
           <div className='slide-container'>
-          <MdChevronRight className='related-right-slide' onClick={slideRight}/>
+          <BsChevronRight className='related-right-slide' onClick={slideRight}/>
           </div>}
     </div>
   )

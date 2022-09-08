@@ -5,7 +5,7 @@ import Card from './Card.jsx'
 import { ProductRelatedContext } from '../../contexts/product-related.context.jsx';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 import axios from 'axios';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
 import { HiOutlinePlusCircle } from 'react-icons/hi';
 const RelatedProductsList = () => {
@@ -64,17 +64,17 @@ const RelatedProductsList = () => {
       <div className='products-list'>
         {currentProd !== 0 && relatedProducts.length > 4 &&
         <div className='slide-container'>
-        <MdChevronLeft className='related-left-slide' onClick={slideLeft}/>
+        <BsChevronLeft className='related-left-slide' onClick={slideLeft}/>
         </div>}
           <div id='slider' className='related-products-list-container snaps-inline'>
-          <div className='card-container'></div>
+          <div></div>
             {relatedProducts.map((relatedProduct, key) => (
               <Card relatedProduct={relatedProduct} key={key} />
             ))}
           </div>
           {currentProd !== relatedProducts.length - 4 && relatedProducts.length > 4 &&
           <div className='slide-container'>
-          <MdChevronRight className='related-right-slide' onClick={slideRight}/>
+          <BsChevronRight className='related-right-slide' onClick={slideRight}/>
           </div>}
       </div>
     )

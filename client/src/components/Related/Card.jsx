@@ -61,9 +61,9 @@ const Card = ({relatedProduct, deleteOutfit}) => {
                            relatedProduct={relatedProduct}/>
         </div>
           <div className='card-content'>
-            <div>{relatedProduct.category}</div>
-            <div><b>{relatedProduct.name}</b></div>
-            <div>${relatedProduct.default_price}</div>
+            <div className='card-prod-name'>{relatedProduct.name}</div>
+            <div className='card-price'>${relatedProduct.default_price}</div>
+            <div className='card-category'>{relatedProduct.category}</div>
             <CardStarRating ratings={ratings}/>
           </div>
       </div>
