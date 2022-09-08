@@ -11,6 +11,7 @@ import { HiOutlinePlusCircle } from 'react-icons/hi';
 const RelatedProductsList = () => {
   const slider = document.getElementById('slider');
 
+  const { productID: PID } = useContext(ProductContext);
   const { productRelated } = useContext(ProductRelatedContext);
   const [productID, setProductID] = useState(productRelated);
   const [relatedProducts, setRelatedProducts] = useState([]);
