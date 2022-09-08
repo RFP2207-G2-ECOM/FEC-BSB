@@ -11,7 +11,7 @@ import { ImCross } from 'react-icons/im';
 
 const AnswerModal = ({ open, product_id, onClose, question_body }) => {
   const { product } = useContext(ProductContext);
-  const { results, setResults } = useContext(QuestionsContext);
+  const { productID, results, setResults } = useContext(QuestionsContext);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -75,7 +75,7 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
               })
                 .then(result => {
                   var baseURI = process.env.BASE_URI;
-                  axios.get(`${baseURI}qa/questions/?product_id=${process.env.PRODUCT_ID}&page=1&count=30`, {
+                  axios.get(`${baseURI}qa/questions/?product_id=${productID}&page=1&count=30`, {
                     headers: {
                       'Authorization': process.env.GITHUB_TOKEN
                     }
@@ -99,7 +99,7 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
       })
         .then(result => {
           var baseURI = process.env.BASE_URI;
-          axios.get(`${baseURI}qa/questions/?product_id=${process.env.PRODUCT_ID}&page=1&count=30`, {
+          axios.get(`${baseURI}qa/questions/?product_id=${productID}&page=1&count=30`, {
             headers: {
               'Authorization': process.env.GITHUB_TOKEN
             }
