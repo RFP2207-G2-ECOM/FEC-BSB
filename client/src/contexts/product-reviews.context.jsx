@@ -1,5 +1,6 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState, useContext } from 'react';
 import axios from 'axios';
+import { ProductContext } from './product-info.context.jsx';
 
 export const ProductReviewsContext = createContext({
   productReviews: [],
@@ -10,6 +11,7 @@ export const ProductReviewsContext = createContext({
 // Ask Daniel about how he wants data to be stored & handled
 
 export const ProductReviewsProvider = ({children}) => {
+  const { productID } = useContext(ProductContext);
   const [reviews, setReviews] = useState([]);
   const [metadata, setMetadata] = useState({});
 
@@ -20,15 +22,15 @@ export const ProductReviewsProvider = ({children}) => {
       'Authorization': process.env.GITHUB_TOKEN
       }
     }
-    let reviews = axios.get(`${baseURI}reviews/?product_id=${process.env.PRODUCT_ID}`, config)
-    let metadata = axios.get(`${baseURI}reviews/meta/?product_id=${process.env.PRODUCT_ID}`, config)
+    let reviews = axios.get(`${baseURI}reviews/?product_id=${productID}`, config)
+    let metadata = axios.get(`${baseURI}reviews/meta/?product_id=${productID}`, config)
 
     Promise.all([reviews, metadata]).then((results) => {
       setReviews(results[0].data);
       setMetadata(results[1].data);
     })
 
-  }, [])
+  }, [productID])
 
   const value = { reviews, setReviews, metadata, setMetadata };
 

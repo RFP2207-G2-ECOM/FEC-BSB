@@ -43,7 +43,7 @@ const FavButton = () => {
     return (
       <div className='FavContainer'>
         <div className='FavButton' onClick={deleteOutfit}>
-            <FaStar className='FavIcon'/>
+            <FaStar className='FavIconActive'/>
         </div>
       </div>
     )
@@ -51,7 +51,7 @@ const FavButton = () => {
     return (
       <div className='FavContainer'>
         <div className='FavButton' onClick={addOutfit}>
-            <FaRegStar className='FavIcon'/>
+            <FaRegStar className='FavIconInactive'/>
         </div>
       </div>
     )

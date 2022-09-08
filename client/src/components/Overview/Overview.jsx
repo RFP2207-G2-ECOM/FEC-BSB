@@ -4,7 +4,6 @@ import { ProductStylesContext } from '../../contexts/product-styles.context.jsx'
 import TopBar from './TopBar.jsx';
 import ProductDisplay from './ProductDisplay.jsx';
 import ProductDetails from './ProductDetails.jsx';
-import BottomBar from './BottomBar.jsx';
 
 import styles from '../../styles/Overview/Overview.css';
 
@@ -42,7 +41,6 @@ const Overview = () => {
           <ProductDetails />
         </CurrentStylesContext.Provider>
       </div>
-      <BottomBar />
     </div>
   )
 };

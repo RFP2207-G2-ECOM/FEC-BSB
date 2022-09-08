@@ -11,9 +11,17 @@ body {
   --iconNoFill: #ccc;
 }
 
+.hover {
+  cursor: pointer;
+  transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
+}
+
 .hover:hover {
   background-color: var(--select);
   cursor: pointer;
+  transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .button1 {

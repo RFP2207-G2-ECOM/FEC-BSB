@@ -2,12 +2,13 @@ import React, { useContext, useState, useEffect } from 'react';
 import { CurrentSKUContext } from './AddToCart.jsx';
 
 const SizeSelect = () => {
-  const { listOfSizes, listOfSKUs, curSize, setCurSize, curSKU, setCurSKU } = useContext(CurrentSKUContext);
+  const { listOfSizes, listOfSKUs, curSize, setCurSize, curSKU, setCurSKU, setAddEmpty } = useContext(CurrentSKUContext);
 
   const updateCurVals = (size)=> {
     setCurSize(size);
     let index = listOfSizes.indexOf(size);
     setCurSKU(listOfSKUs[index]);
+    setAddEmpty(false);
   };
 
   let copyOfLoS = [...listOfSizes];

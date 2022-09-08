@@ -4,6 +4,9 @@ import NameAndCategory from './ProductDetails/NameAndCategory.jsx';
 import StyleInfo from './ProductDetails/StyleInfo.jsx';
 import StyleSelector from './ProductDetails/StyleSelector.jsx';
 import AddToCart from './ProductDetails/AddToCart.jsx';
+import ProductDescription from './ProductDetails/ProductDescription.jsx'
+import FeatureDescription from './ProductDetails/FeatureDescription.jsx';
+import SocialMediaButtons from './ProductDetails/SocialMediaButtons.jsx';
 
 
 const ProductDetails = () => {
@@ -14,6 +17,9 @@ const ProductDetails = () => {
       <StyleInfo/>
       <StyleSelector />
       <AddToCart />
+      <ProductDescription />
+      <FeatureDescription />
+      <SocialMediaButtons />
     </div>
   )
 };
