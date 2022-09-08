@@ -89,7 +89,8 @@ const RatingsReviews = () => {
       }
       <div className="Review-Modal-Container">
         <ReviewModal
-          open={modalOpen}
+          modalOpen={modalOpen}
+          setModalOpen={setModalOpen}
           onClose={() => setModalOpen(false)}
           productName={product.name}
         />

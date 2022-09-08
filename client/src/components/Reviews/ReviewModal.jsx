@@ -14,7 +14,7 @@ import useReviewSubmit from "./useReviewSubmit.js"
 
 import styles from "../../styles/Reviews/reviewModal.css"
 
-const ReviewModal = ({ open, onClose, productName }) => {
+const ReviewModal = ({ modalOpen, setModalOpen, onClose, productName }) => {
 
   const [characteristics, setCharacteristics] = useState({})
   const [email, setEmail] = useState(null)
@@ -40,7 +40,7 @@ const ReviewModal = ({ open, onClose, productName }) => {
     submitPressed
   )
 
-  if(!open) return null
+  if(!modalOpen) return null
 
   return ReactDom.createPortal (
     <>
@@ -54,7 +54,6 @@ const ReviewModal = ({ open, onClose, productName }) => {
           <div className="review-modal-section-header">Overall rating</div>
           <ReviewModalStarRating
             setStarRating={setStarRating}
-            error={error}
           />
         </div>
         <div>

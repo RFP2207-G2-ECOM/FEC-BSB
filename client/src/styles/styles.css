@@ -29,6 +29,10 @@ body {
   width: fit-content;
 }
 
+.button1:hover {
+  cursor: pointer;
+}
+
 
 /* -fonts: roboto condensed
 -colors:
