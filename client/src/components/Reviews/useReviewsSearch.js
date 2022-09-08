@@ -5,7 +5,6 @@ import { ProductContext } from "../../contexts/product-info.context.jsx"
 
 const gitHubToken = process.env.GITHUB_TOKEN
 const baseURI = process.env.BASE_URI
-// const productID = Number(process.env.PRODUCT_ID)
 
 export default function useReviewsSearch(pageNumber, reviewCount, reviewSort, starFilters) {
 
