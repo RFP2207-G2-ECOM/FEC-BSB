@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ProductContext } from '../../../contexts/product-info.context.jsx';
+
 
 import { FaSearch, FaUserAlt, FaShoppingCart } from 'react-icons/fa';
 
 const NavBar = () => {
+
+  const { setProductID } = useContext(ProductContext);
+
+  const reset = () => {
+    setProductID('40344');
+  };
+
+
   return (
     <div className='NavBar'>
       <div className='innerNavBar'>
-        <div className='TopBarLeft'>
+        <div className='TopBarLeft' onClick={reset}>
           <img src={`https://www.officialcharts.com/media/318937/backstreet_boys.jpg?width=796&height=420&mode=stretch`} className='BSBPhoto'></img>
         </div>
         <div className='Logo'>

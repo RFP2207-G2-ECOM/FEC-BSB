@@ -13,7 +13,7 @@ const InteractionsAPI = (element, widget) => {
     }
   })
     .then(response => {
-      console.log('response', response);
+      // console.log('response', response);
     })
 }
 
