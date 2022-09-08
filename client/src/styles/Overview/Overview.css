@@ -218,8 +218,9 @@ a:active {
 }
 
 .Selected-Picture {
-  min-width: 250px;
-  max-width: 850px;
+  /* min-width: 250px;
+  max-width: 850px; */
+  width: 800px;
   height: 100%;
   display: flex;
   justify-content: center;
