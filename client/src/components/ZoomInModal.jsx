@@ -7,7 +7,7 @@ import { ImCross } from 'react-icons/im';
 import ThumbnailDisplay from './ThumbnailDisplay.jsx';
 import ZoomToMouse from './ZoomToMouse.jsx';
 
-const ZoomInModal = ({ open, curPic, listOfPics, setCurPic, onClose}) => {
+const ZoomInModal = ({ open, curPic, listOfPics, setCurPic, onClose }) => {
   // console.log(curPic); // integer that tracks position in listOfPics
   // console.log(listOfPics); // list of pictures that you'd want to cycle through
   // console.log(setCurPic); // method to change curPic's value.

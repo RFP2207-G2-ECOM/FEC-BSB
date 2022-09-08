@@ -5,7 +5,7 @@ const FeatureAndMaterial = ({detail, index}) =>  {
   if (detail.feature && detail.value) {
     return (
       <div key={index} className='FeatureAndMaterial'>
-        <div className='Feature'>{detail.feature}:</div>
+        <div className='Feature'>{detail.feature}</div>
         <div className='Material'>{detail.value}</div>
       </div>
     )

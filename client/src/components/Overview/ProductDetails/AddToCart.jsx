@@ -24,6 +24,7 @@ const AddToCart = () => {
   let [ curSize, setCurSize ] = useState('Select Size');
   let [ curQuantity, setCurQuantity ] = useState(1);
   let [ addEmpty, setAddEmpty ] = useState(false);
+  let [ addNoQuant, setAddNoQuant ] = useState(false);
 
   useEffect(()=> {
     if (Object.keys(curStyle).length) {
@@ -48,7 +49,9 @@ const AddToCart = () => {
 
   // Data is formatted as array with each index matching
   //  listOfSizes={listOfSizes} curSize={curSize} setCurSize={setCurSize}
-  let value = { listOfSKUs, listOfSizes, listOfQuantity, curSKU, curSize, curQuantity, addEmpty, setCurSKU, setCurSize, setCurQuantity, setAddEmpty };
+  let value = { listOfSKUs, listOfSizes, listOfQuantity,
+    curSKU, curSize, curQuantity, addEmpty, addNoQuant,
+    setCurSKU, setCurSize, setCurQuantity, setAddEmpty, setAddNoQuant };
 
   return (
     <div className='AddToCart'>
