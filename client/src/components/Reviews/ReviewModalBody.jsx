@@ -14,7 +14,7 @@ const ReviewModalBody = ( { setReviewBody } ) => {
   return (
     <>
       <div className="review-modal-section-header">Review Body</div>
-      <input
+      <textarea
         className='review-modal-body-input'
         type="text"
         minLength="50"
@@ -22,8 +22,8 @@ const ReviewModalBody = ( { setReviewBody } ) => {
         value={bodyText}
         onChange={(e) => setBodyText(e.target.value)}
       >
-      </input>
-      <div>{`Minimum required characters left: ${charactersLeft}`}</div>
+      </textarea>
+      <div className='review-modal-body-subText'>{`Minimum required characters left: ${charactersLeft}`}</div>
     </>
   )
 }

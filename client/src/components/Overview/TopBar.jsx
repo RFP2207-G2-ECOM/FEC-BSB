@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './TopBar/NavBar.jsx';
-import Announcements from './Announcements.jsx';
+import Announcements from './TopBar/Announcements.jsx';
 
 const TopBar = () => {
   return (

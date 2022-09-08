@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../../contexts/product-info.context.jsx';
-import FeatureContainer from './FeatureContainer.jsx';
-import FeatureTitle from './FeatureTitle.jsx';
+import FeatureAndMaterial from './FeatureAndMaterial.jsx';
 
 const FeatureDescription = () => {
   const { product } = useContext(ProductContext);
@@ -12,8 +11,18 @@ const FeatureDescription = () => {
   if (features.length) {
     return (
       <div className='FeatureContainer'>
-        <FeatureTitle/>
-        <FeatureContainer features={features}/>
+        <div className='FeatureAndMaterialTitle'>
+          Features
+        </div>
+        <div className='FeatureDisplay'>
+        {features.map((detail, index)=>{
+          return (
+            <div key={index}>
+              <FeatureAndMaterial detail={detail} index={index} />
+            </div>
+          )
+        })}
+        </div>
       </div>
     );
   } else {

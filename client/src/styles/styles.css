@@ -8,18 +8,39 @@ body {
   --lightFont: #737373;
   --select: #f5f4f4;
   --divider: #e1e0e0;
-  --iconNoFill: gray;
+  --iconNoFill: #ccc;
+}
+
+.hover {
+  cursor: pointer;
+  transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .hover:hover {
   background-color: var(--select);
   cursor: pointer;
+  transition: color 0.5s ease-out 100ms;
+  transition: background-color 0.5s ease-out 100ms;
+}
+
+.button1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  font-size: large;
+  font-weight:  bold;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  width: fit-content;
 }
 
 
 /* -fonts: roboto condensed
 -colors:
-  -mainFont / icon-fill-color : black (#000)
-  -lightFont : #737373
-  -select-background : #f5f4f4
-  -bar-dividers: #e1e0e0 */
+  -mainFont: main font color and icon fill color
+  -lightFont: used for lighter font
+  -select-background: background color for selected or hovering over items
+  -bar-dividers: used for straight lines separating blocks/elements */

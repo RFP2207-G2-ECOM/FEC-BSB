@@ -5,6 +5,7 @@ import axios from 'axios';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 import '../../styles/QA/QuestionModal.css';
+import { ImCross } from 'react-icons/im';
 
 const QuestionModal = ({ open, product_id, onClose }) => {
   const { product } = useContext(ProductContext);
@@ -57,8 +58,8 @@ const QuestionModal = ({ open, product_id, onClose }) => {
 
   return ReactDom.createPortal(
     <>
-      <div className='overlay-styles' />
-      <div className='modal-styles'>
+      <div className='overlay-styles' onClick={onClose}/>
+      <div className='modal-styles question-modal-class'>
         <h1 className='ans-mod-title'>Ask Your Question</h1>
         <h3 className='ans-mod-subtitle'>{`About the ${product.name}`}</h3>
         <hr></hr>
@@ -98,7 +99,7 @@ const QuestionModal = ({ open, product_id, onClose }) => {
               onChange={handleBodyField}
             ></textarea>
           </label>
-          <button onClick={e => onClose(e.preventDefault())}>Cancel</button>
+          <ImCross key={0} className='CloseModalButton' onClick={onClose} />
           <button className='mod-sub-but'>Submit Question</button>
         </form>
       </div>

@@ -7,6 +7,7 @@ import { ProductContext } from '../../contexts/product-info.context.jsx';
 import { QuestionsContext } from '../../contexts/question.context.jsx';
 
 import '../../styles/QA/AnswerModal.css';
+import { ImCross } from 'react-icons/im';
 
 const AnswerModal = ({ open, product_id, onClose, question_body }) => {
   const { product } = useContext(ProductContext);
@@ -120,8 +121,8 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
 
   return ReactDom.createPortal(
     <>
-      <div className='overlay-styles' />
-      <div className='modal-styles'>
+      <div className='overlay-styles' onClick={onClose} />
+      <div className='modal-styles answer-modal-class'>
         <h1 className='ans-mod-title'>Submit Answer</h1>
         <h3 className='ans-mod-subtitle'>{`${product.name}: ${question_body}`}</h3>
         <hr></hr>
@@ -170,7 +171,7 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
           />
           <p className='photo-message'>Up to 5 images can be added</p>
           <div className='more-answers'>
-            <button onClick={e => onClose(e.preventDefault())}>Cancel</button>
+            <ImCross key={0} className='CloseModalButton' onClick={onClose} />
             <button className='mod-sub-but'>Submit Answer</button>
           </div>
         </form>

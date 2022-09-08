@@ -18,7 +18,7 @@ const AddReviewButton = ({ moreReviews, setModalOpen }) => {
   return (
     <>
       <button
-        className="add-a-review-button"
+        className="add-a-review-button button1"
         style={style}
         onClick={() => setModalOpen(true)}
       >

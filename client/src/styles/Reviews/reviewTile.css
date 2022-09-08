@@ -6,8 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  /* max-width: 650px; */
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--divider);
   margin-top: 20px;
   margin-bottom: 20px;
   padding-bottom: 15px;
@@ -40,10 +39,8 @@
 }
 
 .review-tile-photo {
-  /* float: left; */
   width: 20%;
   height: 100px;
-  /* object-fit: cover; */
 }
 
 .review-tile-recommend {
@@ -59,7 +56,7 @@
 }
 
 .review-tile-response {
-  background-color: grey;
+  background-color: var(--lightFont);
 }
 
 .review-tile-footer {
