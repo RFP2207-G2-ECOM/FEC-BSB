@@ -13,13 +13,10 @@ const RelatedProductsList = () => {
 
   const { productRelated } = useContext(ProductRelatedContext);
   const [productID, setProductID] = useState(productRelated);
-
   const [relatedProducts, setRelatedProducts] = useState([]);
 
   const [ currentProd, setCurrentProd ] = useState(0);
 
-  const [scrollPosition, setScrollPositon] = useState(0);
-  const [maxScrollPositon, setMaxScroll] = useState(window.innerWidth);
 
   useEffect(()=>{
     setProductID(productRelated);
@@ -53,25 +50,13 @@ const RelatedProductsList = () => {
     // var slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft - (slider.clientWidth * .25);
     var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    setScrollPositon(slider.scrollLeft)
-    setMaxScroll(maxScrollLeft)
     setCurrentProd(currentProd - 1)
   };
 
   const slideRight = () => {
     slider.scrollLeft = slider.scrollLeft + (slider.clientWidth * .25);
     var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    setScrollPositon(slider.scrollLeft)
-    setMaxScroll(maxScrollLeft)
     setCurrentProd(currentProd + 1)
-  };
-
-  const setToZero = (length) => {
-    slider.scrollLeft = slider.scrollLeft - (250 * length);
-    var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    setScrollPositon(slider.scrollLeft)
-    setMaxScroll(maxScrollLeft)
-    console.log('setting to zero')
   };
 
 //onClick={()=>setToZero(relatedProducts.length - 1)}

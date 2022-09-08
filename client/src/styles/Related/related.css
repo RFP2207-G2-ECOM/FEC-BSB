@@ -3,8 +3,8 @@
   /* width: 100%; */
   margin-left: 15%;
   margin-right: 15%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 6.3rem;
+  margin-bottom: 8rem;
 }
 
 .card-container {
@@ -23,21 +23,9 @@
 }
 
 .card-button {
-  /* display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 210px;
-  height: 30px; */
-  /* position: absolute; */
   position: relative;
-  /* left: 220px;
-  top: -305px; */
   left: 220px;
   top: -290px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
   color: black;
   font-weight: 550;
   cursor: pointer;
@@ -50,6 +38,25 @@
   opacity: 1;
   transition: color 0.5s ease-out 100ms;
 }
+
+.card-button-hover {
+  position: relative;
+  left: 220px;
+  /* top: -305px; */
+  top: -305px;
+  color: black;
+  font-weight: 550;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.5s ease-out 100ms;
+  opacity: .7;
+}
+
+.card-button-hover:hover {
+  opacity: 1;
+  transition: color 0.5s ease-out 100ms;
+}
+
 
 .card-add-button {
   position: relative;
@@ -101,7 +108,7 @@
 .related-products-list-container {
   display: flex;
   position: relative;
-  width: calc(100% - 6rem);
+  width: calc(100% - 6.5rem);
   overflow: hidden;
   flex-direction: row;
     /* overflow: scroll; */
@@ -121,9 +128,11 @@
   position: relative;
   display: flex;
   /* flex-wrap: nowrap; */
-  width: calc(100% - 6rem);
+  width: calc(100% - 6.5rem);
   /* overflow: hidden; */
   /* overflow: hidden; */
+  margin-bottom: 1rem;
+  margin-top: .5em;
 }
 
 .slide-container {
@@ -139,7 +148,6 @@
   cursor: pointer;
   opacity: .5;
   font-size: 40px;
-  z-index: 10;
   font-size: 3rem;
   align-items: center;
   justify-content: center;
@@ -365,4 +373,9 @@ overflow: hidden;
 .card-thumbnail-pic {
   min-width: 55px;
   object-fit: cover;
+}
+
+.related-title-container {
+  font-size: 16px;
+  color: var(--mainFont);
 }

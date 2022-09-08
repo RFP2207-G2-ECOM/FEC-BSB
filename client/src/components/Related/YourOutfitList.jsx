@@ -19,7 +19,6 @@ const YourOutfitList = () => {
   useEffect(()=>{
       getRelatedProducts();
   }, [outfitList])
- //^use effeect will run every time [] <-- tracks this
 
   const getProductInfo = async (productID) => {
     var baseURI = process.env.BASE_URI;
@@ -76,7 +75,7 @@ const YourOutfitList = () => {
     <div className='products-list'>
         {currentProd !== 0 && outfitList.length > 3 &&
         <div className='slide-container'>
-        <MdChevronLeft className='slide' onClick={slideLeft}/>
+        <MdChevronLeft className='related-left-slide' onClick={slideLeft}/>
         </div>}
           <div id='outfit-slider'
                className='related-products-list-container snaps-inline'>
@@ -96,7 +95,7 @@ const YourOutfitList = () => {
           </div>
           {currentProd !== outfitList.length - 3 && outfitList.length > 3 &&
           <div className='slide-container'>
-          <MdChevronRight className='slide' onClick={slideRight}/>
+          <MdChevronRight className='related-right-slide' onClick={slideRight}/>
           </div>}
     </div>
   )

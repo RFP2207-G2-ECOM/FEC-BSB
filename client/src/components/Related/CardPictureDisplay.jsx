@@ -27,8 +27,13 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
       let listOfPhotos = [];
       let listOfThumbs = [];
       for (let i = 0; i < currentStylePhotos.length; i++) {
-        listOfPhotos.push(currentStylePhotos[i].url);
-        listOfThumbs.push(currentStylePhotos[i].thumbnail_url)
+        if (currentStylePhotos[i].url === null) {
+          listOfPhotos.push('https://tinyurl.com/At-sunglasses');
+          listOfThumbs.push('https://tinyurl.com/At-sunglasses')
+        } else {
+          listOfPhotos.push(currentStylePhotos[i].url);
+          listOfThumbs.push(currentStylePhotos[i].thumbnail_url)
+        }
       }
       SetListOfPictures(listOfPhotos);
       setListOfThumbnails(listOfThumbs);
@@ -41,10 +46,14 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
     return (
       <>
         <img className='card-image' src={listOfPictures[currentPic]}/>
-        {deleteOutfit === undefined &&
+        {deleteOutfit === undefined && hover === false &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
-        {deleteOutfit &&
+        {deleteOutfit && hover === false &&
           <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
+        {deleteOutfit === undefined && hover &&
+          <i className='fa fa-star-o fa-lg card-button-hover' onClick={onOpen}></i>}
+        {deleteOutfit && hover &&
+          <ImCross className='card-button-hover' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
           {hover &&
           <MdChevronLeft className='left-card-arrow-invis'/>}
           {hover &&
@@ -57,10 +66,14 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
     return (
       <>
         <img className='card-image' src={listOfPictures[currentPic]}/>
-        {deleteOutfit === undefined &&
+        {deleteOutfit === undefined && hover === false &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
-        {deleteOutfit &&
-          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>deleteOutfit(relatedProduct.id)}></i>}
+        {deleteOutfit && hover === false &&
+          <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
+        {deleteOutfit === undefined && hover &&
+          <i className='fa fa-star-o fa-lg card-button-hover' onClick={onOpen}></i>}
+        {deleteOutfit && hover &&
+          <ImCross className='card-button-hover' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
           {hover &&
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick}/>}
           {hover &&
@@ -73,10 +86,14 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
     return (
       <>
         <img className='card-image' src={listOfPictures[currentPic]}/>
-        {deleteOutfit === undefined &&
+        {deleteOutfit === undefined && hover === false &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
-        {deleteOutfit &&
-          <i className='fa fa-times-circle fa-lg card-button' onClick={()=>deleteOutfit(relatedProduct.id)}></i>}
+        {deleteOutfit && hover === false &&
+          <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
+        {deleteOutfit === undefined && hover &&
+          <i className='fa fa-star-o fa-lg card-button-hover' onClick={onOpen}></i>}
+        {deleteOutfit && hover &&
+          <ImCross className='card-button-hover' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
           {hover &&
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick}/>}
           {hover &&
