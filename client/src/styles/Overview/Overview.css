@@ -19,10 +19,6 @@ a:active {
   text-decoration: none;
 }
 
-.Style-Detail-Spacer {
-  width: 15px;
-}
-
 .Overview-Container {
   width: 82%;
   margin: auto;
@@ -51,7 +47,7 @@ a:active {
 }
 
 .innerNavBar {
-  width: 77%;
+  width: 82%;
   display: flex;
   justify-content: space-between;
 }
@@ -220,10 +216,8 @@ a:active {
 }
 
 .Selected-Picture {
-  /* min-width: 250px;
-  max-width: 850px; */
-  width: 800px;
   height: 100%;
+  width: calc(81vw - 500px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,6 +247,7 @@ a:active {
   border-radius: 7px;
   height: 100%;
   max-height: 750px;
+  width: 100%
 }
 
 .Arrow-Left {
@@ -457,6 +452,7 @@ a:active {
   height: fit-content;
   display: flex;
   flex-direction: column;
+  margin-left: 16px;
 }
 
 .Name-And-Category {
