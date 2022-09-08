@@ -40,6 +40,11 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
     return url.protocol === "http:" || url.protocol === "https:";
   }
 
+  const handleZoom = (e) => {
+    setCurPic(Number(e.target.id))
+    setIsZoomIn(true)
+  }
+
   return (
     <>
       <div className="Review-Tile-Container">
@@ -52,9 +57,7 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
         {photos.length > 0 &&
           <div className="review-tile-photos">
             {
-              photos.map((photo, i) => {
-                if (isValidHttpUrl(photo.url)) { return (<img key={i} className='review-tile-photo hover' src={photo.url} alt='' onClick={() => setIsZoomIn(true)}/>) }
-              })
+              photos.map((photo, i) => <img key={i} id={i} className='review-tile-photo hover' src={photo.url} alt='' onClick={(e) => handleZoom(e)}/>)
             }
           </div>
         }

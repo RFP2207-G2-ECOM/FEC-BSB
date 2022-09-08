@@ -1,15 +1,16 @@
 .RR-Container {
   display: grid;
-  grid-template-columns: 25% 65%;
+  grid-template-columns: 25% auto;
   grid-template-rows: auto;
-  grid-column-gap: 2rem;
-  grid-row-gap: 10px;
-  width: 82%;
+  grid-column-gap: 3rem;
+  grid-row-gap: 1rem;
+  width: 60%;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   overflow: auto;
   position: relative;
+  margin-top: 4rem;
 }
 
 .rr-title {
@@ -33,7 +34,7 @@
   flex-direction: column;
   height: fit-content;
   min-height: 50vh;
-  max-width: 700px;
+  /* max-width: 700px; */
 }
 
 .reviewList-header {
