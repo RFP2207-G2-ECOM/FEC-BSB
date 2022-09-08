@@ -19,45 +19,78 @@ a:active {
 }
 
 .Style-Detail-Spacer {
-  width: 1%;
+  width: 15px;
 }
 
 .Overview-Container {
   width: 82%;
   margin: auto;
-  height: 725px;
+  height: 750px;
   display: flex;
   justify-content: center;
+  margin-bottom: 70px;
 }
 
 /* TopBar */
 .TopBar {
-  width: 82%;
+  width: 100%;
   margin:auto;
   flex-direction: column;
 }
 
 .NavBar {
-  border: solid;
-  border-color: red;
+  width: 100%;
   display: flex;
   height: 75px;
+  justify-content: space-around;
+  border-bottom: solid 1px var(--divider);
+  padding: 2px;
+}
+
+.innerNavBar {
+  width: 82%;
+  display: flex;
   justify-content: space-between;
 }
 
-.Logo {
-  border: solid;
-  border-color: blue;
-  display: flex;
-  height:100%;
-  width: fit-content;
+.BSBPhoto {
+  height:74px;
+  border: solid 1px var(--mainFont);
+  border-radius: 7px;
+  margin-left: -1px;
+  margin-right: -1px;
 }
 
-.SearchBar {
-  width:fit-content;
-  border: solid;
-  border-color: blue;
+.Logo {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+  width: 400px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.SiteNavBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width:120px;
+}
+
+.IconContainer {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  transition: background-color 0.5s ease-out 100ms;
+}
+
+.IconContainer:hover {
+  background-color: var(--select);
+  transition: background-color 0.5s ease-out 100ms;
 }
 
 .Announcements {
@@ -129,6 +162,12 @@ a:active {
   border: solid 1px;
   border-radius: 7px;
   margin: 10px;
+  transition: box-shadow 0.1s ease-out 100ms;
+}
+
+.ThumbnailFrameSelected:hover{
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.1s ease-out 100ms;
 }
 
 .ThumbnailFrame {
@@ -137,7 +176,14 @@ a:active {
   border: transparent solid 1px;
   border-radius: 7px;
   margin: 10px;
+  transition: box-shadow 0.1s ease-out 100ms;
 }
+
+.ThumbnailFrame:hover{
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.1s ease-out 100ms;
+}
+
 
 .ThumbnailPic {
   min-width: 60px;
@@ -171,7 +217,8 @@ a:active {
 }
 
 .Selected-Picture {
-  width: 800px;
+  min-width: 250px;
+  max-width: 850px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -180,7 +227,7 @@ a:active {
 }
 
 .PicContainer {
-  height: 725px;
+  height: 750px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -189,7 +236,7 @@ a:active {
 
 .PicInterface {
   display: flex;
-  height: 725px;
+  height: 750px;
   width: 100%;
   position: absolute;
   top:0;
@@ -201,7 +248,7 @@ a:active {
   border: var(--mainFont) solid 1px;
   border-radius: 7px;
   height: 100%;
-  max-height: 725px;
+  max-height: 750px;
 }
 
 .Arrow-Left {
@@ -513,38 +560,35 @@ a:active {
 /* Style Display, Selector, & AddToCart */
 
 .StyleInfoAndFav {
+  padding-top: 8px;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 8px;
 }
 
 .FavContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  height:30px;
+  width:30px;
+  border-radius: 7px;
+  transition: background-color 0.25s ease-out 100ms;
+}
+
+.FavContainer:hover {
+  background-color: var(--select);
+  transition: background-color 0.25s ease-out 100ms;
 }
 
 .FavIconInactive {
   font-size: 20px;
   color: var(--mainFont);
-  transition: color 0.25s ease-out 100ms;
-}
-
-.FavIconInactive:hover {
-  font-size: 20px;
-  color: var(--iconNoFill);
-  transition: color 0.25s ease-out 100ms;
 }
 
 .FavIconActive {
   font-size: 20px;
   color: var(--mainFont);
-  transition: color 0.25s ease-out 100ms;
-}
-
-.FavIconActive:hover {
-  font-size: 20px;
-  color: var(--iconNoFill);
-  transition: color 0.25s ease-out 100ms;
 }
 
 /* Style Display */
@@ -595,9 +639,16 @@ a:active {
   border: transparent solid 1px;
   border-radius: 50%;
   object-fit: cover;
-  max-height: 30px;
-  max-width: 30px;
+  height: 30px;
+  width: 30px;
   padding: 2px;
+  font-size: 8px;
+  transition: box-shadow 0.1s ease-out 100ms;
+}
+
+.style:hover {
+  transition: box-shadow 0.1s ease-out 100ms;
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.7);
 }
 
 .styleSelected {
@@ -608,9 +659,16 @@ a:active {
   border: solid 1px;
   border-radius: 50%;
   object-fit: cover;
-  max-height: 30px;
-  max-width: 30px;
+  height: 30px;
+  width: 30px;
   padding: 2px;
+  font-size: 8px;
+  transition: box-shadow 0.1s ease-out 100ms;
+}
+
+.styleSelected:hover {
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.1s ease-out 100ms;
 }
 
 /* AddToCart */
@@ -669,6 +727,12 @@ a:active {
   background-color: var(--select);
   font-size: 14px;
   margin: 0 6px 6px 0;
+  transition: box-shadow 0.1s ease-out 100ms;
+}
+
+.SizeIconSelected:hover {
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.1s ease-out 100ms;
 }
 
 .SizeIconRegular {
@@ -682,6 +746,12 @@ a:active {
   background-color: var(--select);
   font-size: 14px;
   margin: 0 6px 6px 0;
+  transition: box-shadow 0.1s ease-out 100ms;
+}
+
+.SizeIconRegular:hover {
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.1s ease-out 100ms;
 }
 
 .EmptySizes {
@@ -740,14 +810,6 @@ a:active {
   transition: all 0.5s ease-out 100ms;
 }
 
-/* Bottom Bar */
-.BottomBar {
-  width:82%;
-  margin: auto;
-  display:flex;
-  justify-content: center;
-}
-
 .FeatureContainer {
   display: flex;
   padding: 20px 0 20px 0;
@@ -789,7 +851,7 @@ a:active {
   display: flex;
   justify-content: space-around;
   align-items: stretch;
-  border-bottom: 1px solid var(--select);
+  border-bottom: 1px solid var(--divider);
 }
 
 .btn {
@@ -800,7 +862,7 @@ a:active {
 .Info-Container {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--select);
+  border-bottom: 1px solid var(--divider);
   padding: 20px 0;
 }
 
