@@ -11,6 +11,12 @@ const PictureSelector = () => {
   // console.log(curPic);
   // console.log(listOfThumbnails);
 
+  for (let i = 0; i < listOfThumbnails.length; i ++) {
+    if (listOfThumbnails[i] === null) {
+      listOfThumbnails[i] = 'https://i.imgflip.com/6stmrq.jpg';
+    }
+  }
+
   const slideUp = () => {
     var slider = document.getElementById('SlideUpDown');
     slider.scrollTop = slider.scrollTop - 94;

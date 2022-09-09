@@ -10,6 +10,12 @@ const SelectedPicture = () => {
   const { curPic, listOfPics, setCurPic } = useContext(CurrentPicContext);
   const [ isZoomIn, setIsZoomIn ] = useState(false);
 
+  for (let i = 0; i < listOfPics.length; i ++) {
+    if (listOfPics[i] === null) {
+      listOfPics[i] = 'https://i.imgflip.com/6stmrq.jpg';
+    }
+  }
+
   let handleLeftClick = (e) => {
     setCurPic(curPic - 1);
   };
