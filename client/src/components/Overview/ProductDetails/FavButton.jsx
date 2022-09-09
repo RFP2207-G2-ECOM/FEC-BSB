@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { LocalStorageContext } from '../../../contexts/local-storage.context.jsx';
+import { ProductContext } from '../../../contexts/product-info.context.jsx';
 
 import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const FavButton = () => {
 
   const { outfitList, setOutfitList } = useContext(LocalStorageContext);
+  const { productID } = useContext(ProductContext);
   const [ isFav, setIsFav ] = useState(false);
 
   useEffect(()=>{
-    var productID = process.env.PRODUCT_ID;
     let outfits = [...outfitList];
     const index = outfits.indexOf(productID);
 
@@ -18,19 +19,16 @@ const FavButton = () => {
     } else {
       setIsFav(false);
     };
-  }, [outfitList])
+  }, [outfitList, productID])
 
   const addOutfit = () => {
-    var currentProduct = process.env.PRODUCT_ID;
+    var currentProduct = productID;
     if (outfitList.indexOf(currentProduct) === -1){
       setOutfitList([...outfitList, currentProduct]);
     }
   }
 
-  const deleteOutfit = (productID) => {
-    if (typeof productID === 'object') {
-      productID = process.env.PRODUCT_ID;
-    }
+  const deleteOutfit = () => {
     const outfits = [...outfitList];
     const index = outfits.indexOf(productID);
     if (index > -1) {
