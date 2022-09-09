@@ -37,7 +37,6 @@ const Overview = () => {
       <div className='Overview-Container'>
         <CurrentStylesContext.Provider value={currentStyle} >
           <ProductDisplay />
-          <div className='Style-Detail-Spacer'></div>
           <ProductDetails />
         </CurrentStylesContext.Provider>
       </div>

@@ -35,6 +35,7 @@ const ProductDisplay = () => {
 
       setListOfPics(mainPics);
       setListOfThumbnails(thumbnails);
+      setCurPic(0);
     }
   }, [curStyle]);
 
