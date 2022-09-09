@@ -66,9 +66,9 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
           <ImCross className='card-button-hover' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
           {hover &&
           <MdChevronLeft className='left-card-arrow-invis'/>}
-          {hover &&
+          {hover && listOfPictures.length < 1 &&
           <MdChevronRight className='right-card-arrow' onClick={handleRightClick}/>}
-          {hover &&
+          {hover && listOfPictures.length < 1 &&
           <CardThumbnail currentPic={currentPic} listOfThumbnails={listOfThumbnails} setCurrentPic={setCurrentPic} productID={relatedProduct.id}/>}
       </>
     )
@@ -86,9 +86,9 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
           <ImCross className='card-button-hover' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
           {hover &&
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick}/>}
-          {hover &&
+          {hover && listOfPictures.length < 1 &&
           <MdChevronRight className='right-card-arrow-invis'/>}
-          {hover &&
+          {hover && listOfPictures.length < 1 &&
           <CardThumbnail currentPic={currentPic} listOfThumbnails={listOfThumbnails} setCurrentPic={setCurrentPic} productID={relatedProduct.id}/>}
       </>
     )
@@ -106,9 +106,9 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
           <ImCross className='card-button-hover' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
           {hover &&
           <MdChevronLeft className='left-card-arrow' onClick={handleLeftClick}/>}
-          {hover &&
+          {hover && listOfPictures.length < 1 &&
           <MdChevronRight className='right-card-arrow' onClick={handleRightClick}/>}
-          {hover &&
+          {hover && listOfPictures.length < 1 &&
           <CardThumbnail currentPic={currentPic} listOfThumbnails={listOfThumbnails} setCurrentPic={setCurrentPic} productID={relatedProduct.id}/>}
       </>
     )
