@@ -31,12 +31,3 @@ const FeatureDescription = () => {
 }
 
 export default FeatureDescription;
-
-{/* <div key={index} className='FeatureAndMaterial'>
-<div className='Feature'>
-  {obj.feature}
-</div>
-<div className='Material'>
-  {obj.value}
-</div>
-</div> */}
