@@ -29,9 +29,13 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
       let listOfPhotos = [];
       let listOfThumbs = [];
       for (let i = 0; i < currentStylePhotos.length; i++) {
+        let currStylePhotos = currentStylePhotos[i].thumbnail_url
         if (currentStylePhotos[i].url === null) {
           listOfPhotos.push('https://tinyurl.com/At-sunglasses');
           listOfThumbs.push('https://tinyurl.com/At-sunglasses')
+        } else if (currStylePhotos[0] === 'u'){
+          listOfPhotos.push(currentStylePhotos[i].url);
+          listOfThumbs.push(currentStylePhotos[i].thumbnail_url.slice(1))
         } else {
           listOfPhotos.push(currentStylePhotos[i].url);
           listOfThumbs.push(currentStylePhotos[i].thumbnail_url)
