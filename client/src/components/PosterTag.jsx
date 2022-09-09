@@ -6,11 +6,11 @@ const PosterTag = (props) => {
 
   if (props.username !== 'Seller') {
     return (
-      <div>{`${props.username}, ${dateConverted}`}</div>
+      <div className='posterTag'>{`${props.username}, ${dateConverted}`}</div>
     )
   } else {
     return (
-      <div><b>{props.username}</b>{`, ${dateConverted}`}</div>
+      <div className='posterTag'><b>{props.username}</b>{`, ${dateConverted}`}</div>
     )
   }
 }

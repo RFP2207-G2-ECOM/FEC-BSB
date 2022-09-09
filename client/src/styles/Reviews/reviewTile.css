@@ -25,6 +25,11 @@
   font-weight: bold;
   overflow-wrap: break-word;
 }
+.review-tile-body-container {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
 
 .review-tile-body {
   flex-basis: 100%;
@@ -35,6 +40,7 @@
 
 .review-tile-body-show-more {
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .review-tile-body-show-more:hover {
