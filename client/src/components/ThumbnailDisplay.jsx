@@ -6,16 +6,15 @@ const ThumbnailDisplay = ({ thumbnail, index, curPic, setCurPic }) => {
   let changeCurPic = (e) => {
     setCurPic(index);
   }
-  console.log(thumbnail)
 
   let style = {
     'backgroundImage': `url('${thumbnail}')`,
     'backgroundRepeat': `no-repeat`,
-    'background-size': '120%',
+    'backgroundSize': '120%',
     'backgroundPosition': `50% 50%`,
-    'object-fit': 'scale-down',
+    'objectFit': 'scale-down',
     'border': 'transparent solid 1px',
-    'border-radius': '6px'
+    'borderRadius': '6px'
   };
 
   if (index === curPic) {

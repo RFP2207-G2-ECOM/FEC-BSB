@@ -54,10 +54,11 @@ a:active {
 
 .BSBPhoto {
   height:74px;
-  border: solid 1px var(--mainFont);
+  border: solid 1px var(--lightFont);
   border-radius: 7px;
   margin-left: -1px;
   margin-right: -1px;
+  padding-bottom: 0px;
 }
 
 .Logo {
@@ -458,7 +459,7 @@ a:active {
   height: fit-content;
   display: flex;
   flex-direction: column;
-  margin-left: 16px;
+  padding-left: 16px;
 }
 
 .Name-And-Category {
