@@ -1,0 +1,32 @@
+.reviews-active-filters-container {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.reviews-active-filters-container-box {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--divider);
+  min-height: 4rem;
+  gap: .25rem;
+  padding: .25rem;
+}
+
+.review-active-filters-tile-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--iconNoFill);
+  border-radius: 5%;
+  padding: .25rem;
+  height: fit-content;
+  gap: .30rem;
+}
+
+.review-active-filters-tile-x {
+  font-size: 60%
+}
+
+.review-active-filters-tile-x:hover {
+  cursor: pointer;
+}
