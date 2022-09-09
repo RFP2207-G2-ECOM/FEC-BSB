@@ -6,17 +6,28 @@ const ThumbnailDisplay = ({ thumbnail, index, curPic, setCurPic }) => {
   let changeCurPic = (e) => {
     setCurPic(index);
   }
+  console.log(thumbnail)
+
+  let style = {
+    'backgroundImage': `url('${thumbnail}')`,
+    'backgroundRepeat': `no-repeat`,
+    'background-size': '120%',
+    'backgroundPosition': `50% 50%`,
+    'object-fit': 'scale-down',
+    'border': 'transparent solid 1px',
+    'border-radius': '6px'
+  };
 
   if (index === curPic) {
     return (
       <div className='ThumbnailFrameSelected'>
-        <img className='ThumbnailPic' src={thumbnail} onClick={changeCurPic}></img>
+        <div className='ThumbnailPic' style={style} onClick={changeCurPic}></div>
       </div>
     )
   } else {
     return (
       <div className='ThumbnailFrame'>
-        <img className='ThumbnailPic' src={thumbnail} onClick={changeCurPic}></img>
+        <div className='ThumbnailPic' style={style} onClick={changeCurPic}></div>
       </div>
     )
   }

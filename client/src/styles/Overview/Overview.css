@@ -162,6 +162,9 @@ a:active {
   border-radius: 7px;
   margin: 10px;
   transition: box-shadow 0.1s ease-out 100ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ThumbnailFrameSelected:hover{
@@ -176,6 +179,9 @@ a:active {
   border-radius: 7px;
   margin: 10px;
   transition: box-shadow 0.1s ease-out 100ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ThumbnailFrame:hover{
@@ -185,7 +191,8 @@ a:active {
 
 
 .ThumbnailPic {
-  min-width: 60px;
+  height:72px;
+  width:72px;
   object-fit: scale-down;
 }
 
@@ -406,7 +413,6 @@ a:active {
   left:0;
   height: 100%;
   width: 100%;
-  background-size: 250% 250%;
 }
 
 .ZoomedInArrows {
