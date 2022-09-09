@@ -10,9 +10,9 @@ import { ImCross } from 'react-icons/im';
 const QuestionModal = ({ open, product_id, onClose }) => {
   const { product } = useContext(ProductContext);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [body, setBody] = useState('');
+  const [name, setName] = useState('Wild Jack');
+  const [email, setEmail] = useState('Wild@Jack.com');
+  const [body, setBody] = useState('Do these pants look nice?');
 
   const handleEmailChange = (e) => {
     if (e.target.value.length <= 60) {

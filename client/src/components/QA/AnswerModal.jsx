@@ -13,9 +13,9 @@ const AnswerModal = ({ open, product_id, onClose, question_body }) => {
   const { product } = useContext(ProductContext);
   const { productID, results, setResults } = useContext(QuestionsContext);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [body, setBody] = useState('');
+  const [name, setName] = useState('Johnny Walker');
+  const [email, setEmail] = useState('John@Walker.com');
+  const [body, setBody] = useState('This is my answer');
   const [photoCount, setPhotoCount] = useState(0);
   const [photos, setPhotos] = useState(null);
 
