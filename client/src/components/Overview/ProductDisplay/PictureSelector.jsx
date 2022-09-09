@@ -9,7 +9,7 @@ const PictureSelector = () => {
 
   const { curPic, listOfThumbnails, setCurPic } = useContext(CurrentPicContext);
   // console.log(curPic);
-  console.log(listOfThumbnails);
+  // console.log(listOfThumbnails);
 
   for (let i = 0; i < listOfThumbnails.length; i ++) {
     if (listOfThumbnails[i] === null) {
