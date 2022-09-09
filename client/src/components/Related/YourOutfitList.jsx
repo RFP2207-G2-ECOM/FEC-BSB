@@ -52,14 +52,19 @@ const YourOutfitList = () => {
 
   const addOutfit = () => {
     var currentProduct = PID;
+    if (typeof currentProduct !== 'string') {
+      currentProduct = JSON.stringify(currentProduct);
+    }
     if (outfitList.indexOf(currentProduct) === -1){
       setOutfitList([...outfitList, currentProduct]);
     }
+    console.log('addoutfit PID', typeof PID)
+    console.log('currentprodcut', typeof currentProduct)
   }
 
-  const deleteOutfit = (productID) => {
+  const deleteOutfit = (ID) => {
     const outfits = [...outfitList]
-    const index = outfits.indexOf(JSON.stringify(productID))
+    const index = outfits.indexOf(JSON.stringify(ID))
     if (index > -1) {
       outfits.splice(index, 1)
     }
@@ -86,10 +91,9 @@ const YourOutfitList = () => {
         </div>}
           <div id='outfit-slider'
                className='related-products-list-container snaps-inline'>
-                 <div className='card-container'>
+                 <div id='outfit-button' className='card-container outfit' onClick={addOutfit}>
                    <HiOutlinePlusCircle
                    className='card-add-button'
-                   onClick={addOutfit}
                    size={100} />
                    <div className='card-add-outfit '>
                    <b>Add to Outfit</b>
