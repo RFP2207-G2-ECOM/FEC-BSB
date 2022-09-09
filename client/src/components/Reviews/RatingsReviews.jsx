@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
 import { ProductContext } from "../../contexts/product-info.context.jsx"
 
+import ActiveFiltersView from "./ActiveFiltersView.jsx";
 import AddReviewButton from "./AddReviewButton.jsx";
 import MoreReviewsButton from "./MoreReviewsButton.jsx";
 import ProductBreakdown from "./ProductBreakdown.jsx";
@@ -24,7 +25,6 @@ const RatingsReviews = () => {
   const [filteredReviews, setFilteredReviews] = useState([])
   const [reviewsToRender, setReviewsToRender] = useState(2)
   const [reviewSort, setReviewSort] = useState('relevant')
-  const [reviewCount, setReviewCount] = useState(2)
   const [pageNumber, setPageNumber] = useState(1)
   const [moreReviews, setMoreReviews] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
@@ -57,6 +57,10 @@ const RatingsReviews = () => {
           starFilters={starFilters}
           setStarFilters={setStarFilters}
         />
+        <ActiveFiltersView
+          starFilters={starFilters}
+          setStarFilters={setStarFilters}
+        />
         <ProductBreakdown />
       </div>
       <div className="ReviewsList-Container">
@@ -71,7 +75,6 @@ const RatingsReviews = () => {
           setReviewsToRender={setReviewsToRender}
           setReviewSort={setReviewSort}
           setPageNumber={setPageNumber}
-          setReviewCount={setReviewCount}
           setModalOpen={setModalOpen}
           setMoreReviews={setMoreReviews}
           starFilters={starFilters}
@@ -86,7 +89,6 @@ const RatingsReviews = () => {
             reviewsToRender={reviewsToRender}
             setReviewsToRender={setReviewsToRender}
             setMoreReviews={setMoreReviews}
-            setReviewCount={setReviewCount}
           />
           <AddReviewButton
             setModalOpen={setModalOpen}
