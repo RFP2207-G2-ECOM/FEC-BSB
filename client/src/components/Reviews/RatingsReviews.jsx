@@ -79,8 +79,24 @@ const RatingsReviews = () => {
           setMoreReviews={setMoreReviews}
           starFilters={starFilters}
         />
+        { moreReviews === false &&
+          <div className="Buttons-Container">
+            <MoreReviewsButton
+              loading={loading}
+              moreReviews={moreReviews}
+              ratingsCount={ratingsCount}
+              reviewsToRender={reviewsToRender}
+              setReviewsToRender={setReviewsToRender}
+              setMoreReviews={setMoreReviews}
+            />
+            <AddReviewButton
+              setModalOpen={setModalOpen}
+              moreReviews={moreReviews}
+            />
+          </div>
+        }
       </div>
-      { moreReviews === false &&
+      {/* { moreReviews === false &&
         <div className="Buttons-Container">
           <MoreReviewsButton
             loading={loading}
@@ -95,7 +111,7 @@ const RatingsReviews = () => {
             moreReviews={moreReviews}
           />
         </div>
-      }
+      } */}
       <div className="Review-Modal-Container">
         <ReviewModal
           modalOpen={modalOpen}

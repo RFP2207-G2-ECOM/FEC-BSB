@@ -29,6 +29,9 @@
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  flex-basis: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .review-tile-body {

@@ -61,7 +61,8 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .add-a-review-text {
