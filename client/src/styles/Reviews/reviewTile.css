@@ -5,11 +5,11 @@
 .Review-Tile-Container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   border-bottom: 1px solid var(--divider);
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
+  /* border-top: 1px solid var(--divider); */
+  gap: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .review-tile-header {
@@ -17,14 +17,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
-  background-color: #f0efef;
-  padding: 5px;
+  /* background-color: #f0efef; */
 }
 
 .review-tile-summary {
   flex-basis: 100%;
   font-weight: bold;
+  overflow-wrap: break-word;
+}
+.review-tile-body-container {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  flex-basis: 100%;
+  max-width: 100%;
   overflow-wrap: break-word;
 }
 
@@ -33,6 +39,15 @@
   flex-wrap: wrap;
   max-width: 100%;
   overflow-wrap: break-word;
+}
+
+.review-tile-body-show-more {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.review-tile-body-show-more:hover {
+  cursor: pointer;
 }
 
 .review-tile-photos {

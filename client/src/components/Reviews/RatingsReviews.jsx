@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { ProductReviewsContext } from "../../contexts/product-reviews.context.jsx"
 import { ProductContext } from "../../contexts/product-info.context.jsx"
 
+import ActiveFiltersView from "./ActiveFiltersView.jsx";
 import AddReviewButton from "./AddReviewButton.jsx";
 import MoreReviewsButton from "./MoreReviewsButton.jsx";
 import ProductBreakdown from "./ProductBreakdown.jsx";
@@ -24,7 +25,6 @@ const RatingsReviews = () => {
   const [filteredReviews, setFilteredReviews] = useState([])
   const [reviewsToRender, setReviewsToRender] = useState(2)
   const [reviewSort, setReviewSort] = useState('relevant')
-  const [reviewCount, setReviewCount] = useState(2)
   const [pageNumber, setPageNumber] = useState(1)
   const [moreReviews, setMoreReviews] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
@@ -35,6 +35,12 @@ const RatingsReviews = () => {
     loading,
     error
   } = useReviewsSearch(pageNumber, ratingsCount, reviewSort, starFilters)
+
+  useEffect(() => {
+    setReviewSort('relevant')
+    setMoreReviews(false)
+    setReviewsToRender(2)
+  }, [product])
 
   useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
@@ -51,6 +57,10 @@ const RatingsReviews = () => {
           starFilters={starFilters}
           setStarFilters={setStarFilters}
         />
+        <ActiveFiltersView
+          starFilters={starFilters}
+          setStarFilters={setStarFilters}
+        />
         <ProductBreakdown />
       </div>
       <div className="ReviewsList-Container">
@@ -60,17 +70,33 @@ const RatingsReviews = () => {
           loading={loading}
           moreReviews={moreReviews}
           ratingsCount={ratingsCount}
+          reviewSort={reviewSort}
           reviewsToRender={reviewsToRender}
           setReviewsToRender={setReviewsToRender}
           setReviewSort={setReviewSort}
           setPageNumber={setPageNumber}
-          setReviewCount={setReviewCount}
           setModalOpen={setModalOpen}
           setMoreReviews={setMoreReviews}
           starFilters={starFilters}
         />
+        { moreReviews === false &&
+          <div className="Buttons-Container">
+            <MoreReviewsButton
+              loading={loading}
+              moreReviews={moreReviews}
+              ratingsCount={ratingsCount}
+              reviewsToRender={reviewsToRender}
+              setReviewsToRender={setReviewsToRender}
+              setMoreReviews={setMoreReviews}
+            />
+            <AddReviewButton
+              setModalOpen={setModalOpen}
+              moreReviews={moreReviews}
+            />
+          </div>
+        }
       </div>
-      { moreReviews === false &&
+      {/* { moreReviews === false &&
         <div className="Buttons-Container">
           <MoreReviewsButton
             loading={loading}
@@ -79,14 +105,13 @@ const RatingsReviews = () => {
             reviewsToRender={reviewsToRender}
             setReviewsToRender={setReviewsToRender}
             setMoreReviews={setMoreReviews}
-            setReviewCount={setReviewCount}
           />
           <AddReviewButton
             setModalOpen={setModalOpen}
             moreReviews={moreReviews}
           />
         </div>
-      }
+      } */}
       <div className="Review-Modal-Container">
         <ReviewModal
           modalOpen={modalOpen}

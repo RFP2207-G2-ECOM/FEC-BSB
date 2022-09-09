@@ -11,6 +11,7 @@ import styles from "../../styles/Reviews/reviewTile.css"
 
 const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, username, date, summary, body, photos, recommend, response, helpful, setReviewsToRender }) => {
 
+  const [showMoreBody, setShowMoreBody] = useState(false)
   const [curPic, setCurPic] = useState(0)
   const [isZoomIn, setIsZoomIn] = useState(false)
 
@@ -29,16 +30,16 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
   }, [loading, hasMore])
 
   // picture url validator
-  const isValidHttpUrl = (string) => {
-    let url;
+  // const isValidHttpUrl = (string) => {
+  //   let url;
 
-    try {
-      url = new URL(string);
-    } catch (_) {
-      return false;
-    }
-    return url.protocol === "http:" || url.protocol === "https:";
-  }
+  //   try {
+  //     url = new URL(string);
+  //   } catch (_) {
+  //     return false;
+  //   }
+  //   return url.protocol === "http:" || url.protocol === "https:";
+  // }
 
   const handleZoom = (e) => {
     setCurPic(Number(e.target.id))
@@ -53,7 +54,18 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
           <div className="review-tile-posterTag"><PosterTag username={username} date={date}/></div>
         </div>
         <div className="review-tile-summary">{summary}</div>
-        <div className="review-tile-body">{body}</div>
+        {body.length > 250 && showMoreBody === false &&
+          <div className='review-tile-body-container'>
+            <div className="review-tile-body">{`${body.slice(0, 250)}...`}</div>
+            <div className='review-tile-body-show-more' onClick={() => setShowMoreBody(true)}>Show More</div>
+          </div>
+        }
+        {body.length < 250 || showMoreBody === true &&
+          <div className='review-tile-body-container'>
+            <div className="review-tile-body">{body}</div>
+            <div className='review-tile-body-show-more' onClick={() => setShowMoreBody(false)}>Show Less</div>
+          </div>
+        }
         {photos.length > 0 &&
           <div className="review-tile-photos">
             {

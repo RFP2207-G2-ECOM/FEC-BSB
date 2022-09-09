@@ -18,6 +18,7 @@ const RatingsBreakdownFilter = ({ rating, totalReviews, ratingsObject, setStarFi
       setStarFilters(tempFilters)
     }
     setFilterStatus(!filterStatus)
+    console.log('starFilters:', starFilters)
   }
 
   let hoverStyle = {}
@@ -62,6 +63,7 @@ const RatingsBreakdownFilter = ({ rating, totalReviews, ratingsObject, setStarFi
         </div>
         <span></span>
       </div>
+      <div className='ratings-breakdown-filter-percentage'>{`${Math.round(ratings)}%`}</div>
     </div>
   )
 }

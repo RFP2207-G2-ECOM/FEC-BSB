@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 50px;
-  width: 40vw;
+  min-width: 40vw;
   max-height: calc(100vh - 210px);
   overflow-y: auto;
   z-index: 1000;
@@ -89,8 +89,16 @@
   color: var(--lightFont);
 }
 
+.review-modal-summary-input {
+  font-family: 'Roboto Condensed';
+  font-size: 18px;
+}
+
 .review-modal-body-input {
+  font-family: 'Roboto Condensed';
+  font-size: 18px;
   height: 100px;
+  width: 100%
 }
 
 .review-modal-body-subText {
@@ -112,4 +120,14 @@
   position: fixed;
   top: 20px;
   right: 20px;
+}
+
+.review-modal-nickname-input {
+  font-family: 'Roboto Condensed';
+  font-size: 18px;
+}
+
+.review-modal-email-input{
+  font-family: 'Roboto Condensed';
+  font-size: 18px;
 }

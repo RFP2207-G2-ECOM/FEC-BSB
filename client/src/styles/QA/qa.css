@@ -119,6 +119,7 @@
   align-items: center;
   font-size: large;
   justify-content: center;
+  font-size: 90%;
 }
 
 .yes-count {
@@ -128,6 +129,7 @@
   font-size: large;
   margin-left: 10px;
   text-decoration: underline;
+  font-size: 90%
 }
 
 .pipe {
@@ -135,15 +137,21 @@
   justify-content: flex-start;
   align-items: center;
   margin-left: 10px;
+  font-size: 90%
 }
 
 .add-answer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: large;
+  font-size: 90%;
+  text-decoration: underline;
   margin-left: 10px;
   width: 100px;
+}
+
+.add-answer:hover {
+  cursor: pointer;
 }
 
 .a-container {
@@ -179,7 +187,9 @@
   justify-content: flex-start;
   align-items: center;
   margin-left: 10px;
-  font-size: large;
+  /* font-size: large; */
+  font-size: 90%;
+  text-decoration: underline;
 }
 
 .response-container {

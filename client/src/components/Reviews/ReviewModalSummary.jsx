@@ -16,6 +16,7 @@ const ReviewModalSummary = ( { setReviewSummary } ) => {
         maxLength="60"
         placeholder="Example: Best purchase ever!"
         value={summaryText}
+        className='review-modal-summary-input'
         onChange={(e) => setSummaryText(e.target.value)}
       >
       </input>

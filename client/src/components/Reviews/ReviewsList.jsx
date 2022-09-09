@@ -3,7 +3,20 @@ import React from 'react'
 import AddReviewButton from './AddReviewButton.jsx'
 import ReviewTile from './ReviewTile.jsx'
 
-const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCount, reviewsToRender, setReviewsToRender, setModalOpen, setMoreReviews, setReviewSort, starFilters }) => {
+const ReviewsList = ({
+  hasMore,
+  filteredReviews,
+  loading,
+  moreReviews,
+  ratingsCount,
+  reviewsToRender,
+  reviewSort,
+  setReviewsToRender,
+  setModalOpen,
+  setMoreReviews,
+  setReviewSort,
+  starFilters
+}) => {
 
   const change = (e) => {
     setReviewSort(e.target.value)
@@ -16,7 +29,11 @@ const ReviewsList = ({ hasMore, filteredReviews, loading, moreReviews, ratingsCo
       <div className="reviewList-header">
         <div className="reviewList-sort">
           {ratingsCount} reviews, sorted by
-          <select className='hover' onChange={change}>
+          <select
+            className='hover'
+            onChange={change}
+            value={reviewSort}
+          >
             <option value="relevant">relevance</option>
             <option value="newest">newest</option>
             <option value="helpful">helpful</option>
