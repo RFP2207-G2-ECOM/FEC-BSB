@@ -190,7 +190,6 @@ a:active {
   transition: box-shadow 0.1s ease-out 100ms;
 }
 
-
 .ThumbnailPic {
   height:72px;
   width:72px;
@@ -377,6 +376,7 @@ a:active {
   border-radius: 7px;
   cursor: zoom-in;
   position: relative;
+  overflow: hidden;
 }
 
 .UltraZoomInImage {

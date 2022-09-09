@@ -18,13 +18,6 @@ const Overview = () => {
   useEffect(()=> {
     if (productStyles.length){
       let index = 0;
-      // BRD says set to first in list, but then why default flag in the data?
-      // for (let i = 0; i < productStyles.length; i++) {
-      //   if (productStyles[i]['default?'] === true) {
-      //     index = i;
-      //     break;
-      //   }
-      // }
       setCurStyle(productStyles[index]);
     }
   }, [productStyles])
