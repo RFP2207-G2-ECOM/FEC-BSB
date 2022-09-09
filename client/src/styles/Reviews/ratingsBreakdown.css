@@ -58,6 +58,11 @@
   width: 100%
 }
 
+.ratings-breakdown-filter-percentage {
+  min-width: 3ch;
+  padding-left: .5ch;
+}
+
 .StarRatings {
   color: var(--iconNoFill);
   font-size: 100%;
