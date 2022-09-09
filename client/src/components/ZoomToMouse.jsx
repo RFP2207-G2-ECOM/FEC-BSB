@@ -28,7 +28,8 @@ const ZoomToMouse = ({ image, setUltraZoom }) => {
     'opacity': opacity,
     'backgroundImage': `url(${image})`,
     'backgroundRepeat': `no-repeat`,
-    'backgroundPosition': `${xCoord}px ${YCoord}px`
+    'backgroundPosition': `${xCoord}px ${YCoord}px`,
+    'background-size': '250% 250%'
   };
 
   return (
