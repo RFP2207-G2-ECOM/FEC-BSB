@@ -57,9 +57,9 @@ const YourOutfitList = () => {
     }
   }
 
-  const deleteOutfit = (productID) => {
+  const deleteOutfit = (ID) => {
     const outfits = [...outfitList]
-    const index = outfits.indexOf(JSON.stringify(productID))
+    const index = outfits.indexOf(ID)
     if (index > -1) {
       outfits.splice(index, 1)
     }
@@ -86,10 +86,9 @@ const YourOutfitList = () => {
         </div>}
           <div id='outfit-slider'
                className='related-products-list-container snaps-inline'>
-                 <div className='card-container'>
+                 <div id='outfit-button' className='card-container outfit' onClick={addOutfit}>
                    <HiOutlinePlusCircle
                    className='card-add-button'
-                   onClick={addOutfit}
                    size={100} />
                    <div className='card-add-outfit '>
                    <b>Add to Outfit</b>
