@@ -14,6 +14,7 @@ const ReviewModalEmail = ( { setEmail } ) => {
       <input
         type="text"
         value={emailText}
+        className='review-modal-email-input'
         onChange={(e) => setEmailText(e.target.value)}
       />
     </>

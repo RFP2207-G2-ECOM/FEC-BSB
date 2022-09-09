@@ -37,6 +37,11 @@ const RatingsReviews = () => {
   } = useReviewsSearch(pageNumber, ratingsCount, reviewSort, starFilters)
 
   useEffect(() => {
+    setReviewSort('relevant')
+    setMoreReviews(false)
+  }, [product])
+
+  useEffect(() => {
     if(reviews !== undefined && reviews.length > 0) {
       setFilteredReviews(reviews)
     }

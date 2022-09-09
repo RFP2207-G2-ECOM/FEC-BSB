@@ -14,6 +14,7 @@ const ReviewModalNickname = ( { setNickname } ) => {
       <input
         type="text"
         value={nicknameText}
+        className='review-modal-nickname-input'
         onChange={(e) => setNicknameText(e.target.value)}
       />
     </>
