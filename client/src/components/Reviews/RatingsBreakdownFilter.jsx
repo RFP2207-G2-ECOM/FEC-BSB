@@ -18,6 +18,7 @@ const RatingsBreakdownFilter = ({ rating, totalReviews, ratingsObject, setStarFi
       setStarFilters(tempFilters)
     }
     setFilterStatus(!filterStatus)
+    console.log('starFilters:', starFilters)
   }
 
   let hoverStyle = {}

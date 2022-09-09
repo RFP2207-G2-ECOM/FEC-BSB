@@ -1,8 +1,8 @@
 .RR-Container {
   display: grid;
-  grid-template-columns: auto 75%;
+  grid-template-columns: auto 70%;
   grid-template-rows: auto;
-  grid-column-gap: 3rem;
+  grid-column-gap: 4rem;
   grid-row-gap: 1rem;
   width: 60%;
   max-width: 60%;
