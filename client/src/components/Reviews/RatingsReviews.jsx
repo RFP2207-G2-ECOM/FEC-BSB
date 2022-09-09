@@ -39,6 +39,7 @@ const RatingsReviews = () => {
   useEffect(() => {
     setReviewSort('relevant')
     setMoreReviews(false)
+    setReviewsToRender(2)
   }, [product])
 
   useEffect(() => {
@@ -65,6 +66,7 @@ const RatingsReviews = () => {
           loading={loading}
           moreReviews={moreReviews}
           ratingsCount={ratingsCount}
+          reviewSort={reviewSort}
           reviewsToRender={reviewsToRender}
           setReviewsToRender={setReviewsToRender}
           setReviewSort={setReviewSort}
