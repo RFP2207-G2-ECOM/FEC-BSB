@@ -58,8 +58,8 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
         <img className='card-image' src={listOfPictures[currentPic]} onClick={changeCurrProd}/>
         {deleteOutfit === undefined && hover === false &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
-        {/* {deleteOutfit && hover === false &&
-          <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>} */}
+        {deleteOutfit && hover === false &&
+          <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
         {deleteOutfit === undefined && hover &&
           <i className='fa fa-star-o fa-lg card-button-hover' onClick={onOpen}></i>}
         {deleteOutfit && hover &&
@@ -78,8 +78,8 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
         <img className='card-image' src={listOfPictures[currentPic]} onClick={changeCurrProd}/>
         {deleteOutfit === undefined && hover === false &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
-        {/* {deleteOutfit && hover === false &&
-          <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>} */}
+        {deleteOutfit && hover === false &&
+          <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
         {deleteOutfit === undefined && hover &&
           <i className='fa fa-star-o fa-lg card-button-hover' onClick={onOpen}></i>}
         {deleteOutfit && hover &&
@@ -98,8 +98,8 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
         <img className='card-image' src={listOfPictures[currentPic]} onClick={changeCurrProd}/>
         {deleteOutfit === undefined && hover === false &&
           <i className='fa fa-star-o fa-lg card-button' onClick={onOpen}></i>}
-        {/* {deleteOutfit && hover === false &&
-          <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>} */}
+        {deleteOutfit && hover === false &&
+          <ImCross className='card-button' onClick={()=>deleteOutfit(relatedProduct.id)}/>}
         {deleteOutfit === undefined && hover &&
           <i className='fa fa-star-o fa-lg card-button-hover' onClick={onOpen}></i>}
         {deleteOutfit && hover &&

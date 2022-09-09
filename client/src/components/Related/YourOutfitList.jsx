@@ -52,14 +52,19 @@ const YourOutfitList = () => {
 
   const addOutfit = () => {
     var currentProduct = PID;
+    if (typeof currentProduct !== 'string') {
+      currentProduct = JSON.stringify(currentProduct);
+    }
     if (outfitList.indexOf(currentProduct) === -1){
       setOutfitList([...outfitList, currentProduct]);
     }
+    console.log('addoutfit PID', typeof PID)
+    console.log('currentprodcut', typeof currentProduct)
   }
 
   const deleteOutfit = (ID) => {
     const outfits = [...outfitList]
-    const index = outfits.indexOf(ID)
+    const index = outfits.indexOf(JSON.stringify(ID))
     if (index > -1) {
       outfits.splice(index, 1)
     }
