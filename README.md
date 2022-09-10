@@ -23,9 +23,6 @@
 -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -41,12 +38,10 @@
 
   <p align="center">
     Welcome to our Front End Capstone project!
-    Our team's theme is 90's band "Back Street Boys"
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    Our team's theme is the 90's band "Back Street Boys"
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
   </p>
 </div>
 
@@ -72,14 +67,6 @@ FEC-BSB (or Front-End Capstone BackStreet Boys) is a final project by four HackR
 <!-- GETTING STARTED -->
 ## Getting Started
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install
-  ```
-
 ### Installation
 
 1. Clone the repo
@@ -90,7 +77,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-3. Create your .env file using `example.env`
+3. Create your `.env` file using `example.env` and add your GitHub token
    ```js
    GITHUB_TOKEN = 'ENTER YOUR TOKEN';
    ```
@@ -101,11 +88,14 @@ This is an example of how to list things you need to use the software and how to
 ## Contributions
 
 Contributors (in order of component rendered on screen):
+<br />
 Sean Young: Overview Section
+<br />
 Johnny Ho: Related Product
+<br />
 David Garcia: Questions & Answers
+<br />
 Daniel Zweig: Ratings & Reviews
-5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -119,22 +109,10 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
+[contributors-shield]: https://github.com/Johnnyho9/FEC-BSB/
+[contributors-url]: https://github.com/RFP2207-G2-ECOM/FEC-BSB/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
 [forks-url]: https://github.com/github_username/repo_name/network/members
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
