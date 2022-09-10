@@ -81,7 +81,15 @@ FEC-BSB (or Front-End Capstone BackStreet Boys) is a final project by four HackR
    ```js
    GITHUB_TOKEN = 'ENTER YOUR TOKEN';
    ```
-
+4. To run locally
+   ```sh
+   npm run dev
+   ```
+5. Project will deploy to localhost
+   ```sh
+   http://localhost:8080/
+   ```
+   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
