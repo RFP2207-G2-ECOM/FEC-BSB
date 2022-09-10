@@ -1,5 +1,8 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
+<a href="https://github.com/RFP2207-G2-ECOM/FEC-BSB/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=RFP2207-G2-ECOM/FEC-BSB" />
+</a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -101,7 +104,7 @@ Daniel Zweig: Ratings & Reviews
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/RFP2207-G2-ECOM/FEC-BSB](https://github.com/RFP2207-G2-ECOM/FEC-BSB)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
