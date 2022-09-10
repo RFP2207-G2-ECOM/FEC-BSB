@@ -41,7 +41,7 @@ const FavButton = () => {
 
   const deleteOutfit = () => {
     const outfits = [...outfitList];
-    const currentProduct = 0;
+    let currentProduct = '40334';
 
     if (typeof productID !== 'string') {
       currentProduct = JSON.stringify(productID);
@@ -49,6 +49,7 @@ const FavButton = () => {
       currentProduct = productID;
     }
 
+    const index = outfits.indexOf(currentProduct);
     if (index > -1) {
       outfits.splice(index, 1)
     }
