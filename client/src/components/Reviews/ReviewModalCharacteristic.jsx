@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 const ReviewModalCharacteristic = ( { characteristic, characteristicsObj, id, setCharacteristicsObj }) => {
 
-  const [selection, setSelection] = useState(3) /// preset to 3 for demo
+  const [selection, setSelection] = useState(null)
 
   const descriptors = {
     Size: ["A size too small", "1/2 a size too small", "Perfect", "1/2 a size too big", "A size too wide"],
@@ -41,8 +41,6 @@ const ReviewModalCharacteristic = ( { characteristic, characteristicsObj, id, se
                   name={characteristic}
                   value={i}
                   onClick={() => setSelection(i+1)}
-                  checked={i === selection-1} // preset to option 3 checked for demo
-                  onChange={() => selection = 1} // added so not console error during demo
                 />
               </label>
             )

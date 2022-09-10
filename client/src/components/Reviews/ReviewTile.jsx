@@ -29,18 +29,6 @@ const ReviewTile = ({ id, array, index, loading, hasMore, moreReviews, rating, u
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
-  // picture url validator
-  // const isValidHttpUrl = (string) => {
-  //   let url;
-
-  //   try {
-  //     url = new URL(string);
-  //   } catch (_) {
-  //     return false;
-  //   }
-  //   return url.protocol === "http:" || url.protocol === "https:";
-  // }
-
   const handleZoom = (e) => {
     setCurPic(Number(e.target.id))
     setIsZoomIn(true)
