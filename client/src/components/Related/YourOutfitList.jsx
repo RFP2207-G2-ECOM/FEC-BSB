@@ -53,13 +53,11 @@ const YourOutfitList = () => {
   const addOutfit = () => {
     var currentProduct = PID;
     if (typeof currentProduct !== 'string') {
-      currentProduct = JSON.stringify(currentProduct);
+      var currentProduct = JSON.stringify(currentProduct);
     }
     if (outfitList.indexOf(currentProduct) === -1){
       setOutfitList([...outfitList, currentProduct]);
     }
-    console.log('addoutfit PID', typeof PID)
-    console.log('currentprodcut', typeof currentProduct)
   }
 
   const deleteOutfit = (ID) => {
