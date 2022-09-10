@@ -104,7 +104,7 @@ Daniel Zweig: Ratings & Reviews
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/RFP2207-G2-ECOM/FEC-BSB](https://github.com/RFP2207-G2-ECOM/FEC-BSB)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
