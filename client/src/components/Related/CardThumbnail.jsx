@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import CardPictureDisplay from './CardPictureDisplay.jsx'
 import CardThumbnailDisplay from './CardThumbnailDisplay.jsx'
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, createContext } from 'react';
-import Card from './Card.jsx';
 import styles from '../../styles/Related/related.css';
 import RelatedProductsTitle from './RelatedProductsTitle.jsx';
 import YourOutfitTitle from './YourOutfitTitle.jsx';

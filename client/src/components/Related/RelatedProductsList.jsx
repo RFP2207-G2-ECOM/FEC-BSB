@@ -6,23 +6,22 @@ import { ProductRelatedContext } from '../../contexts/product-related.context.js
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 import axios from 'axios';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-
 import { HiOutlinePlusCircle } from 'react-icons/hi';
+
 const RelatedProductsList = () => {
   const slider = document.getElementById('slider');
-
+  //curent product ID being displayed
   const { productID: PID } = useContext(ProductContext);
   const { productRelated } = useContext(ProductRelatedContext);
+
   const [productID, setProductID] = useState(productRelated);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [currentProd, setCurrentProd] = useState(0);
 
-  const [ currentProd, setCurrentProd ] = useState(0);
-
-
-  useEffect(()=>{
+  useEffect(() => {
     setProductID(productRelated);
     getRelatedProducts();
-  },[productRelated])
+  }, [productRelated])
 
   useEffect(() => {
     var slider = document.getElementById('outfit-slider');
@@ -37,8 +36,8 @@ const RelatedProductsList = () => {
         'Authorization': process.env.GITHUB_TOKEN
       }
     })
-    .then(result => {
-      return result.data;
+    .then(productInfo => {
+      return productInfo.data;
     })
   }
 
@@ -54,35 +53,34 @@ const RelatedProductsList = () => {
   }
 
   const slideLeft = () => {
-    // var slider = document.getElementById('slider');
     slider.scrollLeft = slider.scrollLeft - (slider.clientWidth * .25);
-    var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    setCurrentProd(currentProd - 1)
+    setCurrentProd(currentProd - 1);
   };
 
   const slideRight = () => {
     slider.scrollLeft = slider.scrollLeft + (slider.clientWidth * .25);
-    var maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-    setCurrentProd(currentProd + 1)
+    setCurrentProd(currentProd + 1);
   };
 
-//onClick={()=>setToZero(relatedProducts.length - 1)}
     return (
       <div className='products-list'>
         {currentProd !== 0 && relatedProducts.length > 4 &&
-        <div className='slide-container'>
-        <BsChevronLeft className='related-left-slide' onClick={slideLeft}/>
-        </div>}
-          <div id='slider' className='related-products-list-container snaps-inline'>
-          <div></div>
-            {relatedProducts.map((relatedProduct, key) => (
-              <Card relatedProduct={relatedProduct} key={key} />
-            ))}
-          </div>
-          {currentProd !== relatedProducts.length - 4 && relatedProducts.length > 4 &&
           <div className='slide-container'>
-          <BsChevronRight className='related-right-slide' onClick={slideRight}/>
-          </div>}
+            <BsChevronLeft className='related-left-slide' onClick={slideLeft}/>
+          </div>
+        }
+        <div id='slider' className='related-products-list-container snaps-inline'>
+          <div className='related-detail-spacer'></div>
+          {relatedProducts.map((relatedProduct, index) => (
+            <Card relatedProduct={relatedProduct} key={index}/>
+          ))}
+        </div>
+        {currentProd !== relatedProducts.length - 4 &&
+          relatedProducts.length > 4 &&
+            <div className='slide-container'>
+              <BsChevronRight className='related-right-slide' onClick={slideRight}/>
+            </div>
+        }
       </div>
     )
 }
