@@ -1,6 +1,6 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-<a href="https://github.com/RFP2207-G2-ECOM/FEC-BSB/graphs/contributors">
+<a href="https://github.com/RFP2207-G2-ECOM/FEC-BSB/">
   <img src="https://contrib.rocks/image?repo=RFP2207-G2-ECOM/FEC-BSB" />
 </a>
 <!--
@@ -31,7 +31,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/RFP2207-G2-ECOM/FEC-BSB">
     <img src="images/logo.jpg" alt="Logo" width="140" height="80">
   </a>
 
