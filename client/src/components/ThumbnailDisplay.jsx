@@ -65,9 +65,6 @@ const ThumbnailDisplay = ({ thumbnail, index, curPic, setCurPic }) => {
   //   };
   // }
 
-
-
-
   if (index === curPic) {
     return (
       <div className='ThumbnailFrameSelected'>
