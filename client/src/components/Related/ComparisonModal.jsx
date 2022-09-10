@@ -11,7 +11,7 @@ const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
 
   useEffect(()=>{
       compare();
-}, [])
+}, [product])
 
   const compare = () => {
     const currentProductFeatures = product.features
