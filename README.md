@@ -71,7 +71,7 @@ FEC-BSB (or Front-End Capstone BackStreet Boys) is a final project by four HackR
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/RFP2207-G2-ECOM/FEC-BSB
    ```
 2. Install NPM packages
    ```sh
@@ -96,15 +96,6 @@ Johnny Ho: Related Product
 David Garcia: Questions & Answers
 <br />
 Daniel Zweig: Ratings & Reviews
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/RFP2207-G2-ECOM/FEC-BSB](https://github.com/RFP2207-G2-ECOM/FEC-BSB)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
