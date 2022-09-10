@@ -5,6 +5,11 @@ import YourOutfitTitle from './YourOutfitTitle.jsx';
 import RelatedProductsList from './RelatedProductsList.jsx';
 import YourOutfitList from './YourOutfitList.jsx'
 
+export const RelatedItemsAndOutfitContext = createContext({
+  relatedProducts: [],
+  outfitList: []
+});
+
 const RelatedItemsAndComp = () => {
 
   return (

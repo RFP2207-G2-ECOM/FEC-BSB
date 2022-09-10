@@ -51,6 +51,7 @@ const CardPictureDisplay = ({productStyle, deleteOutfit, onOpen, relatedProduct,
     }
   }, [productStyle]);
 
+  //change current product and reset scroll positon
   const changeCurrProd = () => {
     setProductID(relatedProduct.id)
     window.scroll({
