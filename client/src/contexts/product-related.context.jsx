@@ -18,7 +18,13 @@ export const ProductRelatedProvider = ({ children }) => {
       }
     })
       .then(result => {
-        setProductRelated(result.data);
+        //filter duplicate IDs
+        let relatedProducts = new Set();
+        for (let i = 0; i < result.data.length; i++) {
+          relatedProducts.add(result.data[i])
+        }
+        const listOfProductIDs = [...relatedProducts]
+        setProductRelated(listOfProductIDs);
       })
   }, [productID])
 

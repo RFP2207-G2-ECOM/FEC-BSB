@@ -1,10 +1,14 @@
 import React, { useState, useEffect, createContext } from 'react';
-import Card from './Card.jsx';
 import styles from '../../styles/Related/related.css';
 import RelatedProductsTitle from './RelatedProductsTitle.jsx';
 import YourOutfitTitle from './YourOutfitTitle.jsx';
 import RelatedProductsList from './RelatedProductsList.jsx';
 import YourOutfitList from './YourOutfitList.jsx'
+
+export const RelatedItemsAndOutfitContext = createContext({
+  relatedProducts: [],
+  outfitList: []
+});
 
 const RelatedItemsAndComp = () => {
 

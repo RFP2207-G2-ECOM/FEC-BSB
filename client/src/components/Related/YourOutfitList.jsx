@@ -10,11 +10,12 @@ import { LocalStorageContext } from '../../contexts/local-storage.context.jsx';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 const YourOutfitList = () => {
+  const slider = document.getElementById('outfit-slider');
+
   const { productID: PID} = useContext(ProductContext);
   const { outfitList, setOutfitList } = useContext(LocalStorageContext);
 
   const [relatedProduct, setRelatedProduct] = useState([]);
-
   const [ currentProd, setCurrentProd ] = useState(0);
 
   useEffect(()=>{
@@ -60,9 +61,9 @@ const YourOutfitList = () => {
     }
   }
 
-  const deleteOutfit = (ID) => {
+  const deleteOutfit = (outfitID) => {
     const outfits = [...outfitList]
-    const index = outfits.indexOf(JSON.stringify(ID))
+    const index = outfits.indexOf(JSON.stringify(outfitID))
     if (index > -1) {
       outfits.splice(index, 1)
     }
@@ -70,41 +71,39 @@ const YourOutfitList = () => {
   }
 
   const slideLeft = () => {
-    var slider = document.getElementById('outfit-slider');
     slider.scrollLeft = slider.scrollLeft - 250;
     setCurrentProd(currentProd - 1)
   };
 
   const slideRight = () => {
-    var slider = document.getElementById('outfit-slider');
     slider.scrollLeft = slider.scrollLeft + 250;
     setCurrentProd(currentProd + 1)
   };
 
   return (
     <div className='products-list'>
-        {currentProd !== 0 && outfitList.length > 3 &&
+      {currentProd !== 0 && outfitList.length > 3 &&
         <div className='slide-container'>
         <BsChevronLeft className='related-left-slide' onClick={slideLeft}/>
-        </div>}
-          <div id='outfit-slider'
-               className='related-products-list-container snaps-inline'>
-                 <div id='outfit-button' className='card-container outfit' onClick={addOutfit}>
-                   <HiOutlinePlusCircle
-                   className='card-add-button'
-                   size={100} />
-                   <div className='card-add-outfit '>
-                   <b>Add to Outfit</b>
-                   </div>
-                 </div>
-               {relatedProduct.map((relatedProduct, key) => (
-                 <Card relatedProduct={relatedProduct} key={key} deleteOutfit={deleteOutfit}/>
-               ))}
+        </div>
+      }
+      <div id='outfit-slider' className='related-products-list-container snaps-inline'>
+        <div id='outfit-button' className='card-container outfit' onClick={addOutfit}>
+          <HiOutlinePlusCircle className='card-add-button' size={100} />
+          <div className='card-add-outfit '>
+            <b>Add to Outfit</b>
           </div>
-          {currentProd !== outfitList.length - 3 && outfitList.length > 3 &&
-          <div className='slide-container'>
+        </div>
+        {relatedProduct.map((relatedProduct, key) => (
+          <Card relatedProduct={relatedProduct} key={key} deleteOutfit={deleteOutfit}/>
+        ))}
+      </div>
+      {currentProd !== outfitList.length - 3 &&
+        outfitList.length > 3 &&
+        <div className='slide-container'>
           <BsChevronRight className='related-right-slide' onClick={slideRight}/>
-          </div>}
+        </div>
+      }
     </div>
   )
 }
