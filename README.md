@@ -117,9 +117,9 @@ Daniel Zweig: Ratings & Reviews
 [forks-shield]: https://img.shields.io/github/forks/RFP2207-G2-ECOM/FEC-BSB.svg?style=for-the-badge
 [forks-url]: https://github.com/github_username/repo_name/network/members
 [stars-shield]: https://img.shields.io/github/stars/RFP2207-G2-ECOM/FEC-BSB.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
+[stars-url]: https://github.com/RFP2207-G2-ECOM/FEC-BSB/stargazers
 [issues-shield]: https://img.shields.io/github/issues/RFP2207-G2-ECOM/FEC-BSB.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
+[issues-url]: https://github.com/RFP2207-G2-ECOM/FEC-BSB/issues
 [license-shield]: https://img.shields.io/github/license/RFP2207-G2-ECOM/FEC-BSB.svg?style=for-the-badge
 [license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
