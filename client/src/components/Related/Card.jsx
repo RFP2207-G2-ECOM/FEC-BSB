@@ -48,15 +48,6 @@ const Card = ({relatedProduct, deleteOutfit}) => {
     }
   }
 
-  // const changeCurrProd = () => {
-  //   setProductID(productID);
-  //   window.scroll({
-  //     top: 0,
-  //     left: 0,
-  //     behavior: 'smooth',
-  //   })
-  // }
-
   if (productStyle[0]) {
     return (
       <div className='card-container' onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>

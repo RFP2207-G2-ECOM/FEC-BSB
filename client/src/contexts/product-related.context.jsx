@@ -22,6 +22,8 @@ export const ProductRelatedProvider = ({ children }) => {
       })
   }, [productID])
 
+
+
   const value = { productRelated, setProductRelated };
 
   return (<ProductRelatedContext.Provider value={value}>{children}</ProductRelatedContext.Provider>)

@@ -25,21 +25,21 @@ const CardStarRating = (props) => {
     ratings = Math.round(totalScore/totalReviews * 10) / 10;
   }
 
-    if (totalReviews > 0) {
-      return (
-          <div className='related-stars'>
-            <StaticRating rating={ratings} font={'16px'}/>
-          </div>
+  if (totalReviews > 0) {
+    return (
+      <div className='related-stars'>
+        <StaticRating rating={ratings} font={'16px'}/>
+      </div>
       )
-    } else {
-      return (
-        <div className='related-stars-and-reviews'>
-          <div className='related-stars'>
-            <StaticRating rating={ratings} font={'16px'}/>
-          </div>
+  } else {
+    return (
+      <div className='related-stars-and-reviews'>
+        <div className='related-stars'>
+          <StaticRating rating={ratings} font={'16px'}/>
         </div>
-      )
-    }
+      </div>
+    )
+  }
 };
 
 export default CardStarRating;

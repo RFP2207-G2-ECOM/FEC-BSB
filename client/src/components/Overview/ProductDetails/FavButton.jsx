@@ -12,7 +12,13 @@ const FavButton = () => {
 
   useEffect(()=>{
     let outfits = [...outfitList];
-    const index = outfits.indexOf(productID);
+    let index = 0;
+
+    if (typeof productID !== 'string') {
+      index = outfits.indexOf(JSON.stringify(productID));
+    } else {
+      index = outfits.indexOf(productID);
+    }
 
     if (index > -1) {
       setIsFav(true);
@@ -22,7 +28,12 @@ const FavButton = () => {
   }, [outfitList, productID])
 
   const addOutfit = () => {
-    var currentProduct = productID;
+    if (typeof productID !== 'string') {
+    var currentProduct = JSON.stringify(productID);
+    } else {
+      var currentProduct = productID;
+    }
+
     if (outfitList.indexOf(currentProduct) === -1){
       setOutfitList([...outfitList, currentProduct]);
     }
@@ -30,7 +41,15 @@ const FavButton = () => {
 
   const deleteOutfit = () => {
     const outfits = [...outfitList];
-    const index = outfits.indexOf(productID);
+    let currentProduct = '40334';
+
+    if (typeof productID !== 'string') {
+      currentProduct = JSON.stringify(productID);
+    } else {
+      currentProduct = productID;
+    }
+
+    const index = outfits.indexOf(currentProduct);
     if (index > -1) {
       outfits.splice(index, 1)
     }
