@@ -5,7 +5,7 @@ import Card from './Card.jsx'
 import { ProductRelatedContext } from '../../contexts/product-related.context.jsx';
 import axios from 'axios';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import { HiOutlinePlusCircle } from 'react-icons/hi';
+import { BsPlusCircle } from 'react-icons/bs';
 import { LocalStorageContext } from '../../contexts/local-storage.context.jsx';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 
@@ -84,25 +84,31 @@ const YourOutfitList = () => {
     <div className='products-list'>
       {currentProd !== 0 && outfitList.length > 3 &&
         <div className='slide-container'>
-        <BsChevronLeft className='related-left-slide' onClick={slideLeft}/>
+          <BsChevronLeft
+            className='related-left-slide'
+            onClick={slideLeft}
+          />
         </div>
       }
       <div id='outfit-slider' className='related-products-list-container snaps-inline'>
         <div id='outfit-button' className='card-container outfit' onClick={addOutfit}>
-          <HiOutlinePlusCircle className='card-add-button' size={100} />
+          <BsPlusCircle className='card-add-button' size={75} />
+          <i className="fa-thin fa-circle-plus card-add-button"></i>
           <div className='card-add-outfit '>
             <b>Add to Outfit</b>
           </div>
         </div>
-        {relatedProduct.map((relatedProduct, key) => (
-          <Card relatedProduct={relatedProduct} key={key} deleteOutfit={deleteOutfit}/>
-        ))}
+        {relatedProduct.map((relatedProduct, key) =>
+          <Card relatedProduct={relatedProduct}
+                key={key}
+                deleteOutfit={deleteOutfit} />
+        )}
       </div>
-      {currentProd !== outfitList.length - 3 &&
-        outfitList.length > 3 &&
-        <div className='slide-container'>
-          <BsChevronRight className='related-right-slide' onClick={slideRight}/>
-        </div>
+      {currentProd !== outfitList.length - 3
+        && outfitList.length > 3
+        && <div className='slide-container'>
+             <BsChevronRight className='related-right-slide' onClick={slideRight} />
+           </div>
       }
     </div>
   )

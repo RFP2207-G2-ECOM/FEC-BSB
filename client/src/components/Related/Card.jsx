@@ -73,7 +73,7 @@ const Card = ({relatedProduct, deleteOutfit}) => {
             <div className='card-prod-name'>{relatedProduct.name}</div>
             <div className='card-price'>${relatedProduct.default_price}</div>
             <div className='card-category'>{relatedProduct.category}</div>
-            <CardStarRating ratings={ratings}/>
+            <CardStarRating ratings={ratings} />
           </div>
       </div>
     )

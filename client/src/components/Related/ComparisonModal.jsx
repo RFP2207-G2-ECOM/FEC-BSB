@@ -5,7 +5,7 @@ import styles from '../../styles/Related/related.css';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 import { ImCross } from 'react-icons/im';
 
-const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
+const ComparisonModal = ({open, children, onClose, relatedProduct}) => {
   const { product } = useContext(ProductContext);
   const [productFeatures, setFeatures] = useState([]);
 
@@ -62,7 +62,7 @@ const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
     <>
       <div className='overlay-styles' onClick={onClose}/>
       <div className='modal-styles related-modal-class'>
-        <ImCross className='CloseModalButton' onClick={onClose}/>
+        <ImCross className='CloseModalButton' onClick={onClose} />
         <table>
           <tbody>
             <tr>
@@ -71,7 +71,8 @@ const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
               <th className='comparison-modal-title'>{relatedProduct.name}</th>
             </tr>
             {productFeatures.map((feature, key) =>
-              <ComparisonFeatures feature={feature} key={key}/>
+              <ComparisonFeatures feature={feature}
+                                  key={key} />
             )}
           </tbody>
         </table>
