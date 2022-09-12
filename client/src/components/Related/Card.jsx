@@ -10,6 +10,7 @@ import CardPictureDisplay from './CardPictureDisplay.jsx';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 
 const Card = ({relatedProduct, deleteOutfit}) => {
+  //Current Product ID = PID
   const { productID: PID, setProductID } = useContext(ProductContext);
   const [productStyle, setStyle] = useState([]);
   const [isOpen, setIsOpen] = useState(false)
@@ -17,7 +18,7 @@ const Card = ({relatedProduct, deleteOutfit}) => {
   const [isHover, setIsHover] = useState(false)
 
   //API Call Data
-  const productID = relatedProduct.id
+  const productID = relatedProduct.id //this is product ID for related/recommended products
   const baseURI = process.env.BASE_URI;
   const config =  {
     headers: {
@@ -25,10 +26,10 @@ const Card = ({relatedProduct, deleteOutfit}) => {
     }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getProductStyles();
     getReviews();
-  },[relatedProduct])
+  }, [relatedProduct])
 
   const getProductStyles = async () => {
     if (productID) {
@@ -48,34 +49,31 @@ const Card = ({relatedProduct, deleteOutfit}) => {
     }
   }
 
-  // const changeCurrProd = () => {
-  //   setProductID(productID);
-  //   window.scroll({
-  //     top: 0,
-  //     left: 0,
-  //     behavior: 'smooth',
-  //   })
-  // }
-
   if (productStyle[0]) {
     return (
-      <div className='card-container' onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
+      <div className='card-container'
+           onMouseEnter={() => setIsHover(true)}
+           onMouseLeave={() => setIsHover(false)}>
         <div className='card-media'>
-            <CardPictureDisplay productStyle={productStyle}
-                                onOpen={() => setIsOpen(true)}
-                                open={isOpen}
-                                deleteOutfit={deleteOutfit}
-                                relatedProduct={relatedProduct}
-                                hover={isHover}/>
-          <ComparisonModal open={isOpen}
-                           onClose={() => setIsOpen(false)}
-                           relatedProduct={relatedProduct}/>
+          <CardPictureDisplay
+            productStyle={productStyle}
+            onOpen={() => setIsOpen(true)}
+            open={isOpen}
+            deleteOutfit={deleteOutfit}
+            relatedProduct={relatedProduct}
+            hover={isHover}
+          />
+          <ComparisonModal
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            relatedProduct={relatedProduct}
+          />
         </div>
           <div className='card-content'>
             <div className='card-prod-name'>{relatedProduct.name}</div>
             <div className='card-price'>${relatedProduct.default_price}</div>
             <div className='card-category'>{relatedProduct.category}</div>
-            <CardStarRating ratings={ratings}/>
+            <CardStarRating ratings={ratings} />
           </div>
       </div>
     )

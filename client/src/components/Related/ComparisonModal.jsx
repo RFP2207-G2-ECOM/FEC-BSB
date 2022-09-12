@@ -5,16 +5,17 @@ import styles from '../../styles/Related/related.css';
 import { ProductContext } from '../../contexts/product-info.context.jsx';
 import { ImCross } from 'react-icons/im';
 
-const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
-  const [productFeatures, setFeatures] = useState([]);
+const ComparisonModal = ({open, children, onClose, relatedProduct}) => {
   const { product } = useContext(ProductContext);
+  const [productFeatures, setFeatures] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
       compare();
-}, [])
+  }, [relatedProduct, product]);
 
+  //compares features between current product and related product/outfit
   const compare = () => {
-    const currentProductFeatures = product.features
+    const currentProductFeatures = product.features;
     const relatedProductFeatures = relatedProduct.features;
     let currentFeatures = [];
     const features = new Set();
@@ -36,19 +37,19 @@ const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
     }
 
     for (let i = 0; i < currentProductFeatures.length; i++) {
-      var current = currentProductFeatures[i]
+      var current = currentProductFeatures[i];
       for (let j = 0; j < currentFeatures.length; j++) {
         if (currentFeatures[j].feature === current.feature){
-          currentFeatures[j].current = currentProductFeatures[i].value
+          currentFeatures[j].current = currentProductFeatures[i].value;
         }
       }
     }
 
     for (let i = 0; i < relatedProductFeatures.length; i++) {
-      var current = relatedProductFeatures[i]
+      var current = relatedProductFeatures[i];
       for (let j = 0; j < currentFeatures.length; j++) {
         if (currentFeatures[j].feature === current.feature){
-          currentFeatures[j].related = relatedProductFeatures[i].value
+          currentFeatures[j].related = relatedProductFeatures[i].value;
         }
       }
     }
@@ -61,7 +62,7 @@ const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
     <>
       <div className='overlay-styles' onClick={onClose}/>
       <div className='modal-styles related-modal-class'>
-      <ImCross className='CloseModalButton' onClick={onClose}/>
+        <ImCross className='CloseModalButton' onClick={onClose} />
         <table>
           <tbody>
             <tr>
@@ -69,9 +70,10 @@ const ComparisonModal = ({ open, children, onClose, relatedProduct }) => {
               <th className='comparison-modal-title'>Features</th>
               <th className='comparison-modal-title'>{relatedProduct.name}</th>
             </tr>
-              {productFeatures.map((feature, key) =>
-                <ComparisonFeatures feature={feature} key={key}/>
-              )}
+            {productFeatures.map((feature, key) =>
+              <ComparisonFeatures feature={feature}
+                                  key={key} />
+            )}
           </tbody>
         </table>
       </div>
