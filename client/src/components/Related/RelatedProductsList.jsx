@@ -66,19 +66,20 @@ const RelatedProductsList = () => {
       <div className='products-list'>
         {currentProd !== 0 && relatedProducts.length > 4 &&
           <div className='slide-container'>
-            <BsChevronLeft className='related-left-slide' onClick={slideLeft}/>
+            <BsChevronLeft className='related-left-slide' onClick={slideLeft} />
           </div>
         }
         <div id='slider' className='related-products-list-container snaps-inline'>
           <div className='related-detail-spacer'></div>
-          {relatedProducts.map((relatedProduct, index) => (
-            <Card relatedProduct={relatedProduct} key={index}/>
-          ))}
+          {relatedProducts.map((relatedProduct, index) =>
+            <Card relatedProduct={relatedProduct}
+                  key={index} />
+          )}
         </div>
         {currentProd !== relatedProducts.length - 4 &&
           relatedProducts.length > 4 &&
             <div className='slide-container'>
-              <BsChevronRight className='related-right-slide' onClick={slideRight}/>
+              <BsChevronRight className='related-right-slide' onClick={slideRight} />
             </div>
         }
       </div>

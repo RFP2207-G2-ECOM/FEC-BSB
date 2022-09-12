@@ -2,15 +2,11 @@
   display: inline block;
   width: 60%;
   margin: auto;
-  /* margin-left: 20%;
-  margin-right: 20.5%; */
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
 
 .card-container {
-  /* margin-top: 10px;
-  margin-bottom: 10px; */
   max-width: 250px;
   min-height: 400px;
   margin: 10px 30px 10px 0px;
@@ -43,7 +39,6 @@
 .card-button-hover {
   position: relative;
   left: 220px;
-  /* top: -305px; */
   top: -305px;
   color: black;
   font-weight: 550;
@@ -58,12 +53,11 @@
   transition: color 0.5s ease-out 100ms;
 }
 
-
 .card-add-button {
   position: relative;
   margin: auto;
   min-width: 250px;
-  top: 140px;
+  top: 155px;
   font-size: 80px;
 }
 
@@ -77,14 +71,6 @@
 #outfit-button:hover {
   cursor: pointer;
 }
-
-/* .card-product-info {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 140px;
-  height: 110px;
-  border: 2px solid black;
-} */
 
 .card-content {
   padding: 1em 1em;
@@ -126,13 +112,11 @@
 .related-products-list-container {
   display: flex;
   position: relative;
-  /* width: calc(100% - 6.5rem); */
   overflow: hidden;
   flex-direction: row;
   padding-left: 13.5px;
   padding-right: 10px;
   scroll-padding: 1em;
-    /* overflow: scroll; */
 }
 
 /*Snaps in line, scrolls 1 card container at a time*/
@@ -145,13 +129,8 @@
 }
 
 .products-list {
-  /* overflow: hidden; */
   position: relative;
   display: flex;
-  /* flex-wrap: nowrap; */
-  /* width: calc(100% - 6.5rem); */
-  /* overflow: hidden; */
-  /* overflow: hidden; */
   margin-bottom: 1rem;
 }
 
@@ -206,7 +185,6 @@
   z-index: 1000;
   border-collapse: collapse;
   border-spacing: 0;
-  /* height: 35%;*/
   width: 35%;
   height: auto;
   border: 1px solid #ddd;
@@ -216,17 +194,6 @@
   display: block;
   float: right;
 }
-/*
-.columns {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.camparison-column {
-  flex: 33.33%;
-} */
 
 /*Table for Comparison Modal*/
 
@@ -296,7 +263,6 @@ overflow: hidden;
 
 .right-card-arrow {
   position: relative;
-  /* left: 190px; */
   left: 170px;
   top: -150px;
   color: black;
@@ -310,10 +276,6 @@ overflow: hidden;
   font-size: 30px;
   opacity: .8;
 }
-
-/* .right-card-arrow:hover {
-  background-color: white;
-} */
 
 .left-card-arrow {
   position: relative;
@@ -329,7 +291,6 @@ overflow: hidden;
   font-family: 'Lato';
   font-size: 30px;
   opacity: .8;
-  /* color: #FFFFFF; */
 }
 
 .left-card-arrow-invis {
@@ -343,7 +304,6 @@ overflow: hidden;
   font-family: 'Lato';
   font-size: 30px;
   visibility: hidden;
-  /* color: #FFFFFF; */
 }
 
 .right-card-arrow-invis {
@@ -356,11 +316,7 @@ overflow: hidden;
   font-family: 'Lato';
   font-size: 30px;
   visibility: hidden;
-  /* color: #FFFFFF; */
 }
-/* .left-card-arrow:hover {
-    background-color: white;
-} */
 
 /* For Card Carousel*/
 
