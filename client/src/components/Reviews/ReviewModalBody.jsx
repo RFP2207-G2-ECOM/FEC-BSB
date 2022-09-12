@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 const ReviewModalBody = ( { setReviewBody } ) => {
 
-  const [bodyText, setBodyText] = useState("This is truly a life-changing product. I cannot express in simple words how much I love this thing. If I could only make a small change, I\'d ask that it come with a pepperoni pizza") /// preset added for product demo
+  const [bodyText, setBodyText] = useState('')
 
   let charactersLeft
   bodyText.length >= 50 ? charactersLeft = 0 : charactersLeft = 50 - bodyText.length

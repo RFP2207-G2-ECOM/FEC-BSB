@@ -4,7 +4,7 @@ import { MdStar } from "react-icons/md"
 import styles from "../../styles/Reviews/starRating.css"
 
 const ReviewModalStarRating = ( { setStarRating } ) => {
-  const [rating, setRating] = useState(4) /// preset to 4 for demo
+  const [rating, setRating] = useState(null)
   const [hoverRating, setHoverRating] = useState(null)
   const [hovering, setHovering] = useState(false)
 

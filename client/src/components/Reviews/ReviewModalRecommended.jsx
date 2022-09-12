@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 const ReviewModalRecommended = ( { setRecommended } ) => {
 
-  const [selectedOption, setSelectedOption] = useState(true) /// preset to true for demo
+  const [selectedOption, setSelectedOption] = useState(null)
 
   useEffect(() => {
     setRecommended(selectedOption)

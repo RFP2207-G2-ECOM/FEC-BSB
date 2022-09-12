@@ -53,13 +53,8 @@
 .review-tile-photos {
   display: flex;
   justify-content: flex-start;
-  width: 100%;
+  height: 6rem;
   gap: 2px;
-}
-
-.review-tile-photo {
-  width: 20%;
-  height: 100px;
 }
 
 .review-tile-recommend {
